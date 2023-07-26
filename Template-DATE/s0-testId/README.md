@@ -11,7 +11,7 @@ params=&from=1690367297867&to=1690368635328
 {
   "scenarios": { // define scenarios
     // warm-up
-    "accountLookup": { // original scenaio for accountLookup
+    "accountLookup": { // original scenario for accountLookup
       "executor": "ramping-vus",
       "exec": "accountLookupScenarios",
       "startVUs": 1,

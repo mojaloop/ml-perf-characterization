@@ -12,7 +12,7 @@ ACCOUNT_LOOKUP_SERVICE_VERSION=v14.2.2
 {
   "scenarios": { // define scenarios
     // warm-up
-    "accountLookup": { // original scenaio for accountLookup
+    "accountLookup": { // original scenario for accountLookup
       "executor": "ramping-vus",
       "exec": "accountLookupScenarios",
       "startVUs": 1,

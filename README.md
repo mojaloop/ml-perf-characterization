@@ -14,6 +14,6 @@ Scenario | Description | Test-Case | Repeatable (Y/N) | Notes
  2 | ALS Baseline with Sims-only | 1 | Y | C3
  3 | ALS Baseline with Sims-only, Scale 2 | 1 | Y | C3
  4 | ALS Baseline with Sims-only, Scale 4 | 1 | Y | C3
- 5 | ALS Baseline with Sims-only, no logs/events | 1 | Y | C3
+ 5 | ALS Baseline with Sims-only, no logs/audit-events | 1 | Y | C3
  6 | ALS Baseline with Sims-only, HTTP-Keep-Alive enabled | 1 | N | C3
- 7 | ALS Baseline with Sims-only UV_THREADS | 1 | N | C3
+ 7 | ALS Baseline with Sims-only, UV_THREADS | 1 | N | C3

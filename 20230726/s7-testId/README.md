@@ -1,4 +1,4 @@
-# Scenario 1 - ALS-bypass Baseline with Sims-only
+# Scenario 7 - ALS Baseline with Sims-only, UV_THREADS
 
 ```conf
 testid=1690367402771
@@ -15,7 +15,7 @@ Notes:
 {
   "scenarios": { // define scenarios
     // warm-up
-    "accountLookup": { // original scenaio for accountLookup
+    "accountLookup": { // original scenario for accountLookup
       "executor": "ramping-vus",
       "exec": "accountLookupScenarios",
       "startVUs": 1,
