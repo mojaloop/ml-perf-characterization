@@ -17,3 +17,14 @@ Scenario | Description | Test-Case | Repeatable (Y/N) | Notes
  5 | ALS Baseline with Sims-only, no logs/audit-events | 1 | Y | C3
  6 | ALS Baseline with Sims-only, HTTP-Keep-Alive enabled | 1 | N | C3
  7 | ALS Baseline with Sims-only, UV_THREADS | 1 | N | C3
+
+### ALS-bypass Baseline with Sims-only
+
+TODO:
+
+- insert diagram here
+- insert description and why this test scenario may be useful, etc
+
+## TODO
+
+- add sections for each test-scenario

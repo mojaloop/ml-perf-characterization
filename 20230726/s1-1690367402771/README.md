@@ -1,8 +1,8 @@
 # Scenario 1 - ALS-bypass Baseline with Sims-only
 
 ```conf
-testid=1690367402771
-params=&from=1690367297867&to=1690368635328
+var-testid=1690367402771
+params=&var-testid=1690367402771&from=1690367297867&to=1690368635328
 ```
 
 ## k6 Test Config
@@ -30,6 +30,17 @@ params=&from=1690367297867&to=1690368635328
 }
 ```
 
+## Snapshots
+
+- https://snapshots.raintank.io/dashboard/snapshot/ie215NIaFsLwXIzrebhe7Dqy1QCkSFcG
+- https://snapshots.raintank.io/dashboard/snapshot/ysBZLoJedpygVROKbERs287JNLjuz8k5
+- https://snapshots.raintank.io/dashboard/snapshot/Nab8aB5S31oK3ey1hqb3LGq31lGJNokr
+- https://snapshots.raintank.io/dashboard/snapshot/i16hs25XuA5NJ7B2eNHiF1gD0I4XYX3Q
+
 ## Observations
 
+TBD
+
 ## Recommendations
+
+TBD

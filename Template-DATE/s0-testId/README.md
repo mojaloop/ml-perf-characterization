@@ -30,6 +30,8 @@ params=&from=1690367297867&to=1690368635328
 }
 ```
 
+## Snapshots
+
 ## Observations
 
 ## Recommendations

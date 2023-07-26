@@ -1,7 +1,7 @@
 # Scenario 2 - ALS Baseline with Sims-only
 
 ```conf
-testid=1690376653994
+var-testid=1690376653994
 params=&from=1690376607107&to=1690377903696
 ACCOUNT_LOOKUP_SERVICE_VERSION=v14.2.2
 ```
@@ -31,6 +31,20 @@ ACCOUNT_LOOKUP_SERVICE_VERSION=v14.2.2
 }
 ```
 
+## Snapshots
+
+- https://snapshots.raintank.io/dashboard/snapshot/d9zRbrMvkKrX5RMdix8xIHF3RCxEhr0e
+- https://snapshots.raintank.io/dashboard/snapshot/0aMk6hS2Et1xX3AdHvt3Rx1a87P9MyVO
+- https://snapshots.raintank.io/dashboard/snapshot/Haj45ymA0F2ITdgDvFuj2YCaQGEfdIp8
+- https://snapshots.raintank.io/dashboard/snapshot/RUGVCysJNRR31kxuKnn0vTAfNl711M3I (cbs)
+- https://snapshots.raintank.io/dashboard/snapshot/AdtPoicI5Ms3hjScM9ATcoDwYws86MrY (moja_als)
+- https://snapshots.raintank.io/dashboard/snapshot/lz4z2saF4jVhH4MEhHeu2G5BhUlvaDHo
+- https://snapshots.raintank.io/dashboard/snapshot/HBQOYXL0CyX5igfvc5tn7SMZAWpOmW8S
+
 ## Observations
 
+TBD
+
 ## Recommendations
+
+TBD
