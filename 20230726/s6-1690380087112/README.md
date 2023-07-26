@@ -10,6 +10,13 @@ ACCOUNT_LOOKUP_SERVICE_VERSION=local
 
 - ALS is a local build (based on v14.2.2) which includes the following updated `central-services-shared` lib --> [v17.6.0-snapshot.1](https://github.com/mojaloop/central-services-shared/releases/tag/v17.6.0-snapshot.1), [central-services-shared/pull/342](https://github.com/mojaloop/central-services-shared/pull/342)
 
+## Environment
+
+- m6i.2xlarge
+  - 8 CPU - 3.5 GHz 3rd Generation Intel Xeon Scalable processors (Ice Lake 8375C)
+  - 32gb RAM
+- https://gist.github.com/mdebarros/6d9ac90f33c96031cbce6b9a3ea8048e
+
 ## k6 Test Config
 
 ```json

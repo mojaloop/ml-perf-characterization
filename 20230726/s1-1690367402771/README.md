@@ -5,6 +5,13 @@ var-testid=1690367402771
 params=&var-testid=1690367402771&from=1690367297867&to=1690368635328
 ```
 
+## Environment
+
+- m6i.2xlarge
+  - 8 CPU - 3.5 GHz 3rd Generation Intel Xeon Scalable processors (Ice Lake 8375C)
+  - 32gb RAM
+- https://gist.github.com/mdebarros/6d9ac90f33c96031cbce6b9a3ea8048e
+
 ## k6 Test Config
 
 ```json
