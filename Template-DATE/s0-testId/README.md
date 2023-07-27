@@ -1,8 +1,10 @@
 # Scenario 1 - ALS-bypass Baseline with Sims-only
 
-```conf
-testid=1690367402771
-params=&from=1690367297867&to=1690368635328
+```yaml
+testid:
+  - 1690367402771
+params: &from=1690367297867&to=1690368635328
+ACCOUNT_LOOKUP_SERVICE_VERSION: v14.2.2
 ```
 
 ## Environment
@@ -24,8 +26,7 @@ params=&from=1690367297867&to=1690368635328
       "startVUs": 1,
       "stages": [
         { "duration": "2m", "target": 1 },
-        { "duration": "15m", "target": 1 },
-        { "duration": "2m", "target": 0 }
+        { "duration": "5m", "target": 1 },
       ]
     },
   },
@@ -38,6 +39,14 @@ params=&from=1690367297867&to=1690368635328
 ```
 
 ## Snapshots
+
+- [Docker](INSERT_LINK_HERE)
+- [K6](INSERT_LINK_HERE)
+- [Callback Handler Service](INSERT_LINK_HERE)
+- [Account Lookup Service](INSERT_LINK_HERE)
+- [Nodejs moja_als](INSERT_LINK_HERE)
+- [Nodejs cbs](INSERT_LINK_HERE)
+- [MySQL](INSERT_LINK_HERE)
 
 ## Observations
 

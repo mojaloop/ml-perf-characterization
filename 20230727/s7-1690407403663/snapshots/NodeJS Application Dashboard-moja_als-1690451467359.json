@@ -1,0 +1,3089 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "snapshotData": [],
+        "type": "dashboard"
+      }
+    ]
+  },
+  "description": "node.js prometheus client basic metrics",
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "gnetId": 11159,
+  "graphTooltip": 0,
+  "id": 3,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 13,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 7,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "lastNotNull",
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true,
+          "sortBy": "Mean",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.0.2",
+      "snapshotData": [
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 10,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "never",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "links": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "bytes"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690407300000,
+                1690407315000,
+                1690407330000,
+                1690407345000,
+                1690407360000,
+                1690407375000,
+                1690407390000,
+                1690407405000,
+                1690407420000,
+                1690407435000,
+                1690407450000,
+                1690407465000,
+                1690407480000,
+                1690407495000,
+                1690407510000,
+                1690407525000,
+                1690407540000,
+                1690407555000,
+                1690407570000,
+                1690407585000,
+                1690407600000,
+                1690407615000,
+                1690407630000,
+                1690407645000,
+                1690407660000,
+                1690407675000,
+                1690407690000,
+                1690407705000,
+                1690407720000,
+                1690407735000,
+                1690407750000,
+                1690407765000,
+                1690407780000,
+                1690407795000,
+                1690407810000,
+                1690407825000,
+                1690407840000,
+                1690407855000,
+                1690407870000,
+                1690407885000,
+                1690407900000,
+                1690407915000,
+                1690407930000,
+                1690407945000,
+                1690407960000,
+                1690407975000,
+                1690407990000,
+                1690408005000,
+                1690408020000,
+                1690408035000,
+                1690408050000,
+                1690408065000,
+                1690408080000,
+                1690408095000,
+                1690408110000,
+                1690408125000,
+                1690408140000,
+                1690408155000,
+                1690408170000,
+                1690408185000,
+                1690408200000,
+                1690408230000,
+                1690408245000,
+                1690408260000,
+                1690408275000,
+                1690408290000,
+                1690408305000,
+                1690408320000,
+                1690408335000,
+                1690408350000,
+                1690408365000,
+                1690408380000,
+                1690408395000,
+                1690408410000,
+                1690408425000,
+                1690408440000,
+                1690408455000,
+                1690408470000,
+                1690408485000,
+                1690408500000,
+                1690408515000,
+                1690408530000,
+                1690408545000,
+                1690408560000,
+                1690408575000,
+                1690408590000,
+                1690408605000,
+                1690408620000,
+                1690408635000,
+                1690408650000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 10,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "never",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "Process Memory - account-lookup-service:4001 account-lookup-service  ",
+                "links": [],
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "bytes"
+              },
+              "labels": {
+                "instance": "account-lookup-service:4001",
+                "serviceName": "account-lookup-service"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                187748352,
+                187834368,
+                187600896,
+                191311872,
+                187224064,
+                187301888,
+                187158528,
+                187228160,
+                297877504,
+                400867328,
+                299282432,
+                460898304,
+                416956416,
+                238698496,
+                535306240,
+                345042944,
+                316297216,
+                491966464,
+                521121792,
+                331108352,
+                316960768,
+                493043712,
+                478478336,
+                302759936,
+                303210496,
+                478457856,
+                537063424,
+                361807872,
+                303337472,
+                183136256,
+                183762944,
+                247193600,
+                179781632,
+                180895744,
+                180924416,
+                184643584,
+                415277056,
+                240902144,
+                233713664,
+                332046336,
+                244862976,
+                347242496,
+                275066880,
+                421355520,
+                363745280,
+                510226432,
+                511164416,
+                321433600,
+                263983104,
+                439201792,
+                395841536,
+                265695232,
+                268173312,
+                396185600,
+                181403648,
+                181956608,
+                181833728,
+                181997568,
+                182194176,
+                182255616,
+                182472704,
+                173326336,
+                179920896,
+                247681024,
+                438366208,
+                227303424,
+                324898816,
+                233496576,
+                355143680,
+                297664512,
+                429277184,
+                371482624,
+                533553152,
+                504668160,
+                314499072,
+                314875904,
+                534056960,
+                534450176,
+                358883328,
+                461688832,
+                259080192,
+                260923392,
+                432824320,
+                476557312,
+                520019968,
+                177164288,
+                177790976,
+                178421760,
+                178601984,
+                182317056
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: sum(moja_als_process_resident_memory_bytes{instance=~\"account-lookup-service:4001\",kubernetes_pod_name=~\"()\", serviceName=~\"account-lookup-service\"}) by (instance, kubernetes_pod_name, serviceName) \nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 10,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "never",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "links": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "bytes"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690407300000,
+                1690407315000,
+                1690407330000,
+                1690407345000,
+                1690407360000,
+                1690407375000,
+                1690407390000,
+                1690407405000,
+                1690407420000,
+                1690407435000,
+                1690407450000,
+                1690407465000,
+                1690407480000,
+                1690407495000,
+                1690407510000,
+                1690407525000,
+                1690407540000,
+                1690407555000,
+                1690407570000,
+                1690407585000,
+                1690407600000,
+                1690407615000,
+                1690407630000,
+                1690407645000,
+                1690407660000,
+                1690407675000,
+                1690407690000,
+                1690407705000,
+                1690407720000,
+                1690407735000,
+                1690407750000,
+                1690407765000,
+                1690407780000,
+                1690407795000,
+                1690407810000,
+                1690407825000,
+                1690407840000,
+                1690407855000,
+                1690407870000,
+                1690407885000,
+                1690407900000,
+                1690407915000,
+                1690407930000,
+                1690407945000,
+                1690407960000,
+                1690407975000,
+                1690407990000,
+                1690408005000,
+                1690408020000,
+                1690408035000,
+                1690408050000,
+                1690408065000,
+                1690408080000,
+                1690408095000,
+                1690408110000,
+                1690408125000,
+                1690408140000,
+                1690408155000,
+                1690408170000,
+                1690408185000,
+                1690408200000,
+                1690408230000,
+                1690408245000,
+                1690408260000,
+                1690408275000,
+                1690408290000,
+                1690408305000,
+                1690408320000,
+                1690408335000,
+                1690408350000,
+                1690408365000,
+                1690408380000,
+                1690408395000,
+                1690408410000,
+                1690408425000,
+                1690408440000,
+                1690408455000,
+                1690408470000,
+                1690408485000,
+                1690408500000,
+                1690408515000,
+                1690408530000,
+                1690408545000,
+                1690408560000,
+                1690408575000,
+                1690408590000,
+                1690408605000,
+                1690408620000,
+                1690408635000,
+                1690408650000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 10,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "never",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "Heap Total - account-lookup-service:4001 account-lookup-service  ",
+                "links": [],
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "bytes"
+              },
+              "labels": {
+                "instance": "account-lookup-service:4001",
+                "serviceName": "account-lookup-service"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                135352320,
+                135352320,
+                121720832,
+                116477952,
+                139022336,
+                139022336,
+                139022336,
+                139022336,
+                260395008,
+                373379072,
+                261443584,
+                438915072,
+                390942720,
+                194859008,
+                520704000,
+                310988800,
+                279269376,
+                472469504,
+                504713216,
+                295522304,
+                279793664,
+                473255936,
+                457003008,
+                263802880,
+                263540736,
+                457003008,
+                521490432,
+                328290304,
+                263802880,
+                103108608,
+                136138752,
+                203935744,
+                103108608,
+                123555840,
+                123555840,
+                117264384,
+                391991296,
+                199315456,
+                190926848,
+                298930176,
+                201936896,
+                314920960,
+                235229184,
+                396447744,
+                332746752,
+                493441024,
+                493965312,
+                284774400,
+                220811264,
+                413749248,
+                366039040,
+                222646272,
+                225005568,
+                366039040,
+                110186496,
+                110972928,
+                136138752,
+                136138752,
+                117264384,
+                124080128,
+                103632896,
+                96030720,
+                110710784,
+                207966208,
+                418205696,
+                184897536,
+                291065856,
+                190664704,
+                324620288,
+                260657152,
+                405622784,
+                342183936,
+                519917568,
+                487936000,
+                278220800,
+                278220800,
+                519655424,
+                520179712,
+                326717440,
+                439701504,
+                216092672,
+                218189824,
+                407982080,
+                456740864,
+                504451072,
+                108613632,
+                108089344,
+                119885824,
+                111497216,
+                125915136
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: sum(moja_als_nodejs_heap_size_total_bytes{instance=~\"account-lookup-service:4001\",kubernetes_pod_name=~\"()\", serviceName=~\"account-lookup-service\"}) by (instance, kubernetes_pod_name, serviceName) \nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "B"
+        },
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 10,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "never",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "links": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "bytes"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690407300000,
+                1690407315000,
+                1690407330000,
+                1690407345000,
+                1690407360000,
+                1690407375000,
+                1690407390000,
+                1690407405000,
+                1690407420000,
+                1690407435000,
+                1690407450000,
+                1690407465000,
+                1690407480000,
+                1690407495000,
+                1690407510000,
+                1690407525000,
+                1690407540000,
+                1690407555000,
+                1690407570000,
+                1690407585000,
+                1690407600000,
+                1690407615000,
+                1690407630000,
+                1690407645000,
+                1690407660000,
+                1690407675000,
+                1690407690000,
+                1690407705000,
+                1690407720000,
+                1690407735000,
+                1690407750000,
+                1690407765000,
+                1690407780000,
+                1690407795000,
+                1690407810000,
+                1690407825000,
+                1690407840000,
+                1690407855000,
+                1690407870000,
+                1690407885000,
+                1690407900000,
+                1690407915000,
+                1690407930000,
+                1690407945000,
+                1690407960000,
+                1690407975000,
+                1690407990000,
+                1690408005000,
+                1690408020000,
+                1690408035000,
+                1690408050000,
+                1690408065000,
+                1690408080000,
+                1690408095000,
+                1690408110000,
+                1690408125000,
+                1690408140000,
+                1690408155000,
+                1690408170000,
+                1690408185000,
+                1690408200000,
+                1690408230000,
+                1690408245000,
+                1690408260000,
+                1690408275000,
+                1690408290000,
+                1690408305000,
+                1690408320000,
+                1690408335000,
+                1690408350000,
+                1690408365000,
+                1690408380000,
+                1690408395000,
+                1690408410000,
+                1690408425000,
+                1690408440000,
+                1690408455000,
+                1690408470000,
+                1690408485000,
+                1690408500000,
+                1690408515000,
+                1690408530000,
+                1690408545000,
+                1690408560000,
+                1690408575000,
+                1690408590000,
+                1690408605000,
+                1690408620000,
+                1690408635000,
+                1690408650000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 10,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "never",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "Heap Used - account-lookup-service:4001 account-lookup-service  ",
+                "links": [],
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "bytes"
+              },
+              "labels": {
+                "instance": "account-lookup-service:4001",
+                "serviceName": "account-lookup-service"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                82548776,
+                91901328,
+                82751928,
+                89073608,
+                82745280,
+                91936632,
+                83073200,
+                92262224,
+                203128584,
+                303684488,
+                203925824,
+                361486488,
+                318924784,
+                108322344,
+                433899104,
+                247845168,
+                219275328,
+                391106720,
+                419773352,
+                233937240,
+                219510736,
+                391160440,
+                377115864,
+                205113184,
+                205204160,
+                377028000,
+                434242152,
+                262412592,
+                205317672,
+                82893128,
+                82609904,
+                174795864,
+                79147608,
+                77291160,
+                77575064,
+                85349224,
+                315529992,
+                143999512,
+                105997448,
+                231514432,
+                145616088,
+                246027352,
+                174884096,
+                318378112,
+                260896928,
+                404426968,
+                404499880,
+                218183744,
+                161018752,
+                332882608,
+                290186232,
+                107615920,
+                133360776,
+                287674432,
+                81920240,
+                81732096,
+                81795872,
+                90261664,
+                90581968,
+                90898208,
+                82425608,
+                77970768,
+                84722984,
+                157714688,
+                344568648,
+                105577496,
+                230742376,
+                131881680,
+                260008192,
+                203061160,
+                332094832,
+                274948528,
+                432724784,
+                404242256,
+                217878232,
+                218044688,
+                432892632,
+                432995360,
+                261091088,
+                361242336,
+                146449456,
+                160938424,
+                332825408,
+                375943472,
+                416291376,
+                81791368,
+                81516096,
+                81667512,
+                81556176,
+                85927776
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: sum(moja_als_nodejs_heap_size_used_bytes{instance=~\"account-lookup-service:4001\",kubernetes_pod_name=~\"()\", serviceName=~\"account-lookup-service\"}) by (instance, kubernetes_pod_name, serviceName) \nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "C"
+        },
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 10,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "never",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "links": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "bytes"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690407300000,
+                1690407315000,
+                1690407330000,
+                1690407345000,
+                1690407360000,
+                1690407375000,
+                1690407390000,
+                1690407405000,
+                1690407420000,
+                1690407435000,
+                1690407450000,
+                1690407465000,
+                1690407480000,
+                1690407495000,
+                1690407510000,
+                1690407525000,
+                1690407540000,
+                1690407555000,
+                1690407570000,
+                1690407585000,
+                1690407600000,
+                1690407615000,
+                1690407630000,
+                1690407645000,
+                1690407660000,
+                1690407675000,
+                1690407690000,
+                1690407705000,
+                1690407720000,
+                1690407735000,
+                1690407750000,
+                1690407765000,
+                1690407780000,
+                1690407795000,
+                1690407810000,
+                1690407825000,
+                1690407840000,
+                1690407855000,
+                1690407870000,
+                1690407885000,
+                1690407900000,
+                1690407915000,
+                1690407930000,
+                1690407945000,
+                1690407960000,
+                1690407975000,
+                1690407990000,
+                1690408005000,
+                1690408020000,
+                1690408035000,
+                1690408050000,
+                1690408065000,
+                1690408080000,
+                1690408095000,
+                1690408110000,
+                1690408125000,
+                1690408140000,
+                1690408155000,
+                1690408170000,
+                1690408185000,
+                1690408200000,
+                1690408230000,
+                1690408245000,
+                1690408260000,
+                1690408275000,
+                1690408290000,
+                1690408305000,
+                1690408320000,
+                1690408335000,
+                1690408350000,
+                1690408365000,
+                1690408380000,
+                1690408395000,
+                1690408410000,
+                1690408425000,
+                1690408440000,
+                1690408455000,
+                1690408470000,
+                1690408485000,
+                1690408500000,
+                1690408515000,
+                1690408530000,
+                1690408545000,
+                1690408560000,
+                1690408575000,
+                1690408590000,
+                1690408605000,
+                1690408620000,
+                1690408635000,
+                1690408650000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 10,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "never",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "External Memory - account-lookup-service:4001 account-lookup-service ",
+                "links": [],
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "bytes"
+              },
+              "labels": {
+                "instance": "account-lookup-service:4001",
+                "serviceName": "account-lookup-service"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                1272646,
+                1338404,
+                1297213,
+                1256126,
+                1256249,
+                1330200,
+                1462102,
+                1527860,
+                1218064,
+                1242437,
+                1217950,
+                1261319,
+                1246590,
+                1280922,
+                1275230,
+                1227870,
+                1221847,
+                1268903,
+                1272123,
+                1233376,
+                1221961,
+                1266545,
+                1256928,
+                1217484,
+                1217950,
+                1263615,
+                1274419,
+                1228174,
+                1227218,
+                1190849,
+                1239736,
+                1478796,
+                1190352,
+                1206858,
+                1296084,
+                1214967,
+                1246010,
+                1201135,
+                1280342,
+                1223176,
+                1199648,
+                1227073,
+                1212372,
+                1246704,
+                1235900,
+                1269652,
+                1269652,
+                1221381,
+                1202965,
+                1258793,
+                1241012,
+                1280922,
+                1198899,
+                1243406,
+                1248223,
+                1231939,
+                1256429,
+                1322401,
+                1461790,
+                1527767,
+                1658945,
+                1198544,
+                1206858,
+                1212203,
+                1252513,
+                1286238,
+                1221671,
+                1198319,
+                1226203,
+                1217370,
+                1258679,
+                1240263,
+                1275230,
+                1270118,
+                1218795,
+                1221847,
+                1274650,
+                1274650,
+                1234395,
+                1262710,
+                1209441,
+                1210656,
+                1248129,
+                1258529,
+                1274976,
+                1247758,
+                1231473,
+                1255982,
+                1223281,
+                1313384
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: sum(moja_als_nodejs_external_memory_bytes{instance=~\"account-lookup-service:4001\",kubernetes_pod_name=~\"()\", serviceName=~\"account-lookup-service\"}) by (instance, kubernetes_pod_name, serviceName) \nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "D"
+        }
+      ],
+      "title": "Process Memory Usage",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 11,
+        "w": 24,
+        "x": 0,
+        "y": 13
+      },
+      "id": 6,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "lastNotNull",
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true,
+          "sortBy": "Mean",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.0.2",
+      "snapshotData": [
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 10,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "never",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "links": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "percent"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690407300000,
+                1690407315000,
+                1690407330000,
+                1690407345000,
+                1690407360000,
+                1690407375000,
+                1690407390000,
+                1690407405000,
+                1690407420000,
+                1690407435000,
+                1690407450000,
+                1690407465000,
+                1690407480000,
+                1690407495000,
+                1690407510000,
+                1690407525000,
+                1690407540000,
+                1690407555000,
+                1690407570000,
+                1690407585000,
+                1690407600000,
+                1690407615000,
+                1690407630000,
+                1690407645000,
+                1690407660000,
+                1690407675000,
+                1690407690000,
+                1690407705000,
+                1690407720000,
+                1690407735000,
+                1690407750000,
+                1690407765000,
+                1690407780000,
+                1690407795000,
+                1690407810000,
+                1690407825000,
+                1690407840000,
+                1690407855000,
+                1690407870000,
+                1690407885000,
+                1690407900000,
+                1690407915000,
+                1690407930000,
+                1690407945000,
+                1690407960000,
+                1690407975000,
+                1690407990000,
+                1690408005000,
+                1690408020000,
+                1690408035000,
+                1690408050000,
+                1690408065000,
+                1690408080000,
+                1690408095000,
+                1690408110000,
+                1690408125000,
+                1690408140000,
+                1690408155000,
+                1690408170000,
+                1690408185000,
+                1690408200000,
+                1690408215000,
+                1690408230000,
+                1690408245000,
+                1690408260000,
+                1690408275000,
+                1690408290000,
+                1690408305000,
+                1690408320000,
+                1690408335000,
+                1690408350000,
+                1690408365000,
+                1690408380000,
+                1690408395000,
+                1690408410000,
+                1690408425000,
+                1690408440000,
+                1690408455000,
+                1690408470000,
+                1690408485000,
+                1690408500000,
+                1690408515000,
+                1690408530000,
+                1690408545000,
+                1690408560000,
+                1690408575000,
+                1690408590000,
+                1690408605000,
+                1690408620000,
+                1690408635000,
+                1690408650000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 10,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "never",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "User CPU - account-lookup-service:4001 account-lookup-service ",
+                "links": [],
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "percent"
+              },
+              "labels": {
+                "instance": "account-lookup-service:4001",
+                "serviceName": "account-lookup-service"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0.8252459999998792,
+                0.7880239999999504,
+                0.8007000000002336,
+                0.5921480000001793,
+                0.8153860000006716,
+                0.7622480000004543,
+                0.6683360000001812,
+                0.4276060000001962,
+                23.745284000000083,
+                41.90544799999998,
+                78.16744000000017,
+                90.88756000000058,
+                90.27575200000001,
+                90.18371200000001,
+                90.10109399999965,
+                90.1525859999997,
+                90.8448459999995,
+                90.71389999999928,
+                90.90839199999982,
+                90.86333999999988,
+                90.61340400000017,
+                90.83089000000018,
+                91.22696399999995,
+                91.630224,
+                92.06914599999982,
+                91.86218000000008,
+                91.55206000000044,
+                91.54086000000052,
+                86.63384399999995,
+                68.94112399999995,
+                33.05216799999971,
+                20.585059999999885,
+                6.986531999999898,
+                7.185141999999814,
+                1.3171700000000008,
+                1.3798320000000004,
+                35.934461999999996,
+                54.23181799999999,
+                87.12372832773333,
+                91.27224999999999,
+                90.58951,
+                90.136624,
+                90.52938,
+                90.64952400000001,
+                91.25867600000001,
+                91.083672,
+                90.90045400000002,
+                90.98203800000005,
+                91.02138200000002,
+                91.04308800000001,
+                91.15927399999998,
+                91.80901599999999,
+                91.65196600000002,
+                82.65717800000004,
+                46.98006200000003,
+                29.47812600000003,
+                1.7262699999999995,
+                0.941188000000011,
+                0.5000880000000052,
+                0.5133460000000127,
+                0.2851739999999836,
+                0.21832397058334344,
+                7.48424399999999,
+                7.720581999999979,
+                31.651901388333332,
+                47.328868,
+                80.69337837486668,
+                91.039512,
+                90.83649,
+                90.966468,
+                91.42323999999999,
+                91.63893999999998,
+                91.57522599999999,
+                91.03439399999996,
+                91.02992999999998,
+                90.98854799999998,
+                91.01364799999999,
+                91.02931999999998,
+                91.12526599999995,
+                91.77806799999996,
+                91.39424199999996,
+                91.59925399999997,
+                91.27255999999994,
+                91.24673399999989,
+                91.51185999999984,
+                82.0810179999998,
+                46.641173999999864,
+                28.602119999999903,
+                1.6174819999999954,
+                1.1320120000000315,
+                0.6444879999999102
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: avg(rate(moja_als_process_cpu_user_seconds_total{instance=~\"account-lookup-service:4001\",kubernetes_pod_name=~\"()\", serviceName=~\"account-lookup-service\"}[1m0s]) * 100) by (instance, kubernetes_pod_name, serviceName) \nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "A"
+        }
+      ],
+      "title": "Process CPU Usage",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 14,
+        "w": 24,
+        "x": 0,
+        "y": 24
+      },
+      "id": 9,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "lastNotNull",
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true,
+          "sortBy": "Mean",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.0.2",
+      "snapshotData": [
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 10,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "never",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "links": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "short"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690407300000,
+                1690407315000,
+                1690407330000,
+                1690407345000,
+                1690407360000,
+                1690407375000,
+                1690407390000,
+                1690407405000,
+                1690407420000,
+                1690407435000,
+                1690407450000,
+                1690407465000,
+                1690407480000,
+                1690407495000,
+                1690407510000,
+                1690407525000,
+                1690407540000,
+                1690407555000,
+                1690407570000,
+                1690407585000,
+                1690407600000,
+                1690407615000,
+                1690407630000,
+                1690407645000,
+                1690407660000,
+                1690407675000,
+                1690407690000,
+                1690407705000,
+                1690407720000,
+                1690407735000,
+                1690407750000,
+                1690407765000,
+                1690407780000,
+                1690407795000,
+                1690407810000,
+                1690407825000,
+                1690407840000,
+                1690407855000,
+                1690407870000,
+                1690407885000,
+                1690407900000,
+                1690407915000,
+                1690407930000,
+                1690407945000,
+                1690407960000,
+                1690407975000,
+                1690407990000,
+                1690408005000,
+                1690408020000,
+                1690408035000,
+                1690408050000,
+                1690408065000,
+                1690408080000,
+                1690408095000,
+                1690408110000,
+                1690408125000,
+                1690408140000,
+                1690408155000,
+                1690408170000,
+                1690408185000,
+                1690408200000,
+                1690408230000,
+                1690408245000,
+                1690408260000,
+                1690408275000,
+                1690408290000,
+                1690408305000,
+                1690408320000,
+                1690408335000,
+                1690408350000,
+                1690408365000,
+                1690408380000,
+                1690408395000,
+                1690408410000,
+                1690408425000,
+                1690408440000,
+                1690408455000,
+                1690408470000,
+                1690408485000,
+                1690408500000,
+                1690408515000,
+                1690408530000,
+                1690408545000,
+                1690408560000,
+                1690408575000,
+                1690408590000,
+                1690408605000,
+                1690408620000,
+                1690408635000,
+                1690408650000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 10,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "never",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "Active Handler - account-lookup-service:4001 account-lookup-service ",
+                "links": [],
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "short"
+              },
+              "labels": {
+                "instance": "account-lookup-service:4001",
+                "serviceName": "account-lookup-service"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                11,
+                11,
+                11,
+                11,
+                11,
+                11,
+                11,
+                11,
+                10,
+                10,
+                11,
+                10,
+                11,
+                11,
+                11,
+                11,
+                11,
+                11,
+                11,
+                11,
+                9,
+                8,
+                8,
+                7,
+                7,
+                7,
+                7,
+                7,
+                10,
+                9,
+                10,
+                11,
+                11,
+                10,
+                11,
+                11,
+                11,
+                11,
+                11,
+                10,
+                10,
+                10,
+                11,
+                11,
+                10,
+                9,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                7,
+                7,
+                10,
+                10,
+                10,
+                10,
+                9,
+                10,
+                10,
+                9,
+                9,
+                10,
+                10,
+                10,
+                10,
+                10,
+                10,
+                10,
+                10,
+                10,
+                11,
+                11,
+                10,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: sum(moja_als_nodejs_active_handles_total{instance=~\"account-lookup-service:4001\",kubernetes_pod_name=~\"()\", serviceName=~\"account-lookup-service\"}) by (instance, serviceName, kubernetes_pod_name)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 10,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "never",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "links": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "short"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690407300000,
+                1690407315000,
+                1690407330000,
+                1690407345000,
+                1690407360000,
+                1690407375000,
+                1690407390000,
+                1690407405000,
+                1690407420000,
+                1690407435000,
+                1690407450000,
+                1690407465000,
+                1690407480000,
+                1690407495000,
+                1690407510000,
+                1690407525000,
+                1690407540000,
+                1690407555000,
+                1690407570000,
+                1690407585000,
+                1690407600000,
+                1690407615000,
+                1690407630000,
+                1690407645000,
+                1690407660000,
+                1690407675000,
+                1690407690000,
+                1690407705000,
+                1690407720000,
+                1690407735000,
+                1690407750000,
+                1690407765000,
+                1690407780000,
+                1690407795000,
+                1690407810000,
+                1690407825000,
+                1690407840000,
+                1690407855000,
+                1690407870000,
+                1690407885000,
+                1690407900000,
+                1690407915000,
+                1690407930000,
+                1690407945000,
+                1690407960000,
+                1690407975000,
+                1690407990000,
+                1690408005000,
+                1690408020000,
+                1690408035000,
+                1690408050000,
+                1690408065000,
+                1690408080000,
+                1690408095000,
+                1690408110000,
+                1690408125000,
+                1690408140000,
+                1690408155000,
+                1690408170000,
+                1690408185000,
+                1690408200000,
+                1690408230000,
+                1690408245000,
+                1690408260000,
+                1690408275000,
+                1690408290000,
+                1690408305000,
+                1690408320000,
+                1690408335000,
+                1690408350000,
+                1690408365000,
+                1690408380000,
+                1690408395000,
+                1690408410000,
+                1690408425000,
+                1690408440000,
+                1690408455000,
+                1690408470000,
+                1690408485000,
+                1690408500000,
+                1690408515000,
+                1690408530000,
+                1690408545000,
+                1690408560000,
+                1690408575000,
+                1690408590000,
+                1690408605000,
+                1690408620000,
+                1690408635000,
+                1690408650000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 10,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "never",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "Active Request - account-lookup-service:4001 account-lookup-service ",
+                "links": [],
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "short"
+              },
+              "labels": {
+                "instance": "account-lookup-service:4001",
+                "serviceName": "account-lookup-service"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: sum(moja_als_nodejs_active_requests_total{instance=~\"account-lookup-service:4001\",kubernetes_pod_name=~\"()\", serviceName=~\"account-lookup-service\"}) by (instance, serviceName, kubernetes_pod_name)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "B"
+        }
+      ],
+      "title": "Active Handlers/Requests Total",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 14,
+        "w": 24,
+        "x": 0,
+        "y": 38
+      },
+      "id": 8,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "lastNotNull",
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true,
+          "sortBy": "Mean",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.0.2",
+      "title": "Event Loop Lag",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 17,
+        "w": 24,
+        "x": 0,
+        "y": 52
+      },
+      "id": 11,
+      "interval": "",
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "lastNotNull",
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true,
+          "sortBy": "Mean",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.0.2",
+      "title": "Heap Used Detail",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 18,
+        "w": 24,
+        "x": 0,
+        "y": 69
+      },
+      "id": 10,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "lastNotNull",
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true,
+          "sortBy": "Mean",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.0.2",
+      "title": "Heap Total Detail",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 18,
+        "w": 24,
+        "x": 0,
+        "y": 87
+      },
+      "id": 12,
+      "interval": "",
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "lastNotNull",
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true,
+          "sortBy": "Mean",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.0.2",
+      "title": "Heap Available Detail",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 2,
+        "x": 0,
+        "y": 105
+      },
+      "id": 2,
+      "interval": "",
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "name"
+      },
+      "pluginVersion": "10.0.2",
+      "title": "Node.js Version",
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#F2495C",
+            "mode": "fixed"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 5,
+        "x": 2,
+        "y": 105
+      },
+      "id": 4,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.2",
+      "title": "Process Restart Times",
+      "type": "stat"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 38,
+  "snapshot": {
+    "originalUrl": "/d/PTSqcpJWk",
+    "timestamp": "2023-07-27T09:50:11.951Z"
+  },
+  "style": "dark",
+  "tags": [
+    "nodejs"
+  ],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "selected": true,
+          "text": "moja_als",
+          "value": "moja_als"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "label": "metric prefix",
+        "multi": false,
+        "name": "prefix",
+        "options": [
+          {
+            "selected": true,
+            "text": "moja_als",
+            "value": "moja_als"
+          }
+        ],
+        "query": "",
+        "queryValue": "",
+        "refresh": 0,
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFA97CFB590B2093"
+        },
+        "definition": "label_values(${prefix}_nodejs_version_info,instance)",
+        "hide": 0,
+        "includeAll": true,
+        "label": "instance",
+        "multi": true,
+        "name": "instance",
+        "options": [
+          {
+            "selected": true,
+            "text": [
+              "All"
+            ],
+            "value": [
+              "$__all"
+            ]
+          }
+        ],
+        "query": "",
+        "refresh": 0,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "tagValuesQuery": "",
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFA97CFB590B2093"
+        },
+        "definition": "label_values(${prefix}_nodejs_version_info,serviceName)",
+        "hide": 0,
+        "includeAll": true,
+        "label": "serviceName",
+        "multi": true,
+        "name": "serviceName",
+        "options": [
+          {
+            "selected": true,
+            "text": [
+              "All"
+            ],
+            "value": [
+              "$__all"
+            ]
+          }
+        ],
+        "query": "",
+        "refresh": 0,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFA97CFB590B2093"
+        },
+        "definition": "label_values(${prefix}_nodejs_version_info,kubernetes_pod_name)",
+        "hide": 0,
+        "includeAll": true,
+        "label": "podName",
+        "multi": true,
+        "name": "podName",
+        "options": [
+          {
+            "selected": true,
+            "text": [
+              "All"
+            ],
+            "value": [
+              "$__all"
+            ]
+          }
+        ],
+        "query": "",
+        "refresh": 0,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
+  "time": {
+    "from": "2023-07-26T21:35:09.197Z",
+    "raw": {
+      "from": "2023-07-26T21:35:09.197Z",
+      "to": "2023-07-26T21:57:42.339Z"
+    },
+    "to": "2023-07-26T21:57:42.339Z"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "",
+  "title": "NodeJS Application Dashboard-moja_als",
+  "uid": "PTSqcpJWk",
+  "version": 11,
+  "weekStart": ""
+}
