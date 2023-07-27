@@ -1,0 +1,36 @@
+load-k6-1  | time="2023-07-27T11:34:21Z" level=info msg="Env Vars -->\n  K6_SCRIPT_WS_TIMEOUT_MS=2000,\n  K6_SCRIPT_FSPIOP_ALS_ENDPOINT_URL=http://account-lookup-service:4002,\n  K6_SCRIPT_FSPIOP_ALS_PAYEE_PARTYID=19012345002,\n  K6_SCRIPT_FSPIOP_PAYER_FSP_ID=perffsp1,\n  K6_SCRIPT_FSPIOP_PAYEE_FSP_ID=perffsp2,\n  K6_SCRIPT_CALLBACK_HANDLER_SERVICE_WS_URL=ws://callback-handler-svc-payer-sim:3002,\n  K6_SCRIPT_ADMIN_ENDPOINT_URL=http://callback-handler-svc-cl-sim:3001/admin,\n  K6_SCRIPT_ORACLE_ENDPOINT_URL=http://callback-handler-svc-oracle-sim:3001/oracle\n" source=console
+load-k6-1  | 
+load-k6-1  |      ✓ ALS_FSPIOP_GET_PARTIES_RESPONSE_IS_202
+load-k6-1  |      ✓ ALS_E2E_FSPIOP_GET_PARTIES_SUCCESS
+load-k6-1  | 
+load-k6-1  |      █ Get Parties
+load-k6-1  | 
+load-k6-1  |      checks.........................: 100.00% ✓ 8758      ✗ 0   
+load-k6-1  |      data_received..................: 1.4 MB  3.3 kB/s
+load-k6-1  |      data_sent......................: 3.2 MB  7.5 kB/s
+load-k6-1  |      group_duration.................: avg=184.28µs min=109.81µs med=174.27µs max=5.76ms   p(90)=227.9µs  p(95)=236.68µs
+load-k6-1  |      http_req_blocked...............: avg=4.53µs   min=1.63µs   med=4.16µs   max=501.65µs p(90)=5.28µs   p(95)=5.66µs  
+load-k6-1  |      http_req_connecting............: avg=102ns    min=0s       med=0s       max=121.04µs p(90)=0s       p(95)=0s      
+load-k6-1  |    ✓ http_req_duration..............: avg=64.38ms  min=36.1ms   med=43.31ms  max=231.84ms p(90)=125.91ms p(95)=131ms   
+load-k6-1  |        { expected_response:true }...: avg=64.38ms  min=36.1ms   med=43.31ms  max=231.84ms p(90)=125.91ms p(95)=131ms   
+load-k6-1  |    ✓ http_req_failed................: 0.00%   ✓ 0         ✗ 4379
+load-k6-1  |      http_req_receiving.............: avg=46.01µs  min=28.27µs  med=44.41µs  max=92.55µs  p(90)=55.95µs  p(95)=58.9µs  
+load-k6-1  |      http_req_sending...............: avg=18.13µs  min=7.93µs   med=18.16µs  max=148.23µs p(90)=21.48µs  p(95)=22.46µs 
+load-k6-1  |      http_req_tls_handshaking.......: avg=0s       min=0s       med=0s       max=0s       p(90)=0s       p(95)=0s      
+load-k6-1  |      http_req_waiting...............: avg=64.32ms  min=36.04ms  med=43.25ms  max=231.77ms p(90)=125.84ms p(95)=130.95ms
+load-k6-1  |      http_reqs......................: 4379    10.424487/s
+load-k6-1  |    ✓ iteration_duration.............: avg=198.7ms  min=80.79ms  med=179.13ms max=494.21ms p(90)=359.12ms p(95)=392.73ms
+load-k6-1  |      iterations.....................: 4379    10.424487/s
+load-k6-1  |      vus............................: 4       min=1       max=4 
+load-k6-1  |      vus_max........................: 5       min=5       max=5 
+load-k6-1  |      ws_connecting..................: avg=528.73µs min=221.98µs med=365.66µs max=7.92ms   p(90)=943.14µs p(95)=1.14ms  
+load-k6-1  |      ws_msgs_received...............: 4379    10.424487/s
+load-k6-1  |      ws_msgs_sent...................: 4379    10.424487/s
+load-k6-1  |      ws_session_duration............: avg=198.43ms min=80.49ms  med=178.89ms max=493.96ms p(90)=358.95ms p(95)=392.48ms
+load-k6-1  |      ws_sessions....................: 4379    10.424487/s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (7m00.1s), 0/5 VUs, 4379 complete and 0 interrupted iterations
+load-k6-1  | accountLookup ✓ [ 100% ] 0/5 VUs  7m0s
+load-k6-1  | 
+load-k6-1 exited with code 0

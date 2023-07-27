@@ -19,6 +19,7 @@ Scenario | Description | Test-Case | Repeatable (Y/N) | Notes
  7 | ALS Baseline with Sims-only, UV_THREADS | 1 | N | .
  8 | ALS Baseline with Sims-only, multiple k6 VUs | 1 | N | .
  9 | ALS Baseline with Sims-only, MySQL in-memory DB | 1 | N | .
+ 10 | ALS Baseline with Sims-only, Disabled JSON.stringify | 1 | N | .
 
 ### ALS-bypass Baseline with Sims-only
 
