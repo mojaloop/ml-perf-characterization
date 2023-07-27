@@ -11,6 +11,8 @@ EVENT_SDK_LOG_FILTER=""
 ## Added for Test Scenario 7
 UV_THREADPOOL_SIZE=16
 ACCOUNT_LOOKUP_SERVICE_VERSION=v14.2.2
+## Changes for Test Scenario 9
+Enabled in-memory storage for Mysql ALS with following config in docker-compose file
 ## Changes for Test Scenario 10
 Disabled JSON.stringify in logResponse function of ALS
 ```

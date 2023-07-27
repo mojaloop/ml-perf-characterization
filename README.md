@@ -12,15 +12,19 @@ Scenario | Description | Test-Case | Repeatable (Y/N) | Notes
 ---------|----------|---------|---------|---------
  1 | ALS-bypass Baseline with Sims-only | 1 | Y | .
  2 | ALS Baseline with Sims-only | 1 | Y | .
- 3 | ALS Baseline with Sims-only, Scale 2 | 1 | Y | .
- 4 | ALS Baseline with Sims-only, Scale 4 | 1 | Y | .
+ 3 | ~~ALS Baseline with Sims-only, Scale 2~~ | 1 | Y | N/A due to 10 op/s rate limit.
+ 4 | ~~ALS Baseline with Sims-only, Scale 4~~ | 1 | Y | N/A due to 10 op/s rate limit.
  5 | ALS Baseline with Sims-only, no logs/audit-events | 1 | Y | .
  6 | ALS Baseline with Sims-only, HTTP-Keep-Alive enabled | 1 | N | .
  7 | ALS Baseline with Sims-only, UV_THREADS | 1 | N | .
  8 | ALS Baseline with Sims-only, multiple k6 VUs | 1 | N | .
  9 | ALS Baseline with Sims-only, MySQL in-memory DB | 1 | N | .
- 10 | ALS Baseline with Sims-only, Disabled JSON.stringify | 1 | N | [account-lookup-service/pull/460](https://github.com/mojaloop/account-lookup-service/pull/460)
- 
+ 10 | ALS Baseline with Sims-only, Disabled JSON.stringify [ALS v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3) | 1 | N | [account-lookup-service/pull/460](https://github.com/mojaloop/account-lookup-service/pull/460)
+ 11 | ALS Baseline with Sims-only, Disabled JSON.stringify [ALS v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3) + 4x k6 VUs | 1 | N | .
+ 12 | ALS Baseline with Sims-only, Disabled JSON.stringify [ALS v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3) + Scale 2 | 1 | N | .
+ 13 | ALS Baseline with Sims-only, Disabled JSON.stringify [ALS v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3) + Scale 4 | 1 | N | .
+ 14 | ALS Baseline with Sims-only, Disabled JSON.stringify [ALS v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3) + Scale 4 + 4x k6 VUs | 1 | N | .
+
 ### ALS-bypass Baseline with Sims-only
 
 TODO:
