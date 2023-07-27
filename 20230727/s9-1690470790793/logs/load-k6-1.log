@@ -1,0 +1,41 @@
+load-k6-1  | 
+load-k6-1  | running (7m00.0s), 1/1 VUs, 39675 complete and 0 interrupted iterations
+load-k6-1  | accountLookup   [ 100% ] 1/1 VUs  7m00.0s/7m00.0s
+load-k6-1  | 
+load-k6-1  | time="2023-07-27T15:20:10Z" level=info msg="2ddd54305fbf3ffe1f0f0cdd88ca8f1a WS message received [2ddd54305fbf3ffe1f0f0cdd88ca8f1a/PUT/parties/MSISDN/19012345002]: SUCCESS_CALLBACK_RECEIVED" source=console
+load-k6-1  | time="2023-07-27T15:20:10Z" level=info msg="Env Vars -->\n  K6_SCRIPT_WS_TIMEOUT_MS=2000,\n  K6_SCRIPT_FSPIOP_ALS_ENDPOINT_URL=http://account-lookup-service:4002,\n  K6_SCRIPT_FSPIOP_ALS_PAYEE_PARTYID=19012345002,\n  K6_SCRIPT_FSPIOP_PAYER_FSP_ID=perffsp1,\n  K6_SCRIPT_FSPIOP_PAYEE_FSP_ID=perffsp2,\n  K6_SCRIPT_CALLBACK_HANDLER_SERVICE_WS_URL=ws://callback-handler-svc-payer-sim:3002,\n  K6_SCRIPT_ADMIN_ENDPOINT_URL=http://callback-handler-svc-cl-sim:3001/admin,\n  K6_SCRIPT_ORACLE_ENDPOINT_URL=http://callback-handler-svc-oracle-sim:3001/oracle\n" source=console
+load-k6-1  | 
+load-k6-1  |      ✓ ALS_FSPIOP_GET_PARTIES_RESPONSE_IS_202
+load-k6-1  |      ✓ ALS_E2E_FSPIOP_GET_PARTIES_SUCCESS
+load-k6-1  | 
+load-k6-1  |      █ Get Parties
+load-k6-1  | 
+load-k6-1  |      checks.........................: 100.00% ✓ 79352     ✗ 0    
+load-k6-1  |      data_received..................: 12 MB   30 kB/s
+load-k6-1  |      data_sent......................: 29 MB   68 kB/s
+load-k6-1  |      group_duration.................: avg=150.42µs min=105.15µs med=142.99µs max=4.31ms   p(90)=189.95µs p(95)=199.4µs 
+load-k6-1  |      http_req_blocked...............: avg=2.69µs   min=1.63µs   med=2.51µs   max=384.27µs p(90)=3.33µs   p(95)=3.72µs  
+load-k6-1  |      http_req_connecting............: avg=2ns      min=0s       med=0s       max=111.14µs p(90)=0s       p(95)=0s      
+load-k6-1  |    ✓ http_req_duration..............: avg=2.04ms   min=1.76ms   med=1.98ms   max=31.44ms  p(90)=2.14ms   p(95)=2.31ms  
+load-k6-1  |        { expected_response:true }...: avg=2.04ms   min=1.76ms   med=1.98ms   max=31.44ms  p(90)=2.14ms   p(95)=2.31ms  
+load-k6-1  |    ✓ http_req_failed................: 0.00%   ✓ 0         ✗ 39676
+load-k6-1  |      http_req_receiving.............: avg=24.77µs  min=15.15µs  med=23.52µs  max=467.69µs p(90)=30.72µs  p(95)=32.52µs 
+load-k6-1  |      http_req_sending...............: avg=15.74µs  min=7.68µs   med=15.54µs  max=849.43µs p(90)=18.34µs  p(95)=19.23µs 
+load-k6-1  |      http_req_tls_handshaking.......: avg=0s       min=0s       med=0s       max=0s       p(90)=0s       p(95)=0s      
+load-k6-1  |      http_req_waiting...............: avg=2ms      min=1.73ms   med=1.94ms   max=31.28ms  p(90)=2.09ms   p(95)=2.27ms  
+load-k6-1  |      http_reqs......................: 39676   94.466078/s
+load-k6-1  |    ✓ iteration_duration.............: avg=10.57ms  min=9.15ms   med=10.07ms  max=59.04ms  p(90)=12.12ms  p(95)=12.71ms 
+load-k6-1  |      iterations.....................: 39676   94.466078/s
+load-k6-1  |      vus............................: 1       min=1       max=1  
+load-k6-1  |      vus_max........................: 1       min=1       max=1  
+load-k6-1  |      ws_connecting..................: avg=275.43µs min=214.84µs med=260.14µs max=17ms     p(90)=297.97µs p(95)=315.15µs
+load-k6-1  |      ws_msgs_received...............: 39676   94.466078/s
+load-k6-1  |      ws_msgs_sent...................: 39676   94.466078/s
+load-k6-1  |      ws_session_duration............: avg=10.34ms  min=8.93ms   med=9.84ms   max=58.8ms   p(90)=11.88ms  p(95)=12.47ms 
+load-k6-1  |      ws_sessions....................: 39676   94.466078/s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (7m00.0s), 0/1 VUs, 39676 complete and 0 interrupted iterations
+load-k6-1  | accountLookup ✓ [ 100% ] 0/1 VUs  7m0s
+load-k6-1  | 
+load-k6-1 exited with code 0
