@@ -3,7 +3,7 @@
 ```yaml
 testid:
   - 1690367402771
-params: &from=1690367297867&to=1690368635328
+params: &from=XXXXX&to=XXXXXXXX
 ACCOUNT_LOOKUP_SERVICE_VERSION: v14.2.2
 ```
 

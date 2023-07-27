@@ -19,8 +19,8 @@ Scenario | Description | Test-Case | Repeatable (Y/N) | Notes
  7 | ALS Baseline with Sims-only, UV_THREADS | 1 | N | .
  8 | ALS Baseline with Sims-only, multiple k6 VUs | 1 | N | .
  9 | ALS Baseline with Sims-only, MySQL in-memory DB | 1 | N | .
- 10 | ALS Baseline with Sims-only, Disabled JSON.stringify | 1 | N | .
-
+ 10 | ALS Baseline with Sims-only, Disabled JSON.stringify | 1 | N | [account-lookup-service/pull/460](https://github.com/mojaloop/account-lookup-service/pull/460)
+ 
 ### ALS-bypass Baseline with Sims-only
 
 TODO:
@@ -34,7 +34,7 @@ TODO:
 
 - Optimize DFSP Validations - i.e. Add caching to Validation calls for PayerFSP and PayeeFSP on both FSPIOP GET /participant and PUT /participant, or alternatively consider adding a new API operation that is more optimized (i.e. a single API call to validate both PayerFSP & PayeeFSP).
 - Profile NodeJS Process on ALS
-- 
+- Provide configuration to HTTP Agent as part of ALS config (i.e. default.json) that can be overridden.
 
 ## TODO
 
