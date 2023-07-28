@@ -130,6 +130,8 @@ Here we would execute any combination of the following tests based on the [Test 
 | **Spike** | Validates the behavior and survival of the system in cases of sudden, short, and massive increases in activity. |
 | **Breakpoint** | Gradually increase load to identify the capacity limits of the system. |
 
+[Reference](https://k6.io/docs/test-types/load-test-types/#different-tests-for-different-goals).
+
 ### Follow-up stories
 
 #### Account-lookup-Service
