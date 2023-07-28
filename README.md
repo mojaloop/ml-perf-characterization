@@ -19,13 +19,13 @@ Scenario | Description | Test-Case | Repeatable (Y/N) | Notes
  7 | ALS Baseline with Sims-only, UV_THREADS | 1 | N | .
  8 | ALS Baseline with Sims-only, multiple k6 VUs | 1 | N | .
  9 | ALS Baseline with Sims-only, MySQL in-memory DB | 1 | N | .
- 10 | ALS Baseline with Sims-only, Disabled JSON.stringify [ALS v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3) | 1 | N | [account-lookup-service/pull/460](https://github.com/mojaloop/account-lookup-service/pull/460)
+ 10 | ALS Baseline with Sims-only, Disabled JSON.stringify [ALS v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3) | 1 | N | [account-lookup-service/pull/460](https://github.com/mojaloop/account-lookup-service/pull/460), [v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3)
  11 | ALS Baseline with Sims-only, Disabled JSON.stringify [ALS v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3) + 4x k6 VUs | 1 | N | .
  12 | ALS Baseline with Sims-only, Disabled JSON.stringify [ALS v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3) + Scale 2 | 1 | N | .
  13 | ALS Baseline with Sims-only, Disabled JSON.stringify [ALS v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3) + Scale 4 + 4x k6 VUs | 1 | N | .
  14 | ALS Baseline with Sims-only, Disabled JSON.stringify [ALS v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3) + Scale 4 + 6x k6 VUs | 1 | N | .
- 15 | ALS Baseline with Sims-only, Disabled JSON.stringify [ALS v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3) + Scale 4 + 6x k6 VUs + Enhanced Caching for ValidateParticipants | 1 | N | .
- 16 | ALS Baseline with Sims-only, Disabled JSON.stringify [ALS v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3) + Scale 4 + 6x k6 VUs + Enhanced Caching for ValidateParticipants + OracleRequest | 1 | N | .
+ 15 | ALS Baseline with Sims-only, Disabled JSON.stringify [ALS v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3) + Scale 4 + 6x k6 VUs + Enhanced Caching for ValidateParticipants | 1 | N | [account-lookup-service/pull/461](https://github.com/mojaloop/account-lookup-service/pull/461), [v14.2.4-snapshot.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.4-snapshot.3)
+ 16 | ALS Baseline with Sims-only, Disabled JSON.stringify [ALS v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3) + Scale 4 + 6x k6 VUs + Enhanced Caching for ValidateParticipants + OracleRequest | 1 | N | [account-lookup-service/pull/461](https://github.com/mojaloop/account-lookup-service/pull/461), [v14.3.4-snapshot.0](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.3.0-snapshot.0)
 
 ### Approach
 
