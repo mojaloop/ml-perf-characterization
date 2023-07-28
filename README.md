@@ -31,7 +31,7 @@ Scenario | Description | Test-Case | Repeatable (Y/N) | Notes
 
 The approach taken for characterization is follows:
 
-### 0. Tools Used
+#### 0. Tools Used
 
 | Tool | Description |
 |---|---|
