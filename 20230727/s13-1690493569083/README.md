@@ -62,6 +62,4 @@ Up k6s VUs to 4.
 
 ## Observations
 
-Roughly in our test harness a single instance of ALS can handle 1.5 VU with the specified k6s configs.
-
 ## Recommendations
