@@ -12,8 +12,8 @@ Scenario | Description | Test-Case | Repeatable (Y/N) | Notes
 ---------|----------|---------|---------|---------
  1 | FSPIOP Discovery GET Parties with Sims-only - ALS:v14.2.2, scale:1, k6vu:1 | 1 | Y | .
  2 | FSPIOP Discovery GET Parties with ALS + Sims - ALS:v14.2.2, scale:1, k6vu:1 | 1 | Y | .
- 3 | ~~ALS Baseline with Sims, Scale 2~~ | 1 | Y | N/A due to 10 op/s rate limit.
- 4 | ~~ALS Baseline with Sims, Scale 4~~ | 1 | Y | N/A due to 10 op/s rate limit.
+ 3 | ~~FSPIOP Discovery GET Parties with ALS + Sims - ALS:v14.2.2, scale:2, k6vu:1~~ | 1 | Y | N/A due to 10 op/s rate limit.
+ 4 | ~~FSPIOP Discovery GET Parties with ALS + Sims - ALS:v14.2.2, scale:4, k6vu:1~~ | 1 | Y | N/A due to 10 op/s rate limit.
  5 | FSPIOP Discovery GET Parties with ALS + Sims + No Logs/Event-Audits - ALS:v14.2.2, scale:1, k6vu:1 | 1 | Y | .
  6 | FSPIOP Discovery GET Parties with ALS + Sims + HTTP Keep-Alive - ALS:v14.2.2, scale:1, k6vu:1 | 1 | N | .
  7 | FSPIOP Discovery GET Parties with ALS + Sims + UV_THREADPOOL_SCALE scaling - ALS:v14.2.2, scale:1, k6vu:1 | 1 | N | .
