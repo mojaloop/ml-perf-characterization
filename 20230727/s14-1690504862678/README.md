@@ -1,5 +1,10 @@
 # Scenario 14 - ALS Baseline with Sims-only, Disabled JSON.stringify ALS v14.2.3 + Scale 4 + 6x k6 VUs
 
+The End-to-end operation from the K6 test-runner included the following HTTP operations for each *iteration*:
+
+1. FSPIOP GET /parties request to the ALS <-- async callback response
+2. WS Subscription to the `Callback-Handler` Service for Callback Response notifications
+
 ```conf
 testid=1690504862678
 params=&from=1690504843570&to=1690505393440

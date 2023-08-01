@@ -1,4 +1,9 @@
-# Scenario 15 - ALS Baseline with Sims-only, Disabled JSON.stringify [ALS v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3) + Scale 4 + 6x k6 VUs + Enhanced Caching for ValidateParticipants | 1 | N | [account-lookup-service/pull/461](https://github.com/mojaloop/account-lookup-service/pull/461), [v14.2.4-snapshot.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.4-snapshot.3)
+# Scenario 15 - ALS Baseline with Sims, Disabled JSON.stringify [ALS v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3) + Scale 4 + 6x k6 VUs + Enhanced Caching for ValidateParticipants | 1 | N | [account-lookup-service/pull/461](https://github.com/mojaloop/account-lookup-service/pull/461), [v14.2.4-snapshot.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.4-snapshot.3)
+
+The End-to-end operation from the K6 test-runner included the following HTTP operations for each *iteration*:
+
+1. FSPIOP GET /parties request to the ALS <-- async callback response
+2. WS Subscription to the `Callback-Handler` Service for Callback Response notifications
 
 ```conf
 testid=1690548412616
@@ -56,14 +61,13 @@ ALS version change to v14.2.4-snapshot.3
 
 ## Snapshots
 
-- [Docker]()
-- [K6]()
-- [Callback Handler Service]()
-- [Account Lookup Service]()
-- [Nodejs moja_als]()
-- [Nodejs cbs]()
-- [MySQL]()
+N/A
 
 ## Observations
 
+- End-to-end max of `319 Op/s` with a mean of `20.7 ms` achieved --> Increased Scalability but still not linear.
+
 ## Recommendations
+
+- Consider implementing a **caching** mechanism for `OracleRequest` egress.
+- Profile the `Account-Lookup-Service` to see if any further `Event-Loop` "blockers" can be identified.
