@@ -1,4 +1,4 @@
-# Scenario 16 - ALS Baseline with Sims, Disabled JSON.stringify [ALS v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3) + Scale 4 + 6x k6 VUs + Enhanced Caching for ValidateParticipants + OracleRequest | 1 | N | [account-lookup-service/pull/461](https://github.com/mojaloop/account-lookup-service/pull/461), [v14.3.0-snapshot.0](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.3.0-snapshot.0)
+# Scenario 16 - ALS Baseline with Sims, Disabled JSON.stringify [ALS v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3) + Scale 4 + 6x k6 VUs + Enhanced Caching for ValidateParticipants + OracleRequest
 
 The End-to-end operation from the K6 test-runner included the following HTTP operations for each *iteration*:
 
