@@ -1,4 +1,4 @@
-# Scenario 5 - ALS Baseline with Sims, no logs/audit-events
+# Scenario 5 - FSPIOP Discovery GET Parties with ALS + Sims + No Logs/Event-Audits - ALS:v14.2.2, scale:1, k6vu:1
 
 The End-to-end operation from the K6 test-runner included the following HTTP operations for each *iteration*:
 

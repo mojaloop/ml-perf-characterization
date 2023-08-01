@@ -1,4 +1,4 @@
-# Scenario 15 - ALS Baseline with Sims, Disabled JSON.stringify [ALS v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3) + Scale 4 + 6x k6 VUs + Enhanced Caching for ValidateParticipants
+# Scenario 15 - FSPIOP Discovery GET Parties with ALS + Sims + JSON.Stringify fix + validateParticipant caching - ALS:v14.2.4-snapshot.3, scale:4, k6vu:6
 
 The End-to-end operation from the K6 test-runner included the following HTTP operations for each *iteration*:
 

@@ -1,4 +1,4 @@
-# Scenario 11 - ALS Baseline with Sims, Disabled JSON.stringify. ALS v14.2.3 + 4x k6 VUs
+# Scenario 11 - FSPIOP Discovery GET Parties with ALS + Sims + JSON.Stringify fix - ALS:v14.2.3, scale:1, k6vu:4
 
 The End-to-end operation from the K6 test-runner included the following HTTP operations for each *iteration*:
 

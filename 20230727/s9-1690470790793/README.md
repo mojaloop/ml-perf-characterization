@@ -1,4 +1,4 @@
-# Scenario 9 - ALS Baseline with Sims, MySQL in-memory DB
+# Scenario 9 - FSPIOP Discovery GET Parties with ALS + Sims + In-Memory MySQL DB - ALS:v14.2.2, scale:1, k6vu:1
 
 The End-to-end operation from the K6 test-runner included the following HTTP operations for each *iteration*:
 

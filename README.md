@@ -10,22 +10,22 @@ Test Case | Description | Notes
 
 Scenario | Description | Test-Case | Repeatable (Y/N) | Notes
 ---------|----------|---------|---------|---------
- 1 | ALS-bypass Baseline with Sims-only | 1 | Y | .
- 2 | ALS Baseline with Sims | 1 | Y | .
+ 1 | FSPIOP Discovery GET Parties with Sims-only - ALS:v14.2.2, scale:1, k6vu:1 | 1 | Y | .
+ 2 | FSPIOP Discovery GET Parties with ALS + Sims - ALS:v14.2.2, scale:1, k6vu:1 | 1 | Y | .
  3 | ~~ALS Baseline with Sims, Scale 2~~ | 1 | Y | N/A due to 10 op/s rate limit.
  4 | ~~ALS Baseline with Sims, Scale 4~~ | 1 | Y | N/A due to 10 op/s rate limit.
- 5 | ALS Baseline with Sims, no logs/audit-events | 1 | Y | .
- 6 | ALS Baseline with Sims, HTTP-Keep-Alive enabled | 1 | N | .
- 7 | ALS Baseline with Sims, UV_THREADS | 1 | N | .
- 8 | ALS Baseline with Sims, multiple k6 VUs | 1 | N | .
- 9 | ALS Baseline with Sims, MySQL in-memory DB | 1 | N | .
- 10 | ALS Baseline with Sims, Disabled JSON.stringify [ALS v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3) | 1 | N | [account-lookup-service/pull/460](https://github.com/mojaloop/account-lookup-service/pull/460), [v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3)
- 11 | ALS Baseline with Sims, Disabled JSON.stringify [ALS v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3) + 4x k6 VUs | 1 | N | .
- 12 | ALS Baseline with Sims, Disabled JSON.stringify [ALS v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3) + Scale 2 | 1 | N | .
- 13 | ALS Baseline with Sims, Disabled JSON.stringify [ALS v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3) + Scale 4 + 4x k6 VUs | 1 | N | .
- 14 | ALS Baseline with Sims, Disabled JSON.stringify [ALS v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3) + Scale 4 + 6x k6 VUs | 1 | N | .
- 15 | ALS Baseline with Sims, Disabled JSON.stringify [ALS v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3) + Scale 4 + 6x k6 VUs + Enhanced Caching for ValidateParticipants | 1 | N | [account-lookup-service/pull/461](https://github.com/mojaloop/account-lookup-service/pull/461), [v14.2.4-snapshot.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.4-snapshot.3)
- 16 | ALS Baseline with Sims, Disabled JSON.stringify [ALS v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3) + Scale 4 + 6x k6 VUs + Enhanced Caching for ValidateParticipants + OracleRequest | 1 | N | [account-lookup-service/pull/461](https://github.com/mojaloop/account-lookup-service/pull/461), [v14.3.4-snapshot.0](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.3.0-snapshot.0)
+ 5 | FSPIOP Discovery GET Parties with ALS + Sims + No Logs/Event-Audits - ALS:v14.2.2, scale:1, k6vu:1 | 1 | Y | .
+ 6 | FSPIOP Discovery GET Parties with ALS + Sims + HTTP Keep-Alive - ALS:v14.2.2, scale:1, k6vu:1 | 1 | N | .
+ 7 | FSPIOP Discovery GET Parties with ALS + Sims + UV_THREADPOOL_SCALE scaling - ALS:v14.2.2, scale:1, k6vu:1 | 1 | N | .
+ 8 | FSPIOP Discovery GET Parties with ALS + Sims + K6 VU scaling - ALS:v14.2.2, scale:1, k6vu:1-5 | 1 | N | .
+ 9 | FSPIOP Discovery GET Parties with ALS + Sims + In-Memory MySQL DB - ALS:v14.2.2, scale:1, k6vu:1 | 1 | N | .
+ 10 | FSPIOP Discovery GET Parties with ALS + Sims + JSON.Stringify fix - ALS:v14.2.3, scale:1, k6vu:1 | 1 | N | [account-lookup-service/pull/460](https://github.com/mojaloop/account-lookup-service/pull/460), [v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3)
+ 11 | FSPIOP Discovery GET Parties with ALS + Sims + JSON.Stringify fix - ALS:v14.2.3, scale:1, k6vu:4 | 1 | N | .
+ 12 | FSPIOP Discovery GET Parties with ALS + Sims + JSON.Stringify fix - ALS:v14.2.3, scale:2, k6vu:1 | 1 | N | .
+ 13 | FSPIOP Discovery GET Parties with ALS + Sims + JSON.Stringify fix - ALS:v14.2.3, scale:4, k6vu:4 | 1 | N | .
+ 14 | FSPIOP Discovery GET Parties with ALS + Sims + JSON.Stringify fix - ALS:v14.2.3, scale:4, k6vu:6 | 1 | N | .
+ 15 | FSPIOP Discovery GET Parties with ALS + Sims + JSON.Stringify fix + validateParticipant caching - ALS:v14.2.4-snapshot.3, scale:4, k6vu:6 | 1 | N | [account-lookup-service/pull/461](https://github.com/mojaloop/account-lookup-service/pull/461), [v14.2.4-snapshot.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.4-snapshot.3)
+ 16 | FSPIOP Discovery GET Parties with ALS + Sims + JSON.Stringify fix + validateParticipant & oracleRequest caching - ALS:v14.3.0-snapshot.0, scale:4, k6vu:6 | 1 | N | [account-lookup-service/pull/461](https://github.com/mojaloop/account-lookup-service/pull/461), [v14.3.4-snapshot.0](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.3.0-snapshot.0)
 
 ### Approach
 

@@ -1,4 +1,4 @@
-# Scenario 8 - ALS Baseline with Sims, multiple k6 VUs
+# Scenario 8 - FSPIOP Discovery GET Parties with ALS + Sims + K6 VU scaling - ALS:v14.2.2, scale:1, k6vu:1-5
 
 The End-to-end operation from the K6 test-runner included the following HTTP operations for each *iteration*:
 

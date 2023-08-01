@@ -1,4 +1,4 @@
-# Scenario 6 - ALS Baseline ALS Baseline with Sims, HTTP-Keep-Alive enabled
+# Scenario 6 - ALS Baseline FSPIOP Discovery GET Parties with ALS + Sims + HTTP Keep-Alive - ALS:v14.2.2, scale:1, k6vu:1
 
 The End-to-end operation from the K6 test-runner included the following HTTP operations for each *iteration*:
 

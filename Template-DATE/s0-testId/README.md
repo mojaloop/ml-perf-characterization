@@ -1,4 +1,4 @@
-# Scenario 1 - ALS-bypass Baseline with Sims-only
+# Scenario 1 - FSPIOP Discovery GET Parties with Sims-only - ALS:v14.2.2, scale:1, k6vu:1
 
 ```yaml
 testid:

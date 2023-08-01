@@ -1,4 +1,4 @@
-# Scenario 1 - ALS-bypass Baseline with Sims-only
+# Scenario 1: FSPIOP Discovery GET Parties with Sims-only - ALS:v14.2.2, scale:1, k6vu:1
 
 The End-to-end operation from the K6 test-runner included the following HTTP operations for each *iteration*:
 
