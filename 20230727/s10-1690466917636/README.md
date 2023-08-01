@@ -74,7 +74,7 @@ N/A
     - `Account-Lookup-Service` is showing a reduced CPU usage of `70%`, `30%` down from `100%`, indicating that the service is able to do more if K6 VUs are increased.
     - `Callback-Handler` is within bounds of the `Scenario #1`.
 
-- `JSON.stringify` is a demanding operation which is causing a bottleneck on the NodeJS `Event-loop` impacting the End-to-end `Op/s` and `duration`.
+- `JSON.stringify` is a demanding operation which is causing a bottleneck on the NodeJS `Event-loop` impacting the HTTP Sync response and most importantly the End-to-end `Op/s` and `duration`.
   - Comparing the `Event-Loop Lag` on the [NodeJS Application Dashboard for ALS](./images/NodeJS%20Application%20Dashboard%20ALS.png) on this Scenario vs [Scenario #2](../../20230726/s2-1690376653994/images/NodeJS%20Application%20Dashboard-moja_als.png) we can see a huge difference between delay introduced by the `JSON.stringify` operation due to it blocking of the `Event-loop`:
     - `Scenario #2` - Mean `13.3 ms`, Max `24.2 ms`, Min `11.1 ms`
     - `Scenario #10` - Mean `2.41 ms`, Max `7.67 ms`, Min `1.92 ms`
