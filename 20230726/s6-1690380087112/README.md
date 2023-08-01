@@ -1,4 +1,9 @@
-# Scenario 6 - ALS Baseline ALS Baseline with Sims-only, HTTP-Keep-Alive enabled
+# Scenario 6 - ALS Baseline ALS Baseline with Sims, HTTP-Keep-Alive enabled
+
+The End-to-end operation from the K6 test-runner included the following HTTP operations for each *iteration*:
+
+1. FSPIOP GET /parties request to the ALS <-- async callback response
+2. WS Subscription to the `Callback-Handler` Service for Callback Response notifications
 
 ```conf
 testid=1690380087112
@@ -54,8 +59,10 @@ ACCOUNT_LOOKUP_SERVICE_VERSION=local
 
 ## Observations
 
-TBD
+- No observable difference between `Scenario #2`.
+- Possibly no observable impact due to low through-put (i.e. `10 Op/s`).
 
 ## Recommendations
 
-TBD
+- Same as `Scenario #2`.
+- Consider re-running this scenario once an increase of through-put has been observed.

@@ -1,4 +1,9 @@
-# Scenario 12 - ALS Baseline with Sims-only, Disabled JSON.stringify. ALS v14.2.3 + ALS Scale 2.
+# Scenario 12 - ALS Baseline with Sims, Disabled JSON.stringify. ALS v14.2.3 + ALS Scale 2
+
+The End-to-end operation from the K6 test-runner included the following HTTP operations for each *iteration*:
+
+1. FSPIOP GET /parties request to the ALS <-- async callback response
+2. WS Subscription to the `Callback-Handler` Service for Callback Response notifications
 
 ```conf
 testid=1690491686694
@@ -51,16 +56,12 @@ Up ALS scaling to 2.
 
 ## Snapshots
 
-- [Docker]()
-- [K6]()
-- [Callback Handler Service]()
-- [Account Lookup Service]()
-- [Nodejs moja_als]()
-- [Nodejs cbs]()
-- [MySQL]()
+N/A.
 
 ## Observations
 
-K6s could not saturate 2 replicas of the ALS.
+- Similar observation to `Scenario 10` where 1x K6s VU could not saturate 2 replicas of the ALS.
 
 ## Recommendations
+
+- Re-run same scenario with more K6s VUs to match the `Account-Lookup-Service`'s scaling factor.

@@ -54,15 +54,13 @@ Up k6s VUs to 6.
 
 ## Snapshots
 
-- [Docker]()
-- [K6]()
-- [Callback Handler Service]()
-- [Account Lookup Service]()
-- [Nodejs moja_als]()
-- [Nodejs cbs]()
-- [MySQL]()
+N/A
 
 ## Observations
-Observed the iteration rate is 242 ops/sec max
+
+- End-to-end max of `242 Op/s` with a mean of `23.0 ms` achieved --> Scalability is not linear.
 
 ## Recommendations
+
+- Consider implementing a **caching** mechanism for `validateParticipant` egress as it is called TWICE for each leg of the Request and the Callback Response to validate the Payer and Payee FSP.
+- Profile the `Account-Lookup-Service` to see if any further `Event-Loop` "blockers" can be identified.

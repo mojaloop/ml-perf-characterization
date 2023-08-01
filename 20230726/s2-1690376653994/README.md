@@ -1,4 +1,9 @@
-# Scenario 2 - ALS Baseline with Sims-only
+# Scenario 2 - ALS Baseline with Sims
+
+The End-to-end operation from the K6 test-runner included the following HTTP operations for each *iteration*:
+
+1. FSPIOP GET /parties request to the ALS <-- async callback response
+2. WS Subscription to the `Callback-Handler` Service for Callback Response notifications
 
 ```conf
 var-testid=1690376653994
@@ -50,8 +55,29 @@ ACCOUNT_LOOKUP_SERVICE_VERSION=v14.2.2
 
 ## Observations
 
-TBD
+- `Account-Lookup-Service` and the `Callback-Handler` Simulator Service are able to handle `10 Ops/s` End-to-end, while sustaining an average duration of just over `100ms`. This is shown by the following dashboards/metrics:
+  - [K6](./images/Official%20k6%20Test%20Result.png)
+    - `Iteration Rate` (Mean) = `10 Ops/s`
+    - `Ieration Duration (avg)` (Mean) = `101ms`
+  - [Callback Handler Svc](./images/Supporting%20Services%20-%20Callback%20Hander%20Service.png)
+    - `op:fspiop_put_parties_end2end - success:true` - observe the `E2E, Request, Response Calculations Processed Per Second` Graph. Note the Mean includes the pre/post run.
+    - `op:fspiop_put_parties_end2end - success:true` - observe the `E2E, Request, Response Performance Timing Calculations` fall-inline with the observed duration.
+    - The `op:fspiop_put_parties_request` and `op:fspiop_put_parties_response` fall-inline with the observations.
+    - The ingress `Ops/s` for `op:admin_get_participants_endpoints` is very low due the ALS's caching mechanism.
+  - [Account-Lookup-Service](./images/dashboard-account-lookup-service.png)
+    - Egress and Ingress metrics for `getPartiesByTypeAndId` and `putPartiesByTypeAndId` are similar for both `duration` and `Op/s`.
+    - Most of the `duration` is observed to be spend on the `validateParticipant` @ `30ms`
+    - Most of the `Op/s` is observed to be spend on the `validateParticipant` @ `30 Op/s`, a three-fold increase over other egress metrics.
+  - [Docker Node Monitoring](./images/docker-prometheus-monitoring.png)
+    - `Account-Lookup-Service` is showing a `100%` CPU usage (equivalent to a single core of the host machine), indicating that it is most likely being CPU constrained.
+    - `Callback-Handler` is within bounds of the `Scenario #1`.
 
 ## Recommendations
 
-TBD
+- Investigate logic behind the `validateParticipant` egress implementation
+- Consider implementing a **caching** mechanism for `validateParticipant` egress as it is called TWICE for each leg of the Request and the Callback Response to validate the Payer and Payee FSP.
+- Investigate `Account-Lookup-Service` high CPU usage by removing configurable factors that may impact CPU usage, i.e.
+  - Logging
+  - Event Audits
+  - Increase `UV_THREADPOOL_SIZE` for IO threads.
+- Investigate enabling `HTTP Keep-Alive` for egress HTTP requests, especially the `validateParticipants`.

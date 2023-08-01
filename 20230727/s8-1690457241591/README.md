@@ -1,4 +1,9 @@
-# Scenario 8 - ALS Baseline with Sims-only, multiple k6 VUs
+# Scenario 8 - ALS Baseline with Sims, multiple k6 VUs
+
+The End-to-end operation from the K6 test-runner included the following HTTP operations for each *iteration*:
+
+1. FSPIOP GET /parties request to the ALS <-- async callback response
+2. WS Subscription to the `Callback-Handler` Service for Callback Response notifications
 
 ```conf
 testid=1690457241591
@@ -47,16 +52,15 @@ Increased target VUs from 1 to 5
 
 ## Snapshots
 
-- [Docker]()
 - [K6](https://snapshots.raintank.io/dashboard/snapshot/yCQaL9Qz7WcFDcH2v4Yik9vWR1WuO55f?orgId=2)
-- [Callback Handler Service]()
-- [Account Lookup Service]()
-- [Nodejs moja_als]()
-- [Nodejs cbs]()
-- [MySQL]()
 
 ## Observations
 
-- Http response time (Sync response) increased proportional to number VUs which is weird.
+- Minimal observable difference between `Scenario #2`, same observations apply in addition too:
+  - Http response time (Sync response) increased proportional to number VUs which is weird.
+- Possibly no observable impact due to low through-put (i.e. `10 Op/s`).
 
 ## Recommendations
+
+- Same as `Scenario #2`.
+- Consider re-running this scenario once an increase of through-put has been observed.
