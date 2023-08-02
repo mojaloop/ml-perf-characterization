@@ -138,7 +138,7 @@ Here we would execute any combination of the following tests based on the [Test 
 
 #### Account-lookup-Service
 
-- **Optimize DFSP Validations** - i.e. Add caching to Validation calls for PayerFSP and PayeeFSP on both FSPIOP GET /participant and PUT /participant, or alternatively consider adding a new API operation that is more optimized (i.e. a single API call to validate both PayerFSP & PayeeFSP).
-- **Optimize Oracle Resolution** - We can further improve performance by caching requests for the both the internal Oracle resolution, and the actual Oracle GET /participants request.
-- **Profile NodeJS Process on ALS** - some initial work has been done here which has already provided some huge performance gains, but there is certainly more gains to be achieved here.
-- **HTTP Keep-alive support** - Provide configuration to HTTP Agent as part of ALS config (i.e. default.json) that can be overridden.
+- **Optimize DFSP Validations** - i.e. Add caching to Validation calls for PayerFSP and PayeeFSP on both FSPIOP GET /participant and PUT /participant, or alternatively consider adding a new API operation that is more optimized (i.e. a single API call to validate both PayerFSP & PayeeFSP). - https://github.com/mojaloop/project/issues/3426
+- **Optimize Oracle Resolution** - We can further improve performance by caching requests for the both the internal Oracle resolution, and the actual Oracle GET /participants request. - https://github.com/mojaloop/project/issues/3427
+- **Profile NodeJS Process on ALS** - some initial work has been done here which has already provided some huge performance gains, but there is certainly more gains to be achieved here. - https://github.com/mojaloop/project/issues/3429
+- **HTTP Keep-alive support** - Provide configuration to HTTP Agent as part of ALS config (i.e. default.json) that can be overridden. - https://github.com/mojaloop/project/issues/3428
