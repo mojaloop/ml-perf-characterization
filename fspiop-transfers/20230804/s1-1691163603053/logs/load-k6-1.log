@@ -1,0 +1,96 @@
+-9118-447d-9050-16999592a20c" source=console
+time="2023-08-04T15:47:03Z" level=info msg="ecf432430c3d6b4ba4cf6f286599d77e WS message received [ecf432430c3d6b4ba4cf6f286599d77e/PUT/transfers/d6f5abf0-9118-447d-9050-16999592a20c]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-04T15:47:03Z" level=info msg="60dba740a41056466ddda915d1f5b47f WS open on URL: ws://sim-perffsp1:3002/60dba740a41056466ddda915d1f5b47f/PUT/transfers/0d625109-1128-41b6-ac00-7f4d8a59dfda" source=console
+time="2023-08-04T15:47:03Z" level=info msg="60dba740a41056466ddda915d1f5b47f WS message received [60dba740a41056466ddda915d1f5b47f/PUT/transfers/0d625109-1128-41b6-ac00-7f4d8a59dfda]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-04T15:47:03Z" level=info msg="d450027a6d6500f62b3d0dbd8842c712 WS open on URL: ws://sim-perffsp1:3002/d450027a6d6500f62b3d0dbd8842c712/PUT/transfers/26c972ff-fa25-4214-a4e4-5d20cd553169" source=console
+time="2023-08-04T15:47:03Z" level=info msg="d450027a6d6500f62b3d0dbd8842c712 WS message received [d450027a6d6500f62b3d0dbd8842c712/PUT/transfers/26c972ff-fa25-4214-a4e4-5d20cd553169]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-04T15:47:03Z" level=info msg="40d7957f4d0a0dbe50d37a2ff275ecad WS open on URL: ws://sim-perffsp1:3002/40d7957f4d0a0dbe50d37a2ff275ecad/PUT/transfers/1f479391-1911-4d60-a0a1-d67d2c580437" source=console
+time="2023-08-04T15:47:03Z" level=info msg="40d7957f4d0a0dbe50d37a2ff275ecad WS message received [40d7957f4d0a0dbe50d37a2ff275ecad/PUT/transfers/1f479391-1911-4d60-a0a1-d67d2c580437]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-04T15:47:03Z" level=info msg="b616a074cf3c4de92d01d1dae04a54d6 WS open on URL: ws://sim-perffsp1:3002/b616a074cf3c4de92d01d1dae04a54d6/PUT/transfers/61f41235-ee03-4038-b0c5-635d48f1bf7f" source=console
+time="2023-08-04T15:47:03Z" level=info msg="b616a074cf3c4de92d01d1dae04a54d6 WS message received [b616a074cf3c4de92d01d1dae04a54d6/PUT/transfers/61f41235-ee03-4038-b0c5-635d48f1bf7f]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-04T15:47:03Z" level=info msg="881530707d50c947ce00d57b84bb8e62 WS open on URL: ws://sim-perffsp1:3002/881530707d50c947ce00d57b84bb8e62/PUT/transfers/fc0525d0-1d09-4e3b-8a51-a045e43ce28a" source=console
+time="2023-08-04T15:47:03Z" level=info msg="881530707d50c947ce00d57b84bb8e62 WS message received [881530707d50c947ce00d57b84bb8e62/PUT/transfers/fc0525d0-1d09-4e3b-8a51-a045e43ce28a]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-04T15:47:03Z" level=info msg="d30bc4afb42784205e7e774fe4797cbd WS open on URL: ws://sim-perffsp1:3002/d30bc4afb42784205e7e774fe4797cbd/PUT/transfers/2e169513-6ca7-41fe-ad03-db27f1b12f9e" source=console
+time="2023-08-04T15:47:03Z" level=info msg="d30bc4afb42784205e7e774fe4797cbd WS message received [d30bc4afb42784205e7e774fe4797cbd/PUT/transfers/2e169513-6ca7-41fe-ad03-db27f1b12f9e]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-04T15:47:03Z" level=info msg="8d761208a59081a3a0da92da3ad03e82 WS open on URL: ws://sim-perffsp1:3002/8d761208a59081a3a0da92da3ad03e82/PUT/transfers/87b1ce7f-9e53-49fe-bee3-c64d53edff32" source=console
+time="2023-08-04T15:47:03Z" level=info msg="8d761208a59081a3a0da92da3ad03e82 WS message received [8d761208a59081a3a0da92da3ad03e82/PUT/transfers/87b1ce7f-9e53-49fe-bee3-c64d53edff32]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-04T15:47:03Z" level=info msg="fb90d2bd44c8fc5d55ff1b2bb7538bcf WS open on URL: ws://sim-perffsp1:3002/fb90d2bd44c8fc5d55ff1b2bb7538bcf/PUT/transfers/99c1e4bd-5e43-4762-a240-15015d447e4f" source=console
+time="2023-08-04T15:47:03Z" level=info msg="fb90d2bd44c8fc5d55ff1b2bb7538bcf WS message received [fb90d2bd44c8fc5d55ff1b2bb7538bcf/PUT/transfers/99c1e4bd-5e43-4762-a240-15015d447e4f]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-04T15:47:03Z" level=info msg="e77044ce5a488675f24294089bd76ac0 WS open on URL: ws://sim-perffsp1:3002/e77044ce5a488675f24294089bd76ac0/PUT/transfers/3d1089ed-8d9e-41e6-b5dc-d3974114d2b0" source=console
+time="2023-08-04T15:47:03Z" level=info msg="e77044ce5a488675f24294089bd76ac0 WS message received [e77044ce5a488675f24294089bd76ac0/PUT/transfers/3d1089ed-8d9e-41e6-b5dc-d3974114d2b0]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-04T15:47:03Z" level=info msg="fea1f5b09316f76be04a4cc72cda15a5 WS open on URL: ws://sim-perffsp1:3002/fea1f5b09316f76be04a4cc72cda15a5/PUT/transfers/e57313eb-a1fc-4641-87b9-f39e846214e3" source=console
+time="2023-08-04T15:47:03Z" level=info msg="fea1f5b09316f76be04a4cc72cda15a5 WS message received [fea1f5b09316f76be04a4cc72cda15a5/PUT/transfers/e57313eb-a1fc-4641-87b9-f39e846214e3]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-04T15:47:03Z" level=info msg="2e2461eac56f18423c94abe720aa73bb WS open on URL: ws://sim-perffsp1:3002/2e2461eac56f18423c94abe720aa73bb/PUT/transfers/bebfdf23-d821-4279-9d88-69e3f35d8abd" source=console
+time="2023-08-04T15:47:03Z" level=info msg="2e2461eac56f18423c94abe720aa73bb WS message received [2e2461eac56f18423c94abe720aa73bb/PUT/transfers/bebfdf23-d821-4279-9d88-69e3f35d8abd]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-04T15:47:03Z" level=info msg="07fde1c2c1b62b8013cef754dcc0049f WS open on URL: ws://sim-perffsp1:3002/07fde1c2c1b62b8013cef754dcc0049f/PUT/transfers/57d6b076-3b51-4f52-8c1d-3db3f934b86c" source=console
+time="2023-08-04T15:47:03Z" level=info msg="07fde1c2c1b62b8013cef754dcc0049f WS message received [07fde1c2c1b62b8013cef754dcc0049f/PUT/transfers/57d6b076-3b51-4f52-8c1d-3db3f934b86c]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-04T15:47:03Z" level=info msg="334ea0732e95f3e8be05b3fe79027733 WS open on URL: ws://sim-perffsp1:3002/334ea0732e95f3e8be05b3fe79027733/PUT/transfers/20178294-c9c0-4bbf-9053-eb4116645842" source=console
+time="2023-08-04T15:47:03Z" level=info msg="334ea0732e95f3e8be05b3fe79027733 WS message received [334ea0732e95f3e8be05b3fe79027733/PUT/transfers/20178294-c9c0-4bbf-9053-eb4116645842]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-04T15:47:03Z" level=info msg="c969a22e773d4c80e38796e0eb26057f WS open on URL: ws://sim-perffsp1:3002/c969a22e773d4c80e38796e0eb26057f/PUT/transfers/77356061-f46f-4fd6-ac4a-1c8d9853f0d2" source=console
+time="2023-08-04T15:47:03Z" level=info msg="c969a22e773d4c80e38796e0eb26057f WS message received [c969a22e773d4c80e38796e0eb26057f/PUT/transfers/77356061-f46f-4fd6-ac4a-1c8d9853f0d2]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-04T15:47:03Z" level=info msg="93fa5f83250e3b8fae1b3fe2555545c8 WS open on URL: ws://sim-perffsp1:3002/93fa5f83250e3b8fae1b3fe2555545c8/PUT/transfers/0a90b579-5115-4f89-8a0c-6f7daa19b2e9" source=console
+time="2023-08-04T15:47:03Z" level=info msg="93fa5f83250e3b8fae1b3fe2555545c8 WS message received [93fa5f83250e3b8fae1b3fe2555545c8/PUT/transfers/0a90b579-5115-4f89-8a0c-6f7daa19b2e9]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-04T15:47:03Z" level=info msg="5d9f388a7bcaca8098955ade2dbcbf94 WS open on URL: ws://sim-perffsp1:3002/5d9f388a7bcaca8098955ade2dbcbf94/PUT/transfers/9d5ca5ce-38dc-43e2-8038-76d67e054f05" source=console
+time="2023-08-04T15:47:03Z" level=info msg="5d9f388a7bcaca8098955ade2dbcbf94 WS message received [5d9f388a7bcaca8098955ade2dbcbf94/PUT/transfers/9d5ca5ce-38dc-43e2-8038-76d67e054f05]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-04T15:47:03Z" level=info msg="148b6d4db995f492bdd9f421c482dba3 WS open on URL: ws://sim-perffsp1:3002/148b6d4db995f492bdd9f421c482dba3/PUT/transfers/2cf4f041-578e-48e6-a94a-78da58a6121d" source=console
+time="2023-08-04T15:47:03Z" level=info msg="148b6d4db995f492bdd9f421c482dba3 WS message received [148b6d4db995f492bdd9f421c482dba3/PUT/transfers/2cf4f041-578e-48e6-a94a-78da58a6121d]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-04T15:47:03Z" level=info msg="a4957f7acdcdfe8def90892d6ebf3f28 WS open on URL: ws://sim-perffsp1:3002/a4957f7acdcdfe8def90892d6ebf3f28/PUT/transfers/aab18059-99dc-407a-9f29-99b91cf0304b" source=console
+time="2023-08-04T15:47:03Z" level=info msg="a4957f7acdcdfe8def90892d6ebf3f28 WS message received [a4957f7acdcdfe8def90892d6ebf3f28/PUT/transfers/aab18059-99dc-407a-9f29-99b91cf0304b]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-04T15:47:03Z" level=info msg="b6214a609715ed25b3305fb7fa5e0bd2 WS open on URL: ws://sim-perffsp1:3002/b6214a609715ed25b3305fb7fa5e0bd2/PUT/transfers/f0aaac4a-6cc7-4794-ac15-28257c03b380" source=console
+time="2023-08-04T15:47:03Z" level=info msg="b6214a609715ed25b3305fb7fa5e0bd2 WS message received [b6214a609715ed25b3305fb7fa5e0bd2/PUT/transfers/f0aaac4a-6cc7-4794-ac15-28257c03b380]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-04T15:47:03Z" level=info msg="3e124ff281f356bc4be68cf6331144ce WS open on URL: ws://sim-perffsp1:3002/3e124ff281f356bc4be68cf6331144ce/PUT/transfers/8549fc25-4723-4f23-bad6-739c39cfa679" source=console
+time="2023-08-04T15:47:03Z" level=info msg="3e124ff281f356bc4be68cf6331144ce WS message received [3e124ff281f356bc4be68cf6331144ce/PUT/transfers/8549fc25-4723-4f23-bad6-739c39cfa679]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-04T15:47:03Z" level=info msg="1749ab6a9332a361ff07204dd3126b4a WS open on URL: ws://sim-perffsp1:3002/1749ab6a9332a361ff07204dd3126b4a/PUT/transfers/f5f53faa-382f-4d54-9055-9637105c3fad" source=console
+time="2023-08-04T15:47:03Z" level=info msg="1749ab6a9332a361ff07204dd3126b4a WS message received [1749ab6a9332a361ff07204dd3126b4a/PUT/transfers/f5f53faa-382f-4d54-9055-9637105c3fad]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-04T15:47:03Z" level=info msg="78d14063ccc742350a11019d74e7d830 WS open on URL: ws://sim-perffsp1:3002/78d14063ccc742350a11019d74e7d830/PUT/transfers/dfd6c542-62ed-4b34-bc20-14159f3259bc" source=console
+time="2023-08-04T15:47:03Z" level=info msg="78d14063ccc742350a11019d74e7d830 WS message received [78d14063ccc742350a11019d74e7d830/PUT/transfers/dfd6c542-62ed-4b34-bc20-14159f3259bc]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-04T15:47:03Z" level=info msg="6a4a30a554298e65e17cbf20bc63c496 WS open on URL: ws://sim-perffsp1:3002/6a4a30a554298e65e17cbf20bc63c496/PUT/transfers/807f36bf-a68f-4288-88c8-e58e2970fc90" source=console
+time="2023-08-04T15:47:03Z" level=info msg="6a4a30a554298e65e17cbf20bc63c496 WS message received [6a4a30a554298e65e17cbf20bc63c496/PUT/transfers/807f36bf-a68f-4288-88c8-e58e2970fc90]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-04T15:47:03Z" level=info msg="d7e0743a11cab2f23120b6a21e7d580a WS open on URL: ws://sim-perffsp1:3002/d7e0743a11cab2f23120b6a21e7d580a/PUT/transfers/127b352d-1219-42c3-ae1c-14954555bce4" source=console
+time="2023-08-04T15:47:03Z" level=info msg="d7e0743a11cab2f23120b6a21e7d580a WS message received [d7e0743a11cab2f23120b6a21e7d580a/PUT/transfers/127b352d-1219-42c3-ae1c-14954555bce4]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-04T15:47:03Z" level=info msg="7f5f4c8c5e3b17ff9677661bd0451a7f WS open on URL: ws://sim-perffsp1:3002/7f5f4c8c5e3b17ff9677661bd0451a7f/PUT/transfers/309d4cf6-4c4a-4b4e-8539-ba5206e0292a" source=console
+time="2023-08-04T15:47:03Z" level=info msg="7f5f4c8c5e3b17ff9677661bd0451a7f WS message received [7f5f4c8c5e3b17ff9677661bd0451a7f/PUT/transfers/309d4cf6-4c4a-4b4e-8539-ba5206e0292a]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-04T15:47:03Z" level=info msg="331d2e4d54fe680b8b0406450b602eb3 WS open on URL: ws://sim-perffsp1:3002/331d2e4d54fe680b8b0406450b602eb3/PUT/transfers/73b5147b-c363-4eac-abcf-d1a7f01b3a31" source=console
+time="2023-08-04T15:47:03Z" level=info msg="331d2e4d54fe680b8b0406450b602eb3 WS message received [331d2e4d54fe680b8b0406450b602eb3/PUT/transfers/73b5147b-c363-4eac-abcf-d1a7f01b3a31]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-04T15:47:03Z" level=info msg="b722a4ef4b530cb7ecac9ba83099ee2c WS open on URL: ws://sim-perffsp1:3002/b722a4ef4b530cb7ecac9ba83099ee2c/PUT/transfers/704b273f-fbbb-4d5a-b7b6-11052df9ed6a" source=console
+time="2023-08-04T15:47:03Z" level=info msg="b722a4ef4b530cb7ecac9ba83099ee2c WS message received [b722a4ef4b530cb7ecac9ba83099ee2c/PUT/transfers/704b273f-fbbb-4d5a-b7b6-11052df9ed6a]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-04T15:47:03Z" level=info msg="4c72610f4414761e42634b5dd998a6f6 WS open on URL: ws://sim-perffsp1:3002/4c72610f4414761e42634b5dd998a6f6/PUT/transfers/0cba34d5-ad7b-4f08-a511-7d3b1648a259" source=console
+
+running (7m00.0s), 1/1 VUs, 283821 complete and 0 interrupted iterations
+fspiopTransfers   [ 100% ] 1/1 VUs  7m00.0s/7m00.0s
+time="2023-08-04T15:47:03Z" level=info msg="4c72610f4414761e42634b5dd998a6f6 WS message received [4c72610f4414761e42634b5dd998a6f6/PUT/transfers/0cba34d5-ad7b-4f08-a511-7d3b1648a259]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-04T15:47:03Z" level=info msg="Env Vars -->\n  K6_SCRIPT_WS_TIMEOUT_MS=2000,\n  K6_SCRIPT_FSPIOP_ALS_ENDPOINT_URL=http://account-lookup-service:4002,\n  K6_SCRIPT_ADMIN_ENDPOINT_URL=http://callback-handler-svc-cl-sim:3001/admin,\n  K6_SCRIPT_ORACLE_ENDPOINT_URL=http://callback-handler-svc-oracle-sim:3001/oracle,\n  K6_SCRIPT_FSPIOP_FSP_POOL=undefined\n" source=console
+time="2023-08-04T15:47:03Z" level=info msg="Env Vars -->\n  K6_SCRIPT_WS_TIMEOUT_MS=2000,\n  K6_SCRIPT_FSPIOP_TRANSFERS_ENDPOINT_URL=http://sim-perffsp2:3001/fspiop,\n  K6_SCRIPT_FSPIOP_FSP_POOL=[{\"partyId\":19012345001,\"fspId\":\"perffsp1\",\"wsUrl\":\"ws://sim-perffsp1:3002\"},{\"partyId\":19012345002,\"fspId\":\"perffsp2\",\"wsUrl\":\"ws://sim-perffsp2:3002\"},{\"partyId\":19012345003,\"fspId\":\"perffsp3\",\"wsUrl\":\"ws://sim-perffsp3:3002\"},{\"partyId\":19012345004,\"fspId\":\"perffsp4\",\"wsUrl\":\"ws://sim-perffsp4:3002\"},{\"partyId\":19012345005,\"fspId\":\"perffsp5\",\"wsUrl\":\"ws://sim-perffsp5:3002\"},{\"partyId\":19012345006,\"fspId\":\"perffsp6\",\"wsUrl\":\"ws://sim-perffsp6:3002\"},{\"partyId\":19012345007,\"fspId\":\"perffsp7\",\"wsUrl\":\"ws://sim-perffsp7:3002\"},{\"partyId\":19012345008,\"fspId\":\"perffsp8\",\"wsUrl\":\"ws://sim-perffsp8:3002\"}]\n" source=console
+
+     ✓ TRANSFERS_FSPIOP_POST_TRANSFERS_RESPONSE_IS_202
+     ✓ TRANSFERS_E2E_FSPIOP_POST_TRANSFERS_SUCCESS
+
+     █ Post Transfers
+
+     checks.........................: 100.00% ✓ 567644     ✗ 0     
+     data_received..................: 88 MB   210 kB/s
+     data_sent......................: 581 MB  1.4 MB/s
+     group_duration.................: avg=120.26µs min=90.44µs  med=115.4µs  max=5.56ms   p(90)=136.61µs p(95)=157.4µs 
+     http_req_blocked...............: avg=1.81µs   min=926ns    med=1.68µs   max=454.68µs p(90)=2.24µs   p(95)=2.55µs  
+     http_req_connecting............: avg=0ns      min=0s       med=0s       max=95.5µs   p(90)=0s       p(95)=0s      
+   ✓ http_req_duration..............: avg=397.04µs min=297.38µs med=379.69µs max=26.99ms  p(90)=441.73µs p(95)=476.22µs
+       { expected_response:true }...: avg=397.04µs min=297.38µs med=379.69µs max=26.99ms  p(90)=441.73µs p(95)=476.22µs
+   ✓ http_req_failed................: 0.00%   ✓ 0          ✗ 283822
+     http_req_receiving.............: avg=17.84µs  min=9.81µs   med=16.67µs  max=12.18ms  p(90)=22.2µs   p(95)=26.82µs 
+     http_req_sending...............: avg=13.83µs  min=6.42µs   med=13.25µs  max=558.58µs p(90)=16.73µs  p(95)=17.92µs 
+     http_req_tls_handshaking.......: avg=0s       min=0s       med=0s       max=0s       p(90)=0s       p(95)=0s      
+     http_req_waiting...............: avg=365.36µs min=269.91µs med=347.92µs max=26.88ms  p(90)=408.18µs p(95)=442.29µs
+     http_reqs......................: 283822  675.766419/s
+   ✓ iteration_duration.............: avg=1.47ms   min=1.01ms   med=1.28ms   max=36.55ms  p(90)=2.2ms    p(95)=2.3ms   
+     iterations.....................: 283822  675.766419/s
+     vus............................: 1       min=1        max=1   
+     vus_max........................: 1       min=1        max=1   
+     ws_connecting..................: avg=397.47µs min=164.67µs med=214.91µs max=31.27ms  p(90)=1.13ms   p(95)=1.18ms  
+     ws_msgs_received...............: 283822  675.766419/s
+     ws_msgs_sent...................: 283822  675.766419/s
+     ws_session_duration............: avg=1.3ms    min=872.82µs med=1.11ms   max=35.14ms  p(90)=2.02ms   p(95)=2.12ms  
+     ws_sessions....................: 283822  675.766419/s
+
+
+running (7m00.0s), 0/1 VUs, 283822 complete and 0 interrupted iterations
+fspiopTransfers ✓ [ 100% ] 0/1 VUs  7m0s

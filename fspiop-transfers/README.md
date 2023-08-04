@@ -18,8 +18,8 @@ Test Case | Description | K6 Test Case | Notes
 
 Scenario | Description | Test-Case | Repeatable (Y/N) | K6 Test Scenario / Config | Notes
 ---------|----------|---------|---------|---------|---------
- 1 | FSPIOP Transfers POST /transfers with Sims-only - scale:1, k6vu:1 | 1 | Y | fspiopTransfers | .
- 2 | FSPIOP Transfers POST /transfers with Sims-only - scale:1, k6vu:MAX | 1 | Y | fspiopTransfers | .
+ 1 | FSPIOP Transfers POST /transfers with Sims-only + Unidirectional - scale:1, k6vu:1 | 1 | Y | fspiopTransfers | .
+ 2 | FSPIOP Transfers POST /transfers with Sims-only + Unidirectional - scale:1, k6vu:MAX | 1 | Y | fspiopTransfers | .
  3 | FSPIOP Transfers POST /transfers with MLAPI & CL - scale:1, k6vu:1 | 1 | Y | fspiopTransfers | .
  4 | FSPIOP Transfers POST /transfers with MLAPI & CL - scale:1, k6vu:MAX | 1 | Y | fspiopTransfers | .
  5 | FSPIOP Transfers POST /transfers with MLAPI & CL - scale:2, k6vu:1 | 1 | Y | fspiopTransfers | .
