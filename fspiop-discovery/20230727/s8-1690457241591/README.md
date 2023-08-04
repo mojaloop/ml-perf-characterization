@@ -25,6 +25,7 @@ Increased target VUs from 1 to 5
 - m6i.2xlarge
   - 8 CPU - 3.5 GHz 3rd Generation Intel Xeon Scalable processors (Ice Lake 8375C)
   - 32gb RAM
+  - HDD io2 with 50 GB, @ 25000 iOP/S
 - https://gist.github.com/mdebarros/6d9ac90f33c96031cbce6b9a3ea8048e
 
 ## k6 Test Config
