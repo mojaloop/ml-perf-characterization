@@ -1,5 +1,12 @@
 # FSPIOP Transfers Performance Characterization (PLACEHOLDER)
 
+## Status
+
+| Mojaloop Version |  Date  | Status  | Next  | Notes  |
+|---|---|---|---|---|
+| 15.1.0 |   |   | See [#follow-up-stores](#follow-up-stories) |   |
+|   |   |   |   |   |
+
 ## Test Cases
 
 Test Case | Description | K6 Test Case | Notes
@@ -9,12 +16,14 @@ Test Case | Description | K6 Test Case | Notes
 ## Test Scenarios
 
 ### Assumptions
+
 - Use In-Memory DB for all the scenarios to rule out disk I/O issues
 - Disable cl-timeout handler
 - Disable cl-get handler
 - Default is random 2 DFSPs as payer and payee from the configurable pool
 - No PATCH CALLBACKS and No PAYEE NOTIFICATION
 
+### Scenarios
 
 Scenario | Description | Test-Case | Repeatable (Y/N) | K6 Test Scenario / Config | Notes
 ---------|----------|---------|---------|---------|---------
