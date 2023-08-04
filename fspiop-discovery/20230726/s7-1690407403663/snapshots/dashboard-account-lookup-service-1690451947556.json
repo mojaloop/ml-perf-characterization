@@ -1,0 +1,6165 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "snapshotData": [],
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 4,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 58,
+      "links": [],
+      "panels": [],
+      "title": "Participant Resource Metric Totals",
+      "type": "row"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "text",
+            "mode": "palette-classic"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null+nan",
+                "result": {
+                  "index": 0,
+                  "text": "0"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "reqs"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 0,
+        "y": 1
+      },
+      "id": 27,
+      "interval": "1s",
+      "links": [],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "max"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.1",
+      "snapshotData": [
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(moja_als_ing_getParticipantsByTypeAndID_count)\nStep: 5s",
+            "preferredVisualisationType": "graph",
+            "transformations": [
+              "calculateField"
+            ],
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(moja_als_ing_getParticipantsByTypeIdAndSubID_count)\nStep: 5s",
+            "preferredVisualisationType": "graph",
+            "transformations": [
+              "calculateField"
+            ],
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "B"
+        }
+      ],
+      "title": "Ing GET /participants/* requests",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "binary": {
+              "left": "sum(moja_als_ing_getPartiesByTypeAndID_count)",
+              "reducer": "sum",
+              "right": "sum(moja_als_ing_getPartiesByTypeIDAndSubID_count)"
+            },
+            "mode": "binary",
+            "reduce": {
+              "reducer": "sum"
+            },
+            "replaceFields": true
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "text",
+            "mode": "palette-classic"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null+nan",
+                "result": {
+                  "index": 0,
+                  "text": "0"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "reqs"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 4,
+        "y": 1
+      },
+      "id": 45,
+      "interval": "1s",
+      "links": [],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "max"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.1",
+      "snapshotData": [
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(moja_als_ing_postParticipantsbyTypeAndID_count)\nStep: 5s",
+            "preferredVisualisationType": "graph",
+            "transformations": [
+              "calculateField"
+            ],
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(moja_als_ing_postParticipantsByTypeIDAndSubID_count)\nStep: 5s",
+            "preferredVisualisationType": "graph",
+            "transformations": [
+              "calculateField"
+            ],
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "B"
+        }
+      ],
+      "title": "Ing POST /participants/* requests",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "binary": {
+              "left": "sum(moja_als_ing_postParticipantsbyTypeAndID_count)",
+              "reducer": "sum",
+              "right": "sum(moja_als_ing_postParticipantsByTypeIDAndSubID_count)"
+            },
+            "mode": "binary",
+            "reduce": {
+              "reducer": "sum"
+            },
+            "replaceFields": true
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "text",
+            "mode": "palette-classic"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null+nan",
+                "result": {
+                  "index": 0,
+                  "text": "0"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "reqs"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 8,
+        "y": 1
+      },
+      "id": 57,
+      "interval": "1s",
+      "links": [],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "max"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.1",
+      "snapshotData": [
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(moja_als_ing_postParticipantsBatch_count)\nStep: 5s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "A"
+        }
+      ],
+      "title": "Ing POST /participants requests",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "text",
+            "mode": "palette-classic"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null+nan",
+                "result": {
+                  "index": 0,
+                  "text": "0"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "reqs"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 12,
+        "y": 1
+      },
+      "id": 46,
+      "interval": "1s",
+      "links": [],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "max"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.1",
+      "snapshotData": [
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(moja_als_ing_deleteParticipantsByTypeAndID_count)\nStep: 5s",
+            "preferredVisualisationType": "graph",
+            "transformations": [
+              "calculateField"
+            ],
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(moja_als_ing_deleteParticipantsByTypeIDAndSubID_count)\nStep: 5s",
+            "preferredVisualisationType": "graph",
+            "transformations": [
+              "calculateField"
+            ],
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "B"
+        }
+      ],
+      "title": "Ing DELETE /participants/* requests",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "binary": {
+              "left": "sum(moja_als_ing_deleteParticipantsByTypeAndID_count)",
+              "reducer": "sum",
+              "right": "sum(moja_als_ing_deleteParticipantsByTypeIDAndSubID_count)"
+            },
+            "mode": "binary",
+            "reduce": {
+              "reducer": "sum"
+            },
+            "replaceFields": true
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "text",
+            "mode": "palette-classic"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null+nan",
+                "result": {
+                  "index": 0,
+                  "text": "0"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "reqs"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 16,
+        "y": 1
+      },
+      "id": 28,
+      "interval": "1s",
+      "links": [],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "max"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.1",
+      "snapshotData": [
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(moja_als_ing_putParticipantsByTypeAndID_count)\nStep: 5s",
+            "preferredVisualisationType": "graph",
+            "transformations": [
+              "calculateField"
+            ],
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(moja_als_ing_putParticipantsByTypeIDAndSubID_count)\nStep: 5s",
+            "preferredVisualisationType": "graph",
+            "transformations": [
+              "calculateField"
+            ],
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "B"
+        }
+      ],
+      "title": "Ing PUT /participants/* requests",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "binary": {
+              "left": "sum(moja_als_ing_getPartiesByTypeAndID_count)",
+              "reducer": "sum",
+              "right": "sum(moja_als_ing_getPartiesByTypeIDAndSubID_count)"
+            },
+            "mode": "binary",
+            "reduce": {
+              "reducer": "sum"
+            },
+            "replaceFields": true
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "text",
+            "mode": "palette-classic"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null+nan",
+                "result": {
+                  "index": 0,
+                  "text": "0"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "reqs"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 20,
+        "y": 1
+      },
+      "id": 32,
+      "interval": "1s",
+      "links": [],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "max"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.1",
+      "snapshotData": [
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(moja_als_ing_putParticipantsErrorByTypeAndID_count)\nStep: 5s",
+            "preferredVisualisationType": "graph",
+            "transformations": [
+              "calculateField"
+            ],
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(moja_als_ing_putParticipantsErrorByTypeIDAndSubID_count)\nStep: 5s",
+            "preferredVisualisationType": "graph",
+            "transformations": [
+              "calculateField"
+            ],
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "B"
+        }
+      ],
+      "title": "Ing PUT /participants/*/error requests",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "binary": {
+              "left": "sum(moja_als_ing_putParticipantsErrorByTypeAndID_count)",
+              "reducer": "sum",
+              "right": "sum(moja_als_ing_putParticipantsErrorByTypeIDAndSubID_count)"
+            },
+            "mode": "binary",
+            "reduce": {
+              "reducer": "sum"
+            },
+            "replaceFields": true
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byFrameRefID",
+              "options": "B"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "red",
+                  "mode": "shades"
+                }
+              },
+              {
+                "id": "noValue",
+                "value": "0"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 0,
+        "y": 4
+      },
+      "id": 51,
+      "interval": "1s",
+      "links": [],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "",
+          "limit": 2,
+          "values": false
+        },
+        "text": {},
+        "textMode": "value"
+      },
+      "pluginVersion": "9.5.1",
+      "snapshotData": [
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(moja_als_getParticipantsByTypeAndID_count{success=\"true\"})\nStep: 5s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(moja_als_getParticipantsByTypeAndID_count{success=\"false\"})\nStep: 5s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "B"
+        }
+      ],
+      "title": "GET /participants/* Domain Logic - Count",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byFrameRefID",
+              "options": "B"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "red",
+                  "mode": "shades"
+                }
+              },
+              {
+                "id": "noValue",
+                "value": "0"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 4,
+        "y": 4
+      },
+      "id": 52,
+      "interval": "1s",
+      "links": [],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "",
+          "limit": 2,
+          "values": false
+        },
+        "text": {},
+        "textMode": "value"
+      },
+      "pluginVersion": "9.5.1",
+      "snapshotData": [
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(moja_als_postParticipants_count{success=\"true\"})\nStep: 5s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(moja_als_postParticipants_count{success=\"false\"})\nStep: 5s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "B"
+        }
+      ],
+      "title": "POST /participants/* Domain Logic - Count",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byFrameRefID",
+              "options": "B"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "red",
+                  "mode": "shades"
+                }
+              },
+              {
+                "id": "noValue",
+                "value": "0"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 8,
+        "y": 4
+      },
+      "id": 54,
+      "interval": "1s",
+      "links": [],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "",
+          "limit": 2,
+          "values": false
+        },
+        "text": {},
+        "textMode": "value"
+      },
+      "pluginVersion": "9.5.1",
+      "snapshotData": [
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(moja_als_postParticipantsBatch_count{success=\"true\"})\nStep: 5s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(moja_als_postParticipantsBatch_count{success=\"false\"})\nStep: 5s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "B"
+        }
+      ],
+      "title": "POST BATCH /participants Domain Logic - Count",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byFrameRefID",
+              "options": "B"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "red",
+                  "mode": "shades"
+                }
+              },
+              {
+                "id": "noValue",
+                "value": "0"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 12,
+        "y": 4
+      },
+      "id": 53,
+      "interval": "1s",
+      "links": [],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "",
+          "limit": 2,
+          "values": false
+        },
+        "text": {},
+        "textMode": "value"
+      },
+      "pluginVersion": "9.5.1",
+      "snapshotData": [
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(moja_als_deleteParticipants_count{success=\"true\"})\nStep: 5s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(moja_als_deleteParticipants_count{success=\"false\"})\nStep: 5s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "B"
+        }
+      ],
+      "title": "DELETE /participants/* Domain Logic - Count",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byFrameRefID",
+              "options": "B"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "red",
+                  "mode": "shades"
+                }
+              },
+              {
+                "id": "noValue",
+                "value": "0"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 16,
+        "y": 4
+      },
+      "id": 55,
+      "interval": "1s",
+      "links": [],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "",
+          "limit": 2,
+          "values": false
+        },
+        "text": {},
+        "textMode": "value"
+      },
+      "pluginVersion": "9.5.1",
+      "snapshotData": [
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(moja_als_putParticipantsByTypeAndID_count{success=\"true\"})\nStep: 5s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(moja_als_putParticipantsByTypeAndID_count{success=\"false\"})\nStep: 5s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "B"
+        }
+      ],
+      "title": "PUT /participants/* Domain Logic - Count",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byFrameRefID",
+              "options": "B"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "red",
+                  "mode": "shades"
+                }
+              },
+              {
+                "id": "noValue",
+                "value": "0"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 20,
+        "y": 4
+      },
+      "id": 56,
+      "interval": "1s",
+      "links": [],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "",
+          "limit": 2,
+          "values": false
+        },
+        "text": {},
+        "textMode": "value"
+      },
+      "pluginVersion": "9.5.1",
+      "snapshotData": [
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(moja_als_putParticipantsErrorByTypeAndID_count{success=\"true\"})\nStep: 5s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(moja_als_putParticipantsErrorByTypeAndID_count{success=\"false\"})\nStep: 5s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "B"
+        }
+      ],
+      "title": "PUT /participants/*/error Domain Logic - Count",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 9
+      },
+      "id": 10,
+      "links": [],
+      "panels": [],
+      "title": "Participant Resource Performance Metrics",
+      "type": "row"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 10
+      },
+      "id": 3,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "min",
+            "mean",
+            "max",
+            "lastNotNull"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "snapshotData": [
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: avg(rate(moja_als_ing_getParticipantsByTypeAndID_sum[1m0s]) / rate(moja_als_ing_getParticipantsByTypeAndID_count[1m0s]) >=0) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: avg(rate(moja_als_ing_putParticipantsByTypeAndID_sum[1m0s]) / rate(moja_als_ing_putParticipantsByTypeAndID_count[1m0s]) >=0) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "B"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: avg(rate(moja_als_ing_postParticipantsbyTypeAndID_sum[1m0s]) / rate(moja_als_ing_postParticipantsbyTypeAndID_count[1m0s]) >=0) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "C"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: avg(rate(moja_als_ing_deleteParticipantsByTypeAndID_sum[1m0s]) / rate(moja_als_ing_deleteParticipantsByTypeAndID_count[1m0s]) >=0) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "D"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: avg(rate(moja_als_ing_getParticipantsByTypeIdAndSubID_sum[1m0s]) / rate(moja_als_ing_getParticipantsByTypeIdAndSubID_count[1m0s]) >=0) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "E"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: avg(rate(moja_als_ing_putParticipantsByTypeIDAndSubID_sum[1m0s]) / rate(moja_als_ing_putParticipantsByTypeIDAndSubID_count[1m0s]) >=0) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "F"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: avg(rate(moja_als_ing_postParticipantsByTypeIDAndSubID_sum[1m0s]) / rate(moja_als_ing_postParticipantsByTypeIDAndSubID_count[1m0s]) >=0) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "G"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: avg(rate(moja_als_ing_deleteParticipantsByTypeIDAndSubID_sum[1m0s]) / rate(moja_als_ing_deleteParticipantsByTypeIDAndSubID_count[1m0s]) >=0) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "H"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: avg(rate(moja_als_ing_putParticipantsErrorByTypeAndID_sum[1m0s]) / rate(moja_als_ing_putParticipantsErrorByTypeAndID_count[1m0s]) >=0) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "I"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: avg(rate(moja_als_ing_putParticipantsErrorByTypeIDAndSubID_sum[1m0s]) / rate(moja_als_ing_putParticipantsErrorByTypeIDAndSubID_count[1m0s]) >=0) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "J"
+        }
+      ],
+      "title": "Participant Handlers Ingress - Processing Time",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "ops"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 10
+      },
+      "id": 4,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "min",
+            "mean",
+            "max",
+            "lastNotNull"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "snapshotData": [
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(rate(moja_als_ing_getParticipantsByTypeAndID_count[1m0s])) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(rate(moja_als_ing_putParticipantsByTypeAndID_count[1m0s])) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "C"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(rate(moja_als_ing_postParticipantsbyTypeAndID_count[1m0s])) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "D"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(rate(moja_als_ing_deleteParticipantsByTypeAndID_count[1m0s])) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "E"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(rate(moja_als_ing_getParticipantsByTypeIdAndSubID_count[1m0s])) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "F"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(rate(moja_als_ing_putParticipantsByTypeIDAndSubID_count[1m0s])) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "G"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(rate(moja_als_ing_postParticipantsByTypeIDAndSubID_count[1m0s])) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "H"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(rate(moja_als_ing_deleteParticipantsByTypeIDAndSubID_count[1m0s])) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "I"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(rate(moja_als_ing_putParticipantsErrorByTypeAndID_count[1m0s])) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "J"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(rate(moja_als_ing_putParticipantsErrorByTypeIDAndSubID_count[1m0s])) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "K"
+        }
+      ],
+      "title": "Participant Handler Ingress - Processing Per Second",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [
+            {
+              "options": {
+                "null+nan": {
+                  "index": 0,
+                  "text": "0"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 18
+      },
+      "id": 7,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "min",
+            "mean",
+            "max",
+            "lastNotNull"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "snapshotData": [
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: avg(rate(moja_als_getParticipantsByTypeAndID_sum[1m0s]) / rate(moja_als_getParticipantsByTypeAndID_count[1m0s]) >=0) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: avg(rate(moja_als_putParticipantsByTypeAndID_sum[1m0s]) / rate(moja_als_putParticipantsByTypeAndID_count[1m0s]) >=0) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "B"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: avg(rate(moja_als_putParticipantsErrorByTypeAndID_sum[1m0s]) / rate(moja_als_putParticipantsErrorByTypeAndID_count[1m0s]) >=0) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "C"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: avg(rate(moja_als_postParticipants_sum[1m0s]) / rate(moja_als_postParticipants_count[1m0s]) >=0) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "D"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: avg(rate(moja_als_postParticipantsBatch_sum[1m0s]) / rate(moja_als_postParticipantsBatch_count[1m0s]) >=0) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "E"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: avg(rate(moja_als_deleteParticipants_sum[1m0s]) / rate(moja_als_deleteParticipants_count[1m0s]) >=0) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "F"
+        }
+      ],
+      "title": "Participant Domain - Processing Time",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "ops"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 18
+      },
+      "id": 8,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "min",
+            "mean",
+            "max",
+            "lastNotNull"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "snapshotData": [
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(rate(moja_als_getParticipantsByTypeAndID_count[1m0s])) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(rate(moja_als_putParticipantsByTypeAndID_count[1m0s])) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "B"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(rate(moja_als_putParticipantsErrorByTypeAndID_count[1m0s])) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "C"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(rate(moja_als_postParticipants_count[1m0s])) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "D"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(rate(moja_als_postParticipantsBatch_count[1m0s])) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "E"
+        },
+        {
+          "fields": [],
+          "meta": {
+            "executedQueryString": "Expr: sum(rate(moja_als_postParticipantsBatch_count[1m0s])) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "typeVersion": [
+              0,
+              0
+            ]
+          },
+          "refId": "F"
+        }
+      ],
+      "title": "Participants Domain - Processing Per Second",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 14,
+        "w": 12,
+        "x": 0,
+        "y": 26
+      },
+      "id": 29,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "min",
+            "mean",
+            "max",
+            "lastNotNull"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true,
+          "sortBy": "Max",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "snapshotData": [
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "auto",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "s"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690407420000,
+                1690407435000,
+                1690407450000,
+                1690407465000,
+                1690407480000,
+                1690407495000,
+                1690407510000,
+                1690407525000,
+                1690407540000,
+                1690407555000,
+                1690407570000,
+                1690407585000,
+                1690407600000,
+                1690407615000,
+                1690407630000,
+                1690407645000,
+                1690407660000,
+                1690407675000,
+                1690407690000,
+                1690407705000,
+                1690407720000,
+                1690407735000,
+                1690407750000,
+                1690407765000,
+                1690407840000,
+                1690407855000,
+                1690407870000,
+                1690407885000,
+                1690407900000,
+                1690407915000,
+                1690407930000,
+                1690407945000,
+                1690407960000,
+                1690407975000,
+                1690407990000,
+                1690408005000,
+                1690408020000,
+                1690408035000,
+                1690408050000,
+                1690408065000,
+                1690408080000,
+                1690408095000,
+                1690408110000,
+                1690408125000,
+                1690408260000,
+                1690408275000,
+                1690408290000,
+                1690408305000,
+                1690408320000,
+                1690408335000,
+                1690408350000,
+                1690408365000,
+                1690408380000,
+                1690408395000,
+                1690408410000,
+                1690408425000,
+                1690408440000,
+                1690408455000,
+                1690408470000,
+                1690408485000,
+                1690408500000,
+                1690408515000,
+                1690408530000,
+                1690408545000,
+                1690408560000,
+                1690408575000,
+                1690408590000,
+                1690408605000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "getParticipantEndpoint FSPIOP_CALLBACK_URL_PARTIES_GET success:true",
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "s"
+              },
+              "labels": {
+                "endpointType": "FSPIOP_CALLBACK_URL_PARTIES_GET",
+                "success": "true"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0.00014338435200000264,
+                0.00012668371428571832,
+                0.00011539952470588693,
+                0.00010542860600000514,
+                0.00009237068910891277,
+                0.00008769137227722695,
+                0.00007707094082839604,
+                0.00007503745078739518,
+                0.00007561302169624934,
+                0.00007524789173228519,
+                0.00007377954420432761,
+                0.00007265921960785017,
+                0.00007505799215686423,
+                0.00007510137058823795,
+                0.00007641763457760351,
+                0.0000740292499999966,
+                0.0000735982392156821,
+                0.00007330168101760886,
+                0.00007475788039215854,
+                0.00007624531568627696,
+                0.00008044590495867703,
+                0.00008118796596858524,
+                0.00008319001685392727,
+                0.00008098876315789767,
+                0.00010928787999443779,
+                0.00010947547151379183,
+                0.000114774187201269,
+                0.00011851650101419897,
+                0.00010869549298597206,
+                0.00010147282765531075,
+                0.00009149582470119514,
+                0.00008593347211155333,
+                0.00008236824356435606,
+                0.00007966636237623715,
+                0.00007466292899408328,
+                0.00007326114003944777,
+                0.00008491712820512872,
+                0.00009037872386587813,
+                0.00009939749901380696,
+                0.00009598014960629919,
+                0.00009323115717092286,
+                0.00009310866233766174,
+                0.00009180608139534788,
+                0.00008730827564102351,
+                0.0001973205664917812,
+                0.00016290071406110487,
+                0.0001313118020486321,
+                0.00012462877484787033,
+                0.00011055763654618495,
+                0.00010606918600000017,
+                0.0000940475467196821,
+                0.00008889888270377764,
+                0.00008577753174603151,
+                0.00008362003557312259,
+                0.00007788609664694292,
+                0.00007608693293885604,
+                0.00008478318307086628,
+                0.00009034775342465743,
+                0.00009807371093750018,
+                0.00009746257534246566,
+                0.00009537658317025451,
+                0.00009479649215686296,
+                0.00008794041960784381,
+                0.0000831858019607848,
+                0.00007836356054687565,
+                0.00007784413725490218,
+                0.00007655940392156831,
+                0.00007532512418300675
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: avg(rate(moja_als_egress_getParticipantEndpoint_sum[1m0s]) / rate(moja_als_egress_getParticipantEndpoint_count[1m0s]) >=0) by (endpointType,success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "auto",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "s"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690407420000,
+                1690407435000,
+                1690407450000,
+                1690407465000,
+                1690407480000,
+                1690407495000,
+                1690407510000,
+                1690407525000,
+                1690407540000,
+                1690407555000,
+                1690407570000,
+                1690407585000,
+                1690407600000,
+                1690407615000,
+                1690407630000,
+                1690407645000,
+                1690407660000,
+                1690407675000,
+                1690407690000,
+                1690407705000,
+                1690407720000,
+                1690407735000,
+                1690407750000,
+                1690407765000,
+                1690407840000,
+                1690407855000,
+                1690407870000,
+                1690407885000,
+                1690407900000,
+                1690407915000,
+                1690407930000,
+                1690407945000,
+                1690407960000,
+                1690407975000,
+                1690407990000,
+                1690408005000,
+                1690408020000,
+                1690408035000,
+                1690408050000,
+                1690408065000,
+                1690408080000,
+                1690408095000,
+                1690408110000,
+                1690408125000,
+                1690408260000,
+                1690408275000,
+                1690408290000,
+                1690408305000,
+                1690408320000,
+                1690408335000,
+                1690408350000,
+                1690408365000,
+                1690408380000,
+                1690408395000,
+                1690408410000,
+                1690408425000,
+                1690408440000,
+                1690408455000,
+                1690408470000,
+                1690408485000,
+                1690408500000,
+                1690408515000,
+                1690408530000,
+                1690408545000,
+                1690408560000,
+                1690408575000,
+                1690408590000,
+                1690408605000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "getParticipantEndpoint FSPIOP_CALLBACK_URL_PARTIES_PUT success:true",
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "s"
+              },
+              "labels": {
+                "endpointType": "FSPIOP_CALLBACK_URL_PARTIES_PUT",
+                "success": "true"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0.00016395179032258067,
+                0.00013737711160714317,
+                0.00012084747877358307,
+                0.00011047515199999846,
+                0.00010338940674602886,
+                0.00009854970099009581,
+                0.00008870948616600594,
+                0.00007820590354330409,
+                0.00007475728543307011,
+                0.0000744350137795287,
+                0.00007284213333333171,
+                0.00007210045098038832,
+                0.00007281208431372102,
+                0.00007283264117646683,
+                0.00007370477755905378,
+                0.00007196845275590331,
+                0.00007149150687622527,
+                0.00007112244509803832,
+                0.0000736135039215701,
+                0.00007545743137254956,
+                0.00007853058969072445,
+                0.00007895032898172672,
+                0.00007849913966481327,
+                0.00007806736842106596,
+                0.00010395554067345527,
+                0.0001170095054306713,
+                0.00011143395754830351,
+                0.00012114601422764219,
+                0.000106210847389558,
+                0.00010391465199999979,
+                0.00009047966733067726,
+                0.0000880228007968127,
+                0.00008688368849206333,
+                0.00008413070693069292,
+                0.00007872463313609466,
+                0.00007342076771653552,
+                0.00008276881102362207,
+                0.0000871278425196848,
+                0.00009598873320158082,
+                0.00009796206706114381,
+                0.00009233246168958815,
+                0.00009199219264069366,
+                0.00008378504633204791,
+                0.00008546362820513036,
+                0.0001817653547362891,
+                0.00016282701952939667,
+                0.00014141257076469153,
+                0.00012608509736308294,
+                0.00011092593373493946,
+                0.0001080539719438875,
+                0.00009805708548707755,
+                0.00009114949105367791,
+                0.0000879888831683169,
+                0.00008609245940594081,
+                0.0000802954505928855,
+                0.0000762358582677168,
+                0.00008290496267190552,
+                0.00008721691976516616,
+                0.0000959014422700582,
+                0.00009569886301369817,
+                0.00009658319569471592,
+                0.00009639728180039153,
+                0.00009016567843137256,
+                0.00008381836149312388,
+                0.00008122800195312476,
+                0.00008081333478260888,
+                0.00008142537890625011,
+                0.0000823565294117641
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: avg(rate(moja_als_egress_getParticipantEndpoint_sum[1m0s]) / rate(moja_als_egress_getParticipantEndpoint_count[1m0s]) >=0) by (endpointType,success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "auto",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "s"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690407420000,
+                1690407435000,
+                1690407450000,
+                1690407465000,
+                1690407480000,
+                1690407495000,
+                1690407510000,
+                1690407525000,
+                1690407540000,
+                1690407555000,
+                1690407570000,
+                1690407585000,
+                1690407600000,
+                1690407615000,
+                1690407630000,
+                1690407645000,
+                1690407660000,
+                1690407675000,
+                1690407690000,
+                1690407705000,
+                1690407720000,
+                1690407735000,
+                1690407750000,
+                1690407765000,
+                1690407840000,
+                1690407855000,
+                1690407870000,
+                1690407885000,
+                1690407900000,
+                1690407915000,
+                1690407930000,
+                1690407945000,
+                1690407960000,
+                1690407975000,
+                1690407990000,
+                1690408005000,
+                1690408020000,
+                1690408035000,
+                1690408050000,
+                1690408065000,
+                1690408080000,
+                1690408095000,
+                1690408110000,
+                1690408125000,
+                1690408260000,
+                1690408275000,
+                1690408290000,
+                1690408305000,
+                1690408320000,
+                1690408335000,
+                1690408350000,
+                1690408365000,
+                1690408380000,
+                1690408395000,
+                1690408410000,
+                1690408425000,
+                1690408440000,
+                1690408455000,
+                1690408470000,
+                1690408485000,
+                1690408500000,
+                1690408515000,
+                1690408530000,
+                1690408545000,
+                1690408560000,
+                1690408575000,
+                1690408590000,
+                1690408605000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "sendRequestToParticipant FSPIOP_CALLBACK_URL_PARTIES_GET success:true",
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "s"
+              },
+              "labels": {
+                "endpointType": "FSPIOP_CALLBACK_URL_PARTIES_GET",
+                "success": "true"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0.0017398470559998318,
+                0.0016645437633927085,
+                0.0016064109035293104,
+                0.0015586491639999096,
+                0.0014582111445544301,
+                0.0014312475009900835,
+                0.0014214192504931834,
+                0.0014173537968442426,
+                0.0014430545502958892,
+                0.0014121799881889325,
+                0.0014009080490195174,
+                0.001371373176470523,
+                0.0013711071784313323,
+                0.0013719359843137144,
+                0.0013822511100196485,
+                0.0013855445098425179,
+                0.0013819564999999982,
+                0.00137653230528373,
+                0.001373202960784265,
+                0.0013698156274509366,
+                0.0013673490640495778,
+                0.0013603168534031588,
+                0.0013574704494382249,
+                0.001361597657894757,
+                0.001787010895435408,
+                0.0017314785884222567,
+                0.0016573323867967358,
+                0.0015773598255578091,
+                0.001479803498997997,
+                0.0014595029879759555,
+                0.0014211235498008004,
+                0.0014154543486055808,
+                0.0014105304910891085,
+                0.0014114991623762367,
+                0.0013975404240631195,
+                0.0013909848067061206,
+                0.0013862328264299898,
+                0.0013857216489151956,
+                0.001390029508875748,
+                0.0013905512224409524,
+                0.0013822993084479382,
+                0.00137839635281386,
+                0.0013674934418604738,
+                0.0013616271025641187,
+                0.001811980010829717,
+                0.001734389521505391,
+                0.001655804850783991,
+                0.0016147152677484793,
+                0.001513402263052211,
+                0.0014910515580000006,
+                0.0014587162147117303,
+                0.001455291838966206,
+                0.0014433639761904755,
+                0.0014288214308300362,
+                0.0014078392090729678,
+                0.0013939352682445678,
+                0.0013914540019685055,
+                0.0013927770469667345,
+                0.0013862713691406318,
+                0.0013868939726027476,
+                0.0013805822485322887,
+                0.0013793200803921559,
+                0.0013790953764705827,
+                0.0013728213941176502,
+                0.0013624035273437467,
+                0.0013585963115468407,
+                0.0013538219686274442,
+                0.0013564626274509767
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: avg(rate(moja_als_egress_sendRequestToParticipant_sum[1m0s]) / rate(moja_als_egress_sendRequestToParticipant_count[1m0s]) >=0) by (endpointType,success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "B"
+        },
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "auto",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "s"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690407420000,
+                1690407435000,
+                1690407450000,
+                1690407465000,
+                1690407480000,
+                1690407495000,
+                1690407510000,
+                1690407525000,
+                1690407540000,
+                1690407555000,
+                1690407570000,
+                1690407585000,
+                1690407600000,
+                1690407615000,
+                1690407630000,
+                1690407645000,
+                1690407660000,
+                1690407675000,
+                1690407690000,
+                1690407705000,
+                1690407720000,
+                1690407735000,
+                1690407750000,
+                1690407765000,
+                1690407840000,
+                1690407855000,
+                1690407870000,
+                1690407885000,
+                1690407900000,
+                1690407915000,
+                1690407930000,
+                1690407945000,
+                1690407960000,
+                1690407975000,
+                1690407990000,
+                1690408005000,
+                1690408020000,
+                1690408035000,
+                1690408050000,
+                1690408065000,
+                1690408080000,
+                1690408095000,
+                1690408110000,
+                1690408125000,
+                1690408260000,
+                1690408275000,
+                1690408290000,
+                1690408305000,
+                1690408320000,
+                1690408335000,
+                1690408350000,
+                1690408365000,
+                1690408380000,
+                1690408395000,
+                1690408410000,
+                1690408425000,
+                1690408440000,
+                1690408455000,
+                1690408470000,
+                1690408485000,
+                1690408500000,
+                1690408515000,
+                1690408530000,
+                1690408545000,
+                1690408560000,
+                1690408575000,
+                1690408590000,
+                1690408605000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "sendRequestToParticipant FSPIOP_CALLBACK_URL_PARTIES_PUT success:true",
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "s"
+              },
+              "labels": {
+                "endpointType": "FSPIOP_CALLBACK_URL_PARTIES_PUT",
+                "success": "true"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0.0012874058951613478,
+                0.001184252254464343,
+                0.0011061879150943668,
+                0.0010790366966067827,
+                0.0009961541765872647,
+                0.0009876321524752124,
+                0.0009746323735177697,
+                0.0009735186043306857,
+                0.0009667375885826464,
+                0.0009707190374015334,
+                0.0009722878549018988,
+                0.0009717515196077822,
+                0.0009714788999999597,
+                0.0009713047117646833,
+                0.0009738068070866382,
+                0.0009736187834646154,
+                0.0009708737897839072,
+                0.0009691987725490358,
+                0.0009640565862744832,
+                0.000964944209803911,
+                0.0009634344268041167,
+                0.0009629256919060112,
+                0.0009669016983240347,
+                0.0009740715921053154,
+                0.0012200425325325957,
+                0.0012196692149288198,
+                0.0011665715178356716,
+                0.0011216645528455283,
+                0.0010565472269076293,
+                0.0010649773919999977,
+                0.0010384314163346601,
+                0.001030926669322709,
+                0.000999910460317462,
+                0.0010109490792079205,
+                0.0010065661380670595,
+                0.001033516887795271,
+                0.0010116003976377934,
+                0.001031436931102363,
+                0.0010017851877470341,
+                0.0010051337633136058,
+                0.0009803292809430183,
+                0.0009767721168831114,
+                0.0009669361003861058,
+                0.0009617744551282193,
+                0.0012533356634855763,
+                0.0012462933461005648,
+                0.0012369470683066654,
+                0.0011878681196754557,
+                0.0011113412505010013,
+                0.0010787678176352692,
+                0.001041458590457253,
+                0.001061752268389659,
+                0.0010331341386138595,
+                0.0010475857663366352,
+                0.001015349243083003,
+                0.0010390278858267714,
+                0.0010125060510805487,
+                0.001028787373776909,
+                0.0009975579041095934,
+                0.0010232879295499016,
+                0.001011107045009782,
+                0.001025846125244615,
+                0.0010147027960784312,
+                0.0010381373595284866,
+                0.0010231390664062479,
+                0.0010225670195652102,
+                0.0009910747304687408,
+                0.0009908014117646817
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: avg(rate(moja_als_egress_sendRequestToParticipant_sum[1m0s]) / rate(moja_als_egress_sendRequestToParticipant_count[1m0s]) >=0) by (endpointType,success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "B"
+        },
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "auto",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "s"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690407420000,
+                1690407435000,
+                1690407450000,
+                1690407465000,
+                1690407480000,
+                1690407495000,
+                1690407510000,
+                1690407525000,
+                1690407540000,
+                1690407555000,
+                1690407570000,
+                1690407585000,
+                1690407600000,
+                1690407615000,
+                1690407630000,
+                1690407645000,
+                1690407660000,
+                1690407675000,
+                1690407690000,
+                1690407705000,
+                1690407720000,
+                1690407735000,
+                1690407750000,
+                1690407765000,
+                1690407840000,
+                1690407855000,
+                1690407870000,
+                1690407885000,
+                1690407900000,
+                1690407915000,
+                1690407930000,
+                1690407945000,
+                1690407960000,
+                1690407975000,
+                1690407990000,
+                1690408005000,
+                1690408020000,
+                1690408035000,
+                1690408050000,
+                1690408065000,
+                1690408080000,
+                1690408095000,
+                1690408110000,
+                1690408125000,
+                1690408260000,
+                1690408275000,
+                1690408290000,
+                1690408305000,
+                1690408320000,
+                1690408335000,
+                1690408350000,
+                1690408365000,
+                1690408380000,
+                1690408395000,
+                1690408410000,
+                1690408425000,
+                1690408440000,
+                1690408455000,
+                1690408470000,
+                1690408485000,
+                1690408500000,
+                1690408515000,
+                1690408530000,
+                1690408545000,
+                1690408560000,
+                1690408575000,
+                1690408590000,
+                1690408605000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "validateParticipant success:true",
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "s"
+              },
+              "labels": {
+                "success": "true"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0.030669930195194428,
+                0.030522164674113332,
+                0.030425946684463565,
+                0.03030849784933692,
+                0.030169544653896638,
+                0.030148456125328453,
+                0.030054175771709726,
+                0.029989135196322143,
+                0.029967924711752903,
+                0.02997776021508142,
+                0.029863121936560353,
+                0.029871598824069583,
+                0.029865488912418886,
+                0.02987960191693899,
+                0.02995482119528003,
+                0.02999546839566787,
+                0.02991867051798732,
+                0.02988435612679894,
+                0.029855168771747806,
+                0.029865354356211116,
+                0.029816019716645437,
+                0.029829387785528075,
+                0.02977810897009476,
+                0.02981635685965226,
+                0.031055418955145988,
+                0.030976607833353677,
+                0.030839118541743118,
+                0.030589012524712276,
+                0.030324891193979957,
+                0.030284415161441026,
+                0.030206083950863254,
+                0.030229329181275015,
+                0.030118959264375553,
+                0.030113420029703162,
+                0.029973182825772743,
+                0.029901277472094732,
+                0.02990321341694041,
+                0.029906117470781493,
+                0.02996474111849922,
+                0.02998541896714839,
+                0.029845370021611032,
+                0.029764880245487423,
+                0.0295807519406454,
+                0.029701596051392314,
+                0.031007376761966087,
+                0.030734745224053173,
+                0.030603544024353908,
+                0.030492575579161053,
+                0.030300995971906323,
+                0.030233162731462888,
+                0.030105582946357574,
+                0.030105712569251104,
+                0.030064532890429048,
+                0.030001633455804703,
+                0.029966957657011354,
+                0.029884022794349742,
+                0.02985998821952835,
+                0.029747922391389646,
+                0.029737617050162705,
+                0.029732313614229636,
+                0.02970923566601431,
+                0.02972781418276761,
+                0.02978048491639463,
+                0.029811684788473958,
+                0.029729887208333233,
+                0.029717389654571977,
+                0.029651020238592236,
+                0.02961312232751146
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: avg(rate(moja_als_egress_validateParticipant_sum[1m0s]) / rate(moja_als_egress_validateParticipant_count[1m0s]) >=0) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "C"
+        }
+      ],
+      "title": "Participant Egress - Processing Time",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "ops"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 14,
+        "w": 12,
+        "x": 12,
+        "y": 26
+      },
+      "id": 30,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "min",
+            "mean",
+            "max",
+            "lastNotNull"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true,
+          "sortBy": "Max",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "snapshotData": [
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "auto",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "ops"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690407300000,
+                1690407315000,
+                1690407330000,
+                1690407345000,
+                1690407360000,
+                1690407375000,
+                1690407390000,
+                1690407405000,
+                1690407420000,
+                1690407435000,
+                1690407450000,
+                1690407465000,
+                1690407480000,
+                1690407495000,
+                1690407510000,
+                1690407525000,
+                1690407540000,
+                1690407555000,
+                1690407570000,
+                1690407585000,
+                1690407600000,
+                1690407615000,
+                1690407630000,
+                1690407645000,
+                1690407660000,
+                1690407675000,
+                1690407690000,
+                1690407705000,
+                1690407720000,
+                1690407735000,
+                1690407750000,
+                1690407765000,
+                1690407780000,
+                1690407795000,
+                1690407840000,
+                1690407855000,
+                1690407870000,
+                1690407885000,
+                1690407900000,
+                1690407915000,
+                1690407930000,
+                1690407945000,
+                1690407960000,
+                1690407975000,
+                1690407990000,
+                1690408005000,
+                1690408020000,
+                1690408035000,
+                1690408050000,
+                1690408065000,
+                1690408080000,
+                1690408095000,
+                1690408110000,
+                1690408125000,
+                1690408140000,
+                1690408155000,
+                1690408170000,
+                1690408185000,
+                1690408200000,
+                1690408215000,
+                1690408230000,
+                1690408245000,
+                1690408260000,
+                1690408275000,
+                1690408290000,
+                1690408305000,
+                1690408320000,
+                1690408335000,
+                1690408350000,
+                1690408365000,
+                1690408380000,
+                1690408395000,
+                1690408410000,
+                1690408425000,
+                1690408440000,
+                1690408455000,
+                1690408470000,
+                1690408485000,
+                1690408500000,
+                1690408515000,
+                1690408530000,
+                1690408545000,
+                1690408560000,
+                1690408575000,
+                1690408590000,
+                1690408605000,
+                1690408620000,
+                1690408635000,
+                1690408650000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "getParticipantEndpoint FSPIOP_CALLBACK_URL_PARTIES_GET success:true",
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "ops"
+              },
+              "labels": {
+                "endpointType": "FSPIOP_CALLBACK_URL_PARTIES_GET",
+                "success": "true"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                2.5,
+                4.48,
+                8.5,
+                10,
+                10.1,
+                10.1,
+                10.14,
+                10.16,
+                10.14,
+                10.16,
+                10.18,
+                10.200000000000001,
+                10.200000000000001,
+                10.200000000000001,
+                10.18,
+                10.16,
+                10.200000000000001,
+                10.22,
+                10.200000000000001,
+                10.200000000000001,
+                9.68,
+                7.640000000000001,
+                3.56,
+                1.4682566666666665,
+                0,
+                0,
+                3.643553333333333,
+                6.0696916666666665,
+                8.561734166666668,
+                9.86,
+                9.98,
+                9.98,
+                10.040000000000001,
+                10.040000000000001,
+                10.1,
+                10.1,
+                10.14,
+                10.14,
+                10.14,
+                10.14,
+                10.14,
+                10.16,
+                10.18,
+                9.24,
+                5.16,
+                3.12,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                2.93144,
+                5.4030249999999995,
+                7.9132483333333345,
+                9.86,
+                9.96,
+                10,
+                10.06,
+                10.06,
+                10.08,
+                10.120000000000001,
+                10.14,
+                10.14,
+                10.16,
+                10.22,
+                10.24,
+                10.22,
+                10.22,
+                10.200000000000001,
+                10.200000000000001,
+                10.200000000000001,
+                10.24,
+                9.18,
+                5.1000000000000005,
+                3.06,
+                0,
+                0,
+                0
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: sum(rate(moja_als_egress_getParticipantEndpoint_count[1m0s])) by (success, endpointType)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "auto",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "ops"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690407300000,
+                1690407315000,
+                1690407330000,
+                1690407345000,
+                1690407360000,
+                1690407375000,
+                1690407390000,
+                1690407405000,
+                1690407420000,
+                1690407435000,
+                1690407450000,
+                1690407465000,
+                1690407480000,
+                1690407495000,
+                1690407510000,
+                1690407525000,
+                1690407540000,
+                1690407555000,
+                1690407570000,
+                1690407585000,
+                1690407600000,
+                1690407615000,
+                1690407630000,
+                1690407645000,
+                1690407660000,
+                1690407675000,
+                1690407690000,
+                1690407705000,
+                1690407720000,
+                1690407735000,
+                1690407750000,
+                1690407765000,
+                1690407780000,
+                1690407795000,
+                1690407840000,
+                1690407855000,
+                1690407870000,
+                1690407885000,
+                1690407900000,
+                1690407915000,
+                1690407930000,
+                1690407945000,
+                1690407960000,
+                1690407975000,
+                1690407990000,
+                1690408005000,
+                1690408020000,
+                1690408035000,
+                1690408050000,
+                1690408065000,
+                1690408080000,
+                1690408095000,
+                1690408110000,
+                1690408125000,
+                1690408140000,
+                1690408155000,
+                1690408170000,
+                1690408185000,
+                1690408200000,
+                1690408215000,
+                1690408230000,
+                1690408245000,
+                1690408260000,
+                1690408275000,
+                1690408290000,
+                1690408305000,
+                1690408320000,
+                1690408335000,
+                1690408350000,
+                1690408365000,
+                1690408380000,
+                1690408395000,
+                1690408410000,
+                1690408425000,
+                1690408440000,
+                1690408455000,
+                1690408470000,
+                1690408485000,
+                1690408500000,
+                1690408515000,
+                1690408530000,
+                1690408545000,
+                1690408560000,
+                1690408575000,
+                1690408590000,
+                1690408605000,
+                1690408620000,
+                1690408635000,
+                1690408650000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "getParticipantEndpoint FSPIOP_CALLBACK_URL_PARTIES_PUT success:true",
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "ops"
+              },
+              "labels": {
+                "endpointType": "FSPIOP_CALLBACK_URL_PARTIES_PUT",
+                "success": "true"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                2.48,
+                4.48,
+                8.48,
+                10,
+                10.08,
+                10.1,
+                10.120000000000001,
+                10.16,
+                10.16,
+                10.16,
+                10.200000000000001,
+                10.200000000000001,
+                10.200000000000001,
+                10.200000000000001,
+                10.16,
+                10.16,
+                10.18,
+                10.200000000000001,
+                10.200000000000001,
+                10.200000000000001,
+                9.700000000000001,
+                7.66,
+                3.58,
+                1.4682566666666665,
+                0,
+                0,
+                3.62083,
+                6.0696916666666665,
+                8.543553333333334,
+                9.84,
+                9.96,
+                10,
+                10.040000000000001,
+                10.040000000000001,
+                10.08,
+                10.1,
+                10.14,
+                10.16,
+                10.16,
+                10.16,
+                10.120000000000001,
+                10.14,
+                10.18,
+                9.24,
+                5.18,
+                3.12,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                2.9374966666666666,
+                5.410220000000001,
+                7.896581666666666,
+                9.86,
+                9.96,
+                9.98,
+                10.06,
+                10.06,
+                10.1,
+                10.1,
+                10.120000000000001,
+                10.16,
+                10.18,
+                10.22,
+                10.22,
+                10.22,
+                10.22,
+                10.22,
+                10.200000000000001,
+                10.18,
+                10.24,
+                9.200000000000001,
+                5.12,
+                3.06,
+                0,
+                0,
+                0
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: sum(rate(moja_als_egress_getParticipantEndpoint_count[1m0s])) by (success, endpointType)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "auto",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "ops"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690407300000,
+                1690407315000,
+                1690407330000,
+                1690407345000,
+                1690407360000,
+                1690407375000,
+                1690407390000,
+                1690407405000,
+                1690407420000,
+                1690407435000,
+                1690407450000,
+                1690407465000,
+                1690407480000,
+                1690407495000,
+                1690407510000,
+                1690407525000,
+                1690407540000,
+                1690407555000,
+                1690407570000,
+                1690407585000,
+                1690407600000,
+                1690407615000,
+                1690407630000,
+                1690407645000,
+                1690407660000,
+                1690407675000,
+                1690407690000,
+                1690407705000,
+                1690407720000,
+                1690407735000,
+                1690407750000,
+                1690407765000,
+                1690407780000,
+                1690407795000,
+                1690407840000,
+                1690407855000,
+                1690407870000,
+                1690407885000,
+                1690407900000,
+                1690407915000,
+                1690407930000,
+                1690407945000,
+                1690407960000,
+                1690407975000,
+                1690407990000,
+                1690408005000,
+                1690408020000,
+                1690408035000,
+                1690408050000,
+                1690408065000,
+                1690408080000,
+                1690408095000,
+                1690408110000,
+                1690408125000,
+                1690408140000,
+                1690408155000,
+                1690408170000,
+                1690408185000,
+                1690408200000,
+                1690408215000,
+                1690408230000,
+                1690408245000,
+                1690408260000,
+                1690408275000,
+                1690408290000,
+                1690408305000,
+                1690408320000,
+                1690408335000,
+                1690408350000,
+                1690408365000,
+                1690408380000,
+                1690408395000,
+                1690408410000,
+                1690408425000,
+                1690408440000,
+                1690408455000,
+                1690408470000,
+                1690408485000,
+                1690408500000,
+                1690408515000,
+                1690408530000,
+                1690408545000,
+                1690408560000,
+                1690408575000,
+                1690408590000,
+                1690408605000,
+                1690408620000,
+                1690408635000,
+                1690408650000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "sendRequestToParticipant FSPIOP_CALLBACK_URL_PARTIES_GET success:true",
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "ops"
+              },
+              "labels": {
+                "endpointType": "FSPIOP_CALLBACK_URL_PARTIES_GET",
+                "success": "true"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                2.5,
+                4.48,
+                8.5,
+                10,
+                10.1,
+                10.1,
+                10.14,
+                10.14,
+                10.14,
+                10.16,
+                10.200000000000001,
+                10.200000000000001,
+                10.200000000000001,
+                10.200000000000001,
+                10.18,
+                10.16,
+                10.200000000000001,
+                10.22,
+                10.200000000000001,
+                10.200000000000001,
+                9.68,
+                7.640000000000001,
+                3.56,
+                1.4682566666666665,
+                0,
+                0,
+                3.643553333333333,
+                6.0696916666666665,
+                8.561734166666668,
+                9.86,
+                9.98,
+                9.98,
+                10.040000000000001,
+                10.040000000000001,
+                10.1,
+                10.1,
+                10.14,
+                10.14,
+                10.14,
+                10.14,
+                10.14,
+                10.16,
+                10.18,
+                9.24,
+                5.16,
+                3.12,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                2.93144,
+                5.4030249999999995,
+                7.9132483333333345,
+                9.86,
+                9.96,
+                10,
+                10.06,
+                10.06,
+                10.08,
+                10.120000000000001,
+                10.14,
+                10.14,
+                10.16,
+                10.22,
+                10.24,
+                10.22,
+                10.22,
+                10.200000000000001,
+                10.200000000000001,
+                10.200000000000001,
+                10.24,
+                9.18,
+                5.1000000000000005,
+                3.06,
+                0,
+                0,
+                0
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: sum(rate(moja_als_egress_sendRequestToParticipant_count[1m0s])) by (success, endpointType)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "C"
+        },
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "auto",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "ops"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690407300000,
+                1690407315000,
+                1690407330000,
+                1690407345000,
+                1690407360000,
+                1690407375000,
+                1690407390000,
+                1690407405000,
+                1690407420000,
+                1690407435000,
+                1690407450000,
+                1690407465000,
+                1690407480000,
+                1690407495000,
+                1690407510000,
+                1690407525000,
+                1690407540000,
+                1690407555000,
+                1690407570000,
+                1690407585000,
+                1690407600000,
+                1690407615000,
+                1690407630000,
+                1690407645000,
+                1690407660000,
+                1690407675000,
+                1690407690000,
+                1690407705000,
+                1690407720000,
+                1690407735000,
+                1690407750000,
+                1690407765000,
+                1690407780000,
+                1690407795000,
+                1690407840000,
+                1690407855000,
+                1690407870000,
+                1690407885000,
+                1690407900000,
+                1690407915000,
+                1690407930000,
+                1690407945000,
+                1690407960000,
+                1690407975000,
+                1690407990000,
+                1690408005000,
+                1690408020000,
+                1690408035000,
+                1690408050000,
+                1690408065000,
+                1690408080000,
+                1690408095000,
+                1690408110000,
+                1690408125000,
+                1690408140000,
+                1690408155000,
+                1690408170000,
+                1690408185000,
+                1690408200000,
+                1690408215000,
+                1690408230000,
+                1690408245000,
+                1690408260000,
+                1690408275000,
+                1690408290000,
+                1690408305000,
+                1690408320000,
+                1690408335000,
+                1690408350000,
+                1690408365000,
+                1690408380000,
+                1690408395000,
+                1690408410000,
+                1690408425000,
+                1690408440000,
+                1690408455000,
+                1690408470000,
+                1690408485000,
+                1690408500000,
+                1690408515000,
+                1690408530000,
+                1690408545000,
+                1690408560000,
+                1690408575000,
+                1690408590000,
+                1690408605000,
+                1690408620000,
+                1690408635000,
+                1690408650000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "sendRequestToParticipant FSPIOP_CALLBACK_URL_PARTIES_PUT success:true",
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "ops"
+              },
+              "labels": {
+                "endpointType": "FSPIOP_CALLBACK_URL_PARTIES_PUT",
+                "success": "true"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                2.48,
+                4.48,
+                8.48,
+                10.02,
+                10.08,
+                10.1,
+                10.120000000000001,
+                10.16,
+                10.16,
+                10.16,
+                10.200000000000001,
+                10.200000000000001,
+                10.200000000000001,
+                10.200000000000001,
+                10.16,
+                10.16,
+                10.18,
+                10.200000000000001,
+                10.200000000000001,
+                10.200000000000001,
+                9.700000000000001,
+                7.66,
+                3.58,
+                1.4682566666666665,
+                0,
+                0,
+                3.62083,
+                6.0696916666666665,
+                8.543553333333334,
+                9.84,
+                9.96,
+                10,
+                10.040000000000001,
+                10.040000000000001,
+                10.08,
+                10.1,
+                10.14,
+                10.16,
+                10.16,
+                10.16,
+                10.120000000000001,
+                10.14,
+                10.18,
+                9.24,
+                5.18,
+                3.12,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                2.9374966666666666,
+                5.386358333333333,
+                7.896581666666666,
+                9.86,
+                9.98,
+                9.98,
+                10.06,
+                10.06,
+                10.1,
+                10.1,
+                10.120000000000001,
+                10.16,
+                10.18,
+                10.22,
+                10.22,
+                10.22,
+                10.22,
+                10.22,
+                10.200000000000001,
+                10.18,
+                10.24,
+                9.200000000000001,
+                5.12,
+                3.06,
+                0,
+                0,
+                0
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: sum(rate(moja_als_egress_sendRequestToParticipant_count[1m0s])) by (success, endpointType)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "C"
+        },
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "auto",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "ops"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690407300000,
+                1690407315000,
+                1690407330000,
+                1690407345000,
+                1690407360000,
+                1690407375000,
+                1690407390000,
+                1690407405000,
+                1690407420000,
+                1690407435000,
+                1690407450000,
+                1690407465000,
+                1690407480000,
+                1690407495000,
+                1690407510000,
+                1690407525000,
+                1690407540000,
+                1690407555000,
+                1690407570000,
+                1690407585000,
+                1690407600000,
+                1690407615000,
+                1690407630000,
+                1690407645000,
+                1690407660000,
+                1690407675000,
+                1690407690000,
+                1690407705000,
+                1690407720000,
+                1690407735000,
+                1690407750000,
+                1690407765000,
+                1690407780000,
+                1690407795000,
+                1690407840000,
+                1690407855000,
+                1690407870000,
+                1690407885000,
+                1690407900000,
+                1690407915000,
+                1690407930000,
+                1690407945000,
+                1690407960000,
+                1690407975000,
+                1690407990000,
+                1690408005000,
+                1690408020000,
+                1690408035000,
+                1690408050000,
+                1690408065000,
+                1690408080000,
+                1690408095000,
+                1690408110000,
+                1690408125000,
+                1690408140000,
+                1690408155000,
+                1690408170000,
+                1690408185000,
+                1690408200000,
+                1690408215000,
+                1690408230000,
+                1690408245000,
+                1690408260000,
+                1690408275000,
+                1690408290000,
+                1690408305000,
+                1690408320000,
+                1690408335000,
+                1690408350000,
+                1690408365000,
+                1690408380000,
+                1690408395000,
+                1690408410000,
+                1690408425000,
+                1690408440000,
+                1690408455000,
+                1690408470000,
+                1690408485000,
+                1690408500000,
+                1690408515000,
+                1690408530000,
+                1690408545000,
+                1690408560000,
+                1690408575000,
+                1690408590000,
+                1690408605000,
+                1690408620000,
+                1690408635000,
+                1690408650000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "validateParticipant  success:true",
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "ops"
+              },
+              "labels": {
+                "success": "true"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                7.48,
+                13.44,
+                25.48,
+                30,
+                30.28,
+                30.32,
+                30.400000000000002,
+                30.46,
+                30.46,
+                30.5,
+                30.580000000000002,
+                30.580000000000002,
+                30.6,
+                30.580000000000002,
+                30.52,
+                30.48,
+                30.580000000000002,
+                30.6,
+                30.580000000000002,
+                30.6,
+                29.080000000000002,
+                22.94,
+                10.700000000000001,
+                4.404769999999999,
+                0,
+                0,
+                10.901879999999998,
+                18.225741666666664,
+                25.665507499999997,
+                29.54,
+                29.900000000000002,
+                29.98,
+                30.12,
+                30.12,
+                30.26,
+                30.3,
+                30.42,
+                30.46,
+                30.46,
+                30.46,
+                30.38,
+                30.44,
+                30.54,
+                27.7,
+                15.5,
+                9.34,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                8.8231,
+                16.21627,
+                23.723078333333333,
+                29.560000000000002,
+                29.900000000000002,
+                29.94,
+                30.2,
+                30.18,
+                30.3,
+                30.32,
+                30.38,
+                30.44,
+                30.52,
+                30.66,
+                30.7,
+                30.64,
+                30.66,
+                30.64,
+                30.62,
+                30.54,
+                30.72,
+                27.560000000000002,
+                15.34,
+                9.16,
+                0,
+                0,
+                0
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: sum(rate(moja_als_egress_validateParticipant_count[1m0s])) by (success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "D"
+        }
+      ],
+      "title": "Participant Egress - Processing Per Second",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 40
+      },
+      "id": 59,
+      "links": [],
+      "panels": [],
+      "title": "Party Resource Metric Totals",
+      "type": "row"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "text",
+            "mode": "palette-classic"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null+nan",
+                "result": {
+                  "index": 0,
+                  "text": "0"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          },
+          "unit": "reqs"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 3,
+        "y": 41
+      },
+      "id": 17,
+      "interval": "1s",
+      "links": [],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "max"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.2",
+      "title": "Ing GET /parties/* requests",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "binary": {
+              "left": "sum(moja_als_ing_getPartiesByTypeAndID_count)",
+              "reducer": "sum",
+              "right": "sum(moja_als_ing_getPartiesByTypeIDAndSubID_count)"
+            },
+            "mode": "binary",
+            "reduce": {
+              "reducer": "sum"
+            },
+            "replaceFields": true
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "text",
+            "mode": "palette-classic"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null+nan",
+                "result": {
+                  "index": 0,
+                  "text": "0"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          },
+          "unit": "reqs"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 6,
+        "x": 9,
+        "y": 41
+      },
+      "id": 26,
+      "interval": "1s",
+      "links": [],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "max"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.2",
+      "title": "Ing PUT /parties/* requests",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "binary": {
+              "left": "sum(moja_als_ing_getPartiesByTypeAndID_count)",
+              "reducer": "sum",
+              "right": "sum(moja_als_ing_getPartiesByTypeIDAndSubID_count)"
+            },
+            "mode": "binary",
+            "reduce": {
+              "reducer": "sum"
+            },
+            "replaceFields": true
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "text",
+            "mode": "palette-classic"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null+nan",
+                "result": {
+                  "index": 0,
+                  "text": "0"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          },
+          "unit": "reqs"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 16,
+        "y": 41
+      },
+      "id": 31,
+      "interval": "1s",
+      "links": [],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "max"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.2",
+      "title": "Ing PUT /parties/*/error requests",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "binary": {
+              "left": "sum(moja_als_ing_putPartiesErrorByTypeAndID_count)",
+              "reducer": "sum",
+              "right": "sum(moja_als_ing_putPartiesErrorByTypeIDAndSubID_count)"
+            },
+            "mode": "binary",
+            "reduce": {
+              "reducer": "sum"
+            },
+            "replaceFields": true
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byFrameRefID",
+              "options": "B"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "red",
+                  "mode": "shades"
+                }
+              },
+              {
+                "id": "noValue",
+                "value": "0"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 5,
+        "x": 3,
+        "y": 44
+      },
+      "id": 11,
+      "interval": "1s",
+      "links": [],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "",
+          "limit": 2,
+          "values": false
+        },
+        "text": {},
+        "textMode": "value"
+      },
+      "pluginVersion": "10.0.2",
+      "title": "GET /parties/* Domain Logic - Count",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byFrameRefID",
+              "options": "B"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "red",
+                  "mode": "shades"
+                }
+              },
+              {
+                "id": "noValue",
+                "value": "0"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 9,
+        "y": 44
+      },
+      "id": 49,
+      "interval": "1s",
+      "links": [],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "",
+          "limit": 2,
+          "values": false
+        },
+        "text": {},
+        "textMode": "value"
+      },
+      "pluginVersion": "10.0.2",
+      "title": "PUT /parties/* Domain Logic - Count",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byFrameRefID",
+              "options": "B"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "red",
+                  "mode": "shades"
+                }
+              },
+              {
+                "id": "noValue",
+                "value": "0"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 5,
+        "x": 16,
+        "y": 44
+      },
+      "id": 50,
+      "interval": "1s",
+      "links": [],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "",
+          "limit": 2,
+          "values": false
+        },
+        "text": {},
+        "textMode": "value"
+      },
+      "pluginVersion": "10.0.2",
+      "title": "PUT /parties/*/error Domain Logic - Count",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 49
+      },
+      "id": 9,
+      "links": [],
+      "panels": [],
+      "title": "Party Resource Performance Metrics",
+      "type": "row"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 50
+      },
+      "id": 1,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "min",
+            "mean",
+            "max",
+            "lastNotNull"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "title": "Party Handlers Ingress - Processing Time",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "ops"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 50
+      },
+      "id": 2,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "min",
+            "mean",
+            "max",
+            "lastNotNull"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "title": "Party Handler Ingress - Processing Per Second",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 58
+      },
+      "id": 5,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "min",
+            "mean",
+            "max",
+            "lastNotNull"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "title": "Party Domain - Processing Time",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "ops"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 58
+      },
+      "id": 6,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "min",
+            "mean",
+            "max",
+            "lastNotNull"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "title": "Party Domain - Processing Per Second",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 66
+      },
+      "id": 25,
+      "links": [],
+      "panels": [],
+      "title": "CPU Usage",
+      "type": "row"
+    },
+    {
+      "description": "ALS Total CPU Usage",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#299c46"
+              },
+              {
+                "color": "rgba(237, 129, 40, 0.89)",
+                "value": 50
+              },
+              {
+                "color": "#d44a3a",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 0,
+        "y": 67
+      },
+      "id": 24,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "10.0.2",
+      "title": "ALS Total CPU Usage",
+      "type": "gauge"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 70
+      },
+      "id": 21,
+      "links": [],
+      "panels": [],
+      "title": "Resource Usage by Pods",
+      "type": "row"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 71
+      },
+      "hiddenSeries": false,
+      "id": 22,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
+        "rightSide": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "10.0.2",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "ALS - Memory Usage by Pod",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "decbytes",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "description": "ALS  -  CPU Usage in Seconds by Pod",
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 79
+      },
+      "hiddenSeries": false,
+      "id": 23,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "sort": "max",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "10.0.2",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "ALS  -  CPU Usage in Seconds by Pod",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percent",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 86
+      },
+      "id": 18,
+      "links": [],
+      "panels": [],
+      "title": "Misc",
+      "type": "row"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "decimals": 0,
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 4,
+        "w": 24,
+        "x": 0,
+        "y": 87
+      },
+      "hiddenSeries": false,
+      "id": 19,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "sort": "current",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "10.0.2",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "ALS - # Nodes for each Components",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": 0,
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 91
+      },
+      "hiddenSeries": false,
+      "id": 20,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "10.0.2",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "ALS  - Event Loop Lag in Seconds",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "s",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 38,
+  "snapshot": {
+    "originalUrl": "/d/a0bc6ab1-e6f8-4cd3-a173-89b9ae692807",
+    "timestamp": "2023-07-27T09:46:40.714Z"
+  },
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "2023-07-26T21:35:09.197Z",
+    "raw": {
+      "from": "2023-07-26T21:35:09.197Z",
+      "to": "2023-07-26T21:57:42.339Z"
+    },
+    "to": "2023-07-26T21:57:42.339Z"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "dashboard-account-lookup-service",
+  "uid": "a0bc6ab1-e6f8-4cd3-a173-89b9ae692807",
+  "version": 1,
+  "weekStart": ""
+}

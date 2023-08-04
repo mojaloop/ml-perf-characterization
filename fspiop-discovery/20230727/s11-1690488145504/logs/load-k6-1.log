@@ -1,0 +1,31 @@
+load-k6-1  |      ✓ ALS_FSPIOP_GET_PARTIES_RESPONSE_IS_202
+load-k6-1  |      ✓ ALS_E2E_FSPIOP_GET_PARTIES_SUCCESS
+load-k6-1  |
+load-k6-1  |      █ Get Parties
+load-k6-1  |
+load-k6-1  |      checks.........................: 100.00% ✓ 100018     ✗ 0
+load-k6-1  |      data_received..................: 16 MB   37 kB/s
+load-k6-1  |      data_sent......................: 36 MB   86 kB/s
+load-k6-1  |      group_duration.................: avg=164.71µs min=100.36µs med=158.27µs max=17.89ms  p(90)=203.04µs p(95)=213.34µs
+load-k6-1  |      http_req_blocked...............: avg=3.4µs    min=1.19µs   med=3.11µs   max=394.07µs p(90)=4.13µs   p(95)=4.58µs
+load-k6-1  |      http_req_connecting............: avg=8ns      min=0s       med=0s       max=150.45µs p(90)=0s       p(95)=0s
+load-k6-1  |    ✓ http_req_duration..............: avg=4.26ms   min=1.8ms    med=3.88ms   max=38.97ms  p(90)=7.2ms    p(95)=7.4ms
+load-k6-1  |        { expected_response:true }...: avg=4.26ms   min=1.8ms    med=3.88ms   max=38.97ms  p(90)=7.2ms    p(95)=7.4ms
+load-k6-1  |    ✓ http_req_failed................: 0.00%   ✓ 0          ✗ 50009
+load-k6-1  |      http_req_receiving.............: avg=23.8µs   min=10.22µs  med=22.54µs  max=9.41ms   p(90)=29.63µs  p(95)=31.13µs
+load-k6-1  |      http_req_sending...............: avg=16.52µs  min=6.62µs   med=15.6µs   max=425.85µs p(90)=20.08µs  p(95)=21.78µs
+load-k6-1  |      http_req_tls_handshaking.......: avg=0s       min=0s       med=0s       max=0s       p(90)=0s       p(95)=0s
+load-k6-1  |      http_req_waiting...............: avg=4.22ms   min=1.77ms   med=3.84ms   max=38.92ms  p(90)=7.17ms   p(95)=7.36ms
+load-k6-1  |      http_reqs......................: 50009   119.061302/s
+load-k6-1  |    ✓ iteration_duration.............: avg=28.78ms  min=9.32ms   med=31.18ms  max=89.43ms  p(90)=33.95ms  p(95)=34.92ms
+load-k6-1  |      iterations.....................: 50009   119.061302/s
+load-k6-1  |      vus............................: 4       min=1        max=4
+load-k6-1  |      vus_max........................: 4       min=4        max=4
+load-k6-1  |      ws_connecting..................: avg=778.99µs min=206.95µs med=772.02µs max=19.71ms  p(90)=1.19ms   p(95)=1.27ms
+load-k6-1  |      ws_msgs_received...............: 50009   119.061302/s
+load-k6-1  |      ws_msgs_sent...................: 50009   119.061302/s
+load-k6-1  |      ws_session_duration............: avg=28.55ms  min=9.13ms   med=30.96ms  max=89.12ms  p(90)=33.72ms  p(95)=34.69ms
+load-k6-1  |      ws_sessions....................: 50009   119.061302/s
+load-k6-1  |
+load-k6-1  |
+load-k6-1  | running (7m00.0s), 0/4 VUs, 50009 complete and 0 interrupted iterations

@@ -1,0 +1,4042 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "snapshotData": [],
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 2,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "id": 123132,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "min",
+            "max",
+            "mean",
+            "lastNotNull"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "snapshotData": [
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "auto",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "s"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690447515000,
+                1690447530000,
+                1690447545000,
+                1690447560000,
+                1690447575000,
+                1690447590000,
+                1690447605000,
+                1690447620000,
+                1690447635000,
+                1690447650000,
+                1690447665000,
+                1690447680000,
+                1690447695000,
+                1690447710000,
+                1690447725000,
+                1690447740000,
+                1690447755000,
+                1690447770000,
+                1690447785000,
+                1690447800000,
+                1690447815000,
+                1690447830000,
+                1690447845000,
+                1690447860000,
+                1690447875000,
+                1690447890000,
+                1690447905000,
+                1690447920000,
+                1690447935000,
+                1690447950000,
+                1690447965000,
+                1690447980000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "op: admin_get_participants success: true",
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "s"
+              },
+              "labels": {
+                "operation": "admin_get_participants",
+                "success": "true"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0.00021990771119126203,
+                0.0002149355526315389,
+                0.00021129517875643504,
+                0.0002113925209910154,
+                0.0002081056233941532,
+                0.00020678228888887555,
+                0.00020710604008019028,
+                0.0002060751680000147,
+                0.0002055885049701773,
+                0.00020469214559894653,
+                0.00020371112796832737,
+                0.00020330415963060896,
+                0.0002030397856200545,
+                0.00020290200659630424,
+                0.00020353356315787606,
+                0.0002042439341238626,
+                0.00020373784175966664,
+                0.0002045185969756485,
+                0.0002030976911474974,
+                0.00020302052652257035,
+                0.00020274271288423754,
+                0.00020332613704918692,
+                0.00020396804256713548,
+                0.00020420846754100902,
+                0.00020406803863786042,
+                0.00020374715586115203,
+                0.00020219058697065908,
+                0.00020182493164058274,
+                0.00020084854802257513,
+                0.000200776515021423,
+                0.00020236275238094293,
+                0.00019927433333361615
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: sum(rate(cbs_ing_callbackHandler_sum[1m0s]) / rate(cbs_ing_callbackHandler_count[1m0s]) >=0) by (operation, success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "auto",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "s"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690447515000,
+                1690447530000,
+                1690447545000,
+                1690447560000,
+                1690447695000,
+                1690447710000,
+                1690447725000,
+                1690447740000,
+                1690447875000,
+                1690447890000,
+                1690447905000,
+                1690447920000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "op: admin_get_participants_endpoints success: true",
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "s"
+              },
+              "labels": {
+                "operation": "admin_get_participants_endpoints",
+                "success": "true"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0.00020395250000000006,
+                0.00020395250000000006,
+                0.00020395250000000006,
+                0.00020395250000000006,
+                0.00016270200000000068,
+                0.00016270200000000068,
+                0.00016270200000000068,
+                0.00016270200000000068,
+                0.0001761419999999998,
+                0.0001761419999999998,
+                0.0001761419999999998,
+                0.0001761419999999998
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: sum(rate(cbs_ing_callbackHandler_sum[1m0s]) / rate(cbs_ing_callbackHandler_count[1m0s]) >=0) by (operation, success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "auto",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "s"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690447515000,
+                1690447530000,
+                1690447545000,
+                1690447560000,
+                1690447575000,
+                1690447590000,
+                1690447605000,
+                1690447620000,
+                1690447635000,
+                1690447650000,
+                1690447665000,
+                1690447680000,
+                1690447695000,
+                1690447710000,
+                1690447725000,
+                1690447740000,
+                1690447755000,
+                1690447770000,
+                1690447785000,
+                1690447800000,
+                1690447815000,
+                1690447830000,
+                1690447845000,
+                1690447860000,
+                1690447875000,
+                1690447890000,
+                1690447905000,
+                1690447920000,
+                1690447935000,
+                1690447950000,
+                1690447965000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "op: fspiop_get_parties success: true",
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "s"
+              },
+              "labels": {
+                "operation": "fspiop_get_parties",
+                "success": "true"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0.0004513463786408729,
+                0.00043883089054726004,
+                0.00042933609068011413,
+                0.00042467814168376715,
+                0.00041665749695743345,
+                0.00041743414545460187,
+                0.00041351055600004826,
+                0.00041370261600004454,
+                0.00041701975546722234,
+                0.0004184284453280373,
+                0.00041833952173913485,
+                0.0004136579544554126,
+                0.0004093255019762266,
+                0.0004096269624505457,
+                0.0004145207588932509,
+                0.00041385906521742015,
+                0.00041290893885609153,
+                0.00041008261538470254,
+                0.00041542171512774816,
+                0.0004162930098039248,
+                0.0004166338490195995,
+                0.0004131060569744127,
+                0.0004087733163064397,
+                0.0004082380157480424,
+                0.00040761133988212434,
+                0.00040672455206286934,
+                0.0004068568164061967,
+                0.000407088326171881,
+                0.00040801156467661965,
+                0.000408376913043553,
+                0.0004067798723404565
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: sum(rate(cbs_ing_callbackHandler_sum[1m0s]) / rate(cbs_ing_callbackHandler_count[1m0s]) >=0) by (operation, success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "auto",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "s"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690447515000,
+                1690447530000,
+                1690447545000,
+                1690447560000,
+                1690447575000,
+                1690447590000,
+                1690447605000,
+                1690447620000,
+                1690447635000,
+                1690447650000,
+                1690447665000,
+                1690447680000,
+                1690447695000,
+                1690447710000,
+                1690447725000,
+                1690447740000,
+                1690447755000,
+                1690447770000,
+                1690447785000,
+                1690447800000,
+                1690447815000,
+                1690447830000,
+                1690447845000,
+                1690447860000,
+                1690447875000,
+                1690447890000,
+                1690447905000,
+                1690447920000,
+                1690447935000,
+                1690447950000,
+                1690447965000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "op: fspiop_put_parties success: true",
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "s"
+              },
+              "labels": {
+                "operation": "fspiop_put_parties",
+                "success": "true"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0.0001549413650793461,
+                0.000154856445736421,
+                0.00015376819607843155,
+                0.00015324297963341483,
+                0.0001533324077079289,
+                0.00015281500604841236,
+                0.0001522127274549212,
+                0.0001494063844621425,
+                0.00014782291252483625,
+                0.00014673128712870294,
+                0.00014692666403161888,
+                0.00014874787524753123,
+                0.00015080078458498537,
+                0.0001537715968379446,
+                0.00015407030830038565,
+                0.0001533762682445641,
+                0.00015308156410255385,
+                0.0001533189586614283,
+                0.0001532430766208495,
+                0.00015306243333334773,
+                0.00015194820039293898,
+                0.00015156190176817555,
+                0.00015232871960784545,
+                0.0001537265461689582,
+                0.00015386441453830172,
+                0.00015373361960781788,
+                0.00015257039530330678,
+                0.00015203564132552195,
+                0.00015221742342342548,
+                0.0001520190794979115,
+                0.00015257378676474383
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: sum(rate(cbs_ing_callbackHandler_sum[1m0s]) / rate(cbs_ing_callbackHandler_count[1m0s]) >=0) by (operation, success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "auto",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "s"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690447515000,
+                1690447530000,
+                1690447545000,
+                1690447560000,
+                1690447575000,
+                1690447590000,
+                1690447605000,
+                1690447620000,
+                1690447635000,
+                1690447650000,
+                1690447665000,
+                1690447680000,
+                1690447695000,
+                1690447710000,
+                1690447725000,
+                1690447740000,
+                1690447755000,
+                1690447770000,
+                1690447785000,
+                1690447800000,
+                1690447815000,
+                1690447830000,
+                1690447845000,
+                1690447860000,
+                1690447875000,
+                1690447890000,
+                1690447905000,
+                1690447920000,
+                1690447935000,
+                1690447950000,
+                1690447965000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "op: oracle_get_participants success: true",
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "s"
+              },
+              "labels": {
+                "operation": "oracle_get_participants",
+                "success": "true"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0.0002060457964602044,
+                0.00020553099052135043,
+                0.00020517635380839773,
+                0.00020520221516398313,
+                0.0002049606356275698,
+                0.0002048513951613146,
+                0.00020437873453093582,
+                0.00020397400598802623,
+                0.0002038572749003949,
+                0.00020360207936507565,
+                0.00020284046930692606,
+                0.00020255876877470135,
+                0.0002017842792079304,
+                0.00020206770553360948,
+                0.00020311083168317963,
+                0.00020516678106510114,
+                0.000205600360946734,
+                0.00020628097834641837,
+                0.0002058534125736508,
+                0.00020664391372550485,
+                0.0002049640687622731,
+                0.00020319243418467036,
+                0.00020286539566926202,
+                0.00020430015748032864,
+                0.0002049514400786166,
+                0.00020442330588238216,
+                0.00020245097660820152,
+                0.0002012902519531283,
+                0.0002017585907928449,
+                0.00020265150347220653,
+                0.0002044751807229645
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: sum(rate(cbs_ing_callbackHandler_sum[1m0s]) / rate(cbs_ing_callbackHandler_count[1m0s]) >=0) by (operation, success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "A"
+        }
+      ],
+      "title": "Handler Ingress  - Processing Time",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "ops"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "id": 123135,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "min",
+            "max",
+            "mean",
+            "lastNotNull"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "snapshotData": [
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "auto",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "ops"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690447455000,
+                1690447470000,
+                1690447485000,
+                1690447500000,
+                1690447515000,
+                1690447530000,
+                1690447545000,
+                1690447560000,
+                1690447575000,
+                1690447590000,
+                1690447605000,
+                1690447620000,
+                1690447635000,
+                1690447650000,
+                1690447665000,
+                1690447680000,
+                1690447695000,
+                1690447710000,
+                1690447725000,
+                1690447740000,
+                1690447755000,
+                1690447770000,
+                1690447785000,
+                1690447800000,
+                1690447815000,
+                1690447830000,
+                1690447845000,
+                1690447860000,
+                1690447875000,
+                1690447890000,
+                1690447905000,
+                1690447920000,
+                1690447935000,
+                1690447950000,
+                1690447965000,
+                1690447980000,
+                1690447995000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "op:admin_get_participants success: true",
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "ops"
+              },
+              "labels": {
+                "operation": "admin_get_participants",
+                "success": "true"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0,
+                0,
+                0,
+                0,
+                5.54,
+                11.4,
+                23.16,
+                29.060000000000002,
+                29.580000000000002,
+                29.7,
+                29.94,
+                30,
+                30.18,
+                30.22,
+                30.32,
+                30.32,
+                30.32,
+                30.32,
+                30.400000000000002,
+                30.36,
+                30.46,
+                30.42,
+                30.5,
+                30.54,
+                30.580000000000002,
+                30.5,
+                30.54,
+                30.5,
+                30.54,
+                30.54,
+                30.7,
+                30.72,
+                24.78,
+                18.64,
+                6.3,
+                0.18,
+                0
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: sum(rate(cbs_ing_callbackHandler_count[1m0s])) by (operation, success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "auto",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "ops"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690447455000,
+                1690447470000,
+                1690447485000,
+                1690447500000,
+                1690447515000,
+                1690447530000,
+                1690447545000,
+                1690447560000,
+                1690447575000,
+                1690447590000,
+                1690447605000,
+                1690447620000,
+                1690447635000,
+                1690447650000,
+                1690447665000,
+                1690447680000,
+                1690447695000,
+                1690447710000,
+                1690447725000,
+                1690447740000,
+                1690447755000,
+                1690447770000,
+                1690447785000,
+                1690447800000,
+                1690447815000,
+                1690447830000,
+                1690447845000,
+                1690447860000,
+                1690447875000,
+                1690447890000,
+                1690447905000,
+                1690447920000,
+                1690447935000,
+                1690447950000,
+                1690447965000,
+                1690447980000,
+                1690447995000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "op:admin_get_participants_endpoints success: true",
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "ops"
+              },
+              "labels": {
+                "operation": "admin_get_participants_endpoints",
+                "success": "true"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0,
+                0,
+                0,
+                0,
+                0.04,
+                0.04,
+                0.04,
+                0.04,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0.04,
+                0.04,
+                0.04,
+                0.04,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0.04,
+                0.04,
+                0.04,
+                0.04,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: sum(rate(cbs_ing_callbackHandler_count[1m0s])) by (operation, success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "auto",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "ops"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690447455000,
+                1690447470000,
+                1690447485000,
+                1690447500000,
+                1690447515000,
+                1690447530000,
+                1690447545000,
+                1690447560000,
+                1690447575000,
+                1690447590000,
+                1690447605000,
+                1690447620000,
+                1690447635000,
+                1690447650000,
+                1690447665000,
+                1690447680000,
+                1690447695000,
+                1690447710000,
+                1690447725000,
+                1690447740000,
+                1690447755000,
+                1690447770000,
+                1690447785000,
+                1690447800000,
+                1690447815000,
+                1690447830000,
+                1690447845000,
+                1690447860000,
+                1690447875000,
+                1690447890000,
+                1690447905000,
+                1690447920000,
+                1690447935000,
+                1690447950000,
+                1690447965000,
+                1690447980000,
+                1690447995000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "op:fspiop_get_parties success: true",
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "ops"
+              },
+              "labels": {
+                "operation": "fspiop_get_parties",
+                "success": "true"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0,
+                0,
+                0,
+                0,
+                2.06,
+                4.0200000000000005,
+                7.94,
+                9.74,
+                9.86,
+                9.9,
+                10,
+                10,
+                10.06,
+                10.06,
+                10.120000000000001,
+                10.1,
+                10.120000000000001,
+                10.120000000000001,
+                10.120000000000001,
+                10.120000000000001,
+                10.14,
+                10.14,
+                10.18,
+                10.200000000000001,
+                10.200000000000001,
+                10.18,
+                10.18,
+                10.16,
+                10.18,
+                10.18,
+                10.24,
+                10.24,
+                8.040000000000001,
+                5.98,
+                1.8800000000000001,
+                0,
+                0
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: sum(rate(cbs_ing_callbackHandler_count[1m0s])) by (operation, success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "auto",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "ops"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690447455000,
+                1690447470000,
+                1690447485000,
+                1690447500000,
+                1690447515000,
+                1690447530000,
+                1690447545000,
+                1690447560000,
+                1690447575000,
+                1690447590000,
+                1690447605000,
+                1690447620000,
+                1690447635000,
+                1690447650000,
+                1690447665000,
+                1690447680000,
+                1690447695000,
+                1690447710000,
+                1690447725000,
+                1690447740000,
+                1690447755000,
+                1690447770000,
+                1690447785000,
+                1690447800000,
+                1690447815000,
+                1690447830000,
+                1690447845000,
+                1690447860000,
+                1690447875000,
+                1690447890000,
+                1690447905000,
+                1690447920000,
+                1690447935000,
+                1690447950000,
+                1690447965000,
+                1690447980000,
+                1690447995000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "op:fspiop_put_parties success: true",
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "ops"
+              },
+              "labels": {
+                "operation": "fspiop_put_parties",
+                "success": "true"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0,
+                0,
+                0,
+                0,
+                1.26,
+                5.16,
+                7.140000000000001,
+                9.82,
+                9.86,
+                9.92,
+                9.98,
+                10.040000000000001,
+                10.06,
+                10.1,
+                10.120000000000001,
+                10.1,
+                10.120000000000001,
+                10.120000000000001,
+                10.120000000000001,
+                10.14,
+                10.14,
+                10.16,
+                10.18,
+                10.200000000000001,
+                10.18,
+                10.18,
+                10.200000000000001,
+                10.18,
+                10.18,
+                10.200000000000001,
+                10.22,
+                10.26,
+                8.88,
+                4.78,
+                2.72,
+                0,
+                0
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: sum(rate(cbs_ing_callbackHandler_count[1m0s])) by (operation, success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "auto",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "ops"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690447455000,
+                1690447470000,
+                1690447485000,
+                1690447500000,
+                1690447515000,
+                1690447530000,
+                1690447545000,
+                1690447560000,
+                1690447575000,
+                1690447590000,
+                1690447605000,
+                1690447620000,
+                1690447635000,
+                1690447650000,
+                1690447665000,
+                1690447680000,
+                1690447695000,
+                1690447710000,
+                1690447725000,
+                1690447740000,
+                1690447755000,
+                1690447770000,
+                1690447785000,
+                1690447800000,
+                1690447815000,
+                1690447830000,
+                1690447845000,
+                1690447860000,
+                1690447875000,
+                1690447890000,
+                1690447905000,
+                1690447920000,
+                1690447935000,
+                1690447950000,
+                1690447965000,
+                1690447980000,
+                1690447995000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "op:oracle_get_participants success: true",
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "ops"
+              },
+              "labels": {
+                "operation": "oracle_get_participants",
+                "success": "true"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0,
+                0,
+                0,
+                0,
+                2.2600000000000002,
+                4.22,
+                8.14,
+                9.76,
+                9.88,
+                9.92,
+                10.02,
+                10.02,
+                10.040000000000001,
+                10.08,
+                10.1,
+                10.120000000000001,
+                10.1,
+                10.120000000000001,
+                10.1,
+                10.14,
+                10.14,
+                10.16,
+                10.18,
+                10.200000000000001,
+                10.18,
+                10.18,
+                10.16,
+                10.16,
+                10.18,
+                10.200000000000001,
+                10.26,
+                10.24,
+                7.82,
+                5.76,
+                1.6600000000000001,
+                0,
+                0
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: sum(rate(cbs_ing_callbackHandler_count[1m0s])) by (operation, success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "A"
+        }
+      ],
+      "title": "Handler Ingress - Processed Per Second",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 0,
+        "y": 12
+      },
+      "id": 123134,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "min",
+            "max",
+            "mean",
+            "lastNotNull"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "snapshotData": [
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "auto",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "s"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690447515000,
+                1690447530000,
+                1690447545000,
+                1690447560000,
+                1690447575000,
+                1690447590000,
+                1690447605000,
+                1690447620000,
+                1690447635000,
+                1690447650000,
+                1690447665000,
+                1690447680000,
+                1690447695000,
+                1690447710000,
+                1690447725000,
+                1690447740000,
+                1690447755000,
+                1690447770000,
+                1690447785000,
+                1690447800000,
+                1690447815000,
+                1690447830000,
+                1690447845000,
+                1690447860000,
+                1690447875000,
+                1690447890000,
+                1690447905000,
+                1690447920000,
+                1690447935000,
+                1690447950000,
+                1690447965000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "op: fspiop_put_parties success: true",
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "s"
+              },
+              "labels": {
+                "operation": "fspiop_put_parties",
+                "success": "true"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0.045382458165053305,
+                0.04504005005499494,
+                0.0448054990075544,
+                0.04485392042622924,
+                0.04470795833805809,
+                0.04464178513105451,
+                0.04437849068337258,
+                0.04426830965868846,
+                0.04408579599999979,
+                0.044084367696425056,
+                0.043944188223320794,
+                0.04397799691897712,
+                0.043992698739139836,
+                0.044002075964432945,
+                0.043932587905143046,
+                0.04394798428854136,
+                0.04387507954833214,
+                0.0438278356181181,
+                0.04378804186051439,
+                0.04373364613726224,
+                0.04381378516503801,
+                0.043837700255412414,
+                0.043847752196853884,
+                0.0439068548149599,
+                0.04389287574853127,
+                0.04385163737918649,
+                0.04362353698636538,
+                0.043539552718758756,
+                0.043416392475128344,
+                0.04344082610034099,
+                0.0435392046170296
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: sum(rate(cbs_egress_callbackHandler_sum[1m0s]) / rate(cbs_egress_callbackHandler_count[1m0s]) >=0) by (operation, success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "A"
+        }
+      ],
+      "title": "Handler Egress  - Processing Time",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "ops"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 12,
+        "y": 12
+      },
+      "id": 123131,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "min",
+            "max",
+            "mean",
+            "lastNotNull"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "snapshotData": [
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "auto",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "ops"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690447455000,
+                1690447470000,
+                1690447485000,
+                1690447500000,
+                1690447515000,
+                1690447530000,
+                1690447545000,
+                1690447560000,
+                1690447575000,
+                1690447590000,
+                1690447605000,
+                1690447620000,
+                1690447635000,
+                1690447650000,
+                1690447665000,
+                1690447680000,
+                1690447695000,
+                1690447710000,
+                1690447725000,
+                1690447740000,
+                1690447755000,
+                1690447770000,
+                1690447785000,
+                1690447800000,
+                1690447815000,
+                1690447830000,
+                1690447845000,
+                1690447860000,
+                1690447875000,
+                1690447890000,
+                1690447905000,
+                1690447920000,
+                1690447935000,
+                1690447950000,
+                1690447965000,
+                1690447980000,
+                1690447995000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "op:fspiop_put_parties success: true",
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "ops"
+              },
+              "labels": {
+                "operation": "fspiop_put_parties",
+                "success": "true"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0,
+                0,
+                0,
+                0,
+                2.06,
+                4,
+                7.94,
+                9.76,
+                9.88,
+                9.92,
+                9.98,
+                10.02,
+                10.06,
+                10.08,
+                10.120000000000001,
+                10.120000000000001,
+                10.120000000000001,
+                10.120000000000001,
+                10.120000000000001,
+                10.120000000000001,
+                10.14,
+                10.16,
+                10.18,
+                10.200000000000001,
+                10.18,
+                10.18,
+                10.16,
+                10.16,
+                10.18,
+                10.18,
+                10.26,
+                10.24,
+                8.040000000000001,
+                5.98,
+                1.8800000000000001,
+                0,
+                0
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: sum(rate(cbs_egress_callbackHandler_count[1m0s])) by (operation, success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "A"
+        }
+      ],
+      "title": "Handler Egress - Processed Per Second",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "ops"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byValue",
+              "options": {
+                "op": "gte",
+                "reducer": "allIsZero",
+                "value": 0
+              }
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": true,
+                  "tooltip": true,
+                  "viz": false
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byValue",
+              "options": {
+                "op": "gte",
+                "reducer": "allIsNull",
+                "value": 0
+              }
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": true,
+                  "tooltip": true,
+                  "viz": false
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 22
+      },
+      "hideTimeOverride": false,
+      "id": 123127,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "min",
+            "max",
+            "mean",
+            "lastNotNull"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.0.2",
+      "snapshotData": [
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 10,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "never",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "links": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "ops"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690447455000,
+                1690447470000,
+                1690447485000,
+                1690447500000,
+                1690447515000,
+                1690447530000,
+                1690447545000,
+                1690447560000,
+                1690447575000,
+                1690447590000,
+                1690447605000,
+                1690447620000,
+                1690447635000,
+                1690447650000,
+                1690447665000,
+                1690447680000,
+                1690447695000,
+                1690447710000,
+                1690447725000,
+                1690447740000,
+                1690447755000,
+                1690447770000,
+                1690447785000,
+                1690447800000,
+                1690447815000,
+                1690447830000,
+                1690447845000,
+                1690447860000,
+                1690447875000,
+                1690447890000,
+                1690447905000,
+                1690447920000,
+                1690447935000,
+                1690447950000,
+                1690447965000,
+                1690447980000,
+                1690447995000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 10,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "never",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "op:fspiop_put_parties_end2end - success:true",
+                "links": [],
+                "mappings": [],
+                "min": 0,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "ops"
+              },
+              "labels": {
+                "operation": "fspiop_put_parties_end2end",
+                "success": "true"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0,
+                0,
+                0,
+                0,
+                1.26,
+                5.16,
+                7.140000000000001,
+                9.82,
+                9.86,
+                9.92,
+                9.98,
+                10.040000000000001,
+                10.06,
+                10.1,
+                10.120000000000001,
+                10.1,
+                10.120000000000001,
+                10.120000000000001,
+                10.120000000000001,
+                10.14,
+                10.14,
+                10.16,
+                10.18,
+                10.200000000000001,
+                10.18,
+                10.18,
+                10.200000000000001,
+                10.18,
+                10.18,
+                10.200000000000001,
+                10.22,
+                10.26,
+                8.88,
+                4.78,
+                2.72,
+                0,
+                0
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: sum(rate(cbs_tx_cb_perf_count[1m0s])) by (operation, success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 10,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "never",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "links": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "ops"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690447455000,
+                1690447470000,
+                1690447485000,
+                1690447500000,
+                1690447515000,
+                1690447530000,
+                1690447545000,
+                1690447560000,
+                1690447575000,
+                1690447590000,
+                1690447605000,
+                1690447620000,
+                1690447635000,
+                1690447650000,
+                1690447665000,
+                1690447680000,
+                1690447695000,
+                1690447710000,
+                1690447725000,
+                1690447740000,
+                1690447755000,
+                1690447770000,
+                1690447785000,
+                1690447800000,
+                1690447815000,
+                1690447830000,
+                1690447845000,
+                1690447860000,
+                1690447875000,
+                1690447890000,
+                1690447905000,
+                1690447920000,
+                1690447935000,
+                1690447950000,
+                1690447965000,
+                1690447980000,
+                1690447995000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 10,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "never",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "op:fspiop_put_parties_request - success:true",
+                "links": [],
+                "mappings": [],
+                "min": 0,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "ops"
+              },
+              "labels": {
+                "operation": "fspiop_put_parties_request",
+                "success": "true"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0,
+                0,
+                0,
+                0,
+                1.26,
+                5.16,
+                7.140000000000001,
+                9.82,
+                9.86,
+                9.92,
+                9.98,
+                10.040000000000001,
+                10.06,
+                10.1,
+                10.120000000000001,
+                10.1,
+                10.120000000000001,
+                10.120000000000001,
+                10.120000000000001,
+                10.14,
+                10.14,
+                10.16,
+                10.18,
+                10.200000000000001,
+                10.18,
+                10.18,
+                10.200000000000001,
+                10.18,
+                10.18,
+                10.200000000000001,
+                10.22,
+                10.26,
+                8.88,
+                4.78,
+                2.72,
+                0,
+                0
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: sum(rate(cbs_tx_cb_perf_count[1m0s])) by (operation, success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 10,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "never",
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "interval": 15000,
+                "links": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "ops"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690447455000,
+                1690447470000,
+                1690447485000,
+                1690447500000,
+                1690447515000,
+                1690447530000,
+                1690447545000,
+                1690447560000,
+                1690447575000,
+                1690447590000,
+                1690447605000,
+                1690447620000,
+                1690447635000,
+                1690447650000,
+                1690447665000,
+                1690447680000,
+                1690447695000,
+                1690447710000,
+                1690447725000,
+                1690447740000,
+                1690447755000,
+                1690447770000,
+                1690447785000,
+                1690447800000,
+                1690447815000,
+                1690447830000,
+                1690447845000,
+                1690447860000,
+                1690447875000,
+                1690447890000,
+                1690447905000,
+                1690447920000,
+                1690447935000,
+                1690447950000,
+                1690447965000,
+                1690447980000,
+                1690447995000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 10,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "never",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "displayNameFromDS": "op:fspiop_put_parties_response - success:true",
+                "links": [],
+                "mappings": [],
+                "min": 0,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "ops"
+              },
+              "labels": {
+                "operation": "fspiop_put_parties_response",
+                "success": "true"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0,
+                0,
+                0,
+                0,
+                1.26,
+                5.16,
+                7.140000000000001,
+                9.82,
+                9.86,
+                9.92,
+                9.98,
+                10.040000000000001,
+                10.06,
+                10.1,
+                10.120000000000001,
+                10.1,
+                10.120000000000001,
+                10.120000000000001,
+                10.120000000000001,
+                10.14,
+                10.14,
+                10.16,
+                10.18,
+                10.200000000000001,
+                10.18,
+                10.18,
+                10.200000000000001,
+                10.18,
+                10.18,
+                10.200000000000001,
+                10.22,
+                10.26,
+                8.88,
+                4.78,
+                2.72,
+                0,
+                0
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: sum(rate(cbs_tx_cb_perf_count[1m0s])) by (operation, success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "A"
+        }
+      ],
+      "title": "E2E, Request, Response Calulations Proccessed Per Second",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "line+area"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 31
+      },
+      "id": 123130,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "min",
+            "max",
+            "mean",
+            "lastNotNull"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.0.2",
+      "snapshotData": [
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 10,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "never",
+                  "thresholdsStyle": {
+                    "mode": "line+area"
+                  }
+                },
+                "interval": 15000,
+                "links": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "transparent"
+                    },
+                    {
+                      "color": "red",
+                      "value": 1
+                    }
+                  ]
+                },
+                "unit": "s"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690447515000,
+                1690447530000,
+                1690447545000,
+                1690447560000,
+                1690447575000,
+                1690447590000,
+                1690447605000,
+                1690447620000,
+                1690447635000,
+                1690447650000,
+                1690447665000,
+                1690447680000,
+                1690447695000,
+                1690447710000,
+                1690447725000,
+                1690447740000,
+                1690447755000,
+                1690447770000,
+                1690447785000,
+                1690447800000,
+                1690447815000,
+                1690447830000,
+                1690447845000,
+                1690447860000,
+                1690447875000,
+                1690447890000,
+                1690447905000,
+                1690447920000,
+                1690447935000,
+                1690447950000,
+                1690447965000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 10,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "never",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "line+area"
+                  }
+                },
+                "displayNameFromDS": "op:fspiop_put_parties_end2end - Success true",
+                "links": [],
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "transparent"
+                    },
+                    {
+                      "color": "red",
+                      "value": 1
+                    }
+                  ]
+                },
+                "unit": "s"
+              },
+              "labels": {
+                "operation": "fspiop_put_parties_end2end",
+                "success": "true"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0.10596825396817347,
+                0.10288372093017564,
+                0.10231932773103962,
+                0.10123014256614643,
+                0.10074239350909124,
+                0.09998387096772655,
+                0.09945891783565333,
+                0.0989900398406125,
+                0.09878330019877843,
+                0.09852277227720592,
+                0.09839328063238102,
+                0.09816831683164859,
+                0.09816205533593436,
+                0.09814426877468568,
+                0.09811067193675396,
+                0.09798619329387141,
+                0.09803155818537428,
+                0.09783267716529986,
+                0.09750098231821336,
+                0.09738627450977076,
+                0.09742436149309686,
+                0.09748330058936891,
+                0.09758823529409175,
+                0.09765225933199485,
+                0.0975776031433924,
+                0.09734901960780774,
+                0.09705283757333934,
+                0.09678362573094026,
+                0.09663963963958104,
+                0.09674058577399808,
+                0.09667647058818281
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: sum(rate(cbs_tx_cb_perf_sum[1m0s]) / rate(cbs_tx_cb_perf_count[1m0s]) >= 0) by (operation, success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 10,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "never",
+                  "thresholdsStyle": {
+                    "mode": "line+area"
+                  }
+                },
+                "interval": 15000,
+                "links": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "transparent"
+                    },
+                    {
+                      "color": "red",
+                      "value": 1
+                    }
+                  ]
+                },
+                "unit": "s"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690447515000,
+                1690447530000,
+                1690447545000,
+                1690447560000,
+                1690447575000,
+                1690447590000,
+                1690447605000,
+                1690447620000,
+                1690447635000,
+                1690447650000,
+                1690447665000,
+                1690447680000,
+                1690447695000,
+                1690447710000,
+                1690447725000,
+                1690447740000,
+                1690447755000,
+                1690447770000,
+                1690447785000,
+                1690447800000,
+                1690447815000,
+                1690447830000,
+                1690447845000,
+                1690447860000,
+                1690447875000,
+                1690447890000,
+                1690447905000,
+                1690447920000,
+                1690447935000,
+                1690447950000,
+                1690447965000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 10,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "never",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "line+area"
+                  }
+                },
+                "displayNameFromDS": "op:fspiop_put_parties_request - Success true",
+                "links": [],
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "transparent"
+                    },
+                    {
+                      "color": "red",
+                      "value": 1
+                    }
+                  ]
+                },
+                "unit": "s"
+              },
+              "labels": {
+                "operation": "fspiop_put_parties_request",
+                "success": "true"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0.05428571428574431,
+                0.05248062015500689,
+                0.052148459383710724,
+                0.050645621181202916,
+                0.049922920892429605,
+                0.04861895161282578,
+                0.04834468937867782,
+                0.04817729083657356,
+                0.04806361829018056,
+                0.04797623762368597,
+                0.047871541501900705,
+                0.04774059405933376,
+                0.047743083003879576,
+                0.04768774703549964,
+                0.04766798418964132,
+                0.047564102564022305,
+                0.0475719921103741,
+                0.04752952755898884,
+                0.047422396856522414,
+                0.047343137254839504,
+                0.04730058939090197,
+                0.04740078585455248,
+                0.047394117646995165,
+                0.047422396856517945,
+                0.047402750491095116,
+                0.047219607843080845,
+                0.047078277886446813,
+                0.04706627680307189,
+                0.047069819819776544,
+                0.04718410041836266,
+                0.046955882352890776
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: sum(rate(cbs_tx_cb_perf_sum[1m0s]) / rate(cbs_tx_cb_perf_count[1m0s]) >= 0) by (operation, success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "A"
+        },
+        {
+          "fields": [
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 10,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "showPoints": "never",
+                  "thresholdsStyle": {
+                    "mode": "line+area"
+                  }
+                },
+                "interval": 15000,
+                "links": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "transparent"
+                    },
+                    {
+                      "color": "red",
+                      "value": 1
+                    }
+                  ]
+                },
+                "unit": "s"
+              },
+              "name": "Time",
+              "type": "time",
+              "values": [
+                1690447515000,
+                1690447530000,
+                1690447545000,
+                1690447560000,
+                1690447575000,
+                1690447590000,
+                1690447605000,
+                1690447620000,
+                1690447635000,
+                1690447650000,
+                1690447665000,
+                1690447680000,
+                1690447695000,
+                1690447710000,
+                1690447725000,
+                1690447740000,
+                1690447755000,
+                1690447770000,
+                1690447785000,
+                1690447800000,
+                1690447815000,
+                1690447830000,
+                1690447845000,
+                1690447860000,
+                1690447875000,
+                1690447890000,
+                1690447905000,
+                1690447920000,
+                1690447935000,
+                1690447950000,
+                1690447965000
+              ]
+            },
+            {
+              "config": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 10,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "never",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "line+area"
+                  }
+                },
+                "displayNameFromDS": "op:fspiop_put_parties_response - Success true",
+                "links": [],
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "transparent"
+                    },
+                    {
+                      "color": "red",
+                      "value": 1
+                    }
+                  ]
+                },
+                "unit": "s"
+              },
+              "labels": {
+                "operation": "fspiop_put_parties_response",
+                "success": "true"
+              },
+              "name": "Value",
+              "type": "number",
+              "values": [
+                0.05168253968247968,
+                0.05040310077513527,
+                0.05017086834727668,
+                0.050584521384859235,
+                0.05081947261655741,
+                0.05136491935476601,
+                0.051114228456838814,
+                0.05081274900391936,
+                0.050719681908488475,
+                0.0505465346534119,
+                0.05052173913038416,
+                0.0504277227722239,
+                0.050418972331963116,
+                0.05045652173907371,
+                0.05044268774698052,
+                0.05042209072972624,
+                0.05045956607489524,
+                0.05030314960625283,
+                0.05007858546165253,
+                0.0500431372548733,
+                0.05012377210212878,
+                0.05008251473472799,
+                0.05019411764700653,
+                0.050229862475378625,
+                0.050174852652199,
+                0.05012941176465021,
+                0.04997455968684535,
+                0.04971734892784,
+                0.04956981981978707,
+                0.049556485355614494,
+                0.04972058823526194
+              ]
+            }
+          ],
+          "meta": {
+            "custom": {
+              "resultType": "matrix"
+            },
+            "executedQueryString": "Expr: sum(rate(cbs_tx_cb_perf_sum[1m0s]) / rate(cbs_tx_cb_perf_count[1m0s]) >= 0) by (operation, success)\nStep: 15s",
+            "preferredVisualisationType": "graph",
+            "type": "timeseries-multi",
+            "typeVersion": [
+              0,
+              1
+            ]
+          },
+          "refId": "A"
+        }
+      ],
+      "title": "E2E, Request, Response Performance Timing Calculations",
+      "type": "timeseries"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 38,
+  "snapshot": {
+    "originalUrl": "/d/afe9dda2-878b-40c8-90df-072e7ecaaaee",
+    "timestamp": "2023-07-27T09:12:12.335Z"
+  },
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "2023-07-27T08:44:23.109Z",
+    "raw": {
+      "from": "2023-07-27T08:44:23.109Z",
+      "to": "2023-07-27T08:53:21.585Z"
+    },
+    "to": "2023-07-27T08:53:21.585Z"
+  },
+  "timepicker": {
+    "hidden": false,
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ],
+    "type": "timepicker"
+  },
+  "timezone": "browser",
+  "title": "Supporting Services - Callback Hander Service",
+  "uid": "afe9dda2-878b-40c8-90df-072e7ecaaaee",
+  "version": 2,
+  "weekStart": ""
+}
