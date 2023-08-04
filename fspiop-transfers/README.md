@@ -13,6 +13,8 @@ Test Case | Description | K6 Test Case | Notes
 - Disable cl-timeout handler
 - Disable cl-get handler
 - Default is random 2 DFSPs as payer and payee from the configurable pool
+- No PATCH CALLBACKS and No PAYEE NOTIFICATION
+
 
 Scenario | Description | Test-Case | Repeatable (Y/N) | K6 Test Scenario / Config | Notes
 ---------|----------|---------|---------|---------|---------
@@ -35,6 +37,7 @@ Scenario | Description | Test-Case | Repeatable (Y/N) | K6 Test Scenario / Confi
  17 | FSPIOP Transfers POST /transfers with MLAPI & CL + Timeout handler - scale:1, k6vu:MAX | 1 | Y | fspiopTransfers | .
  18 | FSPIOP Transfers POST /transfers with MLAPI & CL + Timeout handler - scale:2-4, k6vu:1 | 1 | Y | fspiopTransfers | .
  19 | FSPIOP Transfers POST /transfers with MLAPI & CL + Timeout handler - scale:2-4, k6vu:MAX | 1 | Y | fspiopTransfers | .
+ 20 | FSPIOP Transfers POST /transfers with MLAPI & CL + PAYEE NOTIFICATION - scale:2, k6vu:MAX | 1 | Y | fspiopTransfers | .
 
   
  1 | ... | # | Y/N | . | .
