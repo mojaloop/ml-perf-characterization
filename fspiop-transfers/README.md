@@ -21,7 +21,7 @@ Test Case | Description | K6 Test Case | Notes
 - Disable cl-timeout handler
 - Disable cl-get handler
 - Default is random 2 DFSPs as payer and payee from the configurable pool
-- No PATCH CALLBACKS and No PAYEE NOTIFICATION
+- No PATCH CALLBACKS and No PAYEE NOTIFICATION (`MLAPI_TRANSFERS__SEND_TRANSFER_CONFIRMATION_TO_PAYEE=false`)
 
 ### Scenarios
 
