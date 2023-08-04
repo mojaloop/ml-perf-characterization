@@ -54,7 +54,7 @@ The down-sides of this approach, is that it only works well when we have a singl
 | **Smoke** | Validates scripts works and that our target env/system performs adequately under minimal load. |
 | **Average-load** | Assess how the system performs under expected normal conditions. |
 | **Stress** | Assess how the system performs at its limits when load exceeds the expected average. |
-| **Spike** | Validates the behavior and survival of the system in cases of sudden, short, and massive increases in activity. |
+| **Spike** | Validates the behaviour and survival of the system in cases of sudden, short, and massive increases in activity. |
 | **Breakpoint** | Gradually increase load to identify the capacity limits of the system. |
 
 [Reference](https://k6.io/docs/test-types/load-test-types/#different-tests-for-different-goals).
