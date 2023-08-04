@@ -15,6 +15,12 @@ Test Case | Description | K6 Test Case | Notes
 
 ## Test Scenarios
 
+### Assumptions
+
+- ...
+
+### Scenarios
+
 Scenario | Description | Test-Case | Repeatable (Y/N) | K6 Test Scenario / Config | Notes
 ---------|----------|---------|---------|---------|---------
  1 | FSPIOP Discovery GET Parties with Sims-only - ALS:v14.2.2, scale:1, k6vu:1 | 1 | Y | fspiopDiscovery | .
