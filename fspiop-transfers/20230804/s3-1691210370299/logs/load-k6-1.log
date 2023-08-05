@@ -1,0 +1,46 @@
+load-k6-1  | time="2023-08-05T04:46:30Z" level=info msg="7aa08db81b1d892fdd5512bee5aac8ec WS message received [7aa08db81b1d892fdd5512bee5aac8ec/PUT/transfers/d3e7748d-c247-4129-8f7d-1db3dfba68db]: SUCCESS_CALLBACK_RECEIVED" source=console
+load-k6-1  | time="2023-08-05T04:46:30Z" level=info msg="5bdbd60323c66426c314c56bdbac104e WS open on URL: ws://sim-perffsp2:3002/5bdbd60323c66426c314c56bdbac104e/PUT/transfers/45dfa1b0-ed50-47a5-bc9e-cbc7d2e9f52a" source=console
+load-k6-1  | time="2023-08-05T04:46:30Z" level=info msg="5bdbd60323c66426c314c56bdbac104e WS message received [5bdbd60323c66426c314c56bdbac104e/PUT/transfers/45dfa1b0-ed50-47a5-bc9e-cbc7d2e9f52a]: SUCCESS_CALLBACK_RECEIVED" source=console
+load-k6-1  | time="2023-08-05T04:46:30Z" level=info msg="089af20ed2071a65404bb6b1ef7aed5a WS open on URL: ws://sim-perffsp1:3002/089af20ed2071a65404bb6b1ef7aed5a/PUT/transfers/5c2e5cb3-dc42-49ec-a2c4-ce3bf3158f3d" source=console
+load-k6-1  |
+load-k6-1  | running (7m00.0s), 1/1 VUs, 6570 complete and 0 interrupted iterations
+load-k6-1  | fspiopTransfers   [ 100% ] 1/1 VUs  7m00.0s/7m00.0s
+load-k6-1  |
+load-k6-1  | time="2023-08-05T04:46:30Z" level=info msg="089af20ed2071a65404bb6b1ef7aed5a WS message received [089af20ed2071a65404bb6b1ef7aed5a/PUT/transfers/5c2e5cb3-dc42-49ec-a2c4-ce3bf3158f3d]: SUCCESS_CALLBACK_RECEIVED" source=console
+load-k6-1  | time="2023-08-05T04:46:30Z" level=info msg="Env Vars -->\n  K6_SCRIPT_WS_TIMEOUT_MS=2000,\n  K6_SCRIPT_FSPIOP_ALS_ENDPOINT_URL=http://account-lookup-service:4002,\n  K6_SCRIPT_ADMIN_ENDPOINT_URL=http://callback-handler-svc-cl-sim:3001/admin,\n  K6_SCRIPT_ORACLE_ENDPOINT_URL=http://callback-handler-svc-oracle-sim:3001/oracle,\n  K6_SCRIPT_FSPIOP_FSP_POOL=undefined\n" source=console
+load-k6-1  | time="2023-08-05T04:46:30Z" level=info msg="Env Vars -->\n  K6_SCRIPT_WS_TIMEOUT_MS=2000,\n  K6_SCRIPT_FSPIOP_TRANSFERS_ENDPOINT_URL=http://ml-api-adapter:3000,\n  K6_SCRIPT_FSPIOP_FSP_POOL=[{\"partyId\":19012345001,\"fspId\":\"perffsp1\",\"wsUrl\":\"ws://sim-perffsp1:3002\"},{\"partyId\":19012345002,\"fspId\":\"perffsp2\",\"wsUrl\":\"ws://sim-perffsp2:3002\"}]\n" source=console
+load-k6-1  |
+load-k6-1  |      ✓ TRANSFERS_FSPIOP_POST_TRANSFERS_RESPONSE_IS_202
+load-k6-1  |      ✓ TRANSFERS_E2E_FSPIOP_POST_TRANSFERS_SUCCESS
+load-k6-1  |
+load-k6-1  |      █ Post Transfers
+load-k6-1  |
+load-k6-1  |      checks.........................: 100.00% ✓ 13142    ✗ 0
+load-k6-1  |      data_received..................: 2.1 MB  4.9 kB/s
+load-k6-1  |      data_sent......................: 13 MB   32 kB/s
+load-k6-1  |      group_duration.................: avg=215.8µs  min=168.26µs med=207.02µs max=1.06ms   p(90)=257.47µs p(95)=282.37µs
+load-k6-1  |      http_req_blocked...............: avg=4.33µs   min=2.58µs   med=4.12µs   max=432.93µs p(90)=5.14µs   p(95)=5.52µs
+load-k6-1  |      http_req_connecting............: avg=23ns     min=0s       med=0s       max=153.57µs p(90)=0s       p(95)=0s
+load-k6-1  |    ✓ http_req_duration..............: avg=1.32ms   min=875.74µs med=1.25ms   max=15.96ms  p(90)=1.61ms   p(95)=1.78ms
+load-k6-1  |        { expected_response:true }...: avg=1.32ms   min=875.74µs med=1.25ms   max=15.96ms  p(90)=1.61ms   p(95)=1.78ms
+load-k6-1  |    ✓ http_req_failed................: 0.00%   ✓ 0        ✗ 6571
+load-k6-1  |      http_req_receiving.............: avg=29.33µs  min=19.84µs  med=28.64µs  max=248.89µs p(90)=34.71µs  p(95)=37.26µs
+load-k6-1  |      http_req_sending...............: avg=22.56µs  min=15.34µs  med=21.77µs  max=144.51µs p(90)=26.46µs  p(95)=27.98µs
+load-k6-1  |      http_req_tls_handshaking.......: avg=0s       min=0s       med=0s       max=0s       p(90)=0s       p(95)=0s
+load-k6-1  |      http_req_waiting...............: avg=1.26ms   min=824.5µs  med=1.19ms   max=15.82ms  p(90)=1.56ms   p(95)=1.73ms
+load-k6-1  |      http_reqs......................: 6571    15.64439/s
+load-k6-1  |    ✓ iteration_duration.............: avg=63.89ms  min=57.19ms  med=63.12ms  max=213.04ms p(90)=68.87ms  p(95)=71.61ms
+load-k6-1  |      iterations.....................: 6571    15.64439/s
+load-k6-1  |      vus............................: 1       min=1      max=1
+load-k6-1  |      vus_max........................: 1       min=1      max=1
+load-k6-1  |      ws_connecting..................: avg=403.25µs min=275.28µs med=384.21µs max=6.97ms   p(90)=472.77µs p(95)=504.94µs
+load-k6-1  |      ws_msgs_received...............: 6571    15.64439/s
+load-k6-1  |      ws_msgs_sent...................: 6571    15.64439/s
+load-k6-1  |      ws_session_duration............: avg=63.58ms  min=56.87ms  med=62.81ms  max=212.39ms p(90)=68.56ms  p(95)=71.27ms
+load-k6-1  |      ws_sessions....................: 6571    15.64439/s
+load-k6-1  |
+load-k6-1  |
+load-k6-1  | running (7m00.0s), 0/1 VUs, 6571 complete and 0 interrupted iterations
+load-k6-1  | fspiopTransfers ✓ [ 100% ] 0/1 VUs  7m0s
+load-k6-1  |
+load-k6-1 exited with code 0
