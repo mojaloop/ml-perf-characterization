@@ -1,0 +1,40 @@
+CCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-07T14:42:14Z" level=info msg="3c9633af7c34ce6906bf268da3d0bcc9 WS message received [3c9633af7c34ce6906bf268da3d0bcc9/PUT/transfers/7d1fa8c6-3be8-4e39-bd0c-59e3167ea487]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-07T14:42:14Z" level=info msg="02d7172d2dc296ec3211028442ba59b1 WS message received [02d7172d2dc296ec3211028442ba59b1/PUT/transfers/252786c2-d9be-4249-9ff1-609ff177c588]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-07T14:42:14Z" level=info msg="763e57114426913a73c1738191e40492 WS message received [763e57114426913a73c1738191e40492/PUT/transfers/af77a8b3-eacf-4bf9-8a54-5b13375c6038]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-07T14:42:14Z" level=info msg="9098df58c003aa02a62f171e0e9f6dad WS message received [9098df58c003aa02a62f171e0e9f6dad/PUT/transfers/9eb711e5-60ff-48e1-8772-37560e8355c0]: SUCCESS_CALLBACK_RECEIVED" source=console
+time="2023-08-07T14:42:14Z" level=info msg="Env Vars -->\n  K6_SCRIPT_WS_TIMEOUT_MS=2000,\n  K6_SCRIPT_FSPIOP_ALS_ENDPOINT_URL=http://account-lookup-service:4002,\n  K6_SCRIPT_ADMIN_ENDPOINT_URL=http://callback-handler-svc-cl-sim:3001/admin,\n  K6_SCRIPT_ORACLE_ENDPOINT_URL=http://callback-handler-svc-oracle-sim:3001/oracle,\n  K6_SCRIPT_FSPIOP_FSP_POOL=undefined\n" source=console
+time="2023-08-07T14:42:14Z" level=info msg="Env Vars -->\n  K6_SCRIPT_WS_TIMEOUT_MS=2000,\n  K6_SCRIPT_FSPIOP_TRANSFERS_ENDPOINT_URL=http://ml-api-adapter:3000,\n  K6_SCRIPT_FSPIOP_FSP_POOL=[{\"partyId\":19012345001,\"fspId\":\"perffsp1\",\"wsUrl\":\"ws://sim-perffsp1:3002\"},{\"partyId\":19012345002,\"fspId\":\"perffsp2\",\"wsUrl\":\"ws://sim-perffsp2:3002\"}]\n" source=console
+
+     ✓ TRANSFERS_FSPIOP_POST_TRANSFERS_RESPONSE_IS_202
+     ✓ TRANSFERS_E2E_FSPIOP_POST_TRANSFERS_SUCCESS
+
+     █ Post Transfers
+
+     checks.........................: 100.00% ✓ 62628     ✗ 0    
+     data_received..................: 9.8 MB  23 kB/s
+     data_sent......................: 64 MB   152 kB/s
+     group_duration.................: avg=209.8µs  min=139.99µs med=201.41µs max=3.5ms    p(90)=259.02µs p(95)=274.54µs
+     http_req_blocked...............: avg=4.28µs   min=2.14µs   med=4.1µs    max=340.12µs p(90)=5.18µs   p(95)=5.54µs  
+     http_req_connecting............: avg=20ns     min=0s       med=0s       max=133.61µs p(90)=0s       p(95)=0s      
+   ✓ http_req_duration..............: avg=1ms      min=728.05µs med=975.96µs max=19.34ms  p(90)=1.16ms   p(95)=1.23ms  
+       { expected_response:true }...: avg=1ms      min=728.05µs med=975.96µs max=19.34ms  p(90)=1.16ms   p(95)=1.23ms  
+   ✓ http_req_failed................: 0.00%   ✓ 0         ✗ 31314
+     http_req_receiving.............: avg=29.34µs  min=16.28µs  med=28.35µs  max=4.13ms   p(90)=35.44µs  p(95)=37.8µs  
+     http_req_sending...............: avg=22.38µs  min=12.97µs  med=21.73µs  max=390.99µs p(90)=26.71µs  p(95)=28.15µs 
+     http_req_tls_handshaking.......: avg=0s       min=0s       med=0s       max=0s       p(90)=0s       p(95)=0s      
+     http_req_waiting...............: avg=953.24µs min=687.54µs med=924.17µs max=19.15ms  p(90)=1.11ms   p(95)=1.17ms  
+     http_reqs......................: 31314   74.548067/s
+   ✓ iteration_duration.............: avg=68.96ms  min=56.24ms  med=68.4ms   max=186.88ms p(90)=74.74ms  p(95)=77.48ms 
+     iterations.....................: 31314   74.548067/s
+     vus............................: 6       min=1       max=6  
+     vus_max........................: 6       min=6       max=6  
+     ws_connecting..................: avg=352.18µs min=222.92µs med=339.94µs max=15.55ms  p(90)=408.93µs p(95)=435.05µs
+     ws_msgs_received...............: 31314   74.548067/s
+     ws_msgs_sent...................: 31314   74.548067/s
+     ws_session_duration............: avg=68.66ms  min=56ms     med=68.11ms  max=186.55ms p(90)=74.45ms  p(95)=77.18ms 
+     ws_sessions....................: 31314   74.548067/s
+
+
+running (7m00.1s), 0/6 VUs, 31314 complete and 0 interrupted iterations
+fspiopTransfers ✓ [ 100% ] 0/6 VUs  7m0s
