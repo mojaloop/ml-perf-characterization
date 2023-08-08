@@ -1,19 +1,15 @@
 # Scenario 8: FSPIOP Transfers POST /transfers with MLAPI & CL - scale:2, k6vu:MAX, dfsps:4 | 1 | Y | fspiopTransfers
 
 ```conf
-var-testid=
+var-testid=1691463856849
 params=&var-testid=1691463856849&from=1691463854953&to=1691464309297
 
 ## Added for Test Scenario 6
 Scale CL handlers to 2
 Scale ML API and ML Notification handler to 2
 Scale kafka partitions to 2
-## Added for Test Scenario 8
-Unidirectional transfers between perffsp1 and perffsp2
-VUs set to 10
 ## Add for Test scenario 10
-DFSP pool of 4
-Remove unidirectional transfers, back to random between pool of 4 DFSPs
+Random transfers between pool of 4 DFSPs
 ```
 
 ```
@@ -54,7 +50,7 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile trans
 
 ## Observations
 
-- At 119 ops/s it performed within the range of unidirectional between 2 dfsps and random between 2 dfsps.
+- At 119 ops/s there is no increase in performance with a random pool with 4 dfsps.
 
 ## Recommendations
 

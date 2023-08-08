@@ -1,17 +1,19 @@
-# FSPIOP Transfers POST /transfers with MLAPI & CL - scale:2, k6vu:MAX | 1 | Y | fspiopTransfers
+# Scenario 11: FSPIOP Transfers POST /transfers with MLAPI & CL - scale:2, k6vu:MAX, dfsps:8 | 1 | Y | fspiopTransfers
 
 ```conf
-var-testid=1691459957300
-params=&var-testid=1691459957300&from=1691459954582&to=1691460410705
+var-testid=1691467517291
+params=&var-testid=1691467517291&from=1691467515034&to=1691467971061
 
 ## Added for Test Scenario 6
 Scale CL handlers to 2
 Scale ML API and ML Notification handler to 2
 Scale kafka partitions to 2
+## Add for Test scenario 11
+Random transfers between pool of 8 DFSPs
 ```
 
 ```
-docker compose --project-name ml-core -f docker-compose-perf.yml --profile transfers-test --profile 2dfsp  up -d
+docker compose --project-name ml-core -f docker-compose-perf.yml --profile transfers-test --profile 8dfsp  up -d
 ```
 
 ## Environment
@@ -48,8 +50,7 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile trans
 
 ## Observations
 
-- Scaling to 2 did not provide linear scaling of ops/s. Attempt of 12 vu's lead to a bottle neck of 125 ops/s.
-  10 vu's resulted in 118 ops/s. For reference, in scenario #4 the system managed 87 ops/s with a maximum of 6 vu's.
+- At 118 ops/s there is no increase in performance with a random pool with 8 dfsps.
 
 ## Recommendations
 
