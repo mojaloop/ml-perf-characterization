@@ -1,8 +1,8 @@
 # Scenario 11: FSPIOP Transfers POST /transfers with MLAPI & CL - scale:2, k6vu:MAX, dfsps:8 | 1 | Y | fspiopTransfers
 
 ```conf
-var-testid=1691467517291
-params=&var-testid=1691467517291&from=1691467515034&to=1691467971061
+var-testid=1691493807211
+params=&var-testid=1691493807211&from=1691493786387&to=1691494234898
 
 ## Added for Test Scenario 6
 Scale CL handlers to 2
@@ -10,6 +10,7 @@ Scale ML API and ML Notification handler to 2
 Scale kafka partitions to 2
 ## Add for Test scenario 11
 Random transfers between pool of 8 DFSPs
+Increased kafka partitions to 17
 ```
 
 ```
@@ -50,7 +51,7 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile trans
 
 ## Observations
 
-- At 118 ops/s there is no increase in performance with a random pool with 8 dfsps.
+- Got 120 ops/s, there is no increase in performance with a random pool with 8 dfsps and 17 kafka partitions. But observed the load is evenly distributed on position handler instances.
 
 ## Recommendations
 

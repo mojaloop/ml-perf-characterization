@@ -1,0 +1,35 @@
+time="2023-08-08T11:28:57Z" level=info msg="Env Vars -->\n  K6_SCRIPT_WS_TIMEOUT_MS=2000,\n  K6_SCRIPT_FSPIOP_ALS_ENDPOINT_URL=http://account-lookup-service:4002,\n  K6_SCRIPT_ADMIN_ENDPOINT_URL=http://callback-handler-svc-cl-sim:3001/admin,\n  K6_SCRIPT_ORACLE_ENDPOINT_URL=http://callback-handler-svc-oracle-sim:3001/oracle,\n  K6_SCRIPT_FSPIOP_FSP_POOL=undefined\n" source=console
+time="2023-08-08T11:28:57Z" level=info msg="Env Vars -->\n  K6_SCRIPT_WS_TIMEOUT_MS=2000,\n  K6_SCRIPT_FSPIOP_TRANSFERS_ENDPOINT_URL=http://ml-api-adapter:3000,\n  K6_SCRIPT_FSPIOP_FSP_POOL=[{\"partyId\":19012345001,\"fspId\":\"perffsp1\",\"wsUrl\":\"ws://sim-perffsp1:3002\"},{\"partyId\":19012345002,\"fspId\":\"perffsp2\",\"wsUrl\":\"ws://sim-perffsp2:3002\"},{\"partyId\":19012345003,\"fspId\":\"perffsp3\",\"wsUrl\":\"ws://sim-perffsp3:3002\"},{\"partyId\":19012345004,\"fspId\":\"perffsp4\",\"wsUrl\":\"ws://sim-perffsp4:3002\"},{\"partyId\":19012345005,\"fspId\":\"perffsp5\",\"wsUrl\":\"ws://sim-perffsp5:3002\"},{\"partyId\":19012345006,\"fspId\":\"perffsp6\",\"wsUrl\":\"ws://sim-perffsp6:3002\"},{\"partyId\":19012345007,\"fspId\":\"perffsp7\",\"wsUrl\":\"ws://sim-perffsp7:3002\"},{\"partyId\":19012345008,\"fspId\":\"perffsp8\",\"wsUrl\":\"ws://sim-perffsp8:3002\"}]\n" source=console
+
+     ✓ TRANSFERS_FSPIOP_POST_TRANSFERS_RESPONSE_IS_202
+     ✓ TRANSFERS_E2E_FSPIOP_POST_TRANSFERS_SUCCESS
+
+     █ Post Transfers
+
+     checks.........................: 100.00% ✓ 74890      ✗ 0    
+     data_received..................: 12 MB   36 kB/s
+     data_sent......................: 76 MB   232 kB/s
+     group_duration.................: avg=231.56µs min=148.35µs med=224.55µs max=6.21ms   p(90)=281.58µs p(95)=293.97µs
+     http_req_blocked...............: avg=4.48µs   min=1.73µs   med=4.22µs   max=2ms      p(90)=5.32µs   p(95)=5.69µs  
+     http_req_connecting............: avg=30ns     min=0s       med=0s       max=207.28µs p(90)=0s       p(95)=0s      
+   ✓ http_req_duration..............: avg=1.28ms   min=790.95µs med=1.23ms   max=16ms     p(90)=1.55ms   p(95)=1.69ms  
+       { expected_response:true }...: avg=1.28ms   min=790.95µs med=1.23ms   max=16ms     p(90)=1.55ms   p(95)=1.69ms  
+   ✓ http_req_failed................: 0.00%   ✓ 0          ✗ 37445
+     http_req_receiving.............: avg=31.68µs  min=13.37µs  med=30.9µs   max=464.93µs p(90)=38.67µs  p(95)=41.55µs 
+     http_req_sending...............: avg=22.73µs  min=9.03µs   med=22.14µs  max=516.6µs  p(90)=27.36µs  p(95)=28.67µs 
+     http_req_tls_handshaking.......: avg=0s       min=0s       med=0s       max=0s       p(90)=0s       p(95)=0s      
+     http_req_waiting...............: avg=1.22ms   min=749µs    med=1.18ms   max=15.92ms  p(90)=1.49ms   p(95)=1.63ms  
+     http_reqs......................: 37445   113.449465/s
+   ✓ iteration_duration.............: avg=84.11ms  min=62.21ms  med=82.55ms  max=193.41ms p(90)=98.58ms  p(95)=103.89ms
+     iterations.....................: 37445   113.449465/s
+     vus............................: 10      min=1        max=10 
+     vus_max........................: 10      min=10       max=10 
+     ws_connecting..................: avg=442.64µs min=240.99µs med=430.51µs max=10.99ms  p(90)=515.4µs  p(95)=546.3µs 
+     ws_msgs_received...............: 37445   113.449465/s
+     ws_msgs_sent...................: 37445   113.449465/s
+     ws_session_duration............: avg=83.79ms  min=61.96ms  med=82.23ms  max=192.98ms p(90)=98.26ms  p(95)=103.56ms
+     ws_sessions....................: 37445   113.449465/s
+
+
+running (5m30.1s), 00/10 VUs, 37445 complete and 0 interrupted iterations
+fspiopTransfers ✓ [ 100% ] 00/10 VUs  5m30s

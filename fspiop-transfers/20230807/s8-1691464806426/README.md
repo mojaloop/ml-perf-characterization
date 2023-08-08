@@ -52,6 +52,7 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile trans
 ## Observations
 
 - At 115 ops/s it performed slightly worse than a random pool with 2 dfsps.
+- It might be because, with unidirectional only one position handler will be used all the time as the destination DFSPID is always same.
 
 ## Recommendations
 
