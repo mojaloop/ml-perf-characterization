@@ -38,16 +38,19 @@ Scenario | Description | Test-Case | Repeatable (Y/N) | K6 Test Scenario / Confi
  9 | FSPIOP Transfers POST /transfers with MLAPI & CL - scale:2, k6vu:1, dfsps:4 | 1 | Y | fspiopTransfers | .
  10 | FSPIOP Transfers POST /transfers with MLAPI & CL - scale:2, k6vu:MAX, dfsps:4 | 1 | Y | fspiopTransfers | .
  11 | FSPIOP Transfers POST /transfers with MLAPI & CL - scale:2, k6vu:MAX, dfsps:8 | 1 | Y | fspiopTransfers | .
- 12 | FSPIOP Transfers POST /transfers with MLAPI & CL with mocked central-admin-api + No Logs/Event-Audits - scale:2, k6vu:MAX | 1 | Y | fspiopTransfers | .
- 13 | FSPIOP Transfers POST /transfers with MLAPI & CL with mocked central-admin-api + No Logs/Event-Audits + UV_THREADPOOL_SCALE - scale:2, k6vu:MAX | 1 | Y | fspiopTransfers | .
- 14 | FSPIOP Transfers POST /transfers with MLAPI & CL with mocked central-admin-api + No Logs/Event-Audits + UV_THREADPOOL_SCALE - scale:2, k6vu:MAX | 1 | Y | fspiopTransfers | .
- 15 | FSPIOP Transfers POST /transfers with MLAPI & CL with mocked central-admin-api - scale:2, k6vu:1 | 1 | Y | fspiopTransfers | .
- 16 | FSPIOP Transfers POST /transfers with MLAPI & CL with mocked central-admin-api - scale:2, k6vu:MAX | 1 | Y | fspiopTransfers | .
- 17 | FSPIOP Transfers POST /transfers with MLAPI & CL + Timeout handler - scale:1, k6vu:1 | 1 | Y | fspiopTransfers | .
- 18 | FSPIOP Transfers POST /transfers with MLAPI & CL + Timeout handler - scale:1, k6vu:MAX | 1 | Y | fspiopTransfers | .
- 19 | FSPIOP Transfers POST /transfers with MLAPI & CL + Timeout handler - scale:2-4, k6vu:1 | 1 | Y | fspiopTransfers | .
- 20 | FSPIOP Transfers POST /transfers with MLAPI & CL + Timeout handler - scale:2-4, k6vu:MAX | 1 | Y | fspiopTransfers | .
- 21 | FSPIOP Transfers POST /transfers with MLAPI & CL + PAYEE NOTIFICATION - scale:2, k6vu:MAX | 1 | Y | fspiopTransfers | .
+ 12 | FSPIOP Transfers POST /transfers with MLAPI & CL with cache config enabled - scale:1, k6vu:1 | 1 | Y | fspiopTransfers | .
+ 13 | FSPIOP Transfers POST /transfers with MLAPI & CL with mocked central-admin-api - scale:1, k6vu:MAX | 1 | Y | fspiopTransfers | .
+ 14 | FSPIOP Transfers POST /transfers with MLAPI & CL with mocked central-admin-api - scale:1, k6vu:1 | 1 | Y | fspiopTransfers | .
+ 15 | FSPIOP Transfers POST /transfers with MLAPI & CL with mocked central-admin-api - scale:2, k6vu:MAX | 1 | Y | fspiopTransfers | .
+ 16 | FSPIOP Transfers POST /transfers with MLAPI & CL with mocked central-admin-api + No Logs/Event-Audits - scale:1, k6vu:MAX | 1 | Y | fspiopTransfers | .
+ 17 | FSPIOP Transfers POST /transfers with MLAPI & CL with mocked central-admin-api + UV_THREADPOOL_SCALE:24 - scale:1, k6vu:MAX | 1 | Y | fspiopTransfers | .
+ 18 | FSPIOP Transfers POST /transfers with MLAPI & CL with mocked central-admin-api + No Logs/Event-Audits + UV_THREADPOOL_SCALE:24 - scale:1, k6vu:MAX | 1 | Y | fspiopTransfers | .
+ 19 | FSPIOP Transfers POST /transfers with MLAPI & CL with mocked central-admin-api + No Logs/Event-Audits + UV_THREADPOOL_SCALE:24 - scale:1, k6vu:MAX | 1 | Y | fspiopTransfers | .
+ 20 | FSPIOP Transfers POST /transfers with MLAPI & CL + Timeout handler - scale:1, k6vu:1 | 1 | Y | fspiopTransfers | .
+ 21 | FSPIOP Transfers POST /transfers with MLAPI & CL + Timeout handler - scale:1, k6vu:MAX | 1 | Y | fspiopTransfers | .
+ 22 | FSPIOP Transfers POST /transfers with MLAPI & CL + Timeout handler - scale:2-4, k6vu:1 | 1 | Y | fspiopTransfers | .
+ 23 | FSPIOP Transfers POST /transfers with MLAPI & CL + Timeout handler - scale:2-4, k6vu:MAX | 1 | Y | fspiopTransfers | .
+ 24 | FSPIOP Transfers POST /transfers with MLAPI & CL + PAYEE NOTIFICATION - scale:2, k6vu:MAX | 1 | Y | fspiopTransfers | .
 
 
  1 | ... | # | Y/N | . | .
