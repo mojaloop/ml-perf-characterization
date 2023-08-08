@@ -37,7 +37,7 @@ Scenario | Description | Test-Case | Repeatable (Y/N) | K6 Test Scenario / Confi
  8 | FSPIOP Transfers POST /transfers with MLAPI & CL + Unidirectional - scale:2, k6vu:MAX | 1 | Y | fspiopTransfers | .
  9 | FSPIOP Transfers POST /transfers with MLAPI & CL - scale:2, k6vu:1, dfsps:4 | 1 | Y | fspiopTransfers | .
  10 | FSPIOP Transfers POST /transfers with MLAPI & CL - scale:2, k6vu:MAX, dfsps:4 | 1 | Y | fspiopTransfers | .
- 11 | FSPIOP Transfers POST /transfers with MLAPI & CL - scale:2, k6vu:MAX, dfsps:8 | 1 | Y | fspiopTransfers | .
+ 11 | FSPIOP Transfers POST /transfers with MLAPI & CL - scale:2, k6vu:MAX, dfsps:8, partitions: 17 | 1 | Y | fspiopTransfers | .
  12 | FSPIOP Transfers POST /transfers with MLAPI & CL with mocked central-admin-api + No Logs/Event-Audits - scale:2, k6vu:MAX | 1 | Y | fspiopTransfers | .
  13 | FSPIOP Transfers POST /transfers with MLAPI & CL with mocked central-admin-api + No Logs/Event-Audits + UV_THREADPOOL_SCALE - scale:2, k6vu:MAX | 1 | Y | fspiopTransfers | .
  14 | FSPIOP Transfers POST /transfers with MLAPI & CL with mocked central-admin-api + No Logs/Event-Audits + UV_THREADPOOL_SCALE - scale:2, k6vu:MAX | 1 | Y | fspiopTransfers | .

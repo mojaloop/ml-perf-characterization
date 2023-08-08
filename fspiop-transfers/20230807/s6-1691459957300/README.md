@@ -50,6 +50,8 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile trans
 
 - Scaling to 2 did not provide linear scaling of ops/s. Attempt of 12 vu's lead to a bottle neck of 125 ops/s.
   10 vu's resulted in 118 ops/s. For reference, in scenario #4 the system managed 87 ops/s with a maximum of 6 vu's.
+- Despite linear scaling, the ops/sec increase is not bad from 87 to 125 and iteration duration is also not affected with the increased load which is a positive sign.
+- The load distribution went well between 2 random dfsps, that means both the position handler instances might be used evenly.
 
 ## Recommendations
 
