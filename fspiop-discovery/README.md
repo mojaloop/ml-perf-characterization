@@ -10,8 +10,8 @@
 ## Test Cases
 
 Test Case | Description | K6 Test Case | Notes
----------|---------|----------|---------|---------|
- 1 | FSPIOP GetParties End-to-end | getParties | FSPIOP GET /parties request executed from K6 via the Account-Lookup-Service |
+---------|---------|----------|---------|
+ 1 | FSPIOP GetParties End-to-end | getParties | FSPIOP GET /parties request executed from K6 via the Account-Lookup-Service | 
 
 ## Test Scenarios
 
