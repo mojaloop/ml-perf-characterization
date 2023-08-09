@@ -104,4 +104,6 @@ Here we would execute any combination of the following tests based on the [Test 
 | 1 | Optimize MySQL IO | Central-Ledger indicates that we are heavily bound by MySQL IO, investigating potential solutions to reduce this dependency would drastically improve performance. | High | Potential solutions include: PRISM (propagate data in messages), Simplify & Merge SQL statements, Cache SQL Queries, etc |
 | 2 | Optimize Steam Lib | Investigate how to optimize Kafka Streaming lib. | High |   | Potential solutions include: serialization using Protobuf |
 | 3 | Optimize Msg Processing via Batch | Investigate impact of processing messages in batches. | High |   | Potential solutions include: optimizing SQL statements due to batching nature. |
+| 4 | Profile Position Handler in isolation | Profile Central-Ledger Position Handler as its one of the components showing the usage of resources (i.e CPU). | Medium-High |   |   |
+| 5 | Profile Notification Handler in isolation | Profile ML-API-Adapter Notification Handler as its one of the components showing the usage of resources (i.e CPU). | Medium-High |   |   |
 |   |   |   |   |   |   |
