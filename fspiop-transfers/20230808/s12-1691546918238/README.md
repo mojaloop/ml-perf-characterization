@@ -6,6 +6,11 @@ params=&var-testid=1691546918238&from=1691546916199&to=1691547370092
 
 ## Add for Test scenario 12
 CLEDG_CACHE__CACHE_ENABLED = true
+"CACHE": {
+  "CACHE_ENABLED": true,
+  "MAX_BYTE_SIZE": 10000000,
+  "EXPIRES_IN_MS": 1000
+}
 ```
 
 ```
