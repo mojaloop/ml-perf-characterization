@@ -101,4 +101,7 @@ Here we would execute any combination of the following tests based on the [Test 
 
 | Story | Name | Description | Impact | Issue | Notes |
 |---|---|---|---|---|---|
-|   |   |   |   |   |
+| 1 | Optimize MySQL IO | Central-Ledger indicates that we are heavily bound by MySQL IO, investigating potential solutions to reduce this dependency would drastically improve performance. | High | Potential solutions include: PRISM (propagate data in messages), Simplify & Merge SQL statements, Cache SQL Queries, etc |
+| 2 | Optimize Steam Lib | Investigate how to optimize Kafka Streaming lib. | High |   | Potential solutions include: serialization using Protobuf |
+| 3 | Optimize Msg Processing via Batch | Investigate impact of processing messages in batches. | High |   | Potential solutions include: optimizing SQL statements due to batching nature. |
+|   |   |   |   |   |   |
