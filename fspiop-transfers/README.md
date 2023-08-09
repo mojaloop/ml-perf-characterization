@@ -60,10 +60,15 @@ Scenario | Description | Test-Case | Repeatable (Y/N) | K6 Test Scenario / Confi
  31 | FSPIOP Transfers POST /transfers with MLAPI & CL + Cache - scale:2+8position+4notification, dfsps:8, partitions: 17, k6vu:12 | 1 | Y | fspiopTransfers | .
  32 | FSPIOP Transfers POST /transfers with MLAPI & CL + Cache - scale:4+8position+4notification, dfsps:4, partitions: 17, k6vu:16 | 1 | Y | fspiopTransfers | .
  33 | FSPIOP Transfers POST /transfers with MLAPI & CL + Cache - scale:4+8position+4notification, dfsps:8, partitions: 17, k6vu:16 | 1 | Y | fspiopTransfers | .
+ 34 | FSPIOP Transfers POST /transfers with MLAPI & CL + Cache + extra notification switched off env var - scale:2+8position+4notification, dfsps:8, partitions: 17, k6vu:16 | 1 | Y fspiopTransfers | .
+ 35 | FSPIOP Transfers POST /transfers with MLAPI & CL + Cache + extra notification switched off via config - scale:2+8position+4notification, dfsps:8, partitions: 17, k6vu:16| 1 | Y fspiopTransfers | .
+ 36 | FSPIOP Transfers POST /transfers with MLAPI & CL + Cache + extra notification switched off via config + logging off - scale:2+8position+4notification, dfsps:8, partitions: 17, k6vu:16| 1 | Y fspiopTransfers | .
 
+<!--
  1 | ... | # | Y/N | . | .
  2 | ... | # | Y/N | . | .
- 3 | ... | # | Y/N | . | .
+ 3 | ... | # | Y/N | . | . 
+-->
 
 ### Approach
 
