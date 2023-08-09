@@ -104,4 +104,9 @@ Here we would execute any combination of the following tests based on the [Test 
 
 | Story | Name | Description | Impact | Issue | Notes |
 |---|---|---|---|---|---|
-|   |   |   |   |   |
+| 1 | Optimize MySQL IO | Central-Ledger indicates that we are heavily bound by MySQL IO, investigating potential solutions to reduce this dependency would drastically improve performance. | High | Potential solutions include: PRISM (propagate data in messages), Simplify & Merge SQL statements, Cache SQL Queries, etc |
+| 2 | Optimize Stream Lib | Investigate how to optimize Kafka Streaming lib, and add [metrics instrumentation](https://github.com/krallistic/kafka-prometheus-exporter/blob/master/README.md). | Medium-High |   | Potential solutions include: serialization using Protobuf, and monitor local msg queue vs kafka queue to determine if lag is by the NodeJS vs Node-Rdkafka process |
+| 3 | Optimize Msg Processing via Batch | Investigate impact of processing messages in batches. | Medium-High |   | Potential solutions include: optimizing SQL statements due to batching nature. |
+| 4 | Profile Position Handler in isolation | Profile Central-Ledger Position Handler as its one of the components showing the usage of resources (i.e CPU). | Medium-High |   |   |
+| 5 | Profile Notification Handler in isolation | Profile ML-API-Adapter Notification Handler as its one of the components showing the usage of resources (i.e CPU). | Medium-High |   |   |
+|   |   |   |   |   |   |
