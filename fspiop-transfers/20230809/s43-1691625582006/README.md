@@ -3,6 +3,15 @@
 ```conf
 var-testid=1691625582006
 params=&var-testid=1691625582006&from=1691625579307&to=1691626036359
+
+Scale 2
+Scale 4 ml-notification-handler
+Scale 8 central-position-handler
+8 dfsp Pool
+MLAPI_TRANSFERS__SEND_TRANSFER_CONFIRMATION_TO_PAYEE=false
+UV_THREADPOOL_SIZE=24
+ML_API_ADAPTER_VERSION=v14.0.1-snapshot.2
+MLAPI_ENDPOINT_SOURCE_URL=http://callback-handler-svc-cl-sim:3001/fspiop
 ```
 
 ```

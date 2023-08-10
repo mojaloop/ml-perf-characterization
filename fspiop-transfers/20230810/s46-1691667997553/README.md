@@ -3,6 +3,16 @@
 ```conf
 var-testid=1691667997553
 params=&var-testid=1691667997553&from=1691667994582&to=1691668453145
+
+Scale 2
+Scale 4 ml-notification-handler
+Scale 8 central-position-handler
+8 dfsp Pool
+MLAPI_TRANSFERS__SEND_TRANSFER_CONFIRMATION_TO_PAYEE=false
+UV_THREADPOOL_SIZE=24
+ML_API_ADAPTER_VERSION=v14.0.1-snapshot.2
+Reduced IOPS on managed Database
+mysql-cl command: "--disable-log-bin"
 ```
 
 ```

@@ -3,6 +3,14 @@
 ```conf
 var-testid=1691590355843
 params=&var-testid=1691580670805&from=1691590353423&to=1691590810219
+
+Scale 2
+Scale 4 ml-notification-handler
+Scale 8 central-position-handler
+8 dfsp Pool
+MLAPI_TRANSFERS__SEND_TRANSFER_CONFIRMATION_TO_PAYEE=false
+LOG_LEVEL=info -> LOG_LEVEL=error
+EVENT_SDK_LOG_FILTER=""
 ```
 
 ```

@@ -4,6 +4,11 @@
 var-testid=1691587588593
 params=&var-testid=1691580670805&from=1691587586463&to=1691588042550
 
+Scale 2
+Scale 4 ml-notification-handler
+Scale 8 central-position-handler
+8 dfsp Pool
+MLAPI_TRANSFERS__SEND_TRANSFER_CONFIRMATION_TO_PAYEE=false
 LOG_LEVEL=info -> LOG_LEVEL=error
 ```
 

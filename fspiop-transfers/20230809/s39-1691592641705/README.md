@@ -3,6 +3,13 @@
 ```conf
 var-testid=1691592641705
 params=&var-testid=1691592641705&from=1691592639451&to=1691593094851
+
+Scale 2
+Scale 4 ml-notification-handler
+Scale 8 central-position-handler
+8 dfsp Pool
+MLAPI_TRANSFERS__SEND_TRANSFER_CONFIRMATION_TO_PAYEE=false
+UV_THREADPOOL_SIZE=24
 ```
 
 ```

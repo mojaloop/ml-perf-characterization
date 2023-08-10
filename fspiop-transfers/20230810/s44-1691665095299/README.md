@@ -3,6 +3,15 @@
 ```conf
 var-testid=1691665095299
 params=&var-testid=1691665095299&from=1691665093149&to=1691665505248
+
+Scale 2
+Scale 4 ml-notification-handler
+Scale 8 central-position-handler
+8 dfsp Pool
+MLAPI_TRANSFERS__SEND_TRANSFER_CONFIRMATION_TO_PAYEE=false
+UV_THREADPOOL_SIZE=24
+ML_API_ADAPTER_VERSION=v14.0.1-snapshot.2
+Reduced IOPS on managed Database
 ```
 
 ```
