@@ -1,0 +1,6 @@
+# Scenario s36:
+Params: &from=1691587586463&to=1691588042550
+
+LOG_LEVEL=info -> LOG_LEVEL=error
+
+1691587588593
