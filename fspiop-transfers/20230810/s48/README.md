@@ -1,19 +1,11 @@
-# Scenario s46: s4, 4notify, 8pos - 8 dfsps + extra notification switched off via config + logging on + audit logs on + UV_THREAD_POOL 24 + 30vus + Ml Notification JSON.stringify fix + reduced IOPS + bin_log off
+# Scenario s48: s6, 6notify, 8pos - 8 dfsps + extra notification switched off via config + logging on + audit logs on + UV_THREAD_POOL 24 + 30vus + Ml Notification JSON.stringify fix + reduced IOPS + external mysql
 
 ```conf
-var-testid=1691667997553
-params=&var-testid=1691667997553&from=1691667994582&to=1691668453145
+var-testid=xxxx
+params=&var-testid=xxxx&from=1691684013993&to=1691684471643
 
-Scale 2
-Scale 4 ml-notification-handler
-Scale 8 central-position-handler
-8 dfsp Pool
-MLAPI_TRANSFERS__SEND_TRANSFER_CONFIRMATION_TO_PAYEE=false
-UV_THREADPOOL_SIZE=24
-ML_API_ADAPTER_VERSION=v14.0.1-snapshot.2
-Reduced IOPS on EC2 instance
 ## Changes to since last scenario
-mysql-cl command: "--disable-log-bin"
+Scaled up all the instances to 6
 ```
 
 ```
@@ -54,7 +46,7 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile trans
 
 ## Observations
 
-- Observed slight improvement in the throughput (10-15 ops/sec).
+- No improvements in throughput
 
 ## Recommendations
 

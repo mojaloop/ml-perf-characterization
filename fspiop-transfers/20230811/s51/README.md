@@ -1,19 +1,12 @@
-# Scenario s46: s4, 4notify, 8pos - 8 dfsps + extra notification switched off via config + logging on + audit logs on + UV_THREAD_POOL 24 + 30vus + Ml Notification JSON.stringify fix + reduced IOPS + bin_log off
+# Scenario s51: s4, 4notify, 8pos - 8 dfsps + extra notification switched off via config + logging on + audit logs on + UV_THREAD_POOL 24 + 20vus + Ml Notification JSON.stringify fix + reduced IOPS + bin_log off + local mysql + partitions 17 + kafka partition.assignment.strategy=cooperative-sticky
 
 ```conf
-var-testid=1691667997553
-params=&var-testid=1691667997553&from=1691667994582&to=1691668453145
+var-testid=xxxx
+params=&var-testid=xxxx&from=1691734070581&to=1691734528176
 
-Scale 2
-Scale 4 ml-notification-handler
-Scale 8 central-position-handler
-8 dfsp Pool
-MLAPI_TRANSFERS__SEND_TRANSFER_CONFIRMATION_TO_PAYEE=false
-UV_THREADPOOL_SIZE=24
-ML_API_ADAPTER_VERSION=v14.0.1-snapshot.2
-Reduced IOPS on EC2 instance
 ## Changes to since last scenario
-mysql-cl command: "--disable-log-bin"
+kafka partition.assignment.strategy=cooperative-sticky
+VUs changed to 20
 ```
 
 ```
@@ -39,8 +32,8 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile trans
       },
       "startVUs": 1,
       "stages": [
-        { "duration": "30s", "target": 30 },
-        { "duration": "5m", "target": 30 }
+        { "duration": "30s", "target": 20 },
+        { "duration": "5m", "target": 20 }
       ]
     }
   },
@@ -54,7 +47,7 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile trans
 
 ## Observations
 
-- Observed slight improvement in the throughput (10-15 ops/sec).
+- Observed the partitions are being allocated to consumers in a group more balanced. No improvements in throughput
 
 ## Recommendations
 
