@@ -10,7 +10,7 @@
 ## Test Cases
 
 Test Case | Description | K6 Test Case | Notes
----------|---------|----------|---------|---------|
+---------|---------|----------|---------
  1 | FSPIOP Transfers End-to-end | Transfers | FSPIOP POST /transfers request executed from K6 |
 
 ## Test Scenarios
@@ -94,7 +94,11 @@ Refer to [../README.md#4-tools-used](../README.md#4-tools-used) for more informa
 
 #### 1. Setup Tests, Test-Scenarios & ml-core-test-harness
 
-TBD
+Initially setup the ml-core-test-harness to support the [Test Scenarios](#test-scenarios) described above. This is done by setting removing all externalized dependencies by simulating them with a simulator (also known as the "Callback Handler Service").
+
+Refer to the following diagram showing the FSPIOP-Transfers characterization interaction diagram:
+
+![fspiop-transfers-characterization-end-to-end-bypassing-with-als-and-sim](../assets/images/fspiop-transfers-characterization-end-to-end-bypassing-with-als-and-sim.drawio.png)
 
 #### 2. Capturing End-to-end Metrics
 
@@ -106,7 +110,15 @@ Once this has been established the next step is to validate the ml-core-test-har
 
 #### 3. Baseline without the Target Service
 
-TBD
+Once this the [Smoke test](../README.md#3-types-of-tests) is successful, we will then perform a [Stress test](../README.md#3-types-of-tests) by-passing the service (The ML-API-Adapter and Central-Ledger components in this example) we wish to characterize and instead directly hit all externalized Simulators (i.e. "Callback Handler Service").
+
+This is shown in the following diagram, the same diagram as before except with the ML-API-Adapter and Central-Ledger services and handlers being removed:
+
+![fspiop-transfers-characterization-end-to-end-bypassing-sim-only](../assets/images/fspiop-transfers-characterization-end-to-end-bypassing-sim-only.drawio.png)
+
+The main advantage of this step is that we are able to determine the theoretical limits of what the Simulators are capable off, and most importantly what they are capable of in the configured typology (i.e. the underlying infrastructure, the number of simulators, etc). This will give us a good indication of when we are being limited by the Simulators when testing against our target Service (e.g. Account-Lookup-Service).
+
+This baseline is general defined to as [Test Scenarios](#test-scenarios) #1.
 
 #### 4. Execute a Tests with the Target Service based on Test Scenarios
 

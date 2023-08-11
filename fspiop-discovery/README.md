@@ -53,7 +53,7 @@ Refer to [../README.md#4-tools-used](../README.md#4-tools-used) for more informa
 
 Initially setup the ml-core-test-harness to support the [Test Scenarios](#test-scenarios) described above. This is done by setting removing all externalized dependencies by simulating them with a simulator (also known as the "Callback Handler Service").
 
-Refer to the following diagram showing the Account-Lookup-Service characterization interaction diagram:
+Refer to the following diagram showing the **FSPIOP-Discovery** characterization interaction diagram:
 
 ![fspiop-discovery-characterization-end-to-end-bypassing-with-als-and-sim.drawio](../assets/images/fspiop-discovery-characterization-end-to-end-bypassing-with-als-and-sim.drawio.png)
 
@@ -79,7 +79,7 @@ Once this has been established the next step is to validate the ml-core-test-har
 
 #### 3. Baseline without the Target Service
 
-Once this the [Smoke test](#types-of-tests) is successful, we will then perform a [Stress test](#types-of-tests) by-passing the service (The Account-lookup-Service in this example) we wish to characterize and instead directly hit all externalized Simulators (i.e. "Callback Handler Service").
+Once this the [Smoke test](../README.md#3-types-of-tests) is successful, we will then perform a [Stress test](../README.md#3-types-of-tests) by-passing the service (The Account-lookup-Service in this example) we wish to characterize and instead directly hit all externalized Simulators (i.e. "Callback Handler Service").
 
 This is shown in the following diagram, the same diagram as before except with the Account-Lookup-Service being removed:
 
