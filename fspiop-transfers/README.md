@@ -1,10 +1,10 @@
-# FSPIOP Transfers Performance Characterization (PLACEHOLDER)
+# FSPIOP Transfers Performance Characterization
 
 ## Status
 
 | Mojaloop Version |  Date  | Status  | Next  | Notes  |
 |---|---|---|---|---|
-| 15.1.0 |   |   | See [#follow-up-stores](#follow-up-stories) |   |
+| 15.1.0 | 2023-08-11 | The `FSPIOP-Transfers` has achieved a maximum observed End-to-end throughput of around `220 Op/s` @ `140 ms` duration based on [Test-Scenario](#scenarios) **#46** results. Configuration and code changes that have been made are summarised as as <br><br> 1. Enabled **Caching** on **Central-Ledger** (ref: [Test-Scenarios](#scenarios) **#29**,**#30**) ~ `7 Op/s` 🔼 <br>2. Released **ML-API-Adapter** [v14.0.1-snapshot.2](https://github.com/mojaloop/ml-api-adapter/releases/tag/v14.0.1-snapshot.2) with minor **JSON.stringify optimizations** (ref: [Test-Scenario](#scenarios) **#41**) ~ ◀️ <br>3. **Logging** & **Audit-Events** `On` vs `Off` (ref: [Test-Scenario](#scenarios) **#38**, **#39**) ~ `15 Op/s` 🔼 <br> 4. Disabling **Payee Notification** (ref: [Test-Scenario](#scenarios) **#34**) ~ ◀️ <br> 5. Local **MySQL** Optimization (ref: [Test-Scenario](#scenarios) **#44**,**#45**) ~ `3 Op/s` 🔼 <br> 6. **Managed MySQL** (ref: [Test-Scenario](#scenarios) **#48**) ~ ◀️ <br> 7. Optimized Kafka **Partitioning Assignment Strategy** (ref: [Test-Scenario](#scenarios) **#51**) ~ ◀️ <br> 8. Optimized Kafka **Partitioning sizing** (ref: [Test-Scenario](#scenarios) **#53**) ~ ◀️ <br><br> Observed areas that are limiting throughput and scalability:<br> 1. High MySQL IO due to un-optimized operations <br> 2. ML-API-Adapter Notification Handler is showing a high NodeJS Event Loop Lag, yet to be determined by detailed profiling<br> 4. High MySQL IO due to un-optimized operations <br> 5. Central-Ledger Handlers (especially Positions) are showing a moderate NodeJS Event Loop Lag, yet to be determined by detailed profiling <br> 6. Shared resource constraints of a single machine | See [#follow-up-stores](#follow-up-stories) |   |
 |   |   |   |   |   |
 
 ## Test Cases
@@ -21,7 +21,7 @@ Test Case | Description | K6 Test Case | Notes
 - Disable cl-timeout handler
 - Disable cl-get handler
 - Default is random 2 DFSPs as payer and payee from the configurable pool
-- No PATCH CALLBACKS and No PAYEE NOTIFICATION (Env Var: `MLAPI_TRANSFERS__SEND_TRANSFER_CONFIRMATION_TO_PAYEE=false`)
+- No PATCH CALLBACKS and ~~No PAYEE NOTIFICATION~~ (Env Var: `MLAPI_TRANSFERS__SEND_TRANSFER_CONFIRMATION_TO_PAYEE=false`, _Note: This was incorrectly configured until [Test-Scenario](#scenarios) **#34**_)
 
 ### Scenarios
 
@@ -72,7 +72,7 @@ Scenario | Description | Test-Case | Repeatable (Y/N) | K6 Test Scenario / Confi
  43 | FSPIOP Transfers POST /transfers with MLAPI & CL + Cache + extra notification switched off + logging on + audit logs on + UV_THREADPOOL_SCALE:24 + ML notification stringify fix + mocked central admin api - scale:2+8position+4notification, dfsps:8, partitions: 17, k6vu:30 | 1 | Y | fspiopTransfers
  44 | FSPIOP Transfers POST /transfers with MLAPI & CL + Cache + extra notification switched off + logging on + audit logs on + UV_THREADPOOL_SCALE:24 + ML notification stringify fix + reduced IOPS - scale:2+8position+4notification, dfsps:8, partitions: 17, k6vu:20 | 1 | Y | fspiopTransfers
  45 | FSPIOP Transfers POST /transfers with MLAPI & CL + Cache + extra notification switched off + logging on + audit logs on + UV_THREADPOOL_SCALE:24 + ML notification stringify fix + reduced IOPS + bin_log off - scale:2+8position+4notification, dfsps:8, partitions: 17, k6vu:20 | 1 | Y | fspiopTransfers
- 46 | FSPIOP Transfers POST /transfers with MLAPI & CL + Cache + extra notification switched off + logging on + audit logs on + UV_THREADPOOL_SCALE:24 + ML notification stringify fix + reduced IOPS + bin_log off - scale:2+8position+4notification, dfsps:8, partitions: 17, k6vu:30 | 1 | Y | fspiopTransfers
+ 46 | **FSPIOP Transfers POST /transfers with MLAPI & CL + Cache + extra notification switched off + logging on + audit logs on + UV_THREADPOOL_SCALE:24 + ML notification stringify fix + reduced IOPS + bin_log off - scale:4+8position+4notification, dfsps:8, partitions: 17, k6vu:30** | 1 | Y | fspiopTransfers
 
 <!--
  1 | ... | # | Y/N | . | .
@@ -119,9 +119,15 @@ Here we would execute any combination of the following tests based on the [Test 
 
 | Story | Name | Description | Impact | Issue | Notes |
 |---|---|---|---|---|---|
-| 1 | Optimize MySQL IO | Central-Ledger indicates that we are heavily bound by MySQL IO, investigating potential solutions to reduce this dependency would drastically improve performance. | High | Potential solutions include: PRISM (propagate data in messages), Simplify & Merge SQL statements, Cache SQL Queries, etc |
-| 2 | Optimize Stream Lib | Investigate how to optimize Kafka Streaming lib, and add [metrics instrumentation](https://github.com/Collaborne/node-rdkafka-prometheus). | Medium-High |   | Potential solutions include: serialization using Protobuf, and monitor local msg queue vs kafka queue to determine if lag is by the NodeJS vs Node-Rdkafka process |
-| 3 | Optimize Msg Processing via Batch | Investigate impact of processing messages in batches. | Medium-High |   | Potential solutions include: optimizing SQL statements due to batching nature. |
-| 4 | Profile Position Handler in isolation | Profile Central-Ledger Position Handler as its one of the components showing the usage of resources (i.e CPU). | Medium-High |   |   |
-| 5 | Profile Notification Handler in isolation | Profile ML-API-Adapter Notification Handler as its one of the components showing the usage of resources (i.e CPU). | Medium-High |   |   |
+| 1 | Enabling parallel processing of the Position management | Investigate how to shard Positions to optimism distributed parallel processing. | High | | Does Tiger Beetle do this for us, or even necessary to consider with Tiger Beetle's performance? |
+| 2 | Optimize MySQL IO | Central-Ledger indicates that we are heavily bound by MySQL IO, investigating potential solutions to reduce this dependency would drastically improve performance. | High | | Potential solutions include: PRISM (propagate data in messages), Simplify & Merge SQL statements, Cache SQL Queries, use In-memory processing for position-management, etc |
+| 3 | Optimize Central-Service-Stream Lib | Investigate how to optimize Kafka Streaming lib, and add [metrics instrumentation](https://github.com/Collaborne/node-rdkafka-prometheus). | Medium-High |   | Potential solutions include: serialization using Protobuf, and monitor local msg queue vs kafka queue to determine if lag is by the NodeJS vs Node-Rdkafka process |
+| 4 | Optimize Msg Processing via Batch | Investigate impact of processing messages in batches. | Medium-High |   | Potential solutions include: optimizing SQL statements due to batching nature. |
+| 5 | Profile Position Handler in isolation | Profile Central-Ledger Position Handler as its one of the components showing the usage of resources (i.e CPU). | Medium-High |   |   |
+| 6 | Profile Notification Handler in isolation | Profile ML-API-Adapter Notification Handler as its one of the components showing the usage of resources (i.e CPU). | Medium-High |   |   |
+| 7 | Apply JSON.stringify fix to ML-API-Adapter Notification Handler | ML-API-Adapter Notification Handler is calling JSON.stringify unnecessary for each Kafka message consumed, however the impact of this change tested via a snapshot releases was minimal which is probably due to "other limiting" factors. We expect that this would certainly be a "high" impact issue if we are able to resolve the "other limiting" factors. | Medium |   | [ml-api-adapter/pull/510](https://github.com/mojaloop/ml-api-adapter/pull/510), [v14.0.1-snapshot.2](https://github.com/mojaloop/ml-api-adapter/releases/tag/v14.0.1-snapshot.2) |
+| 8 | Apply JSON.stringify fix to Central-Ledger Admin API | Central-Ledger Admin API has the same JSON.stringify for all sync responses, however most interactions with the API is cached by the ALS and ML-API adapter making the impact minimal. | Low |   | [central-ledger/pull/961](https://github.com/mojaloop/central-ledger/pull/961) |
+| 9 | Benchmark caching libraries (i.e. Catbox vs Node-Cache).  | Benchmark performance of the caching libraries (i.e. Catbox vs Node-Cache) to determine if the performance difference is impactful enough to refactor caching implementation with Node-Cache. | Low-Medium |   |   |
+| 10 | Reduce Log Verbosity for INFO Log-levels | INFO level logs are too verbose, and should be optimized to provide only a summary of key events/indicators with only key-information (e.g. IDs, Functionality/Event) where required. | Low |   |   |
+| 11 | Performance Characterize FPSIOP-Transfers using Managed Kafka instance | Performance Characterize FPSIOP-Transfers against a Managed Kafka instance to determine if the impact of an optimized Kafaka deployment. | Unknown |   |   |
 |   |   |   |   |   |   |
