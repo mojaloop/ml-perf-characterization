@@ -8,7 +8,7 @@ Here you will find Performance Characterizations for the Mojaloop Services.
 |---|---|---|---|
 | 1. | FSPIOP Discovery | [./fspiop-discovery/README](./fspiop-discovery/README.md) | Done |
 | 2. | ~~FSPIOP Agreement~~ |   | To Be Done |
-| 3. | ~~FSPIOP Transfers~~ | [./fspiop-transfers/README](./fspiop-transfers/README.md) | To Be Done |
+| 3. | FSPIOP Transfers | [./fspiop-transfers/README](./fspiop-transfers/README.md) | In-Progress |
 | 4. | ~~FSPIOP Discovery + Agreement + Transfers~~ |   | To Be Done |
 
 ### 2. Capturing End-to-end Metrics
