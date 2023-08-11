@@ -10,7 +10,7 @@
 ## Test Cases
 
 Test Case | Description | K6 Test Case | Notes
----------|---------|----------|---------|---------|
+---------|---------|----------|---------
  1 | FSPIOP Transfers End-to-end | Transfers | FSPIOP POST /transfers request executed from K6 |
 
 ## Test Scenarios
