@@ -146,6 +146,5 @@ Here we would execute any combination of the following tests based on the [Test 
 | 9 | Benchmark caching libraries (i.e. Catbox vs Node-Cache).  | Benchmark performance of the caching libraries (i.e. Catbox vs Node-Cache) to determine if the performance difference is impactful enough to refactor caching implementation with Node-Cache. | Low-Medium |   |   |
 | 10 | Reduce Log Verbosity for INFO Log-levels | INFO level logs are too verbose, and should be optimized to provide only a summary of key events/indicators with only key-information (e.g. IDs, Functionality/Event) where required. | Low |   |   |
 | 11 | Performance Characterize FPSIOP-Transfers using Managed Kafka instance | Performance Characterize FPSIOP-Transfers against a Managed Kafka instance to determine if the impact of an optimized Kafaka deployment. | Unknown |   |   |
-|   |   |   |   |   |   |
 | 12 | Issue with increasing CACHE duration in Central Ledger  | When the cache is increased in central ledger using CLEDG_CACHE__EXPIRES_IN_MS, transfers are not going through. It seems like a bug, but need to investigate it more. | Unknown |   |   |
 |   |   |   |   |   |   |
