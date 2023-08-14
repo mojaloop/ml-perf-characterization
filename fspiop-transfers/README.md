@@ -147,4 +147,8 @@ Here we would execute any combination of the following tests based on the [Test 
 | 10 | Reduce Log Verbosity for INFO Log-levels | INFO level logs are too verbose, and should be optimized to provide only a summary of key events/indicators with only key-information (e.g. IDs, Functionality/Event) where required. | Low |   |   |
 | 11 | Performance Characterize FPSIOP-Transfers using Managed Kafka instance | Performance Characterize FPSIOP-Transfers against a Managed Kafka instance to determine if the impact of an optimized Kafaka deployment. | Unknown |   |   |
 | 12 | Issue with increasing CACHE duration in Central Ledger  | When the cache is increased in central ledger using CLEDG_CACHE__EXPIRES_IN_MS, transfers are not going through. It seems like a bug, but need to investigate it more. | Unknown |   |   |
+| 13 |  Apply default Configuration on consumer configs with `partition.assignment.strategy=cooperative-sticky` | Applying `partition.assignment.strategy=cooperative-sticky` on Kafka consumers will ensure that scaling of handlers will be better balanced. This will allow partitions to be assigned to available handlers more evenly, allowing messages to be optimally processed. | Low-Medium |   | Ref: [librdkafka Configuration](https://github.com/confluentinc/librdkafka/blob/master/CONFIGURATION.md#:~:text=The%20name%20of,roundrobin%2C%20cooperative%2Dsticky.)  |
+
+<!--
 |   |   |   |   |   |   |
+-->

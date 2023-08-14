@@ -47,8 +47,8 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile trans
 
 ## Observations
 
-- Observed the partitions are being allocated to consumers in a group more balanced. No improvements in throughput
+- Observed the partitions are being allocated to consumers in a group more balanced. No improvements in throughput, however partition balancing is vastly improved. Prior to this config change only 4 of the 8 Position Handlers were being assigned, after this configuration, all 8 are being assigned to a partition for mostly even processing of messages.
 
 ## Recommendations
 
--
+- Configure default consumer configs with `partition.assignment.strategy=cooperative-sticky` ~ [Ref](https://github.com/confluentinc/librdkafka/blob/master/CONFIGURATION.md#:~:text=partition.assignment.strategy)
