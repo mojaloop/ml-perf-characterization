@@ -7,6 +7,7 @@ params=&var-testid=xxxx&from=1691734070581&to=1691734528176
 ## Changes to since last scenario
 kafka partition.assignment.strategy=cooperative-sticky
 VUs changed to 20
+Reduced iOPS from 25k to 5k
 ```
 
 ```
@@ -18,6 +19,7 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile trans
 - m6i.4xlarge
   - 16 CPU - 3.5 GHz 3rd Generation Intel Xeon Scalable processors (Ice Lake 8375C)
   - 64gb RAM
+  - SSD iO2 @ 5k
 
 ## k6 Test Config
 

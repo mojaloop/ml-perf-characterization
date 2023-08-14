@@ -18,6 +18,7 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile trans
 - m6i.4xlarge
   - 16 CPU - 3.5 GHz 3rd Generation Intel Xeon Scalable processors (Ice Lake 8375C)
   - 64gb RAM
+  - HDD io2 with 50 GB, @ 5000 iOP/S
 
 ## k6 Test Config
 

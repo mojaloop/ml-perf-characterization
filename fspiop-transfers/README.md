@@ -24,6 +24,7 @@ Test Case | Description | K6 Test Case | Notes
 - Disable cl-timeout handler
 - Disable cl-get handler
 - Default is random 2 DFSPs as payer and payee from the configurable pool
+- HDD io2 with 50-100 GB, @ 25000 iOP/S is used unless otherwise stated (_i.e. 5k iOP/s configured from Scenario 51+ onwards_)
 - No PATCH CALLBACKS and ~~No PAYEE NOTIFICATION~~ (Env Var: `MLAPI_TRANSFERS__SEND_TRANSFER_CONFIRMATION_TO_PAYEE=false`, _Note: This was incorrectly configured until [Test-Scenario](#scenarios) **#34**_)
 
 ### Scenarios
@@ -77,7 +78,7 @@ Scenario | Description | Test-Case | Repeatable (Y/N) | K6 Test Scenario / Confi
  45 | **FSPIOP Transfers POST /transfers with MLAPI & CL + Cache + extra notification switched off + logging on + audit logs on + UV_THREADPOOL_SCALE:24 + ML notification stringify fix + reduced IOPS + bin_log off - scale:2+8position+4notification, dfsps:8, partitions: 17, k6vu:20** | 1 | Y | fspiopTransfers
  46 | **FSPIOP Transfers POST /transfers with MLAPI & CL + Cache + extra notification switched off + logging on + audit logs on + UV_THREADPOOL_SCALE:24 + ML notification stringify fix + reduced IOPS + bin_log off - scale:4+8position+4notification, dfsps:8, partitions: 17, k6vu:30** | 1 | Y | fspiopTransfers
  47 | **FSPIOP Transfers POST /transfers with MLAPI & CL + Cache + extra notification switched off + logging on + audit logs on + UV_THREADPOOL_SCALE:24 + ML notification stringify fix + reduced IOPS + managed mysql - scale:4+8position+4notification, dfsps:8, partitions: 17, k6vu:30** | 1 | Y | fspiopTransfers
- 48 | FSPIOP Transfers POST /transfers with MLAPI & CL + Cache + extra notification switched off + logging on + audit logs on + UV_THREADPOOL_SCALE:24 + ML notification stringify fix + reduced IOPS + managed mysql - scale:6+8position+4notification, dfsps:8, partitions: 17, k6vu:30 | 1 | Y | fspiopTransfers
+ 48 | **FSPIOP Transfers POST /transfers with MLAPI & CL + Cache + extra notification switched off + logging on + audit logs on + UV_THREADPOOL_SCALE:24 + ML notification stringify fix + reduced IOPS + managed mysql - scale:6+8position+4notification, dfsps:8, partitions: 17, k6vu:30** | 1 | Y | fspiopTransfers
  51 | **FSPIOP Transfers POST /transfers with MLAPI & CL + Cache + extra notification switched off + logging on + audit logs on + UV_THREADPOOL_SCALE:24 + ML notification stringify fix + reduced IOPS + bin_log off + kafka partition.assignment.strategy=cooperative-sticky - scale:4+8position+4notification, dfsps:8, partitions: 17, k6vu:20** | 1 | Y | fspiopTransfers
  53 | **FSPIOP Transfers POST /transfers with MLAPI & CL + Cache + extra notification switched off + logging on + audit logs on + UV_THREADPOOL_SCALE:24 + ML notification stringify fix + reduced IOPS + bin_log off + kafka partition.assignment.strategy=cooperative-sticky - scale:4+8position+4notification, dfsps:8, partitions: 19, k6vu:20** | 1 | Y | fspiopTransfers
 
