@@ -1,0 +1,36 @@
+load-k6-1  | time="2023-08-08T03:09:46Z" level=info msg="Env Vars -->\n  K6_SCRIPT_WS_TIMEOUT_MS=2000,\n  K6_SCRIPT_FSPIOP_TRANSFERS_ENDPOINT_URL=http://ml-api-adapter:3000,\n  K6_SCRIPT_FSPIOP_FSP_POOL=[{\"partyId\":19012345001,\"fspId\":\"perffsp1\",\"wsUrl\":\"ws://sim-perffsp1:3002\"},{\"partyId\":19012345002,\"fspId\":\"perffsp2\",\"wsUrl\":\"ws://sim-perffsp2:3002\"},{\"partyId\":19012345003,\"fspId\":\"perffsp3\",\"wsUrl\":\"ws://sim-perffsp3:3002\"},{\"partyId\":19012345004,\"fspId\":\"perffsp4\",\"wsUrl\":\"ws://sim-perffsp4:3002\"}]\n" source=console
+load-k6-1  |
+load-k6-1  |      ✓ TRANSFERS_FSPIOP_POST_TRANSFERS_RESPONSE_IS_202
+load-k6-1  |      ✓ TRANSFERS_E2E_FSPIOP_POST_TRANSFERS_SUCCESS
+load-k6-1  |
+load-k6-1  |      █ Post Transfers
+load-k6-1  |
+load-k6-1  |      checks.........................: 100.00% ✓ 73452      ✗ 0
+load-k6-1  |      data_received..................: 12 MB   35 kB/s
+load-k6-1  |      data_sent......................: 75 MB   227 kB/s
+load-k6-1  |      group_duration.................: avg=239.04µs min=148.58µs med=234.56µs max=4.99ms   p(90)=290.76µs p(95)=303.51µs
+load-k6-1  |      http_req_blocked...............: avg=4.74µs   min=1.91µs   med=4.49µs   max=426.96µs p(90)=5.72µs   p(95)=6.13µs
+load-k6-1  |      http_req_connecting............: avg=30ns     min=0s       med=0s       max=155.33µs p(90)=0s       p(95)=0s
+load-k6-1  |    ✓ http_req_duration..............: avg=1.35ms   min=794.52µs med=1.31ms   max=17.31ms  p(90)=1.64ms   p(95)=1.77ms
+load-k6-1  |        { expected_response:true }...: avg=1.35ms   min=794.52µs med=1.31ms   max=17.31ms  p(90)=1.64ms   p(95)=1.77ms
+load-k6-1  |    ✓ http_req_failed................: 0.00%   ✓ 0          ✗ 36726
+load-k6-1  |      http_req_receiving.............: avg=33.87µs  min=16.14µs  med=32.76µs  max=1.61ms   p(90)=42.6µs   p(95)=46.18µs
+load-k6-1  |      http_req_sending...............: avg=24.07µs  min=12.19µs  med=23.68µs  max=239.09µs p(90)=28.69µs  p(95)=30.26µs
+load-k6-1  |      http_req_tls_handshaking.......: avg=0s       min=0s       med=0s       max=0s       p(90)=0s       p(95)=0s
+load-k6-1  |      http_req_waiting...............: avg=1.29ms   min=745.4µs  med=1.25ms   max=17.24ms  p(90)=1.57ms   p(95)=1.71ms
+load-k6-1  |      http_reqs......................: 36726   111.265783/s
+load-k6-1  |    ✓ iteration_duration.............: avg=85.76ms  min=62.93ms  med=84.16ms  max=341.34ms p(90)=101ms    p(95)=106.6ms
+load-k6-1  |      iterations.....................: 36726   111.265783/s
+load-k6-1  |      vus............................: 10      min=1        max=10
+load-k6-1  |      vus_max........................: 10      min=10       max=10
+load-k6-1  |      ws_connecting..................: avg=440.42µs min=238.92µs med=415.62µs max=14.54ms  p(90)=529.07µs p(95)=573.42µs
+load-k6-1  |      ws_msgs_received...............: 36726   111.265783/s
+load-k6-1  |      ws_msgs_sent...................: 36726   111.265783/s
+load-k6-1  |      ws_session_duration............: avg=85.42ms  min=62.61ms  med=83.82ms  max=340.99ms p(90)=100.66ms p(95)=106.25ms
+load-k6-1  |      ws_sessions....................: 36726   111.265783/s
+load-k6-1  |
+load-k6-1  |
+load-k6-1  | running (5m30.1s), 00/10 VUs, 36726 complete and 0 interrupted iterations
+load-k6-1  | fspiopTransfers ✓ [ 100% ] 00/10 VUs  5m30s
+load-k6-1  |
+load-k6-1 exited with code 0

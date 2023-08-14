@@ -5,15 +5,24 @@
 | Mojaloop Version |  Date  | Status  | Next  | Notes  |
 |---|---|---|---|---|
 | 15.1.0 | 2nd Aug 2023 | The `Account-Lookup-Service` (`ALS`) has achieved a significant improvement in throughput (10x), from `10 Op/s` ([ref](./20230726/s2-1690376653994/README.md#observations)) --> `100 Op/s` ([ref](./20230727/s10-1690466917636/README.md#observations)), and reduced duration of from around `100 ms` ([ref](./20230726/s2-1690376653994/README.md#observations)) --> `14 ms` ([ref](./20230727/s10-1690466917636/README.md#observations)) for End-to-end `GET /parties` (inc.Callbacks). These improvements have also shown that the `Account-Lookup-Service` was able to `scale near-linearly` with `4x Instances` achieving just over `400 Op/s` ([ref](./20230728/s16-1690552431770/README.md#observations)) with a duration of `14.9 ms` ([ref](./20230728/s16-1690552431770/README.md#observations)). These impressive results were observed after implementing these pull-requests changes: [account-lookup-service/pull/460](https://github.com/mojaloop/account-lookup-service/pull/460), [account-lookup-service/pull/461](https://github.com/mojaloop/account-lookup-service/pull/461). | See [#follow-up-stores](#follow-up-stories) | `ALS` [v14.2.3](https://github.com/mojaloop/account-lookup-service/releases/tag/v14.2.3) was release to address most of the major performance issues, however the caching improvements have yet to be merged as part of [account-lookup-service/pull/461](https://github.com/mojaloop/account-lookup-service/pull/461) as they require additional effort in design & implementation to make them "production" grade. |
-|   |   |   |   |   |
+
+<!--
+|   |   |   |   |   | 
+-->
 
 ## Test Cases
 
 Test Case | Description | K6 Test Case | Notes
 ---------|---------|----------|---------|
- 1 | FSPIOP GetParties End-to-end | getParties | FSPIOP GET /parties request executed from K6 via the Account-Lookup-Service | 
+ 1 | FSPIOP GetParties End-to-end | getParties | FSPIOP GET /parties request executed from K6 via the Account-Lookup-Service |  
 
 ## Test Scenarios
+
+### Assumptions
+
+- ...
+
+### Scenarios
 
 Scenario | Description | Test-Case | Repeatable (Y/N) | K6 Test Scenario / Config | Notes
 ---------|----------|---------|---------|---------|---------
@@ -47,7 +56,7 @@ Refer to [../README.md#4-tools-used](../README.md#4-tools-used) for more informa
 
 Initially setup the ml-core-test-harness to support the [Test Scenarios](#test-scenarios) described above. This is done by setting removing all externalized dependencies by simulating them with a simulator (also known as the "Callback Handler Service").
 
-Refer to the following diagram showing the Account-Lookup-Service characterization interaction diagram:
+Refer to the following diagram showing the **FSPIOP-Discovery** characterization interaction diagram:
 
 ![fspiop-discovery-characterization-end-to-end-bypassing-with-als-and-sim.drawio](../assets/images/fspiop-discovery-characterization-end-to-end-bypassing-with-als-and-sim.drawio.png)
 
@@ -73,7 +82,7 @@ Once this has been established the next step is to validate the ml-core-test-har
 
 #### 3. Baseline without the Target Service
 
-Once this the [Smoke test](#types-of-tests) is successful, we will then perform a [Stress test](#types-of-tests) by-passing the service (The Account-lookup-Service in this example) we wish to characterize and instead directly hit all externalized Simulators (i.e. "Callback Handler Service").
+Once this the [Smoke test](../README.md#3-types-of-tests) is successful, we will then perform a [Stress test](../README.md#3-types-of-tests) by-passing the service (The Account-lookup-Service in this example) we wish to characterize and instead directly hit all externalized Simulators (i.e. "Callback Handler Service").
 
 This is shown in the following diagram, the same diagram as before except with the Account-Lookup-Service being removed:
 
