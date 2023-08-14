@@ -137,6 +137,8 @@ Here we would execute any combination of the following tests based on the [Test 
 
 ## Follow-up stories
 
+_Note: The stories below are not in any order of preference, and will need to be prioritized as required._
+
 | Story | Name | Description | Impact | Issue | Notes |
 |---|---|---|---|---|---|
 | 1 | Enabling parallel processing of the Position management | Investigate how to enable parallel processing, and also consider sharding Positions to optimism distributed parallel processing. | High | | Does Tiger Beetle do this for us, or even necessary to consider with Tiger Beetle's performance? |
@@ -151,7 +153,10 @@ Here we would execute any combination of the following tests based on the [Test 
 | 10 | Reduce Log Verbosity for INFO Log-levels | INFO level logs are too verbose, and should be optimized to provide only a summary of key events/indicators with only key-information (e.g. IDs, Functionality/Event) where required. | Low |   |   |
 | 11 | Performance Characterize FPSIOP-Transfers using Managed Kafka instance | Performance Characterize FPSIOP-Transfers against a Managed Kafka instance to determine if the impact of an optimized Kafaka deployment. | Unknown |   |   |
 | 12 | Issue with increasing CACHE duration in Central Ledger  | Transfers fail when the cache is increased in Central-Ledger using CLEDG_CACHE__EXPIRES_IN_MS. This requires further investigation as it may be a due a bug in the underlying cache implementation. | Unknown |   |   |
-| 13 |  Apply default Configuration on consumer configs with `partition.assignment.strategy=cooperative-sticky` | Applying `partition.assignment.strategy=cooperative-sticky` on Kafka consumers will ensure that scaling of handlers will be better balanced. This will allow partitions to be assigned to available handlers more evenly, allowing messages to be optimally processed. | Low-Medium |   | Ref: [librdkafka Configuration](https://github.com/confluentinc/librdkafka/blob/master/CONFIGURATION.md#:~:text=The%20name%20of,roundrobin%2C%20cooperative%2Dsticky.)  |
+| 13 | Apply default Configuration on consumer configs with `partition.assignment.strategy=cooperative-sticky` | Applying `partition.assignment.strategy=cooperative-sticky` on Kafka consumers will ensure that scaling of handlers will be better balanced. This will allow partitions to be assigned to available handlers more evenly, allowing messages to be optimally processed. | Low-Medium |   | Ref: [librdkafka Configuration](https://github.com/confluentinc/librdkafka/blob/master/CONFIGURATION.md#:~:text=The%20name%20of,roundrobin%2C%20cooperative%2Dsticky.)  |
+| 14 | Performance Characterizes scenarios with Timeout-handler ([Test Scenarios](#test-scenarios) #20, #21, #22, #23) | Performance Characterizes scenarios with Timeout-handler to understand the impact of the Timeout-handler cron-job process on the Transfers critical path. | Unknown |   |   |
+| 15 | Performance Characterizes scenarios with Event-SDK Sidecar impact | Performance Characterizes scenarios with Event-SDK Sidecar to understand the impact of the Trace and Auditing (e.g. Ingress, Egress) event logging. | Unknown |   |   |
+| 16 | Performance Characterizes scenarios with HTTP Keep-live to ML-API-Adapter Notification Handler |   | Unknown |   |   |
 
 <!--
 |   |   |   |   |   |   |
