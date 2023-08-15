@@ -24,7 +24,7 @@ Test Case | Description | K6 Test Case | Notes
   - `8` vCPU - `3.5 GHz` 3rd Generation Intel Xeon Scalable processors (Ice Lake 8375C)
   - `32gb` RAM
   - HDD `io2` with `100` GB, @ `25k` iOP/S is used unless otherwise stated (_i.e. 5k iOP/s configured from Scenario 51+ onwards_)
-- Docker version ([ref](https://gist.github.com/mdebarros/6d9ac90f33c96031cbce6b9a3ea8048e))
+- Docker Version ([ref](https://gist.github.com/mdebarros/6d9ac90f33c96031cbce6b9a3ea8048e))
 
   ```bash
   $ docker version
@@ -58,6 +58,24 @@ Test Case | Description | K6 Test Case | Notes
     GitCommit:        de40ad0
   $ docker compose version
   Docker Compose version v2.19.1
+  ```
+
+- OS Version
+
+  ```bash
+  $ cat /etc/os-release
+  NAME="Amazon Linux"
+  VERSION="2023"
+  ID="amzn"
+  ID_LIKE="fedora"
+  VERSION_ID="2023"
+  PLATFORM_ID="platform:al2023"
+  PRETTY_NAME="Amazon Linux 2023"
+  ANSI_COLOR="0;33"
+  CPE_NAME="cpe:2.3:o:amazon:amazon_linux:2023"
+  HOME_URL="https://aws.amazon.com/linux/"
+  BUG_REPORT_URL="https://github.com/amazonlinux/amazon-linux-2023"
+  SUPPORT_END="2028-03-01"
   ```
 
 ### Scenarios
