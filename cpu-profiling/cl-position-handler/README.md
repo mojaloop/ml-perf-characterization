@@ -98,3 +98,19 @@ Query     COMMIT
 ### Observations
 - The select statement on `participant` tables uses order by on `name` field. The `explain` command is showing `Using filesort`. Should investigate the cause and resolve if sorting is happening really. (May need to use FULLTEXT indexes, remove order by if its not needed ...etc)
 
+
+## Setting up position handler running in isolation for executing kafka messages without need for other handlers
+
+- Follow the instructions in `Local Setup` except running position handler with node as we want to capture unprocessed position messages from kafka as test data. We need to start with fresh deployment as we don't want to dump old data.
+- Execute k6 load scenario `postTransfersNoCallback` for triggering a fixed number of transfers without waiting for a callback
+- Allow some time to get all messages processed by other handlers
+- Dump mysql database `central_ledger` using `mysqldump` command and store it in a file
+- Dump kafka message in the topic `topic-transfer-position` using the following command
+```
+kcat -b localhost:9092 -t topic-transfer-position > kafka-topic-transfer-position.dump
+```
+- Now start the position handler and wait for the messages to be processed and observe the time taken for consuming all the messages with the help of grafana dashboards.
+
+### Replay the messages
+- Execute the script `feed-test-data.sh` to clear the necessary records in mysql database and dump kafka position messages
+- Import `Position Handler Test Dashboard` in grafana and observe the processing time and throughput
