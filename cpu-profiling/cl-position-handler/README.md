@@ -114,3 +114,14 @@ kcat -b localhost:9092 -t topic-transfer-position > kafka-topic-transfer-positio
 ### Replay the messages
 - Execute the script `feed-test-data.sh` to clear the necessary records in mysql database and dump kafka position messages
 - Import `Position Handler Test Dashboard` in grafana and observe the processing time and throughput
+
+
+## Inputs (TODO):
+- Document the observations about batch processing
+- Add hardware spec of dev machine, component versions ...etc
+- Try sync to false
+- Try use a buffer class for rawMessage assignment issue
+- Enable CACHE_ENABLED and observe the difference (Also with participant select query)
+- Document mysql statements for prepare and fulfil separately
+- Get kafka and mysql test dumps for testing prepare and fulfil messages separately
+- Investigate the missing sql update position queries from previous findings
