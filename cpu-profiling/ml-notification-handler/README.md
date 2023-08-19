@@ -5,16 +5,16 @@
 - Scale `ml-notification-handler` to 1
 - Expose port `9092` of kafka service
 - Expose ports for cl-sim, dfsp-sim1 and dfsp-sim2. "3001:3001", "3002:3001" and "3003:3001"
-- Update `envs/cl-sim.env` with `CBH_ADMIN_FSP_ENDPOINT_MAP='{"perffsp1":"http://localhost:3002/fspiop","perffsp2":"http://localhost:3003/fspiop"`
+- Update `envs/cl-sim.env` with `CBH_ADMIN_FSP_ENDPOINT_MAP='{"perffsp1":"http://localhost:3002/fspiop","perffsp2":"http://localhost:3003/fspiop"}`
 - Change `KAFKA_CFG_ADVERTISED_LISTENERS` in kafka environment variables to contain `LISTENER_EXTERN://localhost:9092`
-- Run `docker compose --project-name ml-core -f docker-compose-perf.yml --profile transfers-test --profile 2dfsp --profile ttk-provisioning-transfers up kafka-provisioning callback-handler-svc-cl-sim sim-perffsp1 sim-perffsp2`
+- Run `docker compose --project-name ml-core -f docker-compose-perf.yml up kafka-provisioning callback-handler-svc-cl-sim sim-perffsp1 sim-perffsp2`
 
 ## Profile using chrome debugger
 - Download [ml-api-adapter](https://github.com/mojaloop/ml-api-adapter) repo. Tested using v14.0.1.
 - Change `ENDPOINT_SOURCE_URL` to `http://localhost:3001/admin` in `config/default.json`
 - Run `node --inspect src/handlers/index.js handler --notification` in separate terminal
 - Use `Chrome Debugger` to connect to this instance and start CPU profiling
-- Run load using `messages.log` in included folder with `cat messages.log | kcat -b localhost:9092 -t topic-notification-event`
+- Preload load `messages.log` in included folder with `cat messages.log | kcat -b localhost:9092 -t topic-notification-event`
 - Stop profiling and observe the time taken for various operations in the code
 
 config/default.json
@@ -185,8 +185,11 @@ config/default.json
     }
   }
 }
-
 ```
+
+### Isolated Performance Testing
+
+
 ### Observations
 #### Profile: CPU-20230817T151840.cpuprofile
 In the bottom up and sorting by self time the function writeUtf8String is taking a long time relatively to process.
