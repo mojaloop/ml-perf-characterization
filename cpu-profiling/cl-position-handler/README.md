@@ -1,20 +1,55 @@
 # Profile the Central-Ledger Position Handler in isolation
 
+## Hardware Specification and versions
+CPU - AMD Ryzen 9 3900X 12-Core Processor
+Memory - 32GB
+OS - Ubuntu 23.04
+Docker - v24.0.5
+Mysql - Docker image -> mysql/mysql-server:8.0.32
+Kafka - Docker image -> bitnami/kafka:3.4.0
+Central Ledger - v17.0.3
+Node - v16.15.0
+
 ## Local Setup
 - Download [ml-core-test-harness](https://github.com/mojaloop/ml-core-test-harness) repository
-- Disable `central-handler-position` in `docker-compose-perf.yml`
 - Expose port `9092` of kafka service
 - Change `KAFKA_CFG_ADVERTISED_LISTENERS` in kafka environment variables to contain `LISTENER_EXTERN://localhost:9092`
-- Remove `central-handler-position` dependency in other services
-- Run performance stack with two 2dfsps
+- Start the docker services for dependencies
+```
+docker compose --project-name ml-core -f docker-compose-perf.yml --profile transfers-test up -d kafka-provisioning kafka mysql-cl
+```
 - Download central-ledger repository
 - Add this config to `default.json` -> `KAFKA.CONSUMER.POSITION.config.rdkafkaConf[partition.assignment.strategy]: cooperative-sticky`
-- Start `position handler` using `node src/handlers/index.js handler --position`
+- Start `position handler` using the following
+```
+npm run migrate
+node src/handlers/index.js handler --position
+```
+- Add the new target `<Docker IP of Host>:3001` (ex: 172.17.0.1:3001) to `prometheus.yml`
+- Start monitoring services using the following command
+```
+docker compose --project-name monitoring --profile transfers-test -f docker-compose-monitoring.yml up -d
+```
+
+## Triggering position messages
+
+- Execute the following script for the messages `action=prepare`
+```
+sh ./feed-test-data-prepare.sh
+```
+- Execute the following script for the messages `action=commit`
+```
+sh ./feed-test-data-commit.sh
+```
+- Now you should see the activity in position handler service
+- Observe the grafana dashboard `mojaloop-central-ledger` for `Processed requests per second` and `Processing Time`
+
+---
 
 ## Profile using chrome debugger
 - Run `position handler` using `node --inspect=0.0.0.0:9229 src/handlers/index.js handler --position`
 - Use `Chrome Debugger` to connect to this instance and start CPU profiling
-- Run Transfers using k6 script
+- Trigger prepare / commit messages
 - Stop profiling and observe the time taken for various operations in the code
 
 ### Observations
@@ -58,70 +93,109 @@ at create ../../node_modules/@mojaloop/central-services-database/node_modules/kn
 ```
 TODO: Need to investigate the cause of this issue
 
+---
+
 ## Mysql queries
 
-The following are queries executed during a single transfer operation.
+The following are the queries executed during a prepare / commit message handling operation.
 
+### Prepare
 ```
-Query     select * from `transferDuplicateCheck` where `transferId` = 'f38ccd86-f4fa-4d7c-9a97-2e1fad3840c0';
-+----+-------------+------------------------+------------+-------+---------------+---------+---------+-------+------+----------+-------+
-| id | select_type | table                  | partitions | type  | possible_keys | key     | key_len | ref   | rows | filtered | Extra |
-+----+-------------+------------------------+------------+-------+---------------+---------+---------+-------+------+----------+-------+
-|  1 | SIMPLE      | transferDuplicateCheck | NULL       | const | PRIMARY       | PRIMARY | 146     | const |    1 |   100.00 | NULL  |
-+----+-------------+------------------------+------------+-------+---------------+---------+---------+-------+------+----------+-------+
+2023-08-21T12:04:15.916493Z        28 Query     select * from `settlementModel` where `isActive` = 1
+2023-08-21T12:04:15.918116Z        28 Query     select * from `participant`
+2023-08-21T12:04:15.918940Z        28 Query     select * from `participantCurrency` order by `participantCurrencyId` asc
+2023-08-21T12:04:15.920707Z        28 Query     BEGIN
+2023-08-21T12:04:15.921503Z        28 Query     select * from `transferStateChange` where `transferId` = '9d74acdb-d7da-4362-8f45-661d4fb2c12e' order by `transferStateChangeId` desc limit 1
+2023-08-21T12:04:15.922233Z        28 Query     select * from `participantPosition` where `participantCurrencyId` in (7, 8) for update
+2023-08-21T12:04:15.922971Z        28 Query     update `participantPosition` set `participantPositionId` = 7, `participantCurrencyId` = 7, `value` = 0, `reservedValue` = '2.0000', `changedDate` = '2023-08-21 12:04:15.921' where `participantPositionId` = 7
+2023-08-21T12:04:15.923564Z        41 Query     select * from `participantLimit`
+2023-08-21T12:04:15.924732Z        28 Query     update `participantPosition` set `value` = '2.0000', `reservedValue` = '0.0000', `changedDate` = '2023-08-21 12:04:15.921' where `participantPositionId` = 7
+2023-08-21T12:04:15.925035Z        28 Query     select * from `transfer` where `transferId` in ('9d74acdb-d7da-4362-8f45-661d4fb2c12e') for update
+2023-08-21T12:04:15.926852Z        28 Query     insert into `transferStateChange` (`createdDate`, `reason`, `transferId`, `transferStateChangeId`, `transferStateId`) values ('2023-08-17 15:25:07.000', NULL, '9d74acdb-d7da-4362-8f45-661d4fb2c12e', NULL, 'RESERVED')
+2023-08-21T12:04:15.928243Z        28 Query     insert into `participantPositionChange` (`participantPositionId`, `reservedValue`, `transferStateChangeId`, `value`) values (7, '0.0000', 5073, '2.0000')
+2023-08-21T12:04:15.928811Z        28 Query     COMMIT
+```
 
-Query     insert into `transferDuplicateCheck` (`hash`, `transferId`) values ('XVyGibqb9CeeRB1F24VpXqOvEeVNg39HccPoXRpyXtE', 'f38ccd86-f4fa-4d7c-9a97-2e1fad3840c0');
-
-Query     select * from `participant` order by `name` asc;
-+----+-------------+-------------+------------+------+---------------+------+---------+------+------+----------+----------------+
-| id | select_type | table       | partitions | type | possible_keys | key  | key_len | ref  | rows | filtered | Extra          |
-+----+-------------+-------------+------------+------+---------------+------+---------+------+------+----------+----------------+
-|  1 | SIMPLE      | participant | NULL       | ALL  | NULL          | NULL | NULL    | NULL |   11 |   100.00 | Using filesort |
-+----+-------------+-------------+------------+------+---------------+------+---------+------+------+----------+----------------+
-
-Query     select * from `participantCurrency` order by `participantCurrencyId` asc;
-+----+-------------+---------------------+------------+-------+---------------+---------+---------+------+------+----------+-------+
-| id | select_type | table               | partitions | type  | possible_keys | key     | key_len | ref  | rows | filtered | Extra |
-+----+-------------+---------------------+------------+-------+---------------+---------+---------+------+------+----------+-------+
-|  1 | SIMPLE      | participantCurrency | NULL       | index | NULL          | PRIMARY | 4       | NULL |   86 |   100.00 | NULL  |
-+----+-------------+---------------------+------------+-------+---------------+---------+---------+------+------+----------+-------+
-
-Query     BEGIN
-Query     insert into `transfer` (`amount`, `currencyId`, `expirationDate`, `ilpCondition`, `transferId`) values ('2', 'USD', '2030-01-01 00:00:00.000', '5m0gq_5dLQlTSSRKQmLpj0MZ1MtWLWgSu1oLGVTJyYs', 'f38ccd86-f4fa-4d7c-9a97-2e1fad3840c0')
-Query     insert into `transferParticipant` (`amount`, `ledgerEntryTypeId`, `participantCurrencyId`, `transferId`, `transferParticipantRoleTypeId`) values ('2', 1, 7, 'f38ccd86-f4fa-4d7c-9a97-2e1fad3840c0', 1)
-Query     insert into `transferParticipant` (`amount`, `ledgerEntryTypeId`, `participantCurrencyId`, `transferId`, `transferParticipantRoleTypeId`) values (-2, 1, 15, 'f38ccd86-f4fa-4d7c-9a97-2e1fad3840c0', 2)
-Query     insert into `ilpPacket` (`transferId`, `value`) values ('f38ccd86-f4fa-4d7c-9a97-2e1fad3840c0', 'AYIDGQAAAAAAACcQIWcuZ3JlZW5iYW5rZnNwLm1zaXNkbi4yNzcxMzgwMzkxMoIC62V5SjBjbUZ1YzJGamRHbHZia2xrSWpvaU1ERXhaR1EyTldZdE5UQXpNeTAwTVdNMkxUazFaR1l0T1RFeFl6WTRPVFExWWpobUlpd2ljWFZ2ZEdWSlpDSTZJbVF3TXpJMU1EVTJMVE0xTldFdE5EUmxNUzFpT1RnMExXWXdZVFExTmpFMFkyRXpPQ0lzSW5CaGVXVmxJanA3SW5CaGNuUjVTV1JKYm1adklqcDdJbkJoY25SNVNXUlVlWEJsSWpvaVRWTkpVMFJPSWl3aWNHRnlkSGxKWkdWdWRHbG1hV1Z5SWpvaU1qYzNNVE00TURNNU1USWlMQ0ptYzNCSlpDSTZJbWR5WldWdVltRnVhMlp6Y0NKOWZTd2ljR0Y1WlhJaU9uc2ljR0Z5ZEhsSlpFbHVabThpT25zaWNHRnlkSGxKWkZSNWNHVWlPaUpOVTBsVFJFNGlMQ0p3WVhKMGVVbGtaVzUwYVdacFpYSWlPaUkwTkRFeU16UTFOamM0T1NJc0ltWnpjRWxrSWpvaWNHbHVhMkpoYm10bWMzQWlmU3dpY0dWeWMyOXVZV3hKYm1adklqcDdJbU52YlhCc1pYaE9ZVzFsSWpwN0ltWnBjbk4wVG1GdFpTSTZJa1pwY25OMGJtRnRaUzFVWlhOMElpd2liR0Z6ZEU1aGJXVWlPaUpNWVhOMGJtRnRaUzFVWlhOMEluMHNJbVJoZEdWUFprSnBjblJvSWpvaU1UazROQzB3TVMwd01TSjlmU3dpWVcxdmRXNTBJanA3SW1OMWNuSmxibU41SWpvaVZWTkVJaXdpWVcxdmRXNTBJam9pTVRBd0luMHNJblJ5WVc1ellXTjBhVzl1Vkhsd1pTSTZleUp6WTJWdVlYSnBieUk2SWxSU1FVNVRSa1ZTSWl3aWFXNXBkR2xoZEc5eUlqb2lVRUZaUlZJaUxDSnBibWwwYVdGMGIzSlVlWEJsSWpvaVEwOU9VMVZOUlZJaWZYMAA')
-Query     insert into `transferStateChange` (`createdDate`, `reason`, `transferId`, `transferStateId`) values ('2023-08-17 12:27:21.891', NULL, 'f38ccd86-f4fa-4d7c-9a97-2e1fad3840c0', 'RECEIVED_PREPARE')
-Query     COMMIT
+### Commit
+```
+2023-08-21T12:07:32.588127Z        28 Query     select `transferParticipant`.*, `tsc`.`transferStateId`, `tsc`.`reason` from `transferParticipant` inner join `transferStateChange` as `tsc` on `tsc`.`transferId` = `transferParticipant`.`transferId` where `transferParticipant`.`transferId` = '8cc5c52d-3b9f-4db3-a848-22c7cb842b10' and `transferParticipant`.`transferParticipantRoleTypeId` = 2 and `transferParticipant`.`ledgerEntryTypeId` = 1 order by `tsc`.`transferStateChangeId` desc limit 1
+2023-08-21T12:07:32.589670Z        28 Query     BEGIN
+2023-08-21T12:07:32.589984Z        28 Query     select * from `participantPosition` where `participantCurrencyId` = 15 limit 1 for update
+2023-08-21T12:07:32.590675Z        28 Query     update `participantPosition` set `value` = '4958.0000', `changedDate` = '2023-08-21 12:07:32.589' where `participantCurrencyId` = 15
+2023-08-21T12:07:32.591307Z        28 Query     insert into `transferStateChange` (`createdDate`, `transferId`, `transferStateId`) values ('2023-08-21 12:07:32.589', '8cc5c52d-3b9f-4db3-a848-22c7cb842b10', 'COMMITTED')
+2023-08-21T12:07:32.591633Z        28 Query     select * from `transferStateChange` where `transferId` = '8cc5c52d-3b9f-4db3-a848-22c7cb842b10' order by `transferStateChangeId` desc limit 1 for update
+2023-08-21T12:07:32.591949Z        28 Query     insert into `participantPositionChange` (`createdDate`, `participantPositionId`, `reservedValue`, `transferStateChangeId`, `value`) values ('2023-08-21 12:07:32.589', 15, 0, 15073, '4958.0000')
+2023-08-21T12:07:32.592567Z        28 Query     COMMIT
 ```
 
 ### Observations
 - The select statement on `participant` tables uses order by on `name` field. The `explain` command is showing `Using filesort`. Should investigate the cause and resolve if sorting is happening really. (May need to use FULLTEXT indexes, remove order by if its not needed ...etc)
+- The select statement on `transfer` table has `for update` which I think locks the row in transfer table which is not neccessary although there might not be any other processes try to update the same transfer record.
 
+---
 
-## Setting up position handler running in isolation for executing kafka messages without need for other handlers
+## TODO: Overall Observations
+- participant order by difference
+- Copy rawBuffer difference
+- Batch processing -> refer the issue with Promise.all in chrome profile observations
+- Kafka consumer congiration - sync false
+- CACHE_ENABLED
 
-- Follow the instructions in `Local Setup` except running position handler with node as we want to capture unprocessed position messages from kafka as test data. We need to start with fresh deployment as we don't want to dump old data.
+---
+
+## Appendix
+
+### Capturing Kafka and MySQL dumps for position-prepare
+- Download [ml-core-test-harness](https://github.com/mojaloop/ml-core-test-harness) repository
+- Expose port `9092` of kafka service
+- Change `KAFKA_CFG_ADVERTISED_LISTENERS` in kafka environment variables to contain `LISTENER_EXTERN://localhost:9092`
+- Run the services except position handler
+```
+docker compose --project-name ml-core -f docker-compose-perf.yml --profile transfers-test --profile 2dfsp --profile ttk-provisioning-transfers up -d --scale central-handler-position=0
+```
+- Wait for the TTK provisioning to be completed
+- Note: We need to start with fresh deployment as we don't want to dump old data.
 - Execute k6 load scenario `postTransfersNoCallback` for triggering a fixed number of transfers without waiting for a callback
 - Allow some time to get all messages processed by other handlers
 - Dump mysql database `central_ledger` using `mysqldump` command and store it in a file
+```
+docker exec -it mysql-cl /bin/mysqldump central_ledger > cl-position-handler-testing-prepare.sql
+```
 - Dump kafka message in the topic `topic-transfer-position` using the following command
 ```
-kcat -b localhost:9092 -t topic-transfer-position > kafka-topic-transfer-position.dump
+kcat -b localhost:9092 -t topic-transfer-position > kafka-topic-transfer-position-prepare.dump
 ```
-- Now start the position handler and wait for the messages to be processed and observe the time taken for consuming all the messages with the help of grafana dashboards.
 
-### Replay the messages
-- Execute the script `feed-test-data.sh` to clear the necessary records in mysql database and dump kafka position messages
-- Import `Position Handler Test Dashboard` in grafana and observe the processing time and throughput
+### Capturing Kafka and MySQL dumps for position-commit
+- Now start the position handler and disable fulfil handler
+```
+docker compose --project-name ml-core -f docker-compose-perf.yml --profile transfers-test --profile 2dfsp  --profile debug up -d --scale ml-handler-notification=1 --scale central-handler-prepare=1 --scale mojaloop-testing-toolkit=0 --scale mojaloop-testing-toolkit-ui=0 --scale central-ledger=1 --scale ml-api-adapter=1 --scale central-handler-position=1 --scale central-handler-fulfil=0
+```
+- Wait for the fulfil topic is filled with messages
+- Disable position handler and enable fulfil handler again
+```
+docker compose --project-name ml-core -f docker-compose-perf.yml --profile transfers-test --profile 2dfsp  --profile debug up -d --scale ml-handler-notification=1 --scale central-handler-prepare=1 --scale mojaloop-testing-toolkit=0 --scale mojaloop-testing-toolkit-ui=0 --scale central-ledger=1 --scale ml-api-adapter=1 --scale central-handler-position=0 --scale central-handler-fulfil=1
+```
+- Wait for the messages to be processed by fulfil handler
+- Capture the kafka messages from position topic
+```
+kcat -b localhost:9092 -t topic-transfer-position > kafka-topic-transfer-position-total.dump
+cat kafka-topic-transfer-position-total.dump |grep '"action":"commit"' > kafka-topic-transfer-position-commit.dump
+rm kafka-topic-transfer-position-total.dump
+```
+- Capture mysql database state
+```
+docker exec -it mysql-cl /bin/mysqldump central_ledger > cl-position-handler-testing-commit.sql
+```
 
 
 ## Inputs (TODO):
 - Document the observations about batch processing
-- Add hardware spec of dev machine, component versions ...etc
-- Try sync to false
+- // Add hardware spec of dev machine, component versions ...etc
+- // Try sync to false
 - Try use a buffer class for rawMessage assignment issue
-- Enable CACHE_ENABLED and observe the difference (Also with participant select query)
-- Document mysql statements for prepare and fulfil separately
-- Get kafka and mysql test dumps for testing prepare and fulfil messages separately
-- Investigate the missing sql update position queries from previous findings
+- // Enable CACHE_ENABLED and observe the difference (Also with participant select query)
+- // Document mysql statements for prepare and fulfil separately
+- // Get kafka and mysql test dumps for testing prepare and fulfil messages separately
+- // Investigate the missing sql update position queries from previous findings
+
