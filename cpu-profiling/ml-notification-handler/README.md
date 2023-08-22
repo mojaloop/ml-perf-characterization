@@ -6,7 +6,8 @@
 - Expose port `9092` of kafka service
 - Expose ports for cl-sim, dfsp-sim1 and dfsp-sim2. "3001:3001", "3002:3001" and "3003:3001"
 - Update `envs/cl-sim.env` with `CBH_ADMIN_FSP_ENDPOINT_MAP='{"perffsp1":"http://localhost:3002/fspiop","perffsp2":"http://localhost:3003/fspiop"}`
-- Change `KAFKA_CFG_ADVERTISED_LISTENERS` in kafka environment variables to contain `LISTENER_EXTERN://localhost:9092`
+- Change `KAFKA_CFG_ADVERTISED_LISTENERS` in kafka environment variables to contain `LISTENER_EXTERN://kafka:9092`
+- Add `127.0.0.1 kafka` to `/etc/hosts`
 - Run `docker compose --project-name ml-core -f docker-compose-perf.yml up kafka-provisioning callback-handler-svc-cl-sim sim-perffsp1 sim-perffsp2`
 
 ## Profile using chrome debugger
@@ -14,7 +15,7 @@
 - Change `ENDPOINT_SOURCE_URL` to `http://localhost:3001/admin` in `config/default.json`
 - Run `node --inspect src/handlers/index.js handler --notification` in separate terminal
 - Use `Chrome Debugger` to connect to this instance and start CPU profiling
-- Preload load `messages.log` in included folder with `cat messages.log | kcat -b localhost:9092 -t topic-notification-event`
+- Preload load `messages.log` in included folder with `cat message_large.log | kcat -b kafka:9092 -t topic-notification-event`
 - Stop profiling and observe the time taken for various operations in the code
 
 config/default.json
@@ -187,10 +188,7 @@ config/default.json
 }
 ```
 
-### Isolated Performance Testing
-
-
-### Observations
+### Profiling Observations
 #### Profile: CPU-20230817T151840.cpuprofile
 In the bottom up and sorting by self time the function writeUtf8String is taking a long time relatively to process.
 Digging down into the activity trace it was found that lines 103 and 105 in `@mojaloop/central-services-shared`
@@ -217,3 +215,29 @@ Due to past history with Logger statements and stringify, the conclusion was tha
 ### Follow up Stories
 
 - [[central-services-shared] JSON.stringify degrades performance on high call count function in default LOG_LEVEL=info setups](https://github.com/mojaloop/project/issues/3480)
+
+
+### Isolated Performance Testing
+
+- Comment out below compose definition in `docker-compose-perf.yaml`
+```
+      # central-ledger:
+      #   condition: service_started
+```
+- Set `MLAPI_ENDPOINT_SOURCE_URL=http://callback-handler-svc-cl-sim:3001/admin` in perf.env
+- Adjust kafka partitions and ml-handler-notification scale to desired quantity
+- Update `envs/cl-sim.env` with `CBH_ADMIN_FSP_ENDPOINT_MAP='{"perffsp1":"http://localhost:3002/fspiop","perffsp2":"http://localhost:3003/fspiop"}`
+- Change `KAFKA_CFG_ADVERTISED_LISTENERS` in kafka environment variables to contain `LISTENER_EXTERN://kafka:9092`
+- Add `127.0.0.1 kafka` to `/etc/hosts`
+- docker compose --project-name monitoring -f docker-compose-monitoring.yml up -d
+- Run `docker compose --project-name ml-core -f docker-compose-perf.yml up kafka kafka-provisioning callback-handler-svc-cl-sim sim-perffsp1 sim-perffsp2`
+- Run `cat message_large.log{,}{,}{,} | kcat -b kafka:9092 -t topic-notification-event -X topic.partitioner=random -X batch.num.messages=1 -X batch.size=150`
+- Finally, run `docker compose --project-name ml-core -f docker-compose-perf.yml up ml-handler-notification`
+- Observe grafana dashboards at http://localhost:9999/
+
+### Isolated Performance Testing Observations
+
+- Using http keep alive snapshot of central-services-shared improved performance by 15%~
+- Services don't scale linearly when scaled up
+- Removal of stringify statements in central-services-shared reduced performance by 7 ops/s in scale 1 partition 1, but when scaled to 2 handlers and 2 partitions it increased performance by 13%.
+- Combined improvements in v14.0.2-snapshot-5 saw an improvement of 15%~ over the baseline version of v14.0.1
