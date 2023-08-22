@@ -226,7 +226,6 @@ Due to past history with Logger statements and stringify, the conclusion was tha
 ```
 - Set `MLAPI_ENDPOINT_SOURCE_URL=http://callback-handler-svc-cl-sim:3001/admin` in perf.env
 - Adjust kafka partitions and ml-handler-notification scale to desired quantity
-- Update `envs/cl-sim.env` with `CBH_ADMIN_FSP_ENDPOINT_MAP='{"perffsp1":"http://localhost:3002/fspiop","perffsp2":"http://localhost:3003/fspiop"}`
 - Change `KAFKA_CFG_ADVERTISED_LISTENERS` in kafka environment variables to contain `LISTENER_EXTERN://kafka:9092`
 - Add `127.0.0.1 kafka` to `/etc/hosts`
 - docker compose --project-name monitoring -f docker-compose-monitoring.yml up -d
@@ -239,5 +238,6 @@ Due to past history with Logger statements and stringify, the conclusion was tha
 
 - Using http keep alive snapshot of central-services-shared improved performance by 15%~
 - Services don't scale linearly when scaled up
-- Removal of stringify statements in central-services-shared reduced performance by 7 ops/s in scale 1 partition 1, but when scaled to 2 handlers and 2 partitions it increased performance by 13%.
+- Removal of stringify statements in central-services-shared reduced performance by 7 ops/s in scale 1 partition 1, which is in the realm of error.
+  When scaled to 2 handlers and 2 partitions it increased performance by 13%.
 - Combined improvements in v14.0.2-snapshot-5 saw an improvement of 15%~ over the baseline version of v14.0.1
