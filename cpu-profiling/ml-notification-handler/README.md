@@ -236,8 +236,10 @@ Due to past history with Logger statements and stringify, the conclusion was tha
 
 ### Isolated Performance Testing Observations
 
-- Using http keep alive snapshot of central-services-shared improved performance by 15%~
-- Services don't scale linearly when scaled up
+- Testing was done on a non-standardized machine and there were some variations between repeated runs that would be outside the margin of error of around 3.5%.
+  Recommendation would be to do further testing on a standardized machine.
+- Using http keep alive snapshot of central-services-shared improved performance by 15%~.
+- Services don't scale linearly when scaled up.
 - Removal of stringify statements in central-services-shared reduced performance by 7 ops/s in scale 1 partition 1, which is in the realm of error.
   When scaled to 2 handlers and 2 partitions it increased performance by 13%.
-- Combined improvements in v14.0.2-snapshot-5 saw an improvement of 15%~ over the baseline version of v14.0.1
+- Combined improvements in v14.0.2-snapshot-5 saw an improvement of 15%~ over the baseline version of v14.0.1.
