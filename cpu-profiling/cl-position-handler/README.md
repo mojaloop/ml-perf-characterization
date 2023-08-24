@@ -1,5 +1,9 @@
 # Profile the Central-Ledger Position Handler in isolation
 
+## TODO: Add Status section for overview
+
+## TODO: Prepare a diagram for local setup
+
 ## Hardware Specification and versions
 - CPU - AMD Ryzen 9 3900X 12-Core Processor
 - Memory - 32GB
@@ -35,11 +39,11 @@
 
 - Execute the following script for the messages `action=prepare`
   ```
-  sh ./feed-test-data-prepare.sh
+  sh ./feed-test-data-position-prepare.sh
   ```
 - Execute the following script for the messages `action=commit`
   ```
-  sh ./feed-test-data-commit.sh
+  sh ./feed-test-data-position-commit.sh
   ```
 - Now you should see the activity in position handler service
 - Observe the grafana dashboard `mojaloop-central-ledger` for **Processed requests per second** and **Processing Time**
@@ -182,6 +186,17 @@ The position handler couldn't process messages and observed lot of locks in data
 ### Changed info level logs to to debug
 Changed all the info level logs in the position handler to debug and observed no difference in throughput. This is expected because the logs are minimal already and doesn't have any large data. The results are captured in `dashboard-images/logs-info-to-debug` and the change is in this branch `feat/reduce-logging` of central-ledger.
 
+### Prism approach
+Before implementing prism, ran position handler and prepare handler as node services locally and dumped `10k` prepare kafka messages on `topic-transfer-prepare` and captured the readings as base line for this experiment.
+PRISM implementation can be found in this PR [central-ledger/pull/962](https://github.com/mojaloop/central-ledger/pull/962)
+The following is the comparison with PRISM PoC
+
+| Scenario | Cache    | Prepare Handler   | Position Handler  |
+|----------|----------|-------------------|-------------------|
+| Baseline | Disabled | 166 ops/s, 6.25ms | 138 ops/s, 7.62ms |
+| Baseline | Enabled  | 263 ops/s, 4.05ms | 151 ops/s, 7.76ms |
+| PRISM    | Disabled | 145 ops/s, 7.15ms | 141 ops/s, 7.44ms |
+| PRISM    | Enabled  | 228 ops/s, 4.52ms | 144 ops/s, 8.05ms |
 ---
 
 ## Overall Observations
@@ -245,6 +260,35 @@ rm kafka-topic-transfer-position-total.dump
 ```
 docker exec -it mysql-cl /bin/mysqldump central_ledger > cl-position-handler-testing-commit.sql
 ```
+
+
+### Capturing Kafka and MySQL dumps for prepare messages
+- Download [ml-core-test-harness](https://github.com/mojaloop/ml-core-test-harness) repository
+- Expose port `9092` of kafka service
+- Change `KAFKA_CFG_ADVERTISED_LISTENERS` in kafka environment variables to contain `LISTENER_EXTERN://localhost:9092`
+- Run all the services
+  ```
+  docker compose --project-name ml-core -f docker-compose-perf.yml --profile transfers-test --profile 2dfsp --profile ttk-provisioning-transfers up -d
+  ```
+- Wait for the TTK provisioning to be completed
+- `Note: We need to start with fresh deployment as we don't want to dump old data`
+- Disable prepare and position handlers
+  ```
+  docker compose --project-name ml-core -f docker-compose-perf.yml --profile transfers-test --profile 2dfsp up -d --scale central-handler-position=0 --scale central-handler-prepare=0
+  ```
+- Execute k6 load scenario `postTransfersNoCallback` for triggering a fixed number of transfers without waiting for a callback with following command
+  ```
+  env K6_SCRIPT_CONFIG_FILE_NAME=fspiopTransfersNoCallback.json docker compose --project-name load -f docker-compose-load.yml up
+  ```
+- Allow some time to get all messages processed by other handlers
+- Dump mysql database `central_ledger` using `mysqldump` command and store it in a file
+  ```
+  docker exec -it mysql-cl /bin/mysqldump central_ledger > cl-prepare-handler-testing.sql
+  ```
+- Dump kafka message in the topic `topic-transfer-prepare` using the following command
+  ```
+  kcat -b localhost:9092 -t topic-transfer-prepare > kafka-topic-transfer-prepare.dump
+  ```
 
 ### Testing whole flow with 8DFSPs step by step
 
