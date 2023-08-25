@@ -1,18 +1,38 @@
 # Profile the Central-Ledger Position Handler in isolation
 
-## TODO: Add Status section for overview
+## Status
 
-## TODO: Prepare a diagram for local setup
+| Central Ledger Version |  Date  | Status  | Next  | Notes  |
+|---|---|---|---|---|
+| 17.0.3 | 2023-08-25 | **The `Position Handler` has achieved a maximum observed maximum throughput of around `163 Op/s` @ `6.37 ms` average duration for `action=prepare` messages and `394 Op/s` @ `3.81 ms` average duration for `action=commit` messages as baseline with the system configuration specified in 'Testing Environment' section.<br><br>**An overview of the observations are summarized as follows:** <br> 1. No considerable issues detected in profiling with Chrome debugger <br>2. No issues detected  with Clinic.js bubbleprof analyser <br>3. If CACHE is disabled, there are `13` queries are being executed during processing a `action=prepare` message. And `8` queries during `action=commit` message including BEGIN and COMMITs.<br>4. For `5000` messages the total queries for `action=prepare` are `65000` if CACHE is disabled. This matches with the query count in single transfer (i.e. 5000x13)<br>5. If CACHE is enabled, for `5000` messages the total queries for `action=prepare` are reduced to `45000` 🔽<br>6. The indexes are properly set and no slow queries detected<br><br> **Observed areas that are limiting throughput and scalability:**<br> 1. `Batch processing` implementation is broken and can not be enabled which could improve performance <br> 2. With current setup (kafka key and partition combination), `Scalability` of position handler is not possible for a single DFSP<br><br> _Note: We are not able to determine any single cause of the bottleneck at this time, the load should be handled through batching and scalability._ | See [#follow-up-stores](#follow-up-stories) |   |
 
-## Hardware Specification and versions
-- CPU - AMD Ryzen 9 3900X 12-Core Processor
-- Memory - 32GB
-- OS - Ubuntu 23.04
-- Docker - v24.0.5
-- Mysql - Docker image -> mysql/mysql-server:8.0.32
-- Kafka - Docker image -> bitnami/kafka:3.4.0
-- Central Ledger - v17.0.3
-- Node - v16.15.0
+## Testing Environment
+- Hardware specification and Software versions
+  ```
+  CPU: AMD Ryzen 9 3900X 12-Core Processor
+  Memory: 32GB
+  OS: Ubuntu 23.04 linux/amd64
+  Docker: v24.0.5
+  Mysql: docker:mysql/mysql-server:8.0.32
+  Kafka: docker:bitnami/kafka:3.4.0
+  Node: v16.15.0
+  Central Ledger: v17.0.3
+  ```
+- Used In-Memory MySQL DB for all the scenarios to rule out disk I/O issues
+- Transfers to 2 random DFSPs as payer and payee
+
+## Approach
+The approach taken for profiling central ledger in isolation is follows:
+- Deployed MySQL and Kafka services as dependencies
+- Captured 5000 messages from kafka position topic
+- Captured MySQL database state before position handler starts to process the messages
+- Replay the MySQL state and kafka messages and observe the running instance of position handler
+- Used monitoring services for metrics
+
+Refer to the following diagram showing the interaction diagram:
+
+![profiling-position-handler-in-isolation](assets/images/profiling-position-handler-in-isolation.drawio.png)
+
 
 ## Local Setup
 - Download [ml-core-test-harness](https://github.com/mojaloop/ml-core-test-harness) repository
@@ -187,6 +207,11 @@ The position handler couldn't process messages and observed lot of locks in data
 Changed all the info level logs in the position handler to debug and observed no difference in throughput. This is expected because the logs are minimal already and doesn't have any large data. The results are captured in `dashboard-images/logs-info-to-debug` and the change is in this branch `feat/reduce-logging` of central-ledger.
 
 ### Prism approach
+
+Refer to the following diagram showing the interaction diagram:
+
+![prism-poc-prepare-and-position-handlers-in-isolation](assets/images/prism-poc-prepare-and-position-handlers-in-isolation.drawio.png)
+
 Before implementing prism, ran position handler and prepare handler as node services locally and dumped `10k` prepare kafka messages on `topic-transfer-prepare` and captured the readings as base line for this experiment.
 PRISM implementation can be found in this PR [central-ledger/pull/962](https://github.com/mojaloop/central-ledger/pull/962)
 The following is the comparison with PRISM PoC
@@ -209,6 +234,19 @@ The following is the comparison with PRISM PoC
 - **Parellel processing**: Tried `sync: false` in Kafka consumer configuration, and it didn't work. Got lot of errors in console.log with the existing kafka library and with new snapshot version, got issues with table locks in the database.
 - **Scalability**: In the current configuration, we are using a **Destination FSP ID** as key to the kafka message and hence only one position handler need to process all the requests for a DFSP. It is a problem in production scenario, because if a DFSP wants to send high loads, ther is no option interms of scalabilty. We need to look if there are any standary practises to acheive scalability in the fintech world because it looks like a common issue in this space. (Ex: Partitioning DFSP position, Parallelism with row level locking...etc)
 - **Issue with Notification Handler**: Found an issue with Notification handler while working on this. When the endpoints of a DFSP are configured with non-exitent dfsp hosts, then the nofication handler is freezing sending the http requests to those hosts and timingout. It's taking more than 15s to timeout and hence the messages are piling up in the kafaka topic.
+
+## Follow-up stories
+
+_Note: The stories below are not in any order of preference, and will need to be prioritized as required._
+
+| Story | Name | Description | Impact | Issue | Notes |
+|---|---|---|---|---|---|
+| 1 | Enabling parallel processing of the Position management | Investigate how to enable parallel processing, and also consider sharding Positions to optimism distributed parallel processing. | High | | Does Tiger Beetle do this for us, or even necessary to consider with Tiger Beetle's performance? |
+| 2 | Optimize Msg Processing via Batch | Investigate impact of processing messages in batches. | Medium-High | [mojaloop/3488](https://github.com/mojaloop/project/issues/3488) & [mojaloop/3489](https://github.com/mojaloop/project/issues/3489)  | Potential solutions include: optimizing SQL statements due to batching nature. |
+| 3 | Reduce Log Verbosity for INFO Log-levels | INFO level logs are too verbose, and should be optimized to provide only a summary of key events/indicators with only key-information (e.g. IDs, Functionality/Event) where required. | Low |   |   |
+| 4 | Issue with increasing CACHE duration in Central Ledger  | Transfers fail when the cache is increased in Central-Ledger using CLEDG_CACHE__EXPIRES_IN_MS. This requires further investigation as it may be a due a bug in the underlying cache implementation. | Unknown |   |   |
+| 5 | PRISM Approach  | Minimise the number of SQL queries by implementing PRISM to rather pass data between microservices than to re-query that data. | Unknown | [mojaloop/3491](https://github.com/mojaloop/project/issues/3491)  |   |
+
 
 ---
 
