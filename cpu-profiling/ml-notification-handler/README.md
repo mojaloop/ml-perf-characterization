@@ -1,5 +1,15 @@
 # Profile the ML-Api-Adapter Notification Handler in isolation
 
+## Hardware Specification and versions
+- CPU - Intel Core i5-8600K
+- Memory - 32GB
+- OS - Ubuntu 23.04
+- Docker - v24.0.5
+- Mysql - Docker image -> mysql/mysql-server:8.0.32
+- Kafka - Docker image -> bitnami/kafka:3.4.0
+- Central Ledger - v17.0.3
+- Node - v16.15.0
+
 ## Local Setup
 - Download [ml-core-test-harness](https://github.com/mojaloop/ml-core-test-harness) repository
 - Scale `ml-notification-handler` to 1
@@ -9,13 +19,15 @@
 - Change `KAFKA_CFG_ADVERTISED_LISTENERS` in kafka environment variables to contain `LISTENER_EXTERN://kafka:9092`
 - Add `127.0.0.1 kafka` to `/etc/hosts`
 - Run `docker compose --project-name ml-core -f docker-compose-perf.yml up kafka-provisioning callback-handler-svc-cl-sim sim-perffsp1 sim-perffsp2`
+- Run `docker compose --project-name monitoring --profile als-test -f docker-compose-monitoring.yml up -d`
+
 
 ## Profile using chrome debugger
 - Download [ml-api-adapter](https://github.com/mojaloop/ml-api-adapter) repo. Tested using v14.0.1.
 - Change `ENDPOINT_SOURCE_URL` to `http://localhost:3001/admin` in `config/default.json`
 - Run `node --inspect src/handlers/index.js handler --notification` in separate terminal
 - Use `Chrome Debugger` to connect to this instance and start CPU profiling
-- Preload load `messages.log` in included folder with `cat message_large.log | kcat -b kafka:9092 -t topic-notification-event`
+- From `ml-perf-characterization` directory, load `messages.log` in included folder with `cat cpu-profiling/ml-notification-handler/message_large.log | kcat -b kafka:9092 -t topic-notification-event`
 - Stop profiling and observe the time taken for various operations in the code
 
 config/default.json
@@ -219,6 +231,7 @@ Due to past history with Logger statements and stringify, the conclusion was tha
 
 ### Isolated Performance Testing
 
+- Download [ml-api-adapter](https://github.com/mojaloop/ml-api-adapter) repo.
 - Comment out below compose definition in `docker-compose-perf.yaml`
 ```
       # central-ledger:
@@ -230,7 +243,8 @@ Due to past history with Logger statements and stringify, the conclusion was tha
 - Add `127.0.0.1 kafka` to `/etc/hosts`
 - docker compose --project-name monitoring -f docker-compose-monitoring.yml up -d
 - Run `docker compose --project-name ml-core -f docker-compose-perf.yml up kafka kafka-provisioning callback-handler-svc-cl-sim sim-perffsp1 sim-perffsp2`
-- Run `cat message_large.log{,}{,}{,} | kcat -b kafka:9092 -t topic-notification-event -X topic.partitioner=random -X batch.num.messages=1 -X batch.size=150`
+- From `ml-perf-characterization` directory, run `cat message_large.log{,}{,}{,} | kcat -b kafka:9092 -t topic-notification-event -X topic.partitioner=random -X batch.num.messages=1 -X batch.size=150`
+- Run `docker compose --project-name monitoring --profile als-test -f docker-compose-monitoring.yml up -d`
 - Finally, run `docker compose --project-name ml-core -f docker-compose-perf.yml up ml-handler-notification`
 - Observe grafana dashboards at http://localhost:9999/
 
@@ -243,3 +257,29 @@ Due to past history with Logger statements and stringify, the conclusion was tha
 - Removal of stringify statements in central-services-shared reduced performance by 7 ops/s in scale 1 partition 1, which is in the realm of error.
   When scaled to 2 handlers and 2 partitions it increased performance by 13%.
 - Combined improvements in v14.0.2-snapshot-5 saw an improvement of 15%~ over the baseline version of v14.0.1.
+- v14.0.2-snapshot.11 including kafka optimizations from `central-services-shared` with config
+  ```
+    options: {
+      mode: 2,
+      batchSize: 10, // <-- lets pick up 10 messages at a time
+      pollFrequency: 10,
+      recursiveTimeout: 100,
+      messageCharset: 'utf8',
+      messageAsJSON: true,
+      sync: true,
+      syncConcurrency: 10, // <-- lets processes 10 messages at a time
+      syncSingleMessage: true, // <-- this is new, and will "queue" up each message from the picked up batch to be processed by the consumer!
+      consumeTimeout: 1000,
+    },
+    "rdkafkaConf": {
+      "metadata.broker.list": "kafka:29092",
+      'socket.keepalive.enable': true,
+      'enable.auto.commit': false,
+      'auto.commit.interval.ms': 100,
+      'allow.auto.create.topics': true,
+      'fetch.wait.max.ms': 0
+    }
+  ```
+  performed well with an increase of 12%. However, the notification handler scales poorly on this version.
+  There may be bottle necks with the simulator dfsps.
+  When comparing isolated testing to testing on our performance vm, these configurations seem to hurt performance.
