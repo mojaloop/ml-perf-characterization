@@ -9,9 +9,9 @@ https://github.com/mojaloop/central-ledger/blob/master/src/handlers/positions/ha
  - One observation I have is I see Prepare Handler, Position Handler and Fulfil Handler in the main diagram, but there is PreparePositionHandler and FulfilPositionHandler in the detailed flows. 
  - PreparePositionHandler has Prepare Position Handler and Position Handler Consume, but FulfilPositionhandler has only FulfilPositionHandler without any consume part. 
  - My suggestion is to break it down as follows:
-    Position Handler Consume
-        Prepare Position Handler
-        Fulfill Position Handler
+    - Position Handler Consume
+      - Prepare Position Handler
+      - Fulfill Position Handler
  - The code also checks for the presence of transferId in lines 110-115. This is not listed in the validate Event block in the sequence diagram
  - The diagram only checks for position&prepare. But the code also has logic for COMMIT, REJECT, RESERVE
  - Bulk is also being handled in the code, but is not reflected in the sequence diagram. I do not see any separate bulk related sequence diagrams
