@@ -1,0 +1,95 @@
+diff --git a/src/handlers/positions/handler.js b/src/handlers/positions/handler.js
+index 19644dd..72e264f 100644
+--- a/src/handlers/positions/handler.js
++++ b/src/handlers/positions/handler.js
+@@ -153,23 +153,22 @@ const positions = async (error, messages) => {
+         // rather than the switch to manage this (the topic is an participantEndpoint)
+         Logger.isInfoEnabled && Logger.info(`Limit alarm should be sent with ${limit}`)
+       }
+-      if (Array.isArray(preparedMessagesList) && preparedMessagesList.length > 0) {
+-        const prepareMessage = preparedMessagesList[0]
++      for (const prepareMessage of preparedMessagesList) {
++        const params2 = { message: prepareMessage.rawMessage, kafkaTopic, decodedPayload: payload, span, consumer: Consumer, producer: Producer }
+         const { transferState, fspiopError } = prepareMessage
+         if (transferState.transferStateId === Enum.Transfers.TransferState.RESERVED) {
+           Logger.isInfoEnabled && Logger.info(Utility.breadcrumb(location, `payer--${actionLetter}1`))
+-          await Kafka.proceed(Config.KAFKA_CONFIG, params, { consumerCommit, eventDetail })
+-          histTimerEnd({ success: true, fspId: Config.INSTRUMENTATION_METRICS_LABELS.fspId, action })
+-          return true
++          await Kafka.proceed(Config.KAFKA_CONFIG, params2, { consumerCommit, eventDetail })
+         } else {
+           Logger.isInfoEnabled && Logger.info(Utility.breadcrumb(location, `payerNotifyInsufficientLiquidity--${actionLetter}2`))
+           const responseFspiopError = fspiopError || ErrorHandler.Factory.createFSPIOPError(ErrorHandler.Enums.FSPIOPErrorCodes.INTERNAL_SERVER_ERROR)
+           const fspiopApiError = responseFspiopError.toApiErrorObject(Config.ERROR_HANDLING)
+           await TransferService.logTransferError(transferId, fspiopApiError.errorInformation.errorCode, fspiopApiError.errorInformation.errorDescription)
+-          await Kafka.proceed(Config.KAFKA_CONFIG, params, { consumerCommit, fspiopError: fspiopApiError, eventDetail, fromSwitch })
+-          throw responseFspiopError
++          await Kafka.proceed(Config.KAFKA_CONFIG, params2, { consumerCommit, fspiopError: fspiopApiError, eventDetail, fromSwitch })
+         }
+       }
++      histTimerEnd({ success: true, fspId: Config.INSTRUMENTATION_METRICS_LABELS.fspId, action })
++      return true
+     } else if (eventType === Enum.Events.Event.Type.POSITION && [Enum.Events.Event.Action.COMMIT, Enum.Events.Event.Action.RESERVE, Enum.Events.Event.Action.BULK_COMMIT].includes(action)) {
+       Logger.isInfoEnabled && Logger.info(Utility.breadcrumb(location, { path: 'commit' }))
+       const transferInfo = await TransferService.getTransferInfoToChangePosition(transferId, Enum.Accounts.TransferParticipantRoleType.PAYEE_DFSP, Enum.Accounts.LedgerEntryType.PRINCIPLE_VALUE)
+diff --git a/src/models/position/facade.js b/src/models/position/facade.js
+index a2fa69d..1f03ec4 100644
+--- a/src/models/position/facade.js
++++ b/src/models/position/facade.js
+@@ -94,10 +94,10 @@ const prepareChangeParticipantPositionTransaction = async (transferList) => {
+            ====
+            */
+ 
+-          const id = transfer.value.content.payload.transferId
++          const id = transfer.value.id
+           transferIdList.push(id)
+           // DUPLICATE of TransferStateChangeModel getByTransferId
+-          initialTransferStateChangePromises.push(await knex('transferStateChange').transacting(trx).where('transferId', id).orderBy('transferStateChangeId', 'desc').first())
++          initialTransferStateChangePromises.push(knex('transferStateChange').transacting(trx).where('transferId', id).orderBy('transferStateChangeId', 'desc').first())
+         }
+         const histTimerinitialTransferStateChangeListEnd = Metrics.getHistogram(
+           'model_position',
+@@ -114,6 +114,9 @@ const prepareChangeParticipantPositionTransaction = async (transferList) => {
+         for (const id in initialTransferStateChangeList) {
+           const transferState = initialTransferStateChangeList[id]
+           const transfer = transferList[id].value.content.payload
++          if (!transfer.transferId) {
++            transfer.transferId = transferList[id].value.id
++          }
+           const rawMessage = transferList[id]
+           if (transferState.transferStateId === Enum.Transfers.TransferInternalState.RECEIVED_PREPARE) {
+             transferState.transferStateChangeId = null
+@@ -128,7 +131,7 @@ const prepareChangeParticipantPositionTransaction = async (transferList) => {
+             abortedTransfers[transfer.transferId] = { transferState, transfer, rawMessage }
+           }
+         }
+-        const abortedTransferStateChangeList = Object.keys(abortedTransfers).length && Array.from(transferIdList.map(transferId => abortedTransfers[transferId].transferState))
++        const abortedTransferStateChangeList = Object.keys(abortedTransfers).length && Array.from(abortedTransfers).map(transferId => abortedTransfers[transferId].transferState)
+         Object.keys(abortedTransferStateChangeList).length && await knex.batchInsert('transferStateChange', abortedTransferStateChangeList).transacting(trx)
+         histTimerTransferStateChangePrepareAndBatchInsertEnd({ success: true, queryName: 'facade_prepareChangeParticipantPositionTransaction_transaction_transferStateChangeBatchInsert' })
+         // Get the effective position for this participantCurrency at the start of processing the Batch
+@@ -224,15 +227,18 @@ const prepareChangeParticipantPositionTransaction = async (transferList) => {
+           ['success', 'queryName']
+         ).startTimer()
+         await knex('transfer').transacting(trx).forUpdate().whereIn('transferId', transferIdList).select('*')
+-        const processedTransferStateChangeList = Object.keys(processedTransfers).length && Array.from(transferIdList.map(transferId => processedTransfers[transferId].transferState))
+-        const processedTransferStateChangeIdList = processedTransferStateChangeList && Object.keys(processedTransferStateChangeList).length && await knex.batchInsert('transferStateChange', processedTransferStateChangeList).transacting(trx)
+-        const processedTransfersKeysList = Object.keys(processedTransfers)
++        const processedTransferStateChangeList = Object.keys(processedTransfers).length && Array.from(processedTransfers).map(transferId => processedTransfers[transferId].transferState)
++        processedTransferStateChangeList && Object.keys(processedTransferStateChangeList).length && await knex.batchInsert('transferStateChange', processedTransferStateChangeList).transacting(trx)
++        const processedTransferStateChangeIdListQueryResult = await knex('transferStateChange').transacting(trx).whereIn('transferId', transferIdList).select(['transferStateChangeId','transferId'])
++        const processedTransferStateChangeIdList = Object.fromEntries(
++          processedTransferStateChangeIdListQueryResult.map(transferStateChangeItem => [transferStateChangeItem.transferId, transferStateChangeItem.transferStateChangeId])
++        )
+         const batchParticipantPositionChange = []
+-        for (const keyIndex in processedTransfersKeysList) {
+-          const { runningPosition, runningReservedValue } = processedTransfers[processedTransfersKeysList[keyIndex]]
++        for (const transferId in processedTransfers) {
++          const { runningPosition, runningReservedValue } = processedTransfers[transferId]
+           const participantPositionChange = {
+             participantPositionId: initialParticipantPosition.participantPositionId,
+-            transferStateChangeId: processedTransferStateChangeIdList[keyIndex],
++            transferStateChangeId: processedTransferStateChangeIdList[transferId],
+             value: runningPosition,
+             // processBatch: <uuid> - a single value uuid for this entire batch to make sure the set of transfers in this batch can be clearly grouped
+             reservedValue: runningReservedValue

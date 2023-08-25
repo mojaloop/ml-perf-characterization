@@ -1,0 +1,2 @@
+cat cl-prepare-handler-testing.sql | docker exec -i mysql-cl /bin/mysql central_ledger
+cat kafka-topic-transfer-prepare.dump | kcat -b localhost:9092 -t topic-transfer-prepare -X topic.partitioner=murmur2_random
