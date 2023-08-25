@@ -229,6 +229,16 @@ Due to past history with Logger statements and stringify, the conclusion was tha
 - [[central-services-shared] JSON.stringify degrades performance on high call count function in default LOG_LEVEL=info setups](https://github.com/mojaloop/project/issues/3480)
 
 
+## Status
+
+| Ml api adapter version |  Date  | Status|
+|---|---|---|
+| 14.0.1 | 2023-08-24 | Baseline with a scale of 2 and 2 notification partitions 574 ops/s 🔼
+| 14.0.2-snapshot.0 | 2023-08-24 | Adapter sending requests with http keep alive with a scale of 2 and 2 notification 617 ops/s 🔼
+| 14.0.2-snapshot.2 | 2023-08-24 | Adapter with stringify fixes with a scale of 2 and 2 notification 657 ops/s 🔼
+| 14.0.2-snapshot.5 | 2023-08-24 | Adapter with stringify fixes and http keep alive with a scale of 2 and 2 notification 671 ops/s 🔼
+| 14.0.2-snapshot.11 | 2023-08-24 | Adapter with stringify fixes, http keep alive, kafka optimizations and new config with a scale of 2 and 2 notification 764 ops/s 🔼
+
 ### Isolated Performance Testing
 
 - Download [ml-api-adapter](https://github.com/mojaloop/ml-api-adapter) repo.
