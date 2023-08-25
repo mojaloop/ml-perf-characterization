@@ -2,14 +2,15 @@
 
 Here you will find Performance Characterizations for the Mojaloop Services.
 
-## 1. High-Level Characterization Scenarios
+## 1. High-Level Characterization Scenarios, components or libraries
 
-| High-level Scenario  | Description  | Documentation | Notes |
+| #  | Description  | Documentation | Notes |
 |---|---|---|---|
 | 1. | FSPIOP Discovery | [./fspiop-discovery/README](./fspiop-discovery/README.md) | Done 1st-pass. |
 | 2. | ~~FSPIOP Agreement~~ |   | To Be Done |
 | 3. | FSPIOP Transfers | [./fspiop-transfers/README](./fspiop-transfers/README.md) | Done 1st-pass. |
 | 4. | ~~FSPIOP Discovery + Agreement + Transfers~~ |   | To Be Done |
+| 5. | Central-Services-Stream Library | [./lib-central-services-stream/README.md](./lib-central-services-stream/README.md)| Done 1st-pass |
 
 ### 2. Capturing End-to-end Metrics
 
