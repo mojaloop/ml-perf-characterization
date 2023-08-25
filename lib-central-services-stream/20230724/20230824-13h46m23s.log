@@ -1,0 +1,1912 @@
+Starting tests - 20230824-13h46m23s
+=======================================
+Linux distribution: Amazon Linux 2023
+Linux CPU: Intel(R) Xeon(R) Platinum 8375C CPU @ 2.90GHz
+Linux Memory: 61Gi
+=======================================
+docker version = Client:
+ Version:           20.10.23
+ API version:       1.41
+ Go version:        go1.19.8
+ Git commit:        7155243
+ Built:             Mon May  1 21:07:11 2023
+ OS/Arch:           linux/amd64
+ Context:           default
+ Experimental:      true
+
+Server:
+ Engine:
+  Version:          20.10.23
+  API version:      1.41 (minimum version 1.12)
+  Go version:       go1.19.8
+  Git commit:       6051f14
+  Built:            Wed Apr 19 00:00:00 2023
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          1.6.19
+  GitCommit:        1e1ea6e986c6c86565bc33d52e34b81b3e2bc71f
+ runc:
+  Version:          1.1.7
+  GitCommit:        f19387a6bec4944c770f7668ab51c4348d9c2f38
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0
+docker compose version = Docker Compose version v2.19.1
+=======================================
+
+> perf@1.0.0 start
+> node index.js
+
+Starting benchmark - s00-01-default.js { time: 30000 }
+test:Producer::beforeAll
+onReady: {"name":"test#producer-1","librdkafkaVersion":"2.2.0","features":["gzip","snappy","sasl","regex","lz4","sasl_plain","plugins"]} - with start time: undefined
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [ { name: 'test', partitions: [Array] } ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 2
+test:Producer::afterAll
+{
+  producerConf: '{\n' +
+    '  options: {\n' +
+    '    pollIntervalMs: 50,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    sync: true,\n' +
+    '    serializeFn: [Function: defaultSerializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'client.id': 'test',\n" +
+    '    event_cb: true,\n' +
+    '    dr_cb: true,\n' +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'compression.codec': 'none',\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'queue.buffering.max.messages': 100000,\n" +
+    "    'queue.buffering.max.ms': 0,\n" +
+    "    'api.version.request': true\n" +
+    '  },\n' +
+    "  topicConf: { 'request.required.acks': -1, partitioner: 'murmur2_random' }\n" +
+    '}',
+  topicConf: "{ topicName: 'test' }"
+}
+timer:benchmark::producer:run: 30.034s
+test:Consumer::beforeAll
+ready: {
+  name: 'test#consumer-2',
+  librdkafkaVersion: '2.2.0',
+  features: [ 'gzip', 'snappy', 'sasl', 'regex', 'lz4', 'sasl_plain', 'plugins' ]
+}
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [ { name: 'test', partitions: [Array] } ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 4
+2023-08-24T13:46:53.472Z - [31merror[39m: Consumer::onError()[topics='test'] - Error: Broker: Unknown topic or partition
+    at Function.createLibrdkafkaError [as create] (/home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/error.js:456:10)
+    at /home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/kafka-consumer.js:468:29)
+2023-08-24T13:46:53.574Z - [31merror[39m: Consumer::consume() - onRecursive - error Error: Broker: Unknown topic or partition
+test:Consumer::afterAll
+Disconnecting Consumer!
+{
+  consumerConf: '{\n' +
+    '  options: {\n' +
+    '    mode: 2,\n' +
+    '    batchSize: 1,\n' +
+    '    pollFrequency: 10,\n' +
+    '    recursiveTimeout: 100,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    messageAsJSON: true,\n' +
+    '    sync: true,\n' +
+    '    syncConcurrency: 1,\n' +
+    '    consumeTimeout: 1000,\n' +
+    '    deserializeFn: [Function: defaultDeserializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'client.id': 'test',\n" +
+    "    'group.id': 'cl-group-test',\n" +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'enable.auto.commit': false,\n" +
+    "    'auto.commit.interval.ms': 100,\n" +
+    "    'allow.auto.create.topics': true,\n" +
+    "    'partition.assignment.strategy': 'range,roundrobin',\n" +
+    "    'enable.partition.eof': true,\n" +
+    "    'api.version.request': true\n" +
+    '  },\n' +
+    "  topicConf: { 'auto.offset.reset': 'earliest' }\n" +
+    '}',
+  topicList: "[ 'test' ]"
+}
+timer:benchmark::consumer:run: 10.777s
+timer:benchmark::main: 40.812s
+benchProducerConf: { time: 30000 }
+benchConsumerConf: { iterations: 1, time: 0 }
+┌─────────┬─────────────────────┬────────────┬────────────────────────────┬───────┬──────────────────┬────────────────────┬────────────────────┬────────────────────┬─────────────────────────────────────────────────────────────────────────┐
+│ (index) │      scenario       │    name    │            date            │ count │     ops /(s)     │    duration (s)    │       start        │        end         │                                 labels                                  │
+├─────────┼─────────────────────┼────────────┼────────────────────────────┼───────┼──────────────────┼────────────────────┼────────────────────┼────────────────────┼─────────────────────────────────────────────────────────────────────────┤
+│    0    │ 's00-01-default.js' │ 'Producer' │ '2023-08-24T13:46:23.426Z' │ 25741 │ 857.630585435297 │ 30.014088160037993 │ 162.36301803588867 │ 30176.451178073883 │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}' │
+└─────────┴─────────────────────┴────────────┴────────────────────────────┴───────┴──────────────────┴────────────────────┴────────────────────┴────────────────────┴─────────────────────────────────────────────────────────────────────────┘
+┌─────────┬─────────────────────┬────────────┬────────────────────────────┬───────┬────────────────────┬───────────────────┬───────────────────┬────────────────────┬─────────────────┐
+│ (index) │      scenario       │    name    │            date            │ count │      ops /(s)      │   duration (s)    │       start       │        end         │     labels      │
+├─────────┼─────────────────────┼────────────┼────────────────────────────┼───────┼────────────────────┼───────────────────┼───────────────────┼────────────────────┼─────────────────┤
+│    0    │ 's00-01-default.js' │ 'Consumer' │ '2023-08-24T13:46:23.426Z' │ 25741 │ 3902.3244175083996 │ 6.596324970960617 │ 34366.95795798302 │ 40963.282928943634 │ '{"sync":true}' │
+└─────────┴─────────────────────┴────────────┴────────────────────────────┴───────┴────────────────────┴───────────────────┴───────────────────┴────────────────────┴─────────────────┘
+Starting benchmark - s00-02-default-producer-sync-false.js { time: 30000 }
+test:Producer::beforeAll
+onReady: {"name":"test#producer-3","librdkafkaVersion":"2.2.0","features":["gzip","snappy","sasl","regex","lz4","sasl_plain","plugins"]} - with start time: undefined
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 2
+test:Producer::afterAll
+{
+  producerConf: '{\n' +
+    '  options: {\n' +
+    '    pollIntervalMs: 50,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    sync: false,\n' +
+    '    serializeFn: [Function: defaultSerializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'client.id': 'test',\n" +
+    '    event_cb: true,\n' +
+    '    dr_cb: true,\n' +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'compression.codec': 'none',\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'queue.buffering.max.messages': 100000,\n" +
+    "    'api.version.request': true\n" +
+    '  },\n' +
+    "  topicConf: { 'request.required.acks': -1, partitioner: 'murmur2_random' }\n" +
+    '}',
+  topicConf: "{ topicName: 'test' }"
+}
+timer:benchmark::producer:run: 30.661s
+test:Consumer::beforeAll
+ready: {
+  name: 'test#consumer-4',
+  librdkafkaVersion: '2.2.0',
+  features: [ 'gzip', 'snappy', 'sasl', 'regex', 'lz4', 'sasl_plain', 'plugins' ]
+}
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 136
+2023-08-24T13:54:11.101Z - [31merror[39m: Consumer::onError()[topics='test'] - Error: Broker: Unknown topic or partition
+    at Function.createLibrdkafkaError [as create] (/home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/error.js:456:10)
+    at /home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/kafka-consumer.js:468:29)
+2023-08-24T13:54:11.203Z - [31merror[39m: Consumer::consume() - onRecursive - error Error: Broker: Unknown topic or partition
+test:Consumer::afterAll
+Disconnecting Consumer!
+{
+  consumerConf: '{\n' +
+    '  options: {\n' +
+    '    mode: 2,\n' +
+    '    batchSize: 1,\n' +
+    '    pollFrequency: 10,\n' +
+    '    recursiveTimeout: 100,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    messageAsJSON: true,\n' +
+    '    sync: true,\n' +
+    '    syncConcurrency: 1,\n' +
+    '    consumeTimeout: 1000,\n' +
+    '    deserializeFn: [Function: defaultDeserializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'client.id': 'test',\n" +
+    "    'group.id': 'cl-group-test',\n" +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'enable.auto.commit': false,\n" +
+    "    'auto.commit.interval.ms': 100,\n" +
+    "    'allow.auto.create.topics': true,\n" +
+    "    'partition.assignment.strategy': 'range,roundrobin',\n" +
+    "    'enable.partition.eof': true,\n" +
+    "    'api.version.request': true\n" +
+    '  },\n' +
+    "  topicConf: { 'auto.offset.reset': 'earliest' }\n" +
+    '}',
+  topicList: "[ 'test' ]"
+}
+timer:benchmark::consumer:run: 6:58.272 (m:ss.mmm)
+timer:benchmark::main: 7:28.934 (m:ss.mmm)
+benchProducerConf: { time: 30000 }
+benchConsumerConf: { iterations: 1, time: 0 }
+┌─────────┬─────────────────────────────────────────┬────────────┬────────────────────────────┬────────┬────────────────────┬────────────────────┬───────────────────┬───────────────────┬──────────────────────────────────────────────────────────────────────────┐
+│ (index) │                scenario                 │    name    │            date            │ count  │      ops /(s)      │    duration (s)    │       start       │        end        │                                  labels                                  │
+├─────────┼─────────────────────────────────────────┼────────────┼────────────────────────────┼────────┼────────────────────┼────────────────────┼───────────────────┼───────────────────┼──────────────────────────────────────────────────────────────────────────┤
+│    0    │ 's00-02-default-producer-sync-false.js' │ 'Producer' │ '2023-08-24T13:47:04.239Z' │ 100000 │ 3312.3489822330657 │ 30.190055618047715 │ 40971.03281188011 │ 71161.08842992783 │ '{"sync":false,"compression":"none","queueBufferingMaxMessages":100000}' │
+└─────────┴─────────────────────────────────────────┴────────────┴────────────────────────────┴────────┴────────────────────┴────────────────────┴───────────────────┴───────────────────┴──────────────────────────────────────────────────────────────────────────┘
+┌─────────┬─────────────────────────────────────────┬────────────┬────────────────────────────┬────────┬───────────────────┬────────────────────┬───────────────────┬───────────────────┬─────────────────┐
+│ (index) │                scenario                 │    name    │            date            │ count  │     ops /(s)      │    duration (s)    │       start       │        end        │     labels      │
+├─────────┼─────────────────────────────────────────┼────────────┼────────────────────────────┼────────┼───────────────────┼────────────────────┼───────────────────┼───────────────────┼─────────────────┤
+│    0    │ 's00-02-default-producer-sync-false.js' │ 'Consumer' │ '2023-08-24T13:47:04.239Z' │ 100000 │ 5201.165470377588 │ 19.226460025072097 │ 470672.2531440258 │ 489898.7131690979 │ '{"sync":true}' │
+└─────────┴─────────────────────────────────────────┴────────────┴────────────────────────────┴────────┴───────────────────┴────────────────────┴───────────────────┴───────────────────┴─────────────────┘
+Starting benchmark - s01-auto-commit-enabled.js { time: 30000 }
+test:Producer::beforeAll
+onReady: {"name":"test#producer-5","librdkafkaVersion":"2.2.0","features":["gzip","snappy","sasl","regex","lz4","sasl_plain","plugins"]} - with start time: undefined
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 2
+test:Producer::afterAll
+{
+  producerConf: '{\n' +
+    '  options: {\n' +
+    '    pollIntervalMs: 50,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    sync: true,\n' +
+    '    serializeFn: [Function: defaultSerializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'client.id': 'test',\n" +
+    '    event_cb: true,\n' +
+    '    dr_cb: true,\n' +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'compression.codec': 'none',\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'queue.buffering.max.messages': 100000,\n" +
+    "    'queue.buffering.max.ms': 0,\n" +
+    "    'api.version.request': true\n" +
+    '  },\n' +
+    "  topicConf: { 'request.required.acks': -1, partitioner: 'murmur2_random' }\n" +
+    '}',
+  topicConf: "{ topicName: 'test' }"
+}
+timer:benchmark::producer:run: 30.027s
+test:Consumer::beforeAll
+ready: {
+  name: 'test#consumer-6',
+  librdkafkaVersion: '2.2.0',
+  features: [ 'gzip', 'snappy', 'sasl', 'regex', 'lz4', 'sasl_plain', 'plugins' ]
+}
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 2
+2023-08-24T13:55:03.210Z - [31merror[39m: Consumer::onError()[topics='test'] - Error: Broker: Unknown topic or partition
+    at Function.createLibrdkafkaError [as create] (/home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/error.js:456:10)
+    at /home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/kafka-consumer.js:468:29)
+2023-08-24T13:55:03.311Z - [31merror[39m: Consumer::consume() - onRecursive - error Error: Broker: Unknown topic or partition
+test:Consumer::afterAll
+Disconnecting Consumer!
+{
+  consumerConf: '{\n' +
+    '  options: {\n' +
+    '    mode: 2,\n' +
+    '    batchSize: 1,\n' +
+    '    pollFrequency: 10,\n' +
+    '    recursiveTimeout: 100,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    messageAsJSON: true,\n' +
+    '    sync: true,\n' +
+    '    syncConcurrency: 1,\n' +
+    '    consumeTimeout: 1000,\n' +
+    '    deserializeFn: [Function: defaultDeserializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'client.id': 'test',\n" +
+    "    'group.id': 'cl-group-test',\n" +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'enable.auto.commit': true,\n" +
+    "    'auto.commit.interval.ms': 100,\n" +
+    "    'allow.auto.create.topics': true,\n" +
+    "    'partition.assignment.strategy': 'range,roundrobin',\n" +
+    "    'enable.partition.eof': true\n" +
+    '  },\n' +
+    "  topicConf: { 'auto.offset.reset': 'earliest' }\n" +
+    '}',
+  topicList: "[ 'test' ]"
+}
+timer:benchmark::consumer:run: 5.595s
+timer:benchmark::main: 35.622s
+benchProducerConf: { time: 30000 }
+benchConsumerConf: { iterations: 1, time: 0 }
+┌─────────┬──────────────────────────────┬────────────┬────────────────────────────┬───────┬───────────────────┬────────────────────┬───────────────────┬───────────────────┬─────────────────────────────────────────────────────────────────────────┐
+│ (index) │           scenario           │    name    │            date            │ count │     ops /(s)      │    duration (s)    │       start       │        end        │                                 labels                                  │
+├─────────┼──────────────────────────────┼────────────┼────────────────────────────┼───────┼───────────────────┼────────────────────┼───────────────────┼───────────────────┼─────────────────────────────────────────────────────────────────────────┤
+│    0    │ 's01-auto-commit-enabled.js' │ 'Producer' │ '2023-08-24T13:54:33.175Z' │ 25837 │ 860.8662025071364 │ 30.012794003009795 │ 489905.1823410988 │ 519917.9763441086 │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}' │
+└─────────┴──────────────────────────────┴────────────┴────────────────────────────┴───────┴───────────────────┴────────────────────┴───────────────────┴───────────────────┴─────────────────────────────────────────────────────────────────────────┘
+┌─────────┬──────────────────────────────┬────────────┬────────────────────────────┬───────┬────────────────────┬───────────────────┬───────────────────┬───────────────────┬─────────────────┐
+│ (index) │           scenario           │    name    │            date            │ count │      ops /(s)      │   duration (s)    │       start       │        end        │     labels      │
+├─────────┼──────────────────────────────┼────────────┼────────────────────────────┼───────┼────────────────────┼───────────────────┼───────────────────┼───────────────────┼─────────────────┤
+│    0    │ 's01-auto-commit-enabled.js' │ 'Consumer' │ '2023-08-24T13:54:33.175Z' │ 25837 │ 10001.735385969494 │ 2.583251706123352 │ 522939.4386239052 │ 525522.6903300285 │ '{"sync":true}' │
+└─────────┴──────────────────────────────┴────────────┴────────────────────────────┴───────┴────────────────────┴───────────────────┴───────────────────┴───────────────────┴─────────────────┘
+Starting benchmark - s02-lz4-compression.js { time: 30000 }
+test:Producer::beforeAll
+onReady: {"name":"test#producer-7","librdkafkaVersion":"2.2.0","features":["gzip","snappy","sasl","regex","lz4","sasl_plain","plugins"]} - with start time: undefined
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 1
+test:Producer::afterAll
+{
+  producerConf: '{\n' +
+    '  options: {\n' +
+    '    pollIntervalMs: 50,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    sync: true,\n' +
+    '    serializeFn: [Function: defaultSerializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'client.id': 'test',\n" +
+    '    event_cb: true,\n' +
+    '    dr_cb: true,\n' +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'compression.codec': 'lz4',\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'queue.buffering.max.messages': 100000,\n" +
+    "    'queue.buffering.max.ms': 0,\n" +
+    "    'api.version.request': true\n" +
+    '  },\n' +
+    "  topicConf: { 'request.required.acks': -1, partitioner: 'murmur2_random' }\n" +
+    '}',
+  topicConf: "{ topicName: 'test' }"
+}
+timer:benchmark::producer:run: 30.025s
+test:Consumer::beforeAll
+ready: {
+  name: 'test#consumer-8',
+  librdkafkaVersion: '2.2.0',
+  features: [ 'gzip', 'snappy', 'sasl', 'regex', 'lz4', 'sasl_plain', 'plugins' ]
+}
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 1
+2023-08-24T13:55:38.828Z - [31merror[39m: Consumer::onError()[topics='test'] - Error: Broker: Unknown topic or partition
+    at Function.createLibrdkafkaError [as create] (/home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/error.js:456:10)
+    at /home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/kafka-consumer.js:468:29)
+2023-08-24T13:55:38.928Z - [31merror[39m: Consumer::consume() - onRecursive - error Error: Broker: Unknown topic or partition
+test:Consumer::afterAll
+Disconnecting Consumer!
+{
+  consumerConf: '{\n' +
+    '  options: {\n' +
+    '    mode: 2,\n' +
+    '    batchSize: 1,\n' +
+    '    pollFrequency: 10,\n' +
+    '    recursiveTimeout: 100,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    messageAsJSON: true,\n' +
+    '    sync: true,\n' +
+    '    syncConcurrency: 1,\n' +
+    '    consumeTimeout: 1000,\n' +
+    '    deserializeFn: [Function: defaultDeserializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'client.id': 'test',\n" +
+    "    'group.id': 'cl-group-test',\n" +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'enable.auto.commit': false,\n" +
+    "    'auto.commit.interval.ms': 100,\n" +
+    "    'allow.auto.create.topics': true,\n" +
+    "    'partition.assignment.strategy': 'range,roundrobin',\n" +
+    "    'enable.partition.eof': true\n" +
+    '  },\n' +
+    "  topicConf: { 'auto.offset.reset': 'earliest' }\n" +
+    '}',
+  topicList: "[ 'test' ]"
+}
+timer:benchmark::consumer:run: 8.661s
+timer:benchmark::main: 38.686s
+benchProducerConf: { time: 30000 }
+benchConsumerConf: { iterations: 1, time: 0 }
+┌─────────┬──────────────────────────┬────────────┬────────────────────────────┬───────┬───────────────────┬────────────────────┬───────────────────┬───────────────────┬────────────────────────────────────────────────────────────────────────┐
+│ (index) │         scenario         │    name    │            date            │ count │     ops /(s)      │    duration (s)    │       start       │        end        │                                 labels                                 │
+├─────────┼──────────────────────────┼────────────┼────────────────────────────┼───────┼───────────────────┼────────────────────┼───────────────────┼───────────────────┼────────────────────────────────────────────────────────────────────────┤
+│    0    │ 's02-lz4-compression.js' │ 'Producer' │ '2023-08-24T13:55:08.798Z' │ 25892 │ 862.7115442548724 │ 30.012349055051804 │ 525526.9842479229 │ 555539.3333029747 │ '{"sync":true,"compression":"lz4","queueBufferingMaxMessages":100000}' │
+└─────────┴──────────────────────────┴────────────┴────────────────────────────┴───────┴───────────────────┴────────────────────┴───────────────────┴───────────────────┴────────────────────────────────────────────────────────────────────────┘
+┌─────────┬──────────────────────────┬────────────┬────────────────────────────┬───────┬───────────────────┬───────────────────┬───────────────────┬───────────────────┬─────────────────┐
+│ (index) │         scenario         │    name    │            date            │ count │     ops /(s)      │   duration (s)    │       start       │        end        │     labels      │
+├─────────┼──────────────────────────┼────────────┼────────────────────────────┼───────┼───────────────────┼───────────────────┼───────────────────┼───────────────────┼─────────────────┤
+│    0    │ 's02-lz4-compression.js' │ 'Consumer' │ '2023-08-24T13:55:08.798Z' │ 25892 │ 4582.340944320943 │ 5.650387065172195 │ 558559.5949459076 │ 564209.9820110798 │ '{"sync":true}' │
+└─────────┴──────────────────────────┴────────────┴────────────────────────────┴───────┴───────────────────┴───────────────────┴───────────────────┴───────────────────┴─────────────────┘
+Starting benchmark - s03-producer-reduced-poll-interval.js { time: 30000 }
+test:Producer::beforeAll
+onReady: {"name":"test#producer-9","librdkafkaVersion":"2.2.0","features":["gzip","snappy","sasl","regex","lz4","sasl_plain","plugins"]} - with start time: undefined
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 1
+test:Producer::afterAll
+{
+  producerConf: '{\n' +
+    '  options: {\n' +
+    '    pollIntervalMs: 10,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    sync: true,\n' +
+    '    serializeFn: [Function: defaultSerializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'client.id': 'test',\n" +
+    '    event_cb: true,\n' +
+    '    dr_cb: true,\n' +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'compression.codec': 'none',\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'queue.buffering.max.messages': 100000,\n" +
+    "    'queue.buffering.max.ms': 0,\n" +
+    "    'api.version.request': true\n" +
+    '  },\n' +
+    "  topicConf: { 'request.required.acks': -1, partitioner: 'murmur2_random' }\n" +
+    '}',
+  topicConf: "{ topicName: 'test' }"
+}
+timer:benchmark::producer:run: 30.031s
+test:Consumer::beforeAll
+ready: {
+  name: 'test#consumer-10',
+  librdkafkaVersion: '2.2.0',
+  features: [ 'gzip', 'snappy', 'sasl', 'regex', 'lz4', 'sasl_plain', 'plugins' ]
+}
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 1
+2023-08-24T13:56:17.520Z - [31merror[39m: Consumer::onError()[topics='test'] - Error: Broker: Unknown topic or partition
+    at Function.createLibrdkafkaError [as create] (/home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/error.js:456:10)
+    at /home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/kafka-consumer.js:468:29)
+2023-08-24T13:56:17.621Z - [31merror[39m: Consumer::consume() - onRecursive - error Error: Broker: Unknown topic or partition
+test:Consumer::afterAll
+Disconnecting Consumer!
+{
+  consumerConf: '{\n' +
+    '  options: {\n' +
+    '    mode: 2,\n' +
+    '    batchSize: 1,\n' +
+    '    pollFrequency: 10,\n' +
+    '    recursiveTimeout: 100,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    messageAsJSON: true,\n' +
+    '    sync: true,\n' +
+    '    syncConcurrency: 1,\n' +
+    '    consumeTimeout: 1000,\n' +
+    '    deserializeFn: [Function: defaultDeserializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'client.id': 'test',\n" +
+    "    'group.id': 'cl-group-test',\n" +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'enable.auto.commit': false,\n" +
+    "    'auto.commit.interval.ms': 100,\n" +
+    "    'allow.auto.create.topics': true,\n" +
+    "    'partition.assignment.strategy': 'range,roundrobin',\n" +
+    "    'enable.partition.eof': true,\n" +
+    "    'api.version.request': true\n" +
+    '  },\n' +
+    "  topicConf: { 'auto.offset.reset': 'earliest' }\n" +
+    '}',
+  topicList: "[ 'test' ]"
+}
+timer:benchmark::consumer:run: 8.540s
+timer:benchmark::main: 38.571s
+benchProducerConf: { time: 30000 }
+benchConsumerConf: { iterations: 1, time: 0 }
+┌─────────┬─────────────────────────────────────────┬────────────┬────────────────────────────┬───────┬───────────────────┬────────────────────┬───────────────────┬───────────────────┬─────────────────────────────────────────────────────────────────────────┐
+│ (index) │                scenario                 │    name    │            date            │ count │     ops /(s)      │    duration (s)    │       start       │        end        │                                 labels                                  │
+├─────────┼─────────────────────────────────────────┼────────────┼────────────────────────────┼───────┼───────────────────┼────────────────────┼───────────────────┼───────────────────┼─────────────────────────────────────────────────────────────────────────┤
+│    0    │ 's03-producer-reduced-poll-interval.js' │ 'Producer' │ '2023-08-24T13:55:47.485Z' │ 25889 │ 862.6019865229875 │ 30.012683027029038 │ 564220.6678879261 │ 594233.3509149551 │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}' │
+└─────────┴─────────────────────────────────────────┴────────────┴────────────────────────────┴───────┴───────────────────┴────────────────────┴───────────────────┴───────────────────┴─────────────────────────────────────────────────────────────────────────┘
+┌─────────┬─────────────────────────────────────────┬────────────┬────────────────────────────┬───────┬────────────────────┬───────────────────┬──────────────────┬───────────────────┬─────────────────┐
+│ (index) │                scenario                 │    name    │            date            │ count │      ops /(s)      │   duration (s)    │      start       │        end        │     labels      │
+├─────────┼─────────────────────────────────────────┼────────────┼────────────────────────────┼───────┼────────────────────┼───────────────────┼──────────────────┼───────────────────┼─────────────────┤
+│    0    │ 's03-producer-reduced-poll-interval.js' │ 'Consumer' │ '2023-08-24T13:55:47.485Z' │ 25889 │ 4680.5997171162935 │ 5.531128822088242 │ 597250.903085947 │ 602782.0319080353 │ '{"sync":true}' │
+└─────────┴─────────────────────────────────────────┴────────────┴────────────────────────────┴───────┴────────────────────┴───────────────────┴──────────────────┴───────────────────┴─────────────────┘
+Starting benchmark - s04-producer-increased-queue-buff-max-.js { time: 30000 }
+test:Producer::beforeAll
+onReady: {"name":"test#producer-11","librdkafkaVersion":"2.2.0","features":["gzip","snappy","sasl","regex","lz4","sasl_plain","plugins"]} - with start time: undefined
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 1
+test:Producer::afterAll
+{
+  producerConf: '{\n' +
+    '  options: {\n' +
+    '    pollIntervalMs: 50,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    sync: true,\n' +
+    '    serializeFn: [Function: defaultSerializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'client.id': 'test',\n" +
+    '    event_cb: true,\n' +
+    '    dr_cb: true,\n' +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'compression.codec': 'none',\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'queue.buffering.max.messages': 100000,\n" +
+    "    'queue.buffering.max.ms': 10,\n" +
+    "    'api.version.request': true\n" +
+    '  },\n' +
+    "  topicConf: { 'request.required.acks': -1, partitioner: 'murmur2_random' }\n" +
+    '}',
+  topicConf: "{ topicName: 'test' }"
+}
+timer:benchmark::producer:run: 30.018s
+test:Consumer::beforeAll
+ready: {
+  name: 'test#consumer-12',
+  librdkafkaVersion: '2.2.0',
+  features: [ 'gzip', 'snappy', 'sasl', 'regex', 'lz4', 'sasl_plain', 'plugins' ]
+}
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 1
+2023-08-24T13:56:56.079Z - [31merror[39m: Consumer::onError()[topics='test'] - Error: Broker: Unknown topic or partition
+    at Function.createLibrdkafkaError [as create] (/home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/error.js:456:10)
+    at /home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/kafka-consumer.js:468:29)
+2023-08-24T13:56:56.179Z - [31merror[39m: Consumer::consume() - onRecursive - error Error: Broker: Unknown topic or partition
+test:Consumer::afterAll
+Disconnecting Consumer!
+{
+  consumerConf: '{\n' +
+    '  options: {\n' +
+    '    mode: 2,\n' +
+    '    batchSize: 1,\n' +
+    '    pollFrequency: 10,\n' +
+    '    recursiveTimeout: 100,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    messageAsJSON: true,\n' +
+    '    sync: true,\n' +
+    '    syncConcurrency: 1,\n' +
+    '    consumeTimeout: 1000,\n' +
+    '    deserializeFn: [Function: defaultDeserializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'client.id': 'test',\n" +
+    "    'group.id': 'cl-group-test',\n" +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'enable.auto.commit': false,\n" +
+    "    'auto.commit.interval.ms': 100,\n" +
+    "    'allow.auto.create.topics': true,\n" +
+    "    'partition.assignment.strategy': 'range,roundrobin',\n" +
+    "    'enable.partition.eof': true,\n" +
+    "    'api.version.request': true\n" +
+    '  },\n' +
+    "  topicConf: { 'auto.offset.reset': 'earliest' }\n" +
+    '}',
+  topicList: "[ 'test' ]"
+}
+timer:benchmark::consumer:run: 4.535s
+timer:benchmark::main: 34.553s
+benchProducerConf: { time: 30000 }
+benchConsumerConf: { iterations: 1, time: 0 }
+┌─────────┬─────────────────────────────────────────────┬────────────┬────────────────────────────┬───────┬───────────────────┬───────────────────┬───────────────────┬───────────────────┬─────────────────────────────────────────────────────────────────────────┐
+│ (index) │                  scenario                   │    name    │            date            │ count │     ops /(s)      │   duration (s)    │       start       │        end        │                                 labels                                  │
+├─────────┼─────────────────────────────────────────────┼────────────┼────────────────────────────┼───────┼───────────────────┼───────────────────┼───────────────────┼───────────────────┼─────────────────────────────────────────────────────────────────────────┤
+│    0    │ 's04-producer-increased-queue-buff-max-.js' │ 'Producer' │ '2023-08-24T13:56:26.057Z' │ 2712  │ 90.37319843360304 │ 30.00889696288109 │ 602791.1150460243 │ 632800.0120089054 │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}' │
+└─────────┴─────────────────────────────────────────────┴────────────┴────────────────────────────┴───────┴───────────────────┴───────────────────┴───────────────────┴───────────────────┴─────────────────────────────────────────────────────────────────────────┘
+┌─────────┬─────────────────────────────────────────────┬────────────┬────────────────────────────┬───────┬────────────────────┬────────────────────┬───────────────────┬──────────────────┬─────────────────┐
+│ (index) │                  scenario                   │    name    │            date            │ count │      ops /(s)      │    duration (s)    │       start       │       end        │     labels      │
+├─────────┼─────────────────────────────────────────────┼────────────┼────────────────────────────┼───────┼────────────────────┼────────────────────┼───────────────────┼──────────────────┼─────────────────┤
+│    0    │ 's04-producer-increased-queue-buff-max-.js' │ 'Consumer' │ '2023-08-24T13:56:26.057Z' │ 2712  │ 1776.5261985159127 │ 1.5265747289657592 │ 635809.4164350033 │ 637335.991163969 │ '{"sync":true}' │
+└─────────┴─────────────────────────────────────────────┴────────────┴────────────────────────────┴───────┴────────────────────┴────────────────────┴───────────────────┴──────────────────┴─────────────────┘
+Starting benchmark - s05-consumer-mode-poll.js { time: 30000 }
+test:Producer::beforeAll
+onReady: {"name":"test#producer-13","librdkafkaVersion":"2.2.0","features":["gzip","snappy","sasl","regex","lz4","sasl_plain","plugins"]} - with start time: undefined
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 1
+test:Producer::afterAll
+{
+  producerConf: '{\n' +
+    '  options: {\n' +
+    '    pollIntervalMs: 50,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    sync: true,\n' +
+    '    serializeFn: [Function: defaultSerializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'client.id': 'test',\n" +
+    '    event_cb: true,\n' +
+    '    dr_cb: true,\n' +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'compression.codec': 'none',\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'queue.buffering.max.messages': 100000,\n" +
+    "    'queue.buffering.max.ms': 0,\n" +
+    "    'api.version.request': true\n" +
+    '  },\n' +
+    "  topicConf: { 'request.required.acks': -1, partitioner: 'murmur2_random' }\n" +
+    '}',
+  topicConf: "{ topicName: 'test' }"
+}
+timer:benchmark::producer:run: 30.025s
+test:Consumer::beforeAll
+ready: {
+  name: 'test#consumer-14',
+  librdkafkaVersion: '2.2.0',
+  features: [ 'gzip', 'snappy', 'sasl', 'regex', 'lz4', 'sasl_plain', 'plugins' ]
+}
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 1
+2023-08-24T13:57:30.649Z - [31merror[39m: Consumer::onError()[topics='test'] - Error: Broker: Unknown topic or partition
+    at Function.createLibrdkafkaError [as create] (/home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/error.js:456:10)
+    at /home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/kafka-consumer.js:468:29)
+2023-08-24T13:57:30.650Z - [31merror[39m: Consumer::_consumerPoller() - ERROR - Error: Broker: Unknown topic or partition
+test:Consumer::afterAll
+Disconnecting Consumer!
+{
+  consumerConf: '{\n' +
+    '  options: {\n' +
+    '    mode: 1,\n' +
+    '    batchSize: 1,\n' +
+    '    pollFrequency: 10,\n' +
+    '    recursiveTimeout: 100,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    messageAsJSON: true,\n' +
+    '    sync: true,\n' +
+    '    syncConcurrency: 1,\n' +
+    '    consumeTimeout: 1000,\n' +
+    '    deserializeFn: [Function: defaultDeserializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'client.id': 'test',\n" +
+    "    'group.id': 'cl-group-test',\n" +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'enable.auto.commit': false,\n" +
+    "    'auto.commit.interval.ms': 100,\n" +
+    "    'allow.auto.create.topics': true,\n" +
+    "    'partition.assignment.strategy': 'range,roundrobin',\n" +
+    "    'enable.partition.eof': true,\n" +
+    "    'api.version.request': true\n" +
+    '  },\n' +
+    "  topicConf: { 'auto.offset.reset': 'earliest' }\n" +
+    '}',
+  topicList: "[ 'test' ]"
+}
+timer:benchmark::consumer:run: 4:21.260 (m:ss.mmm)
+timer:benchmark::main: 4:51.285 (m:ss.mmm)
+benchProducerConf: { time: 30000 }
+benchConsumerConf: { iterations: 1, time: 0 }
+┌─────────┬─────────────────────────────┬────────────┬────────────────────────────┬───────┬──────────────────┬────────────────────┬───────────────────┬───────────────────┬─────────────────────────────────────────────────────────────────────────┐
+│ (index) │          scenario           │    name    │            date            │ count │     ops /(s)     │    duration (s)    │       start       │        end        │                                 labels                                  │
+├─────────┼─────────────────────────────┼────────────┼────────────────────────────┼───────┼──────────────────┼────────────────────┼───────────────────┼───────────────────┼─────────────────────────────────────────────────────────────────────────┤
+│    0    │ 's05-consumer-mode-poll.js' │ 'Producer' │ '2023-08-24T13:57:00.611Z' │ 25843 │ 861.064560760543 │ 30.012848255157472 │ 637340.2811019421 │ 667353.1293570995 │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}' │
+└─────────┴─────────────────────────────┴────────────┴────────────────────────────┴───────┴──────────────────┴────────────────────┴───────────────────┴───────────────────┴─────────────────────────────────────────────────────────────────────────┘
+┌─────────┬─────────────────────────────┬────────────┬────────────────────────────┬───────┬────────────────────┬───────────────────┬───────────────────┬───────────────────┬─────────────────┐
+│ (index) │          scenario           │    name    │            date            │ count │      ops /(s)      │   duration (s)    │       start       │        end        │     labels      │
+├─────────┼─────────────────────────────┼────────────┼────────────────────────────┼───────┼────────────────────┼───────────────────┼───────────────────┼───────────────────┼─────────────────┤
+│    0    │ 's05-consumer-mode-poll.js' │ 'Consumer' │ '2023-08-24T13:57:00.611Z' │ 25843 │ 100.06905679331648 │ 258.2516596851349 │ 670370.3010289669 │ 928621.9607141018 │ '{"sync":true}' │
+└─────────┴─────────────────────────────┴────────────┴────────────────────────────┴───────┴────────────────────┴───────────────────┴───────────────────┴───────────────────┴─────────────────┘
+Starting benchmark - s06-01-consumer-mode-flow.js { time: 30000 }
+test:Producer::beforeAll
+onReady: {"name":"test#producer-15","librdkafkaVersion":"2.2.0","features":["gzip","snappy","sasl","regex","lz4","sasl_plain","plugins"]} - with start time: undefined
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 1
+test:Producer::afterAll
+{
+  producerConf: '{\n' +
+    '  options: {\n' +
+    '    pollIntervalMs: 50,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    sync: true,\n' +
+    '    serializeFn: [Function: defaultSerializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'client.id': 'test',\n" +
+    '    event_cb: true,\n' +
+    '    dr_cb: true,\n' +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'compression.codec': 'none',\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'queue.buffering.max.messages': 100000,\n" +
+    "    'queue.buffering.max.ms': 0,\n" +
+    "    'api.version.request': true\n" +
+    '  },\n' +
+    "  topicConf: { 'request.required.acks': -1, partitioner: 'murmur2_random' }\n" +
+    '}',
+  topicConf: "{ topicName: 'test' }"
+}
+timer:benchmark::producer:run: 54.040s
+test:Consumer::beforeAll
+ready: {
+  name: 'test#consumer-16',
+  librdkafkaVersion: '2.2.0',
+  features: [ 'gzip', 'snappy', 'sasl', 'regex', 'lz4', 'sasl_plain', 'plugins' ]
+}
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 1
+test:Consumer::afterAll
+Disconnecting Consumer!
+{
+  consumerConf: '{\n' +
+    '  options: {\n' +
+    '    mode: 0,\n' +
+    '    batchSize: 1,\n' +
+    '    pollFrequency: 10,\n' +
+    '    recursiveTimeout: 100,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    messageAsJSON: true,\n' +
+    '    sync: true,\n' +
+    '    syncConcurrency: 1,\n' +
+    '    consumeTimeout: 1000,\n' +
+    '    deserializeFn: [Function: defaultDeserializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'client.id': 'test',\n" +
+    "    'group.id': 'cl-group-test',\n" +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'enable.auto.commit': false,\n" +
+    "    'auto.commit.interval.ms': 100,\n" +
+    "    'allow.auto.create.topics': true,\n" +
+    "    'partition.assignment.strategy': 'range,roundrobin',\n" +
+    "    'enable.partition.eof': true,\n" +
+    "    'api.version.request': true\n" +
+    '  },\n' +
+    "  topicConf: { 'auto.offset.reset': 'earliest' }\n" +
+    '}',
+  topicList: "[ 'test' ]"
+}
+timer:benchmark::consumer:run: 8.090s
+timer:benchmark::main: 1:02.131 (m:ss.mmm)
+benchProducerConf: { time: 30000 }
+benchConsumerConf: { iterations: 1, time: 0 }
+┌─────────┬────────────────────────────────┬────────────┬────────────────────────────┬───────┬───────────────────┬───────────────────┬───────────────────┬───────────────────┬─────────────────────────────────────────────────────────────────────────┐
+│ (index) │            scenario            │    name    │            date            │ count │     ops /(s)      │   duration (s)    │       start       │        end        │                                 labels                                  │
+├─────────┼────────────────────────────────┼────────────┼────────────────────────────┼───────┼───────────────────┼───────────────────┼───────────────────┼───────────────────┼─────────────────────────────────────────────────────────────────────────┤
+│    0    │ 's06-01-consumer-mode-flow.js' │ 'Producer' │ '2023-08-24T14:01:51.897Z' │ 25848 │ 861.2409405009483 │ 30.01250728392601 │ 952637.3065509796 │ 982649.8138349056 │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}' │
+└─────────┴────────────────────────────────┴────────────┴────────────────────────────┴───────┴───────────────────┴───────────────────┴───────────────────┴───────────────────┴─────────────────────────────────────────────────────────────────────────┘
+┌─────────┬────────────────────────────────┬────────────┬────────────────────────────┬───────┬───────────────────┬───────────────────┬───────────────────┬───────────────────┬─────────────────┐
+│ (index) │            scenario            │    name    │            date            │ count │     ops /(s)      │   duration (s)    │       start       │        end        │     labels      │
+├─────────┼────────────────────────────────┼────────────┼────────────────────────────┼───────┼───────────────────┼───────────────────┼───────────────────┼───────────────────┼─────────────────┤
+│    0    │ 's06-01-consumer-mode-flow.js' │ 'Consumer' │ '2023-08-24T14:01:51.897Z' │ 25848 │ 6044.126503465597 │ 4.276548478126526 │ 985672.9827039242 │ 989949.5311820507 │ '{"sync":true}' │
+└─────────┴────────────────────────────────┴────────────┴────────────────────────────┴───────┴───────────────────┴───────────────────┴───────────────────┴───────────────────┴─────────────────┘
+Starting benchmark - s06-02-consumer-mode-flow-with-sync-false.js { time: 30000 }
+test:Producer::beforeAll
+onReady: {"name":"test#producer-17","librdkafkaVersion":"2.2.0","features":["gzip","snappy","sasl","regex","lz4","sasl_plain","plugins"]} - with start time: undefined
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 1
+test:Producer::afterAll
+{
+  producerConf: '{\n' +
+    '  options: {\n' +
+    '    pollIntervalMs: 50,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    sync: true,\n' +
+    '    serializeFn: [Function: defaultSerializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'client.id': 'test',\n" +
+    '    event_cb: true,\n' +
+    '    dr_cb: true,\n' +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'compression.codec': 'none',\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'queue.buffering.max.messages': 100000,\n" +
+    "    'queue.buffering.max.ms': 0,\n" +
+    "    'api.version.request': true\n" +
+    '  },\n' +
+    "  topicConf: { 'request.required.acks': -1, partitioner: 'murmur2_random' }\n" +
+    '}',
+  topicConf: "{ topicName: 'test' }"
+}
+timer:benchmark::producer:run: 30.025s
+test:Consumer::beforeAll
+ready: {
+  name: 'test#consumer-18',
+  librdkafkaVersion: '2.2.0',
+  features: [ 'gzip', 'snappy', 'sasl', 'regex', 'lz4', 'sasl_plain', 'plugins' ]
+}
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 1
+test:Consumer::afterAll
+Disconnecting Consumer!
+{
+  consumerConf: '{\n' +
+    '  options: {\n' +
+    '    mode: 0,\n' +
+    '    batchSize: 1,\n' +
+    '    pollFrequency: 10,\n' +
+    '    recursiveTimeout: 100,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    messageAsJSON: true,\n' +
+    '    sync: false,\n' +
+    '    syncConcurrency: 1,\n' +
+    '    consumeTimeout: 1000,\n' +
+    '    deserializeFn: [Function: defaultDeserializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'client.id': 'test',\n" +
+    "    'group.id': 'cl-group-test',\n" +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'enable.auto.commit': false,\n" +
+    "    'auto.commit.interval.ms': 100,\n" +
+    "    'allow.auto.create.topics': true,\n" +
+    "    'partition.assignment.strategy': 'range,roundrobin',\n" +
+    "    'enable.partition.eof': true,\n" +
+    "    'api.version.request': true\n" +
+    '  },\n' +
+    "  topicConf: { 'auto.offset.reset': 'earliest' }\n" +
+    '}',
+  topicList: "[ 'test' ]"
+}
+timer:benchmark::consumer:run: 5.090s
+timer:benchmark::main: 35.115s
+benchProducerConf: { time: 30000 }
+benchConsumerConf: { iterations: 1, time: 0 }
+┌─────────┬────────────────────────────────────────────────┬────────────┬────────────────────────────┬───────┬───────────────────┬────────────────────┬───────────────────┬────────────────────┬─────────────────────────────────────────────────────────────────────────┐
+│ (index) │                    scenario                    │    name    │            date            │ count │     ops /(s)      │    duration (s)    │       start       │        end         │                                 labels                                  │
+├─────────┼────────────────────────────────────────────────┼────────────┼────────────────────────────┼───────┼───────────────────┼────────────────────┼───────────────────┼────────────────────┼─────────────────────────────────────────────────────────────────────────┤
+│    0    │ 's06-02-consumer-mode-flow-with-sync-false.js' │ 'Producer' │ '2023-08-24T14:02:54.035Z' │ 25845 │ 861.1471706652083 │ 30.012291604042055 │ 990764.3921558857 │ 1020776.6837599277 │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}' │
+└─────────┴────────────────────────────────────────────────┴────────────┴────────────────────────────┴───────┴───────────────────┴────────────────────┴───────────────────┴────────────────────┴─────────────────────────────────────────────────────────────────────────┘
+┌─────────┬────────────────────────────────────────────────┬────────────┬────────────────────────────┬───────┬───────────────────┬────────────────────┬────────────────────┬────────────────────┬──────────────────┐
+│ (index) │                    scenario                    │    name    │            date            │ count │     ops /(s)      │    duration (s)    │       start        │        end         │      labels      │
+├─────────┼────────────────────────────────────────────────┼────────────┼────────────────────────────┼───────┼───────────────────┼────────────────────┼────────────────────┼────────────────────┼──────────────────┤
+│    0    │ 's06-02-consumer-mode-flow-with-sync-false.js' │ 'Consumer' │ '2023-08-24T14:02:54.035Z' │ 25845 │ 36702.06088486724 │ 0.7041838898658752 │ 1023794.1234500408 │ 1024498.3073399067 │ '{"sync":false}' │
+└─────────┴────────────────────────────────────────────────┴────────────┴────────────────────────────┴───────┴───────────────────┴────────────────────┴────────────────────┴────────────────────┴──────────────────┘
+Starting benchmark - s07-01-consumer-mode-recursive.js { time: 30000 }
+test:Producer::beforeAll
+onReady: {"name":"test#producer-19","librdkafkaVersion":"2.2.0","features":["gzip","snappy","sasl","regex","lz4","sasl_plain","plugins"]} - with start time: undefined
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 1
+test:Producer::afterAll
+{
+  producerConf: '{\n' +
+    '  options: {\n' +
+    '    pollIntervalMs: 50,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    sync: true,\n' +
+    '    serializeFn: [Function: defaultSerializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'client.id': 'test',\n" +
+    '    event_cb: true,\n' +
+    '    dr_cb: true,\n' +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'compression.codec': 'none',\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'queue.buffering.max.messages': 100000,\n" +
+    "    'queue.buffering.max.ms': 0,\n" +
+    "    'api.version.request': true\n" +
+    '  },\n' +
+    "  topicConf: { 'request.required.acks': -1, partitioner: 'murmur2_random' }\n" +
+    '}',
+  topicConf: "{ topicName: 'test' }"
+}
+timer:benchmark::producer:run: 30.024s
+test:Consumer::beforeAll
+ready: {
+  name: 'test#consumer-20',
+  librdkafkaVersion: '2.2.0',
+  features: [ 'gzip', 'snappy', 'sasl', 'regex', 'lz4', 'sasl_plain', 'plugins' ]
+}
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 1
+2023-08-24T14:03:59.187Z - [31merror[39m: Consumer::onError()[topics='test'] - Error: Broker: Unknown topic or partition
+    at Function.createLibrdkafkaError [as create] (/home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/error.js:456:10)
+    at /home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/kafka-consumer.js:468:29)
+2023-08-24T14:03:59.198Z - [31merror[39m: Consumer::consume() - onRecursive - error Error: Broker: Unknown topic or partition
+test:Consumer::afterAll
+Disconnecting Consumer!
+{
+  consumerConf: '{\n' +
+    '  options: {\n' +
+    '    mode: 2,\n' +
+    '    batchSize: 1,\n' +
+    '    pollFrequency: 10,\n' +
+    '    recursiveTimeout: 10,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    messageAsJSON: true,\n' +
+    '    sync: true,\n' +
+    '    syncConcurrency: 1,\n' +
+    '    syncSingleMessage: true,\n' +
+    '    consumeTimeout: 10,\n' +
+    '    deserializeFn: [Function: defaultDeserializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'client.id': 'test',\n" +
+    "    'group.id': 'cl-group-test',\n" +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'enable.auto.commit': false,\n" +
+    "    'auto.commit.interval.ms': 100,\n" +
+    "    'allow.auto.create.topics': true,\n" +
+    "    'partition.assignment.strategy': 'range,roundrobin',\n" +
+    "    'enable.partition.eof': true,\n" +
+    "    'api.version.request': true,\n" +
+    "    'fetch.wait.max.ms': 0\n" +
+    '  },\n' +
+    "  topicConf: { 'auto.offset.reset': 'earliest' }\n" +
+    '}',
+  topicList: "[ 'test' ]"
+}
+timer:benchmark::consumer:run: 7.977s
+timer:benchmark::main: 38.002s
+benchProducerConf: { time: 30000 }
+benchConsumerConf: { iterations: 1, time: 0 }
+┌─────────┬─────────────────────────────────────┬────────────┬────────────────────────────┬───────┬───────────────────┬────────────────────┬────────────────────┬────────────────────┬─────────────────────────────────────────────────────────────────────────┐
+│ (index) │              scenario               │    name    │            date            │ count │     ops /(s)      │    duration (s)    │       start        │        end         │                                 labels                                  │
+├─────────┼─────────────────────────────────────┼────────────┼────────────────────────────┼───────┼───────────────────┼────────────────────┼────────────────────┼────────────────────┼─────────────────────────────────────────────────────────────────────────┤
+│    0    │ 's07-01-consumer-mode-recursive.js' │ 'Producer' │ '2023-08-24T14:03:29.158Z' │ 25879 │ 862.2717508272342 │ 30.012580111980437 │ 1025887.4281051159 │ 1055900.0082170963 │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}' │
+└─────────┴─────────────────────────────────────┴────────────┴────────────────────────────┴───────┴───────────────────┴────────────────────┴────────────────────┴────────────────────┴─────────────────────────────────────────────────────────────────────────┘
+┌─────────┬─────────────────────────────────────┬────────────┬────────────────────────────┬───────┬───────────────────┬───────────────────┬────────────────────┬────────────────────┬─────────────────┐
+│ (index) │              scenario               │    name    │            date            │ count │     ops /(s)      │   duration (s)    │       start        │        end         │     labels      │
+├─────────┼─────────────────────────────────────┼────────────┼────────────────────────────┼───────┼───────────────────┼───────────────────┼────────────────────┼────────────────────┼─────────────────┤
+│    0    │ 's07-01-consumer-mode-recursive.js' │ 'Consumer' │ '2023-08-24T14:03:29.158Z' │ 25879 │ 5207.099444787189 │ 4.969945412874222 │ 1058916.3818330765 │ 1063886.3272459507 │ '{"sync":true}' │
+└─────────┴─────────────────────────────────────┴────────────┴────────────────────────────┴───────┴───────────────────┴───────────────────┴────────────────────┴────────────────────┴─────────────────┘
+Starting benchmark - s07-02-consumer-mode-recursive-with-sync-conc.js { time: 30000 }
+test:Producer::beforeAll
+onReady: {"name":"test#producer-21","librdkafkaVersion":"2.2.0","features":["gzip","snappy","sasl","regex","lz4","sasl_plain","plugins"]} - with start time: undefined
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 1
+test:Producer::afterAll
+{
+  producerConf: '{\n' +
+    '  options: {\n' +
+    '    pollIntervalMs: 50,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    sync: true,\n' +
+    '    serializeFn: [Function: defaultSerializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'client.id': 'test',\n" +
+    '    event_cb: true,\n' +
+    '    dr_cb: true,\n' +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'compression.codec': 'none',\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'queue.buffering.max.messages': 100000,\n" +
+    "    'queue.buffering.max.ms': 0,\n" +
+    "    'api.version.request': true\n" +
+    '  },\n' +
+    "  topicConf: { 'request.required.acks': -1, partitioner: 'murmur2_random' }\n" +
+    '}',
+  topicConf: "{ topicName: 'test' }"
+}
+timer:benchmark::producer:run: 30.024s
+test:Consumer::beforeAll
+ready: {
+  name: 'test#consumer-22',
+  librdkafkaVersion: '2.2.0',
+  features: [ 'gzip', 'snappy', 'sasl', 'regex', 'lz4', 'sasl_plain', 'plugins' ]
+}
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 1
+2023-08-24T14:04:37.191Z - [31merror[39m: Consumer::onError()[topics='test'] - Error: Broker: Unknown topic or partition
+    at Function.createLibrdkafkaError [as create] (/home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/error.js:456:10)
+    at /home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/kafka-consumer.js:468:29)
+2023-08-24T14:04:37.291Z - [31merror[39m: Consumer::consume() - onRecursive - error Error: Broker: Unknown topic or partition
+MAX MESSAGES REACHED! Exiting Consumer...
+test:Consumer::afterAll
+Disconnecting Consumer!
+{
+  consumerConf: '{\n' +
+    '  options: {\n' +
+    '    mode: 2,\n' +
+    '    batchSize: 1,\n' +
+    '    pollFrequency: 10,\n' +
+    '    recursiveTimeout: 100,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    messageAsJSON: true,\n' +
+    '    sync: true,\n' +
+    '    syncConcurrency: 10,\n' +
+    '    syncSingleMessage: true,\n' +
+    '    consumeTimeout: 1000,\n' +
+    '    deserializeFn: [Function: defaultDeserializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'client.id': 'test',\n" +
+    "    'group.id': 'cl-group-test',\n" +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'enable.auto.commit': false,\n" +
+    "    'auto.commit.interval.ms': 100,\n" +
+    "    'allow.auto.create.topics': true,\n" +
+    "    'partition.assignment.strategy': 'range,roundrobin',\n" +
+    "    'enable.partition.eof': true,\n" +
+    "    'api.version.request': true,\n" +
+    "    'fetch.wait.max.ms': 0\n" +
+    '  },\n' +
+    "  topicConf: { 'auto.offset.reset': 'earliest' }\n" +
+    '}',
+  topicList: "[ 'test' ]"
+}
+timer:benchmark::consumer:run: 7.713s
+timer:benchmark::main: 37.739s
+benchProducerConf: { time: 30000 }
+benchConsumerConf: { iterations: 1, time: 0 }
+┌─────────┬────────────────────────────────────────────────────┬────────────┬────────────────────────────┬───────┬───────────────────┬───────────────────┬────────────────────┬───────────────────┬─────────────────────────────────────────────────────────────────────────┐
+│ (index) │                      scenario                      │    name    │            date            │ count │     ops /(s)      │   duration (s)    │       start        │        end        │                                 labels                                  │
+├─────────┼────────────────────────────────────────────────────┼────────────┼────────────────────────────┼───────┼───────────────────┼───────────────────┼────────────────────┼───────────────────┼─────────────────────────────────────────────────────────────────────────┤
+│    0    │ 's07-02-consumer-mode-recursive-with-sync-conc.js' │ 'Producer' │ '2023-08-24T14:04:07.161Z' │ 25828 │ 860.5853865232494 │ 30.01212942314148 │ 1063891.9822199345 │ 1093904.111643076 │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}' │
+└─────────┴────────────────────────────────────────────────────┴────────────┴────────────────────────────┴───────┴───────────────────┴───────────────────┴────────────────────┴───────────────────┴─────────────────────────────────────────────────────────────────────────┘
+┌─────────┬────────────────────────────────────────────────────┬────────────┬────────────────────────────┬───────┬───────────────────┬───────────────────┬────────────────────┬───────────────────┬─────────────────┐
+│ (index) │                      scenario                      │    name    │            date            │ count │     ops /(s)      │   duration (s)    │       start        │        end        │     labels      │
+├─────────┼────────────────────────────────────────────────────┼────────────┼────────────────────────────┼───────┼───────────────────┼───────────────────┼────────────────────┼───────────────────┼─────────────────┤
+│    0    │ 's07-02-consumer-mode-recursive-with-sync-conc.js' │ 'Consumer' │ '2023-08-24T14:04:07.163Z' │ 25828 │ 5489.567431400665 │ 4.704924444913864 │ 1096921.1971449852 │ 1101626.121589899 │ '{"sync":true}' │
+└─────────┴────────────────────────────────────────────────────┴────────────┴────────────────────────────┴───────┴───────────────────┴───────────────────┴────────────────────┴───────────────────┴─────────────────┘
+Starting benchmark - s07-03-consumer-mode-recursive-with-sync-conc-batch.js { time: 30000 }
+test:Producer::beforeAll
+onReady: {"name":"test#producer-23","librdkafkaVersion":"2.2.0","features":["gzip","snappy","sasl","regex","lz4","sasl_plain","plugins"]} - with start time: undefined
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 1
+test:Producer::afterAll
+{
+  producerConf: '{\n' +
+    '  options: {\n' +
+    '    pollIntervalMs: 50,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    sync: true,\n' +
+    '    serializeFn: [Function: defaultSerializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'client.id': 'test',\n" +
+    '    event_cb: true,\n' +
+    '    dr_cb: true,\n' +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'compression.codec': 'none',\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'queue.buffering.max.messages': 100000,\n" +
+    "    'queue.buffering.max.ms': 0,\n" +
+    "    'api.version.request': true\n" +
+    '  },\n' +
+    "  topicConf: { 'request.required.acks': -1, partitioner: 'murmur2_random' }\n" +
+    '}',
+  topicConf: "{ topicName: 'test' }"
+}
+timer:benchmark::producer:run: 30.025s
+test:Consumer::beforeAll
+ready: {
+  name: 'test#consumer-24',
+  librdkafkaVersion: '2.2.0',
+  features: [ 'gzip', 'snappy', 'sasl', 'regex', 'lz4', 'sasl_plain', 'plugins' ]
+}
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 1
+2023-08-24T14:05:14.930Z - [31merror[39m: Consumer::onError()[topics='test'] - Error: Broker: Unknown topic or partition
+    at Function.createLibrdkafkaError [as create] (/home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/error.js:456:10)
+    at /home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/kafka-consumer.js:468:29)
+2023-08-24T14:05:15.030Z - [31merror[39m: Consumer::consume() - onRecursive - error Error: Broker: Unknown topic or partition
+MAX MESSAGES REACHED! Exiting Consumer...
+test:Consumer::afterAll
+Disconnecting Consumer!
+{
+  consumerConf: '{\n' +
+    '  options: {\n' +
+    '    mode: 2,\n' +
+    '    batchSize: 10,\n' +
+    '    pollFrequency: 10,\n' +
+    '    recursiveTimeout: 100,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    messageAsJSON: true,\n' +
+    '    sync: true,\n' +
+    '    syncConcurrency: 10,\n' +
+    '    syncSingleMessage: true,\n' +
+    '    consumeTimeout: 1000,\n' +
+    '    deserializeFn: [Function: defaultDeserializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'client.id': 'test',\n" +
+    "    'group.id': 'cl-group-test',\n" +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'enable.auto.commit': false,\n" +
+    "    'auto.commit.interval.ms': 100,\n" +
+    "    'allow.auto.create.topics': true,\n" +
+    "    'partition.assignment.strategy': 'range,roundrobin',\n" +
+    "    'enable.partition.eof': true,\n" +
+    "    'api.version.request': true,\n" +
+    "    'fetch.wait.max.ms': 0\n" +
+    '  },\n' +
+    "  topicConf: { 'auto.offset.reset': 'earliest' }\n" +
+    '}',
+  topicList: "[ 'test' ]"
+}
+timer:benchmark::consumer:run: 7.033s
+timer:benchmark::main: 37.058s
+benchProducerConf: { time: 30000 }
+benchConsumerConf: { iterations: 1, time: 0 }
+┌─────────┬──────────────────────────────────────────────────────────┬────────────┬────────────────────────────┬───────┬───────────────────┬────────────────────┬────────────────────┬───────────────────┬─────────────────────────────────────────────────────────────────────────┐
+│ (index) │                         scenario                         │    name    │            date            │ count │     ops /(s)      │    duration (s)    │       start        │        end        │                                 labels                                  │
+├─────────┼──────────────────────────────────────────────────────────┼────────────┼────────────────────────────┼───────┼───────────────────┼────────────────────┼────────────────────┼───────────────────┼─────────────────────────────────────────────────────────────────────────┤
+│    0    │ 's07-03-consumer-mode-recursive-with-sync-conc-batch.js' │ 'Producer' │ '2023-08-24T14:04:44.901Z' │ 25838 │ 860.8937763246741 │ 30.012994297981262 │ 1101630.3288009167 │ 1131643.323098898 │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}' │
+└─────────┴──────────────────────────────────────────────────────────┴────────────┴────────────────────────────┴───────┴───────────────────┴────────────────────┴────────────────────┴───────────────────┴─────────────────────────────────────────────────────────────────────────┘
+┌─────────┬──────────────────────────────────────────────────────────┬────────────┬────────────────────────────┬───────┬──────────────────┬───────────────────┬────────────────────┬────────────────────┬─────────────────┐
+│ (index) │                         scenario                         │    name    │            date            │ count │     ops /(s)     │   duration (s)    │       start        │        end         │     labels      │
+├─────────┼──────────────────────────────────────────────────────────┼────────────┼────────────────────────────┼───────┼──────────────────┼───────────────────┼────────────────────┼────────────────────┼─────────────────┤
+│    0    │ 's07-03-consumer-mode-recursive-with-sync-conc-batch.js' │ 'Consumer' │ '2023-08-24T14:04:44.901Z' │ 25838 │ 6419.86139395877 │ 4.024697484016419 │ 1134660.5006580353 │ 1138685.1981420517 │ '{"sync":true}' │
+└─────────┴──────────────────────────────────────────────────────────┴────────────┴────────────────────────────┴───────┴──────────────────┴───────────────────┴────────────────────┴────────────────────┴─────────────────┘
+Starting benchmark - s07-04-consumer-mode-recursive-sync-false.js { time: 30000 }
+test:Producer::beforeAll
+onReady: {"name":"test#producer-25","librdkafkaVersion":"2.2.0","features":["gzip","snappy","sasl","regex","lz4","sasl_plain","plugins"]} - with start time: undefined
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 1
+test:Producer::afterAll
+{
+  producerConf: '{\n' +
+    '  options: {\n' +
+    '    pollIntervalMs: 50,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    sync: true,\n' +
+    '    serializeFn: [Function: defaultSerializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'client.id': 'test',\n" +
+    '    event_cb: true,\n' +
+    '    dr_cb: true,\n' +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'compression.codec': 'none',\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'queue.buffering.max.messages': 100000,\n" +
+    "    'queue.buffering.max.ms': 0,\n" +
+    "    'api.version.request': true\n" +
+    '  },\n' +
+    "  topicConf: { 'request.required.acks': -1, partitioner: 'murmur2_random' }\n" +
+    '}',
+  topicConf: "{ topicName: 'test' }"
+}
+timer:benchmark::producer:run: 30.025s
+test:Consumer::beforeAll
+ready: {
+  name: 'test#consumer-26',
+  librdkafkaVersion: '2.2.0',
+  features: [ 'gzip', 'snappy', 'sasl', 'regex', 'lz4', 'sasl_plain', 'plugins' ]
+}
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 1
+2023-08-24T14:05:51.988Z - [31merror[39m: Consumer::onError()[topics='test'] - Error: Broker: Unknown topic or partition
+    at Function.createLibrdkafkaError [as create] (/home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/error.js:456:10)
+    at /home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/kafka-consumer.js:468:29)
+2023-08-24T14:05:51.999Z - [31merror[39m: Consumer::consume() - onRecursive - error Error: Broker: Unknown topic or partition
+test:Consumer::afterAll
+Disconnecting Consumer!
+{
+  consumerConf: '{\n' +
+    '  options: {\n' +
+    '    mode: 2,\n' +
+    '    batchSize: 1,\n' +
+    '    pollFrequency: 10,\n' +
+    '    recursiveTimeout: 10,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    messageAsJSON: true,\n' +
+    '    sync: true,\n' +
+    '    syncConcurrency: 1,\n' +
+    '    syncSingleMessage: true,\n' +
+    '    consumeTimeout: 10,\n' +
+    '    deserializeFn: [Function: defaultDeserializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'client.id': 'test',\n" +
+    "    'group.id': 'cl-group-test',\n" +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'enable.auto.commit': false,\n" +
+    "    'auto.commit.interval.ms': 100,\n" +
+    "    'allow.auto.create.topics': true,\n" +
+    "    'partition.assignment.strategy': 'range,roundrobin',\n" +
+    "    'enable.partition.eof': true,\n" +
+    "    'api.version.request': true,\n" +
+    "    'fetch.wait.max.ms': 0\n" +
+    '  },\n' +
+    "  topicConf: { 'auto.offset.reset': 'earliest' }\n" +
+    '}',
+  topicList: "[ 'test' ]"
+}
+timer:benchmark::consumer:run: 7.771s
+timer:benchmark::main: 37.796s
+benchProducerConf: { time: 30000 }
+benchConsumerConf: { iterations: 1, time: 0 }
+┌─────────┬────────────────────────────────────────────────┬────────────┬────────────────────────────┬───────┬───────────────────┬───────────────────┬────────────────────┬────────────────────┬─────────────────────────────────────────────────────────────────────────┐
+│ (index) │                    scenario                    │    name    │            date            │ count │     ops /(s)      │   duration (s)    │       start        │        end         │                                 labels                                  │
+├─────────┼────────────────────────────────────────────────┼────────────┼────────────────────────────┼───────┼───────────────────┼───────────────────┼────────────────────┼────────────────────┼─────────────────────────────────────────────────────────────────────────┤
+│    0    │ 's07-04-consumer-mode-recursive-sync-false.js' │ 'Producer' │ '2023-08-24T14:05:21.960Z' │ 25823 │ 860.3933572178815 │ 30.01301646900177 │ 1138689.2671620846 │ 1168702.2836310863 │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}' │
+└─────────┴────────────────────────────────────────────────┴────────────┴────────────────────────────┴───────┴───────────────────┴───────────────────┴────────────────────┴────────────────────┴─────────────────────────────────────────────────────────────────────────┘
+┌─────────┬────────────────────────────────────────────────┬────────────┬────────────────────────────┬───────┬───────────────────┬───────────────────┬────────────────────┬────────────────────┬─────────────────┐
+│ (index) │                    scenario                    │    name    │            date            │ count │     ops /(s)      │   duration (s)    │       start        │        end         │     labels      │
+├─────────┼────────────────────────────────────────────────┼────────────┼────────────────────────────┼───────┼───────────────────┼───────────────────┼────────────────────┼────────────────────┼─────────────────┤
+│    0    │ 's07-04-consumer-mode-recursive-sync-false.js' │ 'Consumer' │ '2023-08-24T14:05:21.960Z' │ 25823 │ 5420.913639231956 │ 4.763588154792786 │ 1171718.3648490906 │ 1176481.9530038834 │ '{"sync":true}' │
+└─────────┴────────────────────────────────────────────────┴────────────┴────────────────────────────┴───────┴───────────────────┴───────────────────┴────────────────────┴────────────────────┴─────────────────┘
+Starting benchmark - s08-consumer-mode-recursive-with-batch.js { time: 30000 }
+test:Producer::beforeAll
+onReady: {"name":"test#producer-27","librdkafkaVersion":"2.2.0","features":["gzip","snappy","sasl","regex","lz4","sasl_plain","plugins"]} - with start time: undefined
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 1
+test:Producer::afterAll
+{
+  producerConf: '{\n' +
+    '  options: {\n' +
+    '    pollIntervalMs: 50,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    sync: true,\n' +
+    '    serializeFn: [Function: defaultSerializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'client.id': 'test',\n" +
+    '    event_cb: true,\n' +
+    '    dr_cb: true,\n' +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'compression.codec': 'none',\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'queue.buffering.max.messages': 100000,\n" +
+    "    'queue.buffering.max.ms': 0,\n" +
+    "    'api.version.request': true\n" +
+    '  },\n' +
+    "  topicConf: { 'request.required.acks': -1, partitioner: 'murmur2_random' }\n" +
+    '}',
+  topicConf: "{ topicName: 'test' }"
+}
+timer:benchmark::producer:run: 30.026s
+test:Consumer::beforeAll
+ready: {
+  name: 'test#consumer-28',
+  librdkafkaVersion: '2.2.0',
+  features: [ 'gzip', 'snappy', 'sasl', 'regex', 'lz4', 'sasl_plain', 'plugins' ]
+}
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 1
+2023-08-24T14:06:29.791Z - [31merror[39m: Consumer::onError()[topics='test'] - Error: Broker: Unknown topic or partition
+    at Function.createLibrdkafkaError [as create] (/home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/error.js:456:10)
+    at /home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/kafka-consumer.js:468:29)
+2023-08-24T14:06:29.892Z - [31merror[39m: Consumer::consume() - onRecursive - error Error: Broker: Unknown topic or partition
+MAX MESSAGES REACHED! Exiting Consumer...
+test:Consumer::afterAll
+Disconnecting Consumer!
+{
+  consumerConf: '{\n' +
+    '  options: {\n' +
+    '    mode: 2,\n' +
+    '    batchSize: 10,\n' +
+    '    pollFrequency: 10,\n' +
+    '    recursiveTimeout: 100,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    messageAsJSON: true,\n' +
+    '    sync: true,\n' +
+    '    syncConcurrency: 1,\n' +
+    '    consumeTimeout: 1000,\n' +
+    '    deserializeFn: [Function: defaultDeserializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'client.id': 'test',\n" +
+    "    'group.id': 'cl-group-test',\n" +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'enable.auto.commit': false,\n" +
+    "    'auto.commit.interval.ms': 100,\n" +
+    "    'allow.auto.create.topics': true,\n" +
+    "    'partition.assignment.strategy': 'range,roundrobin',\n" +
+    "    'enable.partition.eof': true,\n" +
+    "    'api.version.request': true\n" +
+    '  },\n' +
+    "  topicConf: { 'auto.offset.reset': 'earliest' }\n" +
+    '}',
+  topicList: "[ 'test' ]"
+}
+timer:benchmark::consumer:run: 6.926s
+timer:benchmark::main: 36.953s
+benchProducerConf: { time: 30000 }
+benchConsumerConf: { iterations: 1, time: 0 }
+┌─────────┬─────────────────────────────────────────────┬────────────┬────────────────────────────┬───────┬───────────────────┬────────────────────┬────────────────────┬────────────────────┬─────────────────────────────────────────────────────────────────────────┐
+│ (index) │                  scenario                   │    name    │            date            │ count │     ops /(s)      │    duration (s)    │       start        │        end         │                                 labels                                  │
+├─────────┼─────────────────────────────────────────────┼────────────┼────────────────────────────┼───────┼───────────────────┼────────────────────┼────────────────────┼────────────────────┼─────────────────────────────────────────────────────────────────────────┤
+│    0    │ 's08-consumer-mode-recursive-with-batch.js' │ 'Producer' │ '2023-08-24T14:05:59.761Z' │ 25866 │ 861.8256233514544 │ 30.013031985998154 │ 1176490.5488910675 │ 1206503.5808770657 │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}' │
+└─────────┴─────────────────────────────────────────────┴────────────┴────────────────────────────┴───────┴───────────────────┴────────────────────┴────────────────────┴────────────────────┴─────────────────────────────────────────────────────────────────────────┘
+┌─────────┬─────────────────────────────────────────────┬────────────┬────────────────────────────┬───────┬───────────────────┬────────────────────┬───────────────────┬───────────────────┬─────────────────┐
+│ (index) │                  scenario                   │    name    │            date            │ count │     ops /(s)      │    duration (s)    │       start       │        end        │     labels      │
+├─────────┼─────────────────────────────────────────────┼────────────┼────────────────────────────┼───────┼───────────────────┼────────────────────┼───────────────────┼───────────────────┼─────────────────┤
+│    0    │ 's08-consumer-mode-recursive-with-batch.js' │ 'Consumer' │ '2023-08-24T14:05:59.761Z' │ 25866 │ 6600.010771530067 │ 3.9190845129489897 │ 1209521.106652975 │ 1213440.191165924 │ '{"sync":true}' │
+└─────────┴─────────────────────────────────────────────┴────────────┴────────────────────────────┴───────┴───────────────────┴────────────────────┴───────────────────┴───────────────────┴─────────────────┘
+Starting benchmark - s09-protobuf-serilization.js { time: 30000 }
+test:Producer::beforeAll
+onReady: {"name":"test#producer-29","librdkafkaVersion":"2.2.0","features":["gzip","snappy","sasl","regex","lz4","sasl_plain","plugins"]} - with start time: undefined
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 0
+test:Producer::afterAll
+{
+  producerConf: '{\n' +
+    '  options: {\n' +
+    '    pollIntervalMs: 50,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    sync: true,\n' +
+    '    serializeFn: [Function: serializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'client.id': 'test',\n" +
+    '    event_cb: true,\n' +
+    '    dr_cb: true,\n' +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'compression.codec': 'none',\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'queue.buffering.max.messages': 100000,\n" +
+    "    'queue.buffering.max.ms': 0,\n" +
+    "    'api.version.request': true\n" +
+    '  },\n' +
+    "  topicConf: { 'request.required.acks': -1, partitioner: 'murmur2_random' }\n" +
+    '}',
+  topicConf: "{ topicName: 'test' }"
+}
+timer:benchmark::producer:run: 30.025s
+test:Consumer::beforeAll
+ready: {
+  name: 'test#consumer-30',
+  librdkafkaVersion: '2.2.0',
+  features: [ 'gzip', 'snappy', 'sasl', 'regex', 'lz4', 'sasl_plain', 'plugins' ]
+}
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 0
+2023-08-24T14:07:06.750Z - [31merror[39m: Consumer::onError()[topics='test'] - Error: Broker: Unknown topic or partition
+    at Function.createLibrdkafkaError [as create] (/home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/error.js:456:10)
+    at /home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/kafka-consumer.js:468:29)
+2023-08-24T14:07:06.850Z - [31merror[39m: Consumer::consume() - onRecursive - error Error: Broker: Unknown topic or partition
+test:Consumer::afterAll
+Disconnecting Consumer!
+{
+  consumerConf: '{\n' +
+    '  options: {\n' +
+    '    mode: 2,\n' +
+    '    batchSize: 1,\n' +
+    '    pollFrequency: 10,\n' +
+    '    recursiveTimeout: 100,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    messageAsJSON: true,\n' +
+    '    sync: true,\n' +
+    '    syncConcurrency: 1,\n' +
+    '    consumeTimeout: 1000,\n' +
+    '    deserializeFn: [Function: deserializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'client.id': 'test',\n" +
+    "    'group.id': 'cl-group-test',\n" +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'enable.auto.commit': false,\n" +
+    "    'auto.commit.interval.ms': 100,\n" +
+    "    'allow.auto.create.topics': true,\n" +
+    "    'partition.assignment.strategy': 'range,roundrobin',\n" +
+    "    'enable.partition.eof': true,\n" +
+    "    'api.version.request': true\n" +
+    '  },\n' +
+    "  topicConf: { 'auto.offset.reset': 'earliest' }\n" +
+    '}',
+  topicList: "[ 'test' ]"
+}
+timer:benchmark::consumer:run: 8.670s
+timer:benchmark::main: 38.701s
+benchProducerConf: { time: 30000 }
+benchConsumerConf: { iterations: 1, time: 0 }
+┌─────────┬────────────────────────────────┬────────────┬────────────────────────────┬───────┬──────────────────┬────────────────────┬────────────────────┬────────────────────┬─────────────────────────────────────────────────────────────────────────┐
+│ (index) │            scenario            │    name    │            date            │ count │     ops /(s)     │    duration (s)    │       start        │        end         │                                 labels                                  │
+├─────────┼────────────────────────────────┼────────────┼────────────────────────────┼───────┼──────────────────┼────────────────────┼────────────────────┼────────────────────┼─────────────────────────────────────────────────────────────────────────┤
+│    0    │ 's09-protobuf-serilization.js' │ 'Producer' │ '2023-08-24T14:06:36.721Z' │ 26027 │ 867.188081232466 │ 30.013097000837327 │ 1213450.7232420444 │ 1243463.8202428818 │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}' │
+└─────────┴────────────────────────────────┴────────────┴────────────────────────────┴───────┴──────────────────┴────────────────────┴────────────────────┴────────────────────┴─────────────────────────────────────────────────────────────────────────┘
+┌─────────┬────────────────────────────────┬────────────┬────────────────────────────┬───────┬───────────────────┬───────────────────┬────────────────────┬───────────────────┬─────────────────┐
+│ (index) │            scenario            │    name    │            date            │ count │     ops /(s)      │   duration (s)    │       start        │        end        │     labels      │
+├─────────┼────────────────────────────────┼────────────┼────────────────────────────┼───────┼───────────────────┼───────────────────┼────────────────────┼───────────────────┼─────────────────┤
+│    0    │ 's09-protobuf-serilization.js' │ 'Consumer' │ '2023-08-24T14:06:36.721Z' │ 26027 │ 4597.657195694081 │ 5.660926618099213 │ 1246481.3011569977 │ 1252142.227775097 │ '{"sync":true}' │
+└─────────┴────────────────────────────────┴────────────┴────────────────────────────┴───────┴───────────────────┴───────────────────┴────────────────────┴───────────────────┴─────────────────┘
+Starting benchmark - s10-default-with-sync-false.js { time: 30000 }
+test:Producer::beforeAll
+onReady: {"name":"test#producer-31","librdkafkaVersion":"2.2.0","features":["gzip","snappy","sasl","regex","lz4","sasl_plain","plugins"]} - with start time: undefined
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 1
+test:Producer::afterAll
+{
+  producerConf: '{\n' +
+    '  options: {\n' +
+    '    pollIntervalMs: 50,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    sync: true,\n' +
+    '    serializeFn: [Function: defaultSerializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'client.id': 'test',\n" +
+    '    event_cb: true,\n' +
+    '    dr_cb: true,\n' +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'compression.codec': 'none',\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'queue.buffering.max.messages': 100000,\n" +
+    "    'queue.buffering.max.ms': 0,\n" +
+    "    'api.version.request': true\n" +
+    '  },\n' +
+    "  topicConf: { 'request.required.acks': -1, partitioner: 'murmur2_random' }\n" +
+    '}',
+  topicConf: "{ topicName: 'test' }"
+}
+timer:benchmark::producer:run: 30.031s
+test:Consumer::beforeAll
+ready: {
+  name: 'test#consumer-32',
+  librdkafkaVersion: '2.2.0',
+  features: [ 'gzip', 'snappy', 'sasl', 'regex', 'lz4', 'sasl_plain', 'plugins' ]
+}
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 1
+2023-08-24T14:07:45.452Z - [31merror[39m: Consumer::onError()[topics='test'] - Error: Broker: Unknown topic or partition
+    at Function.createLibrdkafkaError [as create] (/home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/error.js:456:10)
+    at /home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/kafka-consumer.js:468:29)
+2023-08-24T14:07:45.551Z - [31merror[39m: Consumer::consume() - onRecursive - error Error: Broker: Unknown topic or partition
+MAX MESSAGES REACHED! Exiting Consumer...
+test:Consumer::afterAll
+Disconnecting Consumer!
+{
+  consumerConf: '{\n' +
+    '  options: {\n' +
+    '    mode: 2,\n' +
+    '    batchSize: 10,\n' +
+    '    pollFrequency: 10,\n' +
+    '    recursiveTimeout: 100,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    messageAsJSON: true,\n' +
+    '    sync: true,\n' +
+    '    syncConcurrency: 10,\n' +
+    '    syncSingleMessage: true,\n' +
+    '    consumeTimeout: 1000,\n' +
+    '    deserializeFn: [Function: defaultDeserializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'client.id': 'test',\n" +
+    "    'group.id': 'cl-group-test',\n" +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'enable.auto.commit': false,\n" +
+    "    'auto.commit.interval.ms': 100,\n" +
+    "    'allow.auto.create.topics': true,\n" +
+    "    'partition.assignment.strategy': 'range,roundrobin',\n" +
+    "    'enable.partition.eof': true,\n" +
+    "    'api.version.request': true,\n" +
+    "    'fetch.wait.max.ms': 0\n" +
+    '  },\n' +
+    "  topicConf: { 'auto.offset.reset': 'earliest' }\n" +
+    '}',
+  topicList: "[ 'test' ]"
+}
+timer:benchmark::consumer:run: 7.016s
+timer:benchmark::main: 37.048s
+benchProducerConf: { time: 30000 }
+benchConsumerConf: { iterations: 1, time: 0 }
+┌─────────┬──────────────────────────────────┬────────────┬────────────────────────────┬───────┬──────────────────┬────────────────────┬────────────────────┬────────────────────┬─────────────────────────────────────────────────────────────────────────┐
+│ (index) │             scenario             │    name    │            date            │ count │     ops /(s)     │    duration (s)    │       start        │        end         │                                 labels                                  │
+├─────────┼──────────────────────────────────┼────────────┼────────────────────────────┼───────┼──────────────────┼────────────────────┼────────────────────┼────────────────────┼─────────────────────────────────────────────────────────────────────────┤
+│    0    │ 's10-default-with-sync-false.js' │ 'Producer' │ '2023-08-24T14:07:15.417Z' │ 25792 │ 859.362615900009 │ 30.012941595077514 │ 1252150.9979579449 │ 1282163.9395530224 │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}' │
+└─────────┴──────────────────────────────────┴────────────┴────────────────────────────┴───────┴──────────────────┴────────────────────┴────────────────────┴────────────────────┴─────────────────────────────────────────────────────────────────────────┘
+┌─────────┬──────────────────────────────────┬────────────┬────────────────────────────┬───────┬───────────────────┬───────────────────┬────────────────────┬────────────────────┬─────────────────┐
+│ (index) │             scenario             │    name    │            date            │ count │     ops /(s)      │   duration (s)    │       start        │        end         │     labels      │
+├─────────┼──────────────────────────────────┼────────────┼────────────────────────────┼───────┼───────────────────┼───────────────────┼────────────────────┼────────────────────┼─────────────────┤
+│    0    │ 's10-default-with-sync-false.js' │ 'Consumer' │ '2023-08-24T14:07:15.417Z' │ 25792 │ 6434.862200703911 │ 4.008166639089584 │ 1285182.2723100185 │ 1289190.4389491081 │ '{"sync":true}' │
+└─────────┴──────────────────────────────────┴────────────┴────────────────────────────┴───────┴───────────────────┴───────────────────┴────────────────────┴────────────────────┴─────────────────┘
+Starting benchmark - s11-part-assignment-coop-sticky.js { time: 30000 }
+test:Producer::beforeAll
+onReady: {"name":"test#producer-33","librdkafkaVersion":"2.2.0","features":["gzip","snappy","sasl","regex","lz4","sasl_plain","plugins"]} - with start time: undefined
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 1
+test:Producer::afterAll
+{
+  producerConf: '{\n' +
+    '  options: {\n' +
+    '    pollIntervalMs: 50,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    sync: true,\n' +
+    '    serializeFn: [Function: defaultSerializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'client.id': 'test',\n" +
+    '    event_cb: true,\n' +
+    '    dr_cb: true,\n' +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'compression.codec': 'none',\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'queue.buffering.max.messages': 100000,\n" +
+    "    'queue.buffering.max.ms': 0,\n" +
+    "    'api.version.request': true\n" +
+    '  },\n' +
+    "  topicConf: { 'request.required.acks': -1, partitioner: 'murmur2_random' }\n" +
+    '}',
+  topicConf: "{ topicName: 'test' }"
+}
+timer:benchmark::producer:run: 30.024s
+test:Consumer::beforeAll
+ready: {
+  name: 'test#consumer-34',
+  librdkafkaVersion: '2.2.0',
+  features: [ 'gzip', 'snappy', 'sasl', 'regex', 'lz4', 'sasl_plain', 'plugins' ]
+}
+metadataSync {
+  orig_broker_id: 1,
+  orig_broker_name: 'localhost:9092/1',
+  topics: [
+    { name: 'test', partitions: [Array] },
+    { name: '__consumer_offsets', partitions: [Array] }
+  ],
+  brokers: [ { id: 1, host: 'localhost', port: 9092 } ]
+}
+isConnected true
+connectedTime 1
+2023-08-24T14:08:22.493Z - [31merror[39m: Consumer::onError()[topics='test'] - Error: Broker: Unknown topic or partition
+    at Function.createLibrdkafkaError [as create] (/home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/error.js:456:10)
+    at /home/ec2-user/central-services-stream/node_modules/node-rdkafka/lib/kafka-consumer.js:468:29)
+2023-08-24T14:08:22.593Z - [31merror[39m: Consumer::consume() - onRecursive - error Error: Broker: Unknown topic or partition
+test:Consumer::afterAll
+Disconnecting Consumer!
+{
+  consumerConf: '{\n' +
+    '  options: {\n' +
+    '    mode: 2,\n' +
+    '    batchSize: 1,\n' +
+    '    pollFrequency: 10,\n' +
+    '    recursiveTimeout: 100,\n' +
+    "    messageCharset: 'utf8',\n" +
+    '    messageAsJSON: true,\n' +
+    '    sync: true,\n' +
+    '    syncConcurrency: 1,\n' +
+    '    consumeTimeout: 1000,\n' +
+    '    deserializeFn: [Function: defaultDeserializeFn]\n' +
+    '  },\n' +
+    '  rdkafkaConf: {\n' +
+    "    'client.id': 'test',\n" +
+    "    'group.id': 'cl-group-test',\n" +
+    "    'metadata.broker.list': 'localhost:9092',\n" +
+    "    'statistics.interval.ms': 0,\n" +
+    "    'socket.keepalive.enable': true,\n" +
+    "    'enable.auto.commit': false,\n" +
+    "    'auto.commit.interval.ms': 100,\n" +
+    "    'allow.auto.create.topics': true,\n" +
+    "    'partition.assignment.strategy': 'cooperative-sticky',\n" +
+    "    'enable.partition.eof': true,\n" +
+    "    'api.version.request': true\n" +
+    '  },\n' +
+    "  topicConf: { 'auto.offset.reset': 'earliest' }\n" +
+    '}',
+  topicList: "[ 'test' ]"
+}
+timer:benchmark::consumer:run: 8.480s
+timer:benchmark::main: 38.505s
+benchProducerConf: { time: 30000 }
+benchConsumerConf: { iterations: 1, time: 0 }
+┌─────────┬──────────────────────────────────────┬────────────┬────────────────────────────┬───────┬───────────────────┬───────────────────┬────────────────────┬───────────────────┬─────────────────────────────────────────────────────────────────────────┐
+│ (index) │               scenario               │    name    │            date            │ count │     ops /(s)      │   duration (s)    │       start        │        end        │                                 labels                                  │
+├─────────┼──────────────────────────────────────┼────────────┼────────────────────────────┼───────┼───────────────────┼───────────────────┼────────────────────┼───────────────────┼─────────────────────────────────────────────────────────────────────────┤
+│    0    │ 's11-part-assignment-coop-sticky.js' │ 'Producer' │ '2023-08-24T14:07:52.465Z' │ 25837 │ 860.8731582673474 │ 30.01255150294304 │ 1289194.2222950459 │ 1319206.773797989 │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}' │
+└─────────┴──────────────────────────────────────┴────────────┴────────────────────────────┴───────┴───────────────────┴───────────────────┴────────────────────┴───────────────────┴─────────────────────────────────────────────────────────────────────────┘
+┌─────────┬──────────────────────────────────────┬────────────┬────────────────────────────┬───────┬───────────────────┬───────────────────┬──────────────────┬────────────────────┬─────────────────┐
+│ (index) │               scenario               │    name    │            date            │ count │     ops /(s)      │   duration (s)    │      start       │        end         │     labels      │
+├─────────┼──────────────────────────────────────┼────────────┼────────────────────────────┼───────┼───────────────────┼───────────────────┼──────────────────┼────────────────────┼─────────────────┤
+│    0    │ 's11-part-assignment-coop-sticky.js' │ 'Consumer' │ '2023-08-24T14:07:52.465Z' │ 25837 │ 4721.121704534577 │ 5.472640109062195 │ 1322223.10096097 │ 1327695.7410700321 │ '{"sync":true}' │
+└─────────┴──────────────────────────────────────┴────────────┴────────────────────────────┴───────┴───────────────────┴───────────────────┴──────────────────┴────────────────────┴─────────────────┘
+timer:benchRunner: 22:07.546 (m:ss.mmm)
+┌─────────┬──────────────────────────────────────────────────────────┬────────────┬────────────────────────────┬────────┬────────────────────┬────────────────────┬────────────────────┬────────────────────┬──────────────────────────────────────────────────────────────────────────┐
+│ (index) │                         scenario                         │    name    │            date            │ count  │      ops /(s)      │    duration (s)    │       start        │        end         │                                  labels                                  │
+├─────────┼──────────────────────────────────────────────────────────┼────────────┼────────────────────────────┼────────┼────────────────────┼────────────────────┼────────────────────┼────────────────────┼──────────────────────────────────────────────────────────────────────────┤
+│    0    │                   's00-01-default.js'                    │ 'Producer' │ '2023-08-24T13:46:23.426Z' │ 25741  │  857.630585435297  │ 30.014088160037993 │ 162.36301803588867 │ 30176.451178073883 │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}'  │
+│    1    │                   's00-01-default.js'                    │ 'Consumer' │ '2023-08-24T13:46:23.426Z' │ 25741  │ 3902.3244175083996 │ 6.596324970960617  │ 34366.95795798302  │ 40963.282928943634 │                             '{"sync":true}'                              │
+│    2    │         's00-02-default-producer-sync-false.js'          │ 'Producer' │ '2023-08-24T13:47:04.239Z' │ 100000 │ 3312.3489822330657 │ 30.190055618047715 │ 40971.03281188011  │ 71161.08842992783  │ '{"sync":false,"compression":"none","queueBufferingMaxMessages":100000}' │
+│    3    │         's00-02-default-producer-sync-false.js'          │ 'Consumer' │ '2023-08-24T13:47:04.239Z' │ 100000 │ 5201.165470377588  │ 19.226460025072097 │ 470672.2531440258  │ 489898.7131690979  │                             '{"sync":true}'                              │
+│    4    │               's01-auto-commit-enabled.js'               │ 'Producer' │ '2023-08-24T13:54:33.175Z' │ 25837  │ 860.8662025071364  │ 30.012794003009795 │ 489905.1823410988  │ 519917.9763441086  │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}'  │
+│    5    │               's01-auto-commit-enabled.js'               │ 'Consumer' │ '2023-08-24T13:54:33.175Z' │ 25837  │ 10001.735385969494 │ 2.583251706123352  │ 522939.4386239052  │ 525522.6903300285  │                             '{"sync":true}'                              │
+│    6    │                 's02-lz4-compression.js'                 │ 'Producer' │ '2023-08-24T13:55:08.798Z' │ 25892  │ 862.7115442548724  │ 30.012349055051804 │ 525526.9842479229  │ 555539.3333029747  │  '{"sync":true,"compression":"lz4","queueBufferingMaxMessages":100000}'  │
+│    7    │                 's02-lz4-compression.js'                 │ 'Consumer' │ '2023-08-24T13:55:08.798Z' │ 25892  │ 4582.340944320943  │ 5.650387065172195  │ 558559.5949459076  │ 564209.9820110798  │                             '{"sync":true}'                              │
+│    8    │         's03-producer-reduced-poll-interval.js'          │ 'Producer' │ '2023-08-24T13:55:47.485Z' │ 25889  │ 862.6019865229875  │ 30.012683027029038 │ 564220.6678879261  │ 594233.3509149551  │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}'  │
+│    9    │         's03-producer-reduced-poll-interval.js'          │ 'Consumer' │ '2023-08-24T13:55:47.485Z' │ 25889  │ 4680.5997171162935 │ 5.531128822088242  │  597250.903085947  │ 602782.0319080353  │                             '{"sync":true}'                              │
+│   10    │       's04-producer-increased-queue-buff-max-.js'        │ 'Producer' │ '2023-08-24T13:56:26.057Z' │  2712  │ 90.37319843360304  │ 30.00889696288109  │ 602791.1150460243  │ 632800.0120089054  │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}'  │
+│   11    │       's04-producer-increased-queue-buff-max-.js'        │ 'Consumer' │ '2023-08-24T13:56:26.057Z' │  2712  │ 1776.5261985159127 │ 1.5265747289657592 │ 635809.4164350033  │  637335.991163969  │                             '{"sync":true}'                              │
+│   12    │               's05-consumer-mode-poll.js'                │ 'Producer' │ '2023-08-24T13:57:00.611Z' │ 25843  │  861.064560760543  │ 30.012848255157472 │ 637340.2811019421  │ 667353.1293570995  │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}'  │
+│   13    │               's05-consumer-mode-poll.js'                │ 'Consumer' │ '2023-08-24T13:57:00.611Z' │ 25843  │ 100.06905679331648 │ 258.2516596851349  │ 670370.3010289669  │ 928621.9607141018  │                             '{"sync":true}'                              │
+│   14    │              's06-01-consumer-mode-flow.js'              │ 'Producer' │ '2023-08-24T14:01:51.897Z' │ 25848  │ 861.2409405009483  │ 30.01250728392601  │ 952637.3065509796  │ 982649.8138349056  │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}'  │
+│   15    │              's06-01-consumer-mode-flow.js'              │ 'Consumer' │ '2023-08-24T14:01:51.897Z' │ 25848  │ 6044.126503465597  │ 4.276548478126526  │ 985672.9827039242  │ 989949.5311820507  │                             '{"sync":true}'                              │
+│   16    │      's06-02-consumer-mode-flow-with-sync-false.js'      │ 'Producer' │ '2023-08-24T14:02:54.035Z' │ 25845  │ 861.1471706652083  │ 30.012291604042055 │ 990764.3921558857  │ 1020776.6837599277 │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}'  │
+│   17    │      's06-02-consumer-mode-flow-with-sync-false.js'      │ 'Consumer' │ '2023-08-24T14:02:54.035Z' │ 25845  │ 36702.06088486724  │ 0.7041838898658752 │ 1023794.1234500408 │ 1024498.3073399067 │                             '{"sync":false}'                             │
+│   18    │           's07-01-consumer-mode-recursive.js'            │ 'Producer' │ '2023-08-24T14:03:29.158Z' │ 25879  │ 862.2717508272342  │ 30.012580111980437 │ 1025887.4281051159 │ 1055900.0082170963 │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}'  │
+│   19    │           's07-01-consumer-mode-recursive.js'            │ 'Consumer' │ '2023-08-24T14:03:29.158Z' │ 25879  │ 5207.099444787189  │ 4.969945412874222  │ 1058916.3818330765 │ 1063886.3272459507 │                             '{"sync":true}'                              │
+│   20    │    's07-02-consumer-mode-recursive-with-sync-conc.js'    │ 'Producer' │ '2023-08-24T14:04:07.161Z' │ 25828  │ 860.5853865232494  │ 30.01212942314148  │ 1063891.9822199345 │ 1093904.111643076  │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}'  │
+│   21    │    's07-02-consumer-mode-recursive-with-sync-conc.js'    │ 'Consumer' │ '2023-08-24T14:04:07.163Z' │ 25828  │ 5489.567431400665  │ 4.704924444913864  │ 1096921.1971449852 │ 1101626.121589899  │                             '{"sync":true}'                              │
+│   22    │ 's07-03-consumer-mode-recursive-with-sync-conc-batch.js' │ 'Producer' │ '2023-08-24T14:04:44.901Z' │ 25838  │ 860.8937763246741  │ 30.012994297981262 │ 1101630.3288009167 │ 1131643.323098898  │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}'  │
+│   23    │ 's07-03-consumer-mode-recursive-with-sync-conc-batch.js' │ 'Consumer' │ '2023-08-24T14:04:44.901Z' │ 25838  │  6419.86139395877  │ 4.024697484016419  │ 1134660.5006580353 │ 1138685.1981420517 │                             '{"sync":true}'                              │
+│   24    │      's07-04-consumer-mode-recursive-sync-false.js'      │ 'Producer' │ '2023-08-24T14:05:21.960Z' │ 25823  │ 860.3933572178815  │ 30.01301646900177  │ 1138689.2671620846 │ 1168702.2836310863 │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}'  │
+│   25    │      's07-04-consumer-mode-recursive-sync-false.js'      │ 'Consumer' │ '2023-08-24T14:05:21.960Z' │ 25823  │ 5420.913639231956  │ 4.763588154792786  │ 1171718.3648490906 │ 1176481.9530038834 │                             '{"sync":true}'                              │
+│   26    │       's08-consumer-mode-recursive-with-batch.js'        │ 'Producer' │ '2023-08-24T14:05:59.761Z' │ 25866  │ 861.8256233514544  │ 30.013031985998154 │ 1176490.5488910675 │ 1206503.5808770657 │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}'  │
+│   27    │       's08-consumer-mode-recursive-with-batch.js'        │ 'Consumer' │ '2023-08-24T14:05:59.761Z' │ 25866  │ 6600.010771530067  │ 3.9190845129489897 │ 1209521.106652975  │ 1213440.191165924  │                             '{"sync":true}'                              │
+│   28    │              's09-protobuf-serilization.js'              │ 'Producer' │ '2023-08-24T14:06:36.721Z' │ 26027  │  867.188081232466  │ 30.013097000837327 │ 1213450.7232420444 │ 1243463.8202428818 │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}'  │
+│   29    │              's09-protobuf-serilization.js'              │ 'Consumer' │ '2023-08-24T14:06:36.721Z' │ 26027  │ 4597.657195694081  │ 5.660926618099213  │ 1246481.3011569977 │ 1252142.227775097  │                             '{"sync":true}'                              │
+│   30    │             's10-default-with-sync-false.js'             │ 'Producer' │ '2023-08-24T14:07:15.417Z' │ 25792  │  859.362615900009  │ 30.012941595077514 │ 1252150.9979579449 │ 1282163.9395530224 │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}'  │
+│   31    │             's10-default-with-sync-false.js'             │ 'Consumer' │ '2023-08-24T14:07:15.417Z' │ 25792  │ 6434.862200703911  │ 4.008166639089584  │ 1285182.2723100185 │ 1289190.4389491081 │                             '{"sync":true}'                              │
+│   32    │           's11-part-assignment-coop-sticky.js'           │ 'Producer' │ '2023-08-24T14:07:52.465Z' │ 25837  │ 860.8731582673474  │ 30.01255150294304  │ 1289194.2222950459 │ 1319206.773797989  │ '{"sync":true,"compression":"none","queueBufferingMaxMessages":100000}'  │
+│   33    │           's11-part-assignment-coop-sticky.js'           │ 'Consumer' │ '2023-08-24T14:07:52.465Z' │ 25837  │ 4721.121704534577  │ 5.472640109062195  │  1322223.10096097  │ 1327695.7410700321 │                             '{"sync":true}'                              │
+└─────────┴──────────────────────────────────────────────────────────┴────────────┴────────────────────────────┴────────┴────────────────────┴────────────────────┴────────────────────┴────────────────────┴──────────────────────────────────────────────────────────────────────────┘
