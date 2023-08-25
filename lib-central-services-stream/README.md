@@ -1,23 +1,46 @@
-# FSPIOP Transfers Performance Characterization
+# Central-Services-Stream
+
+This characterization is for the [Central-Services-Stream](https://github.com/mojaloop/central-services-stream).
 
 ## Status
 
 | Mojaloop Version |  Date  | Status  | Next  | Notes  |
 |---|---|---|---|---|
-| 15.1.0 | 2023-08-24 |  | See [#follow-up-stores](#follow-up-stories) |   |
+| 15.1.0 | 2023-08-24 | [v11.1.0-snapshot.10](https://github.com/mojaloop/central-services-stream/releases/tag/v11.1.0-snapshot.10) show some improvements, specifically when dealing with `100k+` messages. The re-factor of the recursive processing mode using events instead of recursive calls improved stability and allowed all `100k+` messages to be processed without error. <br><br>Most of the performance improvements were mainly realized by optimizing configurations as per the [Summary](#summary) section below. However the newly added `syncSingleMessage` option provided a `25%` increase in performance when disabled, providing a similar performance to just batch-processing at `30%`. <br><br>The `syncSingleMessage` on **Consumers** is thus the recommended option when single messages can be concurrent processed in a controlled manner by configuring the desired concurrency to ensure adequate back-pressure (_This is especially important as seen in the situation when the Central-Ledger position handler is configured to process messages in flow mode with sync disabled - refer to `cpu-profiling/cl-position-handler` results_). <br><br>With `sync` disabled on **Consumers**, we see the "**smoothest**" processing curve on `recursive` mode, and should be the recommended approach if either a single or batch message processing is desired - `sync` should only be enabled when a `syncConcurrency` of larger than `1` is desired and `syncMessages` is true to maintain adequate back-pressure. <br><br>Compression (`LZ4`) enabled showed a minor performance improvement of ~`3%` over baseline, indicating that it is a viable option especially when transporting Kafka messages over a network to reduce the packet size and network latencies. <br><br> Producers with `sync=true` option configured will also improve back-pressure, ensuring that Kafka topic lag does run away | See [#follow-up-stores](#follow-up-stories).  |   |
+
+## Summary
+
+### Producer
+
+| Scenario | Observation (Ops/s) | Difference | Notes |
+|---|---|---|---|
+| s00-01-default | 861 | N/A | Default (Recursive) |
+| s00-02-default-producer-sync-false | 3311 | 74% |   |
+| s03-producer-reduced-poll-interval | 860 | -0.12$ |
+| s04-producer-increased-queue-buff-max | 90 | -856% |   |
 
 <!--
-|   |   |   |   |   |
+|  |  |  |  |
 -->
 
-## Test Cases
+### Consumer
 
-Test Case | Description | K6 Test Case | Notes
----------|---------|----------|---------
- 1 | Producer - Test script to test producing Kafka messages based on a time, or number of iterations. | N/A | FSPIOP POST /transfers request executed from K6 |
- 2 | Consumer - Test script to test consume Kafka messages based on a time, or number of iterations. | N/A | FSPIOP POST /transfers request executed from K6 |
+| Scenario | Observation (Ops/s) | Difference | Notes |
+|---|---|---|---|
+| s00-01-default.js | 4620 | N/A | Default (Recursive) |
+| s01-auto-commit-enabled.js | 10051 | 54.03% | Default with auto-commit enabled |
+| s02-lz4-compression.js | 4781 | 3.37% | Default with recommended LZ4 Compression enabled |
+| s03-producer-reduced-poll-interval.js | 4678 | 1.24% | Poll Mode (optimized default) |
+| s06-01-consumer-mode-flow.js | 5966 | 22.56% | Flow Mode (optimized default) |
+| s07-01-consumer-mode-recursive.js | 5456 | 15.32% | Recursive Mode (optimized default) |
+| s07-04-consumer-mode-recursive-sync-false.js | 5509 | 16.14% | Recursive Mode without sync |
+| s07-03-consumer-mode-recursive-with-sync-conc-batch.js | 6190 | 25.36% | Recursive Mode sync with batch of 10 and single message sync |
+| s08-consumer-mode-recursive-with-batch.js | 6603 | 30.03% | Recursive Mode with batch of 10 |
+| s09-protobuf-serilization.js | 4724 | 2.20% | Default with Protobuf serializer |
 
-## Test Scenarios
+<!--
+|  |  |  |  |
+-->
 
 ### Assumptions
 
@@ -79,64 +102,109 @@ Test Case | Description | K6 Test Case | Notes
   SUPPORT_END="2028-03-01"
   ```
 
-### Scenarios
+### Test Cases
 
-Scenario | Description | Test-Case | Repeatable (Y/N) | K6 Test Scenario / Config | Notes
----------|----------|---------|---------|---------|---------
- 1 | ... | # | Y/N | . | .
+Test Case | Description | K6 Test Case | Notes
+---------|---------|----------|---------
+ 1 | Producer - Test script to test producing Kafka messages based on a time, or number of iterations. | N/A | FSPIOP POST /transfers request executed from K6 |
+ 2 | Consumer - Test script to test consume Kafka messages based on a time, or number of iterations. | N/A | FSPIOP POST /transfers request executed from K6 |
+
+### Test Scenarios
+
+| # | Scenario | Description |
+| --- | --- | --- |
+| 0-1 | s00-01-default | Default recursive mode config |
+| 0-2 | s00-02-default-producer-sync-false | Default recursive mode config with sync disabled |
+| 1 | s01-auto-commit-enabled | Default recursive mode config with auto-commit enabled |
+| 2 | s02-lz4-compression | Default recursive mode config with lz4 compression |
+| 3 | s03-producer-reduced-poll-interval | Default with producer increase poller timings |
+| 4 | s04-producer-increased-queue-buff-max | Default with producer queue-buff-max increased |
+| 5 | s05-consumer-mode-poll | Consumer poll mode |
+| 6-1 | s06-01-consumer-mode-flow | Consumer Flow mode |
+| 6-2 | s06-02-consumer-mode-flow-with-sync-false | Consumer Flow mode and sync disabled |
+| 7-1 | s07-01-consumer-mode-recursive | Consumer Recursive mode |
+| 7-2 | s07-02-consumer-mode-recursive-with-sync-conc | Consumer Recursive mode with sync enabled and concurrency 10 |
+| 7-3 | s07-03-consumer-mode-recursive-with-sync-conc-batch | Consumer Recursive mode with sync enabled and concurrency 10 and batch 10 |
+| 7-4 | s07-04-consumer-mode-recursive-sync-false | Consumer Recursive mode and sync disabled |
+| 8 | s08-consumer-mode-recursive-with-batch | Consumer Recursive mode and batch 10 |
+| 9 | s09-protobuf-serilization |Consumer Recursive mode with ProtoBuf serlization|
+| 10 | s10-default-with-sync-false | Default recursive mode with sync disabled |
+| 11 | s11-part-assignment-coop-stick | Default recursive mode with sync disabled with co-op stick partition assignment |
 
 <!--
- 1 | ... | # | Y/N | . | .
- 2 | ... | # | Y/N | . | .
- 3 | ... | # | Y/N | . | .
+|   |   |   |
 -->
 
-### Approach
+## Approach
 
 The approach taken for characterization is follows:
 
-#### 0. Tools Used
+### 0. Tools Used
 
-TODO!
+1. NodeJS
+2. Docker
 
-#### 1. Setup Tests, Test-Scenarios & ml-core-test-harness
+### 1. Setup Tests, Test-Scenarios
 
-Initially setup the ml-core-test-harness to support the [Test Scenarios](#test-scenarios) described above. This is done by setting removing all externalized dependencies by simulating them with a simulator (also known as the "Callback Handler Service").
+#### Pre-requisites
 
-Refer to the following diagram showing the FSPIOP-Transfers characterization interaction diagram:
+1. Install [NVM](https://github.com/nvm-sh/nvm)
+2. Install build dependencies (below commands are for AWS Linux OS)
 
-![fspiop-transfers-characterization-end-to-end-bypassing-with-als-and-sim](../assets/images/fspiop-transfers-characterization-end-to-end-bypassing-with-als-and-sim.drawio.png)
+  ```bash
+  sudo yum install yum-utils
+  sudo dnf install make automake gcc gcc-c++ kernel-devel
+  ```
 
-#### 2. Capturing End-to-end Metrics
+#### Checkout Code and tag
 
-Refer to [../README#capturing-end-to-end-metrics](../README.md#2-capturing-end-to-end-metrics) for more information.
+```bash
+git clone https://github.com/mojaloop/central-services-stream.git
+git fetch --tags origin
+git checkout -b release/v11.1.0-snapshot.8 tags/v11.1.0-snapshot.8
+```
 
-#### 2. Validate Tests, Test-Scenarios & ml-core-test-harness
+#### Setup
 
-Once this has been established the next step is to validate the ml-core-test-harness, and the [Test Cases](#test-cases) by executing a [Smoke test](../README.md#3-types-of-tests).
+Install Node dependencies for library:
 
-#### 3. Baseline without the Target Service
+```bash
+cd ./central-services-stream
+npm i
+```
 
-Once this the [Smoke test](../README.md#3-types-of-tests) is successful, we will then perform a [Stress test](../README.md#3-types-of-tests) by-passing the service (The ML-API-Adapter and Central-Ledger components in this example) we wish to characterize and instead directly hit all externalized Simulators (i.e. "Callback Handler Service").
+Install Node dependencies for Performance Test Benchmarking tools:
 
-This is shown in the following diagram, the same diagram as before except with the ML-API-Adapter and Central-Ledger services and handlers being removed:
+```bash
+cd ./test/perf/
+npm i
+```
 
-![fspiop-transfers-characterization-end-to-end-bypassing-sim-only](../assets/images/fspiop-transfers-characterization-end-to-end-bypassing-sim-only.drawio.png)
+##### Dependencies
 
-The main advantage of this step is that we are able to determine the theoretical limits of what the Simulators are capable off, and most importantly what they are capable of in the configured typology (i.e. the underlying infrastructure, the number of simulators, etc). This will give us a good indication of when we are being limited by the Simulators when testing against our target Service (e.g. Account-Lookup-Service).
+Starting docker compose:
 
-This baseline is general defined to as [Test Scenarios](#test-scenarios) #1.
+```bash
+docker compose --project-name css --profile all up -d
+```
 
-#### 4. Execute a Tests with the Target Service based on Test Scenarios
+### 2. Capturing Performance Test Benchmarks
 
-This stage we execute the actual Test Scenarios, capture results, and document any observations and findings as a results.
+Run the following shell-script:
 
-Here we would execute any combination of the following tests based on the [Test Scenarios](#test-scenarios):
+```bash
+sh run.sh
+```
 
-1. Average-Load
-2. Stress
-3. Spike
-4. Breakpoint
+The test results will be stored in the `./results` folder with the following format `YYYYmmDD-HHhMMmSSs.log`.
+
+### 2. Cleaning up
+
+Shutting down docker compose:
+
+```bash
+docker compose --project-name css --profile all down -v
+```
 
 ## Follow-up stories
 
@@ -144,7 +212,7 @@ _Note: The stories below are not in any order of preference, and will need to be
 
 | Story | Name | Description | Impact | Issue | Notes |
 |---|---|---|---|---|---|
-|   |   |   |   |   |   |
+| 1 | Re-run End-to-end tests with "recommended" configurations and learnings with latest [central-services-shared](https://github.com/mojaloop/central-services-stream). | Re-run end-to-end tests using all services build using the latest version of the [central-services-stream/releases/tag/v11.1.0](https://github.com/mojaloop/central-services-stream/releases/tag/v11.1.0) library, with the "recommendation" configuration (As per the status/summary section above) being applied to suite the type of processing being done. | Medium-High |   | e.g. <br>CL-Position-Handler<br> &nbsp;&nbsp;&nbsp;&nbsp;* Producer: `sync=true`,`queue.buffering.max.ms=0`, `compression=lz4` <br> &nbsp;&nbsp;&nbsp;&nbsp;* Consumer: `sync=false`<br>ML-API-Adapter<br> &nbsp;&nbsp;&nbsp;&nbsp;* Producer: `sync=true`,`queue.buffering.max.ms=0`, `compression=lz4` <br> &nbsp;&nbsp;&nbsp;&nbsp;* Consumer: `sync=true`, `batchSize>1`, `batchSize=syncConcurrency`, `syncSingleMessage=true` |
 
 <!--
 |   |   |   |   |   |   |
