@@ -254,15 +254,33 @@ Refer to the following diagram showing the interaction diagram:
 ![prism-poc-prepare-and-position-handlers-in-isolation](assets/images/prism-poc-prepare-and-position-handlers-in-isolation.drawio.png)
 
 Before implementing prism, ran position handler and prepare handler as node services locally and dumped `10k` prepare kafka messages on `topic-transfer-prepare` and captured the readings as base line for this experiment.
+
+The following are the commands used to run preapre and position handlers as node processes without docker
+```
+export CLEDG_PORT=3001
+nohup node src/handlers/index.js handler --position 2>&1 > position.log &
+```
+
+```
+export CLEDG_PORT=3002
+nohup node src/handlers/index.js handler --prepare 2>&1 > prepare.log &
+```
+
 PRISM implementation can be found in this PR [central-ledger/pull/962](https://github.com/mojaloop/central-ledger/pull/962)
 The following is the comparison with PRISM PoC
 
-| Scenario | Cache    | Prepare Handler   | Position Handler  |
-|----------|----------|-------------------|-------------------|
-| Baseline | Disabled | 166 ops/s, 6.25ms | 138 ops/s, 7.62ms |
-| Baseline | Enabled  | 263 ops/s, 4.05ms | 151 ops/s, 7.76ms |
-| PRISM    | Disabled | 145 ops/s, 7.15ms | 141 ops/s, 7.44ms |
-| PRISM    | Enabled  | 228 ops/s, 4.52ms | 144 ops/s, 8.05ms |
+| Scenario | Cache    | Compression       | Prepare Handler   | Position Handler  |
+|----------|----------|-------------------|-------------------|-------------------|
+| Baseline | Disabled | none              | 168 ops/s         | 153 ops/s         |
+| Baseline | Disabled | lz4               | 168 ops/s         | 154 ops/s         |
+| Baseline | Enabled  | none              | 280 ops/s         | 180 ops/s         |
+| Baseline | Enabled  | lz4               | 272 ops/s         | 187 ops/s         |
+| PRISM    | Disabled | none              | 149 ops/s         | 149 ops/s         |
+| PRISM    | Disabled | lz4               | 147 ops/s         | 150 ops/s         |
+| PRISM    | Enabled  | none              | 268 ops/s         | 169 ops/s         |
+| PRISM    | Enabled  | lz4               | 276 ops/s         | 189 ops/s         |
+
+
 ---
 
 ## Overall Observations
