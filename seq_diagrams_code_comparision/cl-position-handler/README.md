@@ -1,9 +1,9 @@
-## Below are the differences/suggestions that were identified as part of comparing the code against sequence diagrams.
+Below are the differences/suggestions that were identified as part of comparing the code against sequence diagrams.
 
 ### Location of Sequence Diagram:
-https://docs.mojaloop.io/technical/central-ledger/transfers/1.1.2.a-position-handler-consume.html
+[central-ledger/transfers/1.1.2.a-position-handler-consume.html](https://docs.mojaloop.io/technical/central-ledger/transfers/1.1.2.a-position-handler-consume.html)
 ### Source code:
-https://github.com/mojaloop/central-ledger/blob/master/src/handlers/positions/handler.js
+[src/handlers/positions/handler.js](https://github.com/mojaloop/central-ledger/blob/master/src/handlers/positions/handler.js)
  - The sequence diagram's naming is confusing. 
  - It will be better if we have some in-line comments in the code, as per the sequence diagram to understand the steps?
  - One observation I have is I see Prepare Handler, Position Handler and Fulfil Handler in the main diagram, but there is PreparePositionHandler and FulfilPositionHandler in the detailed flows. 
@@ -16,11 +16,11 @@ https://github.com/mojaloop/central-ledger/blob/master/src/handlers/positions/ha
  - The diagram only checks for position&prepare. But the code also has logic for COMMIT, REJECT, RESERVE
  - Bulk is also being handled in the code, but is not reflected in the sequence diagram. I do not see any separate bulk related sequence diagrams
 
-
+---
 ### Location of Sequence Diagram:
-https://docs.mojaloop.io/technical/central-ledger/transfers/1.3.1-prepare-position-handler-consume.html
+[central-ledger/transfers/1.3.1-prepare-position-handler-consume.html](https://docs.mojaloop.io/technical/central-ledger/transfers/1.3.1-prepare-position-handler-consume.html)
 ### Source code:
-https://github.com/mojaloop/central-ledger/blob/master/src/models/position/facade.js
+[src/models/position/facade.js](https://github.com/mojaloop/central-ledger/blob/master/src/models/position/facade.js)
  - Step 2 - It would be good to elaborate on what Check 1st transfer means
  - Lines 56-60 in Facade, there is logic with settlement models which is not reflected in the sequence diagram
  - Step 4 has RECEIVED_PREPARE_PROCESSING but I do not see it in the Position Facade code 
