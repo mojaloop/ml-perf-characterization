@@ -253,33 +253,38 @@ Refer to the following diagram showing the interaction diagram:
 
 ![prism-poc-prepare-and-position-handlers-in-isolation](assets/images/prism-poc-prepare-and-position-handlers-in-isolation.drawio.png)
 
-Before implementing prism, ran position handler and prepare handler as node services locally and dumped `10k` prepare kafka messages on `topic-transfer-prepare` and captured the readings as base line for this experiment.
+- Before implementing prism, ran position handler and prepare handler as node services locally and dumped `10k` prepare kafka messages on `topic-transfer-prepare` and captured the readings as base line for this experiment.
+- The following are the commands used to run preapre and position handlers as node processes without docker
+  ```
+  export CLEDG_PORT=3001
+  nohup node src/handlers/index.js handler --position 2>&1 > position.log &
+  ```
 
-The following are the commands used to run preapre and position handlers as node processes without docker
-```
-export CLEDG_PORT=3001
-nohup node src/handlers/index.js handler --position 2>&1 > position.log &
-```
+  ```
+  export CLEDG_PORT=3002
+  nohup node src/handlers/index.js handler --prepare 2>&1 > prepare.log &
+  ```
+- PRISM implementation can be found in this PR [central-ledger/pull/962](https://github.com/mojaloop/central-ledger/pull/962)
+- The following is the comparison with PRISM PoC
+  | Scenario | Cache    | Compression       | Prepare Handler   | Position Handler  |
+  |----------|----------|-------------------|-------------------|-------------------|
+  | Baseline | Disabled | none              | 168 ops/s         | 153 ops/s         |
+  | Baseline | Disabled | lz4               | 168 ops/s         | 154 ops/s         |
+  | Baseline | Enabled  | none              | 280 ops/s         | 180 ops/s         |
+  | Baseline | Enabled  | lz4               | 272 ops/s         | 187 ops/s         |
+  | PRISM    | Disabled | none              | 149 ops/s         | 149 ops/s         |
+  | PRISM    | Disabled | lz4               | 147 ops/s         | 150 ops/s         |
+  | PRISM    | Enabled  | none              | 268 ops/s         | 169 ops/s         |
+  | PRISM    | Enabled  | lz4               | 276 ops/s         | 189 ops/s         |
 
-```
-export CLEDG_PORT=3002
-nohup node src/handlers/index.js handler --prepare 2>&1 > prepare.log &
-```
-
-PRISM implementation can be found in this PR [central-ledger/pull/962](https://github.com/mojaloop/central-ledger/pull/962)
-The following is the comparison with PRISM PoC
-
-| Scenario | Cache    | Compression       | Prepare Handler   | Position Handler  |
-|----------|----------|-------------------|-------------------|-------------------|
-| Baseline | Disabled | none              | 168 ops/s         | 153 ops/s         |
-| Baseline | Disabled | lz4               | 168 ops/s         | 154 ops/s         |
-| Baseline | Enabled  | none              | 280 ops/s         | 180 ops/s         |
-| Baseline | Enabled  | lz4               | 272 ops/s         | 187 ops/s         |
-| PRISM    | Disabled | none              | 149 ops/s         | 149 ops/s         |
-| PRISM    | Disabled | lz4               | 147 ops/s         | 150 ops/s         |
-| PRISM    | Enabled  | none              | 268 ops/s         | 169 ops/s         |
-| PRISM    | Enabled  | lz4               | 276 ops/s         | 189 ops/s         |
-
+- The system configuration used for testing is as follows:
+  - AWS EC2 instance `m6i.4xlarge`
+  - `16x` vCPU - `3.5 GHz` 3rd Generation Intel Xeon Scalable processors (Ice Lake 8375C)
+  - `64gb` RAM
+  - HDD `io2` with `50`-`100` GB, @ `5k`-`25k` iOP/S is used unless otherwise stated (_i.e. 5k iOP/s configured from Scenario 51+ onwards_)
+  - Docker Version: 20.10.23
+  - Docker Compose version: v2.19.1
+  - OS Version: Amazon Linux 2023 
 
 ---
 
