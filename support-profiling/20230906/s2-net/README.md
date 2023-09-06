@@ -29,6 +29,7 @@ docker run  -it --rm networkstatic/iperf3 -c $(docker inspect --format "{{ .Netw
 ## Observations
 
 - Network Input/Output is limited to 6.46 GBytes @ 55.5 Gbits/sec
+- Network packet I/O rate is `150 kp/s` (kp = kilo-packets) for both receive an transmit
 
 ## Recommendations
 

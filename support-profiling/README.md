@@ -6,7 +6,7 @@ This characterization is for the [Central-Services-Stream](https://github.com/mo
 
 | Mojaloop Version |  Date  | Status  | Next  | Notes  |
 |---|---|---|---|---|
-| 15.1.0 | 2023-09-06 | Docker network shows a limit of `6.42 GBytes` @ `55 Gbits/sec` using iPERF3 benchmark over a 5m period. |   |
+| 15.1.0 | 2023-09-06 | Docker network shows a limit of `6.42 GBytes` @ `55 Gbits/sec` using iPERF3 benchmark over a 5m period, with the network I/O packet rate being around `150 kp/s` (kp = kilo-packets) for both receive an transmit. |   |
 
 ### Assumptions
 
