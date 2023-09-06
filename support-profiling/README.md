@@ -8,7 +8,6 @@ This characterization is for the [Central-Services-Stream](https://github.com/mo
 |---|---|---|---|---|
 | 15.1.0 | 2023-09-06 | Docker network shows a limit of `6.42 GBytes` @ `55 Gbits/sec` using iPERF3 benchmark over a 5m period. |   |
 
-
 ### Assumptions
 
 - The following AWS machine was used for testing: `m6i.4xlarge`
@@ -68,6 +67,11 @@ This characterization is for the [Central-Services-Stream](https://github.com/mo
   BUG_REPORT_URL="https://github.com/amazonlinux/amazon-linux-2023"
   SUPPORT_END="2028-03-01"
   ```
+
+### References
+
+- [iPERF3 Docker Image](https://hub.docker.com/r/networkstatic/iperf3)
+- [iPERF3 Documentation](https://iperf.fr/iperf-doc.php)
 
 ### Test Cases
 
