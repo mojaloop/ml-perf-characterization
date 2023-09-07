@@ -1,6 +1,6 @@
-# Central-Services-Stream
+# Support Profiling
 
-This characterization is for the [Central-Services-Stream](https://github.com/mojaloop/central-services-stream).
+This characterization is for supporting infra, services or components.
 
 ## Status
 
