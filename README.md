@@ -11,6 +11,7 @@ Here you will find Performance Characterizations for the Mojaloop Services.
 | 3. | FSPIOP Transfers | [./fspiop-transfers/README](./fspiop-transfers/README.md) | Done 1st-pass. |
 | 4. | ~~FSPIOP Discovery + Agreement + Transfers~~ |   | To Be Done |
 | 5. | Central-Services-Stream Library | [./lib-central-services-stream/README.md](./lib-central-services-stream/README.md)| Done 1st-pass |
+| 6. | Support Services (e.g. Network) | [./support-profiling/README.md](./support-profiling/README.md) |
 
 ### 2. Capturing End-to-end Metrics
 
