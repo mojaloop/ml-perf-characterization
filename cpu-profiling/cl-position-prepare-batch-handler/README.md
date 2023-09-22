@@ -30,6 +30,7 @@ The approach taken for profiling central ledger in isolation is follows:
 - Used monitoring services for metrics
 
 Refer to the following diagram showing the interaction diagram:
+![profiling-position-handler-in-isolation](assets/images/profiling-position-handler-in-isolation.drawio.png)
 
 ## Test Position Handler using kcat
 - Download [ml-core-test-harness](https://github.com/mojaloop/ml-core-test-harness) repository
