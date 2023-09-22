@@ -41,12 +41,11 @@ Refer to the following diagram showing the interaction diagram:
   docker compose --project-name ml-core -f docker-compose-perf.yml --profile transfers-test up -d kafka-provisioning kafka mysql-cl
   ```
 - Download central-ledger repository
-- Add this config to `default.json` -> `KAFKA.CONSUMER.POSITION.config.rdkafkaConf[partition.assignment.strategy]: cooperative-sticky`
 - Enable cache (CACHE.CACHE_ENABLED: true) in default.json
 - Start **position handler** using the following
   ```
   npm run migrate
-  nohup env "CLEDG_PORT=3001" "CLEDG_KAFKA__EVENT_TYPE_ACTION_TOPIC_MAP__POSITION__PREPARE=topic-transfer-position-batch" node src/handlers/index.js handler --positionbatch &
+  nohup env "CLEDG_PORT=3001" "CLEDG_KAFKA__EVENT_TYPE_ACTION_TOPIC_MAP__POSITION__PREPARE=topic-transfer-position-batch" node src/handlers/index.js handler --positionbatch > /dev/null 2>&1&
   ```
   Note: Running the service with nohup is important otherwise we will get very low throughput
 - Add the new target `<Docker IP of Host>:3001` (ex: 172.17.0.1:3001) to `prometheus.yml`
@@ -124,8 +123,8 @@ tar -cvzf position-prepare-5l-8dfsps.tar.gz cl-position-handler-testing-prepare.
 
 | Scenario           | Cache    | DFSPs   | batchSize | Scale   | Throughput   | Latency  |
 |--------------------|----------|---------|-----------|---------|--------------|----------|
-| Non Batching - S0  | Enabled  | 2       | 0         | 0       | 183 ops/s    | 5.37ms   |
-| Non Batching - S1  | Disabled | 2       | 0         | 0       | 161 ops/s    | 6.44ms   |
+| Non Batching - S0  | Enabled  | 2       | -         | 1       | 183 ops/s    | 5.37ms   |
+| Non Batching - S1  | Disabled | 2       | -         | 1       | 161 ops/s    | 6.44ms   |
 | Batching - S2      | Enabled  | 2       | 10        | 1       | 1.10K ops/s  | 8.39ms   |
 | Batching - S3      | Disabled | 2       | 10        | 1       | 907 ops/s    | 9.97ms   |
 | Batching - S4      | Enabled  | 2       | 50        | 1       | 1.95K ops/s  | 21.5ms   |
@@ -133,10 +132,10 @@ tar -cvzf position-prepare-5l-8dfsps.tar.gz cl-position-handler-testing-prepare.
 | Batching - S6      | Enabled  | 4       | 10        | 1       | 762 ops/s    | 12.1ms   |
 | Batching - S7      | Enabled  | 4       | 20        | 1       | 1.17K ops/s  | 15.4ms   |
 | Batching - S8      | Enabled  | 4       | 40        | 1       | 1.55K ops/s  | 21.9ms   |
-| Batching - S9      | Enabled  | 4       | 50        | 1       | TBD ops/s    | TBDms    |
-| Batching - S10     | Enabled  | 4       | 100       | 1       | TBD ops/s    | TBDms    |
-| Batching - S11     | Enabled  | 8       | 10        | 1       | TBD ops/s    | TBDms    |
-| Batching - S12     | Enabled  | 8       | 20        | 1       | TBD ops/s    | TBDms    |
-| Batching - S13     | Enabled  | 8       | 40        | 1       | TBD ops/s    | TBDms    |
-| Batching - S14     | Enabled  | 8       | 50        | 1       | TBD ops/s    | TBDms    |
-| Batching - S15     | Enabled  | 8       | 100       | 1       | TBD ops/s    | TBDms    |
+| Batching - S9      | Enabled  | 4       | 50        | 1       | 1.67K ops/s  | 25.8ms   |
+| Batching - S10     | Enabled  | 4       | 100       | 1       | 1.94K ops/s  | 42.8ms   |
+| Batching - S11     | Enabled  | 8       | 10        | 1       | 779 ops/s    | 11.0ms   |
+| Batching - S12     | Enabled  | 8       | 20        | 1       | 1.18K ops/s  | 26.1ms   |
+| Batching - S13     | Enabled  | 8       | 40        | 1       | 1.68K ops/s  | 20.9ms   |
+| Batching - S14     | Enabled  | 8       | 50        | 1       | 1.84K ops/s  | 23.0ms   |
+| Batching - S15     | Enabled  | 8       | 100       | 1       | 2.15K ops/s  | 38.6ms   |
