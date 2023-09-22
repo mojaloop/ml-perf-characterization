@@ -9,14 +9,14 @@
 ## Testing Environment
 - Hardware specification and Software versions
   ```
-  CPU: TBD
-  Memory: TBD
-  OS: TBD
-  Docker: TBD
+  CPU: AMD Ryzen 9 3900X 12-Core Processor
+  Memory: 32GB
+  OS: Ubuntu 23.04 linux/amd64
+  Docker: v24.0.5
   Mysql: docker:mysql/mysql-server:8.0.32
-  Kafka: docker:bitnami/kafka:3.5.0
-  Node: v18.17.1
-  Central Ledger: Branch - feature/position-prepare-binnning
+  Kafka: docker:bitnami/kafka:3.4.0
+  Node: v16.15.0
+  Central Ledger: v17.0.3
   ```
 - Used In-Memory MySQL DB for all the scenarios to rule out disk I/O issues
 - Transfers to 2 random DFSPs as payer and payee
@@ -121,6 +121,8 @@ tar -cvzf position-prepare-5l-8dfsps.tar.gz cl-position-handler-testing-prepare.
 
 ## Test Scenarios
 
+### With one instance
+
 | Scenario           | Cache    | DFSPs   | batchSize | Scale   | Throughput   | Latency  |
 |--------------------|----------|---------|-----------|---------|--------------|----------|
 | Non Batching - S0  | Enabled  | 2       | -         | 1       | 183 ops/s    | 5.37ms   |
@@ -139,3 +141,17 @@ tar -cvzf position-prepare-5l-8dfsps.tar.gz cl-position-handler-testing-prepare.
 | Batching - S13     | Enabled  | 8       | 40        | 1       | 1.68K ops/s  | 20.9ms   |
 | Batching - S14     | Enabled  | 8       | 50        | 1       | 1.84K ops/s  | 23.0ms   |
 | Batching - S15     | Enabled  | 8       | 100       | 1       | 2.15K ops/s  | 38.6ms   |
+
+### With scaling and distributed messages based on accountID across kafka partitions
+
+| Scenario           | Cache    | DFSPs   | batchSize | Scale   | Throughput per instance | Overall throughput  | Latency  |
+|--------------------|----------|---------|-----------|---------|-------------------------|---------------------|----------|
+| Batching - S16     | Enabled  | 2       | 50        | 1       | 1.88K ops/s             | 1.88K ops/s         | 21.4ms   |
+| Batching - S17     | Enabled  | 4       | 50        | 1       | 1.54K ops/s             | 1.54K ops/s         | 27.5ms   |
+| Batching - S18     | Enabled  | 8       | 50        | 1       | 1.63K ops/s             | 1.63K ops/s         | 25.5ms   |
+| Batching - S19     | Enabled  | 2       | 50        | 2       | TBD ops/s               | TBD ops/s           | TBDms    |
+| Batching - S20     | Enabled  | 4       | 50        | 2       | TBD ops/s               | TBD ops/s           | TBDms    |
+| Batching - S21     | Enabled  | 8       | 50        | 2       | TBD ops/s               | TBD ops/s           | TBDms    |
+| Batching - S22     | Enabled  | 4       | 50        | 4       | TBD ops/s               | TBD ops/s           | TBDms    |
+| Batching - S23     | Enabled  | 8       | 50        | 4       | TBD ops/s               | TBD ops/s           | TBDms    |
+| Batching - S24     | Enabled  | 8       | 50        | 8       | TBD ops/s               | TBD ops/s           | TBDms    |
