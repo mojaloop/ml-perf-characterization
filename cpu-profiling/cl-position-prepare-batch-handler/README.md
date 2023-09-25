@@ -49,40 +49,38 @@ Refer to the following diagram showing the interaction diagram:
   ```
   docker compose --project-name monitoring --profile transfers-test -f docker-compose-monitoring.yml up -d
   ```
-
-- Execute the following script for the messages `action=prepare`
+- Execute the following script for the messages `action=prepare` from `cpu-profiling/cl-position-prepare-batch-handler/test-data/feed-test-data-position-prepare-batch.sh` of [ml-perf-characterization](https://github.com/mojaloop/ml-perf-characterization.git) repository (TODO: test with the branch feat/#3489-perf-benchmark until it is merged to main)
   ```
   sh ./feed-test-data-position-prepare-batch.sh
   ```
 - Now you should see the activity in position handler service
 - Observe the grafana dashboard `mojaloop-central-ledger` for **Processed requests per second** and **Processing Time**
 
-## Test Position Handler using K6 load
+## Test Position Handler running as docker processes
 - Download [ml-core-test-harness](https://github.com/mojaloop/ml-core-test-harness) repository
-- Add new partition `topic-transfer-position-batch` to kafka-provisioning
-- Add the following line to perf.env
+- TODO: Test with branch `feat/#3520-rebaseline-with-position-prepare-batching` until it is merged to main
+- Expose port `9092` of kafka service
+- Expose port `3306` of mysql service
+- Change `CENTRAL_LEDGER_POSITION_BATCH_REPLICAS` to desired number
+- Enable the following line in perf.env
 ```
 CLEDG_KAFKA__EVENT_TYPE_ACTION_TOPIC_MAP__POSITION__PREPARE=topic-transfer-position-batch
 ```
-- Start the docker services
+- Start the docker services for position batch handler
 ```
-env "CENTRAL_LEDGER_VERSION=v17.2.0" docker compose --project-name ml-core -f docker-compose-perf.yml --profile transfers-test --profile ttk-provisioning-transfers up -d --scale ml-handler-notification=0 --scale central-handler-prepare=4 --scale central-ledger=1 --scale ml-api-adapter=1 --scale central-handler-position=0 --scale central-handler-fulfil=0
+docker compose --project-name ml-core -f docker-compose-perf.yml --profile transfers-test up -d kafka-provisioning kafka mysql-cl central-handler-position-batch
 ```
-- After all the service are healthy, check if the provisioning collection is passed. If it fails execute it again using the following command
-```
-docker restart ttk-provisioning-transfers
-```
-- Change `iterations` count to '500000'
-- Start transfer(no callback) test case
-```
-env K6_SCRIPT_CONFIG_FILE_NAME=fspiopTransfersNoCallback.json docker compose --project-name load -f docker-compose-load.yml up
-```
-- Wait for prepare handlers to process all the messages in prepare queue
-- Start the position handler
-- Stop all services
-```
-docker compose --project-name ml-core -f docker-compose-perf.yml --profile transfers-test down
-```
+- Wait for all the services become healthy
+- Start monitoring services using the following command
+  ```
+  docker compose --project-name monitoring --profile transfers-test -f docker-compose-monitoring.yml up -d
+  ```
+- Execute the following script for the messages `action=prepare` from `cpu-profiling/cl-position-prepare-batch-handler/test-data/feed-test-data-position-prepare-batch.sh` of [ml-perf-characterization](https://github.com/mojaloop/ml-perf-characterization.git) repository (TODO: test with the branch feat/#3489-perf-benchmark until it is merged to main)
+  ```
+  sh ./feed-test-data-position-prepare-batch.sh
+  ```
+- Now you should see the activity in position batch handler instances
+- Observe the grafana dashboard `mojaloop-central-ledger` for **Processed requests per second** and **Processing Time**
 
 ## Capturing Kafka and MySQL dumps for position-prepare
 - Download [ml-core-test-harness](https://github.com/mojaloop/ml-core-test-harness) repository
@@ -137,6 +135,7 @@ tar -cvzf position-prepare-5l-8dfsps.tar.gz cl-position-handler-testing-prepare.
 | Batching - S13     | Enabled  | 8       | 40        | 1       | 1.68K ops/s  | 20.9ms   |
 | Batching - S14     | Enabled  | 8       | 50        | 1       | 1.84K ops/s  | 23.0ms   |
 | Batching - S15     | Enabled  | 8       | 100       | 1       | 2.15K ops/s  | 38.6ms   |
+| Batching - S16     | Enabled  | 8       | 1         | 1       | TBD ops/s    | TBDms    |
 
 ### With scaling and distributed messages based on accountID across kafka partitions
 
@@ -151,3 +150,6 @@ tar -cvzf position-prepare-5l-8dfsps.tar.gz cl-position-handler-testing-prepare.
 | Batching - S22     | Enabled  | 4       | 50        | 4       | TBD ops/s               | TBD ops/s           | TBDms    |
 | Batching - S23     | Enabled  | 8       | 50        | 4       | TBD ops/s               | TBD ops/s           | TBDms    |
 | Batching - S24     | Enabled  | 8       | 50        | 8       | TBD ops/s               | TBD ops/s           | TBDms    |
+
+### Observations
+- TBD
