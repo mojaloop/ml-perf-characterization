@@ -7,25 +7,20 @@
 
 
 ## Testing Environment
-- Hardware specification and Software versions
-  ```
-  CPU: AMD Ryzen 9 3900X 12-Core Processor
-  Memory: 32GB
-  OS: Ubuntu 23.04 linux/amd64
-  Docker: v24.0.5
-  Mysql: docker:mysql/mysql-server:8.0.32
-  Kafka: docker:bitnami/kafka:3.4.0
-  Node: v16.15.0
-  Central Ledger: v17.0.3
-  ```
+- The following AWS machine was used for testing: `m6i.4xlarge`
+  - `16x` vCPU - `3.5 GHz` 3rd Generation Intel Xeon Scalable processors (Ice Lake 8375C)
+  - `64gb` RAM
+  - HDD `io2` with `50`-`100` GB, @ `5k` iOP/S
+  - Docker: 20.10.23
+  - Mysql: docker:mysql/mysql-server:8.0.32
+  - Kafka: docker:bitnami/kafka:3.5.0
 - Used In-Memory MySQL DB for all the scenarios to rule out disk I/O issues
-- Transfers to 2 random DFSPs as payer and payee
+- Transfers to 2-8 random DFSPs as payer and payee
 
 ## Approach
 The approach taken for profiling central ledger in isolation is follows:
 - Deployed MySQL and Kafka services as dependencies
-- Used the same 5000 messages captured as part of performance characterization of position handler
-- Used previously captured MySQL database dump to set the tables state before position handler starts to process the messages
+- Captured 5L position-prepare messages and MySQL data dump to set the tables state before position handler starts to process the messages
 - Replay the MySQL state and kafka messages and observe the running instance of position handler
 - Used monitoring services for metrics
 
