@@ -31,20 +31,46 @@ The approach taken for characterizing transfers performance with batch processin
 Refer to the following diagram showing the interaction diagram:
 ![profiling-position-handler-in-isolation](assets/images/Transfers-Arch-End-to-End-v1.1-batch-prepare-position.drawio.svg)
 
+## Steps followed
+- Build the Central Ledger Docker image from the branch [feat/prepare-handler-publish-topic](https://github.com/mojaloop/central-ledger/tree/feat/prepare-handler-publish-topic) of the central-ledger repository. Tag the image with `mojaloop/central-ledger:local`.
+  
+  **Reasoning:**
+  - This step is necessary because there was an issue identified with Kafka consumption in the prepare handler when using the latest version of Central Ledger (v17.2.0). Version v17.0.3 is known to work correctly. A story is created mojaloop/3529.
+  - To address this issue temporarily, some functionality has been backported to the older version, i.e., v17.0.3, in the branch `central-ledger:feat/prepare-handler-publish-topic`.
+- Checkout to the branch `feat/#3520-rebaseline-with-position-prepare-batching` of the [mojaloop/ml-core-test-harness](https://github.com/mojaloop/ml-core-test-harness.git) repository.
+- Uncomment the line `CLEDG_KAFKA__EVENT_TYPE_ACTION_TOPIC_MAP__POSITION__PREPARE` in the `perf.env` file.
+- Adjust the replica count by modifying the `CENTRAL_LEDGER_POSITION_BATCH_REPLICAS` to the desired number.
+- Update the version of `CENTRAL_LEDGER_BATCH_VERSION` to `v17.3.0-snapshot.5`.
+- Update the version of `CENTRAL_LEDGER_VERSION` to `local`.
+- Follow the instructions outlined in the README file to initiate the performance stack with monitoring capabilities.
+- Execute a k6 transfer test case as specified in the README.
+- Observe the performance metrics in the Grafana dashboard to evaluate the system's behavior and performance.
+
 ## Test Scenarios
 
-| Scenario           | Cache    | DFSPs   | batchSize | Scale   | Throughput   | Latency  |
-|--------------------|----------|---------|-----------|---------|--------------|----------|
-| Batching - S1      | Enabled  | 2       | 10        | 1       | TBD ops/s    | TBDms    |
-| Batching - S2      | Enabled  | 4       | 10        | 1       | TBD ops/s    | TBDms    |
-| Batching - S3      | Enabled  | 8       | 10        | 1       | TBD ops/s    | TBDms    |
-| Batching - S4      | Enabled  | 2       | 50        | 1       | TBD ops/s    | TBDms    |
-| Batching - S5      | Enabled  | 4       | 50        | 1       | TBD ops/s    | TBDms    |
-| Batching - S6      | Enabled  | 8       | 50        | 1       | TBD ops/s    | TBDms    |
-| Batching - S7      | Enabled  | 2       | 100       | 1       | TBD ops/s    | TBDms    |
-| Batching - S8      | Enabled  | 4       | 100       | 1       | TBD ops/s    | TBDms    |
-| Batching - S9      | Enabled  | 8       | 100       | 1       | TBD ops/s    | TBDms    |
+| Scenario           | Cache    | DFSPs   | batchSize | Consumer Timeout | Scale   | Other Services Scale | Vus   | Throughput   | Latency  |
+|--------------------|----------|---------|-----------|------------------|---------|----------------------|-------|--------------|----------|
+| Non Batching - S1  | Enabled  | 8       | -         | -                | 1       | All: 1               | 30    | 103 ops/s    | 298ms    |
+| Batching - S2      | Enabled  | 8       | 50        | 10ms             | 1       | All: 1               | 30    | 119 ops/s    | 260ms    |
+| Batching - S3      | Enabled  | 8       | 50        | 10ms             | 1       | All: 2               | 30    | 135 ops/s    | 232ms    |
+| Batching - S4      | Enabled  | 8       | 50        | 10ms             | 1       | All: 2               | 50    | 173 ops/s    | 316ms    |
+| Batching - S5      | Enabled  | 8       | 50        | 10ms             | 1       | All: 2               | 70    | 198 ops/s    | 362ms    |
+| Batching - S6      | Enabled  | 8       | 50        | 10ms             | 1       | All: 2               | 100   | 226 ops/s    | 456ms    |
+| Batching - S7      | Enabled  | 8       | 50        | 10ms             | 1       | CL: 4, All: 2        | 30    | 140 ops/s    | 237ms    |
+| Batching - S8      | Enabled  | 8       | 50        | 10ms             | 1       | CL: 4, All: 2        | 100   | 233 ops/s    | 453ms    |
+| Batching - S9      | Enabled  | 8       | 50        | 10ms             | 8       | CL POS: 8, All: 4    | 30    | 201 ops/s    | 155ms    |
+| Batching - S10     | Enabled  | 8       | 50        | 10ms             | 8       | CL POS: 8, All: 4    | 100   | 282 ops/s    | 393ms    |
 
 
 ### Observations
-- TBD
+
+1. **Increased Efficiency in Position-Prepare Handling:** Significant improvements have been observed in the processing of position-prepare messages, thanks to the utilization of Kafka lag monitoring for the `topic-transfer-position-batch`. Notably, the lag on this topic has been minimized to a very low level.
+
+2. **Kafka Lag Identification:** Extensive Kafka lag has been identified across several critical topics:
+    - `topic-transfer-position`: Pertaining to fulfillment of position messages.
+    - `topic-transfer-prepare`: Associated with the preparation phase of transfers.
+    - `topic-transfer-fulfil`: Corresponding to the fulfillment of transfers.
+
+3. **Optimized Throughput Achieved:** The system achieved an impressive throughput of 280 operations per second (ops/sec) by fully utilizing the CPU. This was accomplished by deploying 100 k6 virtual users (VUs), with the CPU utilization peaking at 99% under this load.
+
+4. **Upcoming Hardware Upgrade:** To establish a precise benchmark and further enhance performance, testing with new hardware featuring increased CPU capacity is planned.
