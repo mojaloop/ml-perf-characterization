@@ -58,7 +58,6 @@ Refer to the following diagram showing the interaction diagram:
 
 ## Test Position Handler running as docker processes
 - Download [ml-core-test-harness](https://github.com/mojaloop/ml-core-test-harness) repository
-- TODO: Test with branch `feat/#3520-rebaseline-with-position-prepare-batching` until it is merged to main
 - Expose port `9092` of kafka service
 - Expose port `3306` of mysql service
 - Change `CENTRAL_LEDGER_POSITION_BATCH_REPLICAS` to desired number
@@ -75,7 +74,7 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile trans
   ```
   docker compose --project-name monitoring --profile transfers-test -f docker-compose-monitoring.yml up -d
   ```
-- Execute the following script for the messages `action=prepare` from `cpu-profiling/cl-position-prepare-batch-handler/test-data/feed-test-data-position-prepare-batch.sh` of [ml-perf-characterization](https://github.com/mojaloop/ml-perf-characterization.git) repository (TODO: test with the branch feat/#3489-perf-benchmark until it is merged to main)
+- Execute the following script for the messages `action=prepare` from `cpu-profiling/cl-position-prepare-batch-handler/test-data/feed-test-data-position-prepare-batch.sh` of [ml-perf-characterization](https://github.com/mojaloop/ml-perf-characterization.git) repository
   ```
   sh ./feed-test-data-position-prepare-batch.sh
   ```
@@ -139,17 +138,16 @@ tar -cvzf position-prepare-5l-8dfsps.tar.gz cl-position-handler-testing-prepare.
 
 ### With scaling and distributed messages based on accountID across kafka partitions
 
-| Scenario           | Cache    | DFSPs   | batchSize | Scale   | Throughput per instance | Overall throughput  | Latency  |
-|--------------------|----------|---------|-----------|---------|-------------------------|---------------------|----------|
-| Batching - S16     | Enabled  | 2       | 50        | 1       | 1.88K ops/s             | 1.88K ops/s         | 21.4ms   |
-| Batching - S17     | Enabled  | 4       | 50        | 1       | 1.54K ops/s             | 1.54K ops/s         | 27.5ms   |
-| Batching - S18     | Enabled  | 8       | 50        | 1       | 1.63K ops/s             | 1.63K ops/s         | 25.5ms   |
-| Batching - S19     | Enabled  | 2       | 50        | 2       | TBD ops/s               | TBD ops/s           | TBDms    |
-| Batching - S20     | Enabled  | 4       | 50        | 2       | TBD ops/s               | TBD ops/s           | TBDms    |
-| Batching - S21     | Enabled  | 8       | 50        | 2       | TBD ops/s               | TBD ops/s           | TBDms    |
-| Batching - S22     | Enabled  | 4       | 50        | 4       | TBD ops/s               | TBD ops/s           | TBDms    |
-| Batching - S23     | Enabled  | 8       | 50        | 4       | TBD ops/s               | TBD ops/s           | TBDms    |
-| Batching - S24     | Enabled  | 8       | 50        | 8       | TBD ops/s               | TBD ops/s           | TBDms    |
+| Scenario           | Cache    | DFSPs   | batchSize | Scale   | Throughput per instance | Latency  |
+|--------------------|----------|---------|-----------|---------|-------------------------|----------|
+| Batching - S20     | Enabled  | 2       | 50        | 1       | 1.88K ops/s             | 21.4ms   |
+| Batching - S21     | Enabled  | 4       | 50        | 1       | 1.54K ops/s             | 27.5ms   |
+| Batching - S22     | Enabled  | 8       | 50        | 1       | 1.63K ops/s             | 25.5ms   |
+| Batching - S23     | Enabled  | 4       | 50        | 4       | 1.56K ops/s             | 26.5ms   |
+
 
 ### Observations
-- TBD
+- Enabling batching resulted in higher throughput compared to the corresponding non-batching scenarios.
+- As the batch size increases (from 10 to 100), throughput increased, but latency also increased significantly.
+- With a batch size of 50, there's a noticeable improvement in throughput for most scenarios with moderate to low latency.
+- When scaling, throughput and latency remained relatively consistent per each instance.
