@@ -135,7 +135,7 @@ tar -cvzf position-prepare-5l-8dfsps.tar.gz cl-position-handler-testing-prepare.
 | Batching - S13     | Enabled  | 8       | 40        | 1       | 1.68K ops/s  | 20.9ms   |
 | Batching - S14     | Enabled  | 8       | 50        | 1       | 1.84K ops/s  | 23.0ms   |
 | Batching - S15     | Enabled  | 8       | 100       | 1       | 2.15K ops/s  | 38.6ms   |
-| Batching - S16     | Enabled  | 8       | 1         | 1       | TBD ops/s    | TBDms    |
+| Batching - S16     | Enabled  | 2       | 1         | 1       | 181 ops/s    | 5.44ms   |
 
 ### With scaling and distributed messages based on accountID across kafka partitions
 
