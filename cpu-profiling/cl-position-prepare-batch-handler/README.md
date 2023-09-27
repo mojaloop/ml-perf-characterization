@@ -49,7 +49,7 @@ Refer to the following diagram showing the interaction diagram:
   ```
   docker compose --project-name monitoring --profile transfers-test -f docker-compose-monitoring.yml up -d
   ```
-- Execute the following script for the messages `action=prepare` from `cpu-profiling/cl-position-prepare-batch-handler/test-data/feed-test-data-position-prepare-batch.sh` of [ml-perf-characterization](https://github.com/mojaloop/ml-perf-characterization.git) repository (TODO: test with the branch feat/#3489-perf-benchmark until it is merged to main)
+- Execute the following script for the messages `action=prepare` from `cpu-profiling/cl-position-prepare-batch-handler/test-data/feed-test-data-position-prepare-batch.sh` of [ml-perf-characterization](https://github.com/mojaloop/ml-perf-characterization.git) repository.
   ```
   sh ./feed-test-data-position-prepare-batch.sh
   ```
