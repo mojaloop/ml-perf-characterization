@@ -1,5 +1,7 @@
 # Profile the Central-Ledger Position Handler with Batch support in isolation
 
+_Note: Currently batch processing is implemented for only `position-prepare` messages. And there is an open PR for central-ledger [central-ledger/968](https://github.com/mojaloop/central-ledger/pull/968)._
+
 ## Status
 
 | Central Ledger Version |  Date  | Status  | Next  | Notes  |
