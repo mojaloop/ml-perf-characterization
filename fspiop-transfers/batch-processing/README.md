@@ -1,6 +1,6 @@
 # FSPIOP Transfers Performance Characterization with Batch processing
 
-_Note: Currently batch processing is implemented for only `position-prepare` messages._
+_Note: Currently batch processing is implemented for only `position-prepare` messages. And there is an open PR for central-ledger [central-ledger/968](https://github.com/mojaloop/central-ledger/pull/968)._
 
 
 ## Status
@@ -37,10 +37,9 @@ Refer to the following diagram showing the interaction diagram:
   **Reasoning:**
   - This step is necessary because there was an issue identified with Kafka consumption in the prepare handler when using the latest version of Central Ledger (v17.2.0). Version v17.0.3 is known to work correctly. A story is created mojaloop/3529.
   - To address this issue temporarily, some functionality has been backported to the older version, i.e., v17.0.3, in the branch `central-ledger:feat/prepare-handler-publish-topic`.
-- Checkout to the branch `feat/#3520-rebaseline-with-position-prepare-batching` of the [mojaloop/ml-core-test-harness](https://github.com/mojaloop/ml-core-test-harness.git) repository.
+- Clone the repository [mojaloop/ml-core-test-harness](https://github.com/mojaloop/ml-core-test-harness.git).
 - Uncomment the line `CLEDG_KAFKA__EVENT_TYPE_ACTION_TOPIC_MAP__POSITION__PREPARE` in the `perf.env` file.
 - Adjust the replica count by modifying the `CENTRAL_LEDGER_POSITION_BATCH_REPLICAS` to the desired number.
-- Update the version of `CENTRAL_LEDGER_BATCH_VERSION` to `v17.3.0-snapshot.5`.
 - Update the version of `CENTRAL_LEDGER_VERSION` to `local`.
 - Follow the instructions outlined in the README file to initiate the performance stack with monitoring capabilities.
 - Execute a k6 transfer test case as specified in the README.
