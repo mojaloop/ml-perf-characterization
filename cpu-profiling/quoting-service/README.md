@@ -1,4 +1,4 @@
-# Profile the ML-Api-Adapter Notification Handler in isolation
+# Profile the Quoting service Handler in isolation
 
 ## Hardware Specification and versions
 - CPU - Intel Core i5-8600K
@@ -16,7 +16,8 @@
 - Expose port `9229` and add `node --inspect=0.0.0.0` to start command of `quoting-service`
 - Update `K6_SCRIPT_FSPIOP_FSP_POOL` in perf.env to use the 2 dfsp option
 - Run `docker compose --project-name ml-core -f docker-compose-perf.yml --profile quotes-test --profile 2dfsp --profile ttk-provisioning-quotes up -d`
-
+- After 5 minutes or by using docker logs -f on the testing toolkit to see if onboarding is finished run `docker compose stop central-ledger kafka`
+  to remove these services that were required only for onboarding.
 ## Profile using chrome debugger
 - Use `Chrome Debugger` to connect to the docker quoting service container and start CPU profiling
 - Run `env K6_SCRIPT_CONFIG_FILE_NAME=fspiopQuotes.json docker compose --project-name load -f docker-compose-load.yml up`
