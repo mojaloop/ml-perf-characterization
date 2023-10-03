@@ -25,6 +25,78 @@
 
 config/default.json
 ```
+{
+  "HOSTNAME": "http://quoting-service",
+  "LISTEN_ADDRESS": "0.0.0.0",
+  "PORT": 3002,
+  "AMOUNT": {
+    "PRECISION": 18,
+    "SCALE": 4
+  },
+  "PROTOCOL_VERSIONS": {
+    "CONTENT": {
+      "DEFAULT": "1.1",
+      "VALIDATELIST": [
+        "1.1",
+        "1.0"
+      ]
+    },
+    "ACCEPT": {
+      "DEFAULT": "1",
+      "VALIDATELIST": [
+        "1",
+        "1.0",
+        "1.1"
+      ]
+    }
+  },
+  "DATABASE": {
+    "DIALECT": "mysql",
+    "HOST": "mysql-cl",
+    "PORT": 3306,
+    "USER": "central_ledger",
+    "PASSWORD": "password",
+    "SCHEMA": "central_ledger",
+    "POOL_MIN_SIZE": 10,
+    "POOL_MAX_SIZE": 10,
+    "ACQUIRE_TIMEOUT_MILLIS": 30000,
+    "CREATE_TIMEOUT_MILLIS": 30000,
+    "DESTROY_TIMEOUT_MILLIS": 5000,
+    "IDLE_TIMEOUT_MILLIS": 30000,
+    "REAP_INTERVAL_MILLIS": 1000,
+    "CREATE_RETRY_INTERVAL_MILLIS": 200,
+    "DEBUG": false
+  },
+  "SWITCH_ENDPOINT": "http://central-ledger:3001",
+  "ERROR_HANDLING": {
+    "includeCauseExtension": false,
+    "truncateExtensions": true
+  },
+  "SIMPLE_ROUTING_MODE": false,
+  "ENDPOINT_SECURITY": {
+    "JWS": {
+      "JWS_SIGN": false,
+      "FSPIOP_SOURCE_TO_SIGN": "switch",
+      "JWS_SIGNING_KEY_PATH": "secrets/jwsSigningKey.key"
+    }
+  },
+  "API_DOCUMENTATION_ENDPOINTS": true,
+  "INSTRUMENTATION": {
+    "METRICS": {
+      "DISABLED": false,
+      "labels": {
+        "fspId": "*"
+      },
+      "config": {
+        "timeout": 5000,
+        "prefix": "moja_qs_",
+        "defaultLabels": {
+          "serviceName": "quoting-service"
+        }
+      }
+    }
+  }
+}
 ```
 
 ### Profiling Observations
