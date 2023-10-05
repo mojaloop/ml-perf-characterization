@@ -128,7 +128,7 @@ are not cached.
 While `getParticipantEndpoint` has no reason specified. Adding endpoint caching may be a optimization.
 
 Strangely, the `handleQuoteRequest` function uses the http admin endpoint to get participants
-when it could potentially just query the database direct.
+when it could potentially just query the database direct. **give history lesson on tight couping between quoting service and central ledger**
 
 Outside of profiling another potential issue raised by @vijayg10, the passing of the hapi request object to an async function that we don't
 handle the promises such as below, may be causing side effects and crashing that preliminary testing of high virtual users
