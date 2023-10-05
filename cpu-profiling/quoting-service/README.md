@@ -15,9 +15,11 @@
 - Scale services to 1
 - Expose port `9229` and add `node --inspect=0.0.0.0` to start command of `quoting-service`
 - Update `K6_SCRIPT_FSPIOP_FSP_POOL` in perf.env to use the 2 dfsp option
+- Set `K6_SCRIPT_WS_TIMEOUT_MS` to 5000 in perf.env
 - Run `docker compose --project-name ml-core -f docker-compose-perf.yml --profile quotes-test --profile 2dfsp --profile ttk-provisioning-quotes up -d`
-- After 5 minutes or by using docker logs -f on the testing toolkit to see if onboarding is finished run `docker compose stop central-ledger kafka`
+- After 5 minutes or by using docker logs -f on the testing toolkit to see if onboarding is finished run `docker compose -p ml-core stop central-ledger kafka`
   to remove these services that were required only for onboarding.
+
 ## Profile using chrome debugger
 - Use `Chrome Debugger` to connect to the docker quoting service container and start CPU profiling
 - Run `env K6_SCRIPT_CONFIG_FILE_NAME=fspiopQuotes.json docker compose --project-name load -f docker-compose-load.yml up`
@@ -67,7 +69,7 @@ config/default.json
     "CREATE_RETRY_INTERVAL_MILLIS": 200,
     "DEBUG": false
   },
-  "SWITCH_ENDPOINT": "http://central-ledger:3001",
+  "SWITCH_ENDPOINT": "http://callback-handler-svc-cl-sim:3001/admin",
   "ERROR_HANDLING": {
     "includeCauseExtension": false,
     "truncateExtensions": true
@@ -125,6 +127,9 @@ are not cached.
 
 While `getParticipantEndpoint` has no reason specified. Adding endpoint caching may be a optimization.
 
+Strangely, the `handleQuoteRequest` function uses the http admin endpoint to get participants
+when it could potentially just query the database direct.
+
 Outside of profiling another potential issue raised by @vijayg10, the passing of the hapi request object to an async function that we don't
 handle the promises such as below, may be causing side effects and crashing that preliminary testing of high virtual users
 sending quote requests have shown.
@@ -135,10 +140,21 @@ sending quote requests have shown.
   })
 ```
 
-### Follow up Stories
-
 ## Status
 
+Performance testing was done with 15.1.1 as opposed to 15.1.0, since metric improvements were added.
+No other impacting changes were made.
+
+| Quoting service version |  Date  | Status|
+|---|---|---|
+|  | 2023-10-04 | Baseline with a scale of 1 ops/s
+|  | 2023-08-24 | Quoting Service logger fixes ops/s
+
 ### Isolated Performance Testing
+
+- Follow steps in Local Setup above
+- Run `env K6_SCRIPT_CONFIG_FILE_NAME=fspiopQuotes.json docker compose --project-name load -f docker-compose-load.yml up`
+- Run `docker compose --project-name monitoring --profile quotes-test -f docker-compose-monitoring.yml up -d`
+- Observe grafana dashboards at http://localhost:9999/
 
 ### Isolated Performance Testing Observations
