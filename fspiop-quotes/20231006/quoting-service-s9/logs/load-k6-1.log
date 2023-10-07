@@ -1,0 +1,532 @@
+Attaching to load-k6-1
+load-k6-1  | 
+load-k6-1  |           /\      |‾‾| /‾‾/   /‾‾/   
+load-k6-1  |      /\  /  \     |  |/  /   /  /    
+load-k6-1  |     /  \/    \    |     (   /   ‾‾\  
+load-k6-1  |    /          \   |  |\  \ |  (‾)  | 
+load-k6-1  |   / __________ \  |__| \__\ \_____/ .io
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  |   execution: local
+load-k6-1  |      script: /scripts/index.js
+load-k6-1  |      output: Prometheus remote write (http://prometheus:9090/api/v1/write)
+load-k6-1  | 
+load-k6-1  |   scenarios: (100.00%) 1 scenario, 15 max VUs, 2m30s max duration (incl. graceful stop):
+load-k6-1  |            * fspiopQuotes: Up to 15 looping VUs for 2m0s over 2 stages (gracefulRampDown: 30s, exec: fspiopQuotesScenarios, gracefulStop: 30s)
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m01.0s), 01/15 VUs, 43 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [   1% ] 01/15 VUs  0m01.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m02.0s), 01/15 VUs, 100 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [   2% ] 01/15 VUs  0m02.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m03.0s), 02/15 VUs, 179 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [   2% ] 02/15 VUs  0m03.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m04.0s), 02/15 VUs, 273 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [   3% ] 02/15 VUs  0m04.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m05.0s), 03/15 VUs, 388 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [   4% ] 03/15 VUs  0m05.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m06.0s), 03/15 VUs, 520 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [   5% ] 03/15 VUs  0m06.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m07.0s), 04/15 VUs, 657 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [   6% ] 04/15 VUs  0m07.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m08.0s), 04/15 VUs, 794 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [   7% ] 04/15 VUs  0m08.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m09.0s), 05/15 VUs, 959 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [   7% ] 05/15 VUs  0m09.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m10.0s), 05/15 VUs, 1144 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [   8% ] 05/15 VUs  0m10.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m11.0s), 06/15 VUs, 1326 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [   9% ] 06/15 VUs  0m11.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m12.0s), 06/15 VUs, 1514 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  10% ] 06/15 VUs  0m12.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m13.0s), 07/15 VUs, 1704 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  11% ] 07/15 VUs  0m13.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m14.0s), 07/15 VUs, 1921 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  12% ] 07/15 VUs  0m14.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m15.0s), 07/15 VUs, 2139 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  12% ] 07/15 VUs  0m15.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m16.0s), 08/15 VUs, 2364 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  13% ] 08/15 VUs  0m16.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m17.0s), 08/15 VUs, 2604 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  14% ] 08/15 VUs  0m17.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m18.0s), 09/15 VUs, 2848 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  15% ] 09/15 VUs  0m18.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m19.0s), 09/15 VUs, 3092 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  16% ] 09/15 VUs  0m19.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m20.0s), 10/15 VUs, 3329 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  17% ] 10/15 VUs  0m20.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m21.0s), 10/15 VUs, 3577 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  17% ] 10/15 VUs  0m21.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m22.0s), 11/15 VUs, 3806 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  18% ] 11/15 VUs  0m22.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m23.0s), 11/15 VUs, 4033 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  19% ] 11/15 VUs  0m23.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m24.0s), 12/15 VUs, 4275 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  20% ] 12/15 VUs  0m24.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m25.0s), 12/15 VUs, 4517 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  21% ] 12/15 VUs  0m25.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m26.0s), 13/15 VUs, 4754 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  22% ] 13/15 VUs  0m26.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m27.0s), 13/15 VUs, 4994 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  22% ] 13/15 VUs  0m27.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m28.0s), 14/15 VUs, 5222 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  23% ] 14/15 VUs  0m28.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m29.0s), 14/15 VUs, 5463 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  24% ] 14/15 VUs  0m29.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m30.0s), 14/15 VUs, 5730 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  25% ] 14/15 VUs  0m30.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m31.0s), 15/15 VUs, 5988 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  26% ] 15/15 VUs  0m31.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m32.0s), 15/15 VUs, 6252 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  27% ] 15/15 VUs  0m32.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m33.0s), 15/15 VUs, 6516 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  27% ] 15/15 VUs  0m33.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m34.0s), 15/15 VUs, 6781 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  28% ] 15/15 VUs  0m34.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m35.0s), 15/15 VUs, 7063 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  29% ] 15/15 VUs  0m35.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m36.0s), 15/15 VUs, 7329 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  30% ] 15/15 VUs  0m36.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m37.0s), 15/15 VUs, 7592 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  31% ] 15/15 VUs  0m37.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m38.0s), 15/15 VUs, 7845 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  32% ] 15/15 VUs  0m38.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m39.0s), 15/15 VUs, 8108 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  32% ] 15/15 VUs  0m39.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m40.0s), 15/15 VUs, 8362 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  33% ] 15/15 VUs  0m40.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m41.0s), 15/15 VUs, 8630 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  34% ] 15/15 VUs  0m41.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m42.0s), 15/15 VUs, 8914 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  35% ] 15/15 VUs  0m42.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m43.0s), 15/15 VUs, 9186 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  36% ] 15/15 VUs  0m43.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m44.0s), 15/15 VUs, 9454 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  37% ] 15/15 VUs  0m44.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m45.0s), 15/15 VUs, 9733 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  37% ] 15/15 VUs  0m45.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m46.0s), 15/15 VUs, 10016 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  38% ] 15/15 VUs  0m46.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m47.0s), 15/15 VUs, 10270 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  39% ] 15/15 VUs  0m47.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m48.0s), 15/15 VUs, 10536 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  40% ] 15/15 VUs  0m48.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m49.0s), 15/15 VUs, 10831 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  41% ] 15/15 VUs  0m49.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m50.0s), 15/15 VUs, 11109 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  42% ] 15/15 VUs  0m50.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m51.0s), 15/15 VUs, 11384 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  42% ] 15/15 VUs  0m51.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m52.0s), 15/15 VUs, 11656 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  43% ] 15/15 VUs  0m52.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m53.0s), 15/15 VUs, 11939 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  44% ] 15/15 VUs  0m53.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m54.0s), 15/15 VUs, 12222 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  45% ] 15/15 VUs  0m54.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m55.0s), 15/15 VUs, 12478 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  46% ] 15/15 VUs  0m55.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m56.0s), 15/15 VUs, 12739 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  47% ] 15/15 VUs  0m56.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m57.0s), 15/15 VUs, 13009 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  47% ] 15/15 VUs  0m57.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m58.0s), 15/15 VUs, 13284 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  48% ] 15/15 VUs  0m58.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m59.0s), 15/15 VUs, 13542 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  49% ] 15/15 VUs  0m59.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m00.0s), 15/15 VUs, 13823 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  50% ] 15/15 VUs  1m00.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m01.0s), 15/15 VUs, 14097 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  51% ] 15/15 VUs  1m01.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m02.0s), 15/15 VUs, 14379 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  52% ] 15/15 VUs  1m02.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m03.0s), 15/15 VUs, 14653 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  52% ] 15/15 VUs  1m03.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m04.0s), 15/15 VUs, 14932 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  53% ] 15/15 VUs  1m04.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m05.0s), 15/15 VUs, 15226 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  54% ] 15/15 VUs  1m05.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m06.0s), 15/15 VUs, 15514 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  55% ] 15/15 VUs  1m06.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m07.0s), 15/15 VUs, 15816 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  56% ] 15/15 VUs  1m07.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m08.0s), 15/15 VUs, 16120 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  57% ] 15/15 VUs  1m08.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m09.0s), 15/15 VUs, 16394 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  57% ] 15/15 VUs  1m09.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m10.0s), 15/15 VUs, 16677 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  58% ] 15/15 VUs  1m10.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m11.0s), 15/15 VUs, 16955 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  59% ] 15/15 VUs  1m11.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m12.0s), 15/15 VUs, 17234 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  60% ] 15/15 VUs  1m12.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m13.0s), 15/15 VUs, 17508 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  61% ] 15/15 VUs  1m13.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m14.0s), 15/15 VUs, 17801 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  62% ] 15/15 VUs  1m14.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m15.0s), 15/15 VUs, 18085 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  62% ] 15/15 VUs  1m15.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m16.0s), 15/15 VUs, 18363 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  63% ] 15/15 VUs  1m16.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m17.0s), 15/15 VUs, 18636 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  64% ] 15/15 VUs  1m17.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m18.0s), 15/15 VUs, 18924 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  65% ] 15/15 VUs  1m18.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m19.0s), 15/15 VUs, 19191 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  66% ] 15/15 VUs  1m19.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m20.0s), 15/15 VUs, 19463 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  67% ] 15/15 VUs  1m20.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m21.0s), 15/15 VUs, 19751 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  67% ] 15/15 VUs  1m21.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m22.0s), 15/15 VUs, 20031 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  68% ] 15/15 VUs  1m22.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m23.0s), 15/15 VUs, 20273 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  69% ] 15/15 VUs  1m23.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m24.0s), 15/15 VUs, 20551 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  70% ] 15/15 VUs  1m24.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m25.0s), 15/15 VUs, 20817 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  71% ] 15/15 VUs  1m25.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m26.0s), 15/15 VUs, 21077 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  72% ] 15/15 VUs  1m26.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m27.0s), 15/15 VUs, 21309 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  72% ] 15/15 VUs  1m27.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m28.0s), 15/15 VUs, 21548 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  73% ] 15/15 VUs  1m28.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m29.0s), 15/15 VUs, 21803 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  74% ] 15/15 VUs  1m29.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m30.0s), 15/15 VUs, 22068 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  75% ] 15/15 VUs  1m30.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m31.0s), 15/15 VUs, 22361 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  76% ] 15/15 VUs  1m31.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m32.0s), 15/15 VUs, 22641 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  77% ] 15/15 VUs  1m32.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m33.0s), 15/15 VUs, 22910 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  77% ] 15/15 VUs  1m33.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m34.0s), 15/15 VUs, 23172 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  78% ] 15/15 VUs  1m34.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m35.0s), 15/15 VUs, 23423 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  79% ] 15/15 VUs  1m35.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m36.0s), 15/15 VUs, 23688 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  80% ] 15/15 VUs  1m36.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m37.0s), 15/15 VUs, 23945 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  81% ] 15/15 VUs  1m37.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m38.0s), 15/15 VUs, 24197 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  82% ] 15/15 VUs  1m38.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m39.0s), 15/15 VUs, 24467 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  82% ] 15/15 VUs  1m39.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m40.0s), 15/15 VUs, 24746 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  83% ] 15/15 VUs  1m40.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m41.0s), 15/15 VUs, 25004 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  84% ] 15/15 VUs  1m41.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m42.0s), 15/15 VUs, 25271 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  85% ] 15/15 VUs  1m42.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m43.0s), 15/15 VUs, 25518 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  86% ] 15/15 VUs  1m43.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m44.0s), 15/15 VUs, 25769 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  87% ] 15/15 VUs  1m44.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m45.0s), 15/15 VUs, 26028 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  87% ] 15/15 VUs  1m45.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m46.0s), 15/15 VUs, 26268 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  88% ] 15/15 VUs  1m46.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m47.0s), 15/15 VUs, 26535 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  89% ] 15/15 VUs  1m47.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m48.0s), 15/15 VUs, 26783 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  90% ] 15/15 VUs  1m48.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m49.0s), 15/15 VUs, 27046 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  91% ] 15/15 VUs  1m49.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m50.0s), 15/15 VUs, 27282 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  92% ] 15/15 VUs  1m50.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m51.0s), 15/15 VUs, 27517 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  92% ] 15/15 VUs  1m51.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m52.0s), 15/15 VUs, 27767 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  93% ] 15/15 VUs  1m52.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m53.0s), 15/15 VUs, 28009 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  94% ] 15/15 VUs  1m53.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m54.0s), 15/15 VUs, 28263 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  95% ] 15/15 VUs  1m54.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m55.0s), 15/15 VUs, 28507 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  96% ] 15/15 VUs  1m55.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m56.0s), 15/15 VUs, 28756 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  97% ] 15/15 VUs  1m56.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m57.0s), 15/15 VUs, 29018 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  97% ] 15/15 VUs  1m57.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m58.0s), 15/15 VUs, 29299 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  98% ] 15/15 VUs  1m58.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (1m59.0s), 15/15 VUs, 29585 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [  99% ] 15/15 VUs  1m59.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (2m00.0s), 15/15 VUs, 29851 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes   [ 100% ] 15/15 VUs  2m00.0s/2m00.0s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  |      ✓ QUOTES_FSPIOP_POST_QUOTES_RESPONSE_IS_202
+load-k6-1  |      ✓ QUOTES_E2E_FSPIOP_POST_QUOTES_SUCCESS
+load-k6-1  | 
+load-k6-1  |      █ Post Quotes
+load-k6-1  | 
+load-k6-1  |      checks.........................: 100.00% ✓ 59736     ✗ 0    
+load-k6-1  |      data_received..................: 9.3 MB  78 kB/s
+load-k6-1  |      data_sent......................: 36 MB   299 kB/s
+load-k6-1  |      group_duration.................: avg=203.08µs min=134.29µs med=192.68µs max=10.84ms  p(90)=253.43µs p(95)=266.63µs
+load-k6-1  |      http_req_blocked...............: avg=3.8µs    min=1.49µs   med=3.58µs   max=366.98µs p(90)=4.58µs   p(95)=4.99µs  
+load-k6-1  |      http_req_connecting............: avg=50ns     min=0s       med=0s       max=175.98µs p(90)=0s       p(95)=0s      
+load-k6-1  |    ✓ http_req_duration..............: avg=2.77ms   min=931.16µs med=2.28ms   max=28.73ms  p(90)=4.92ms   p(95)=5.76ms  
+load-k6-1  |        { expected_response:true }...: avg=2.77ms   min=931.16µs med=2.28ms   max=28.73ms  p(90)=4.92ms   p(95)=5.76ms  
+load-k6-1  |    ✓ http_req_failed................: 0.00%   ✓ 0         ✗ 29868
+load-k6-1  |      http_req_receiving.............: avg=27.26µs  min=8.16µs   med=25.64µs  max=6.5ms    p(90)=33.54µs  p(95)=36.47µs 
+load-k6-1  |      http_req_sending...............: avg=20.45µs  min=8.64µs   med=20.02µs  max=362.29µs p(90)=25.13µs  p(95)=26.5µs  
+load-k6-1  |      http_req_tls_handshaking.......: avg=0s       min=0s       med=0s       max=0s       p(90)=0s       p(95)=0s      
+load-k6-1  |      http_req_waiting...............: avg=2.72ms   min=890.07µs med=2.23ms   max=28.68ms  p(90)=4.87ms   p(95)=5.7ms   
+load-k6-1  |      http_reqs......................: 29868   248.78617/s
+load-k6-1  |    ✓ iteration_duration.............: avg=52.73ms  min=12.37ms  med=50.15ms  max=154.1ms  p(90)=84.25ms  p(95)=95.29ms 
+load-k6-1  |      iterations.....................: 29868   248.78617/s
+load-k6-1  |      vus............................: 15      min=1       max=15 
+load-k6-1  |      vus_max........................: 15      min=15      max=15 
+load-k6-1  |      ws_connecting..................: avg=429.84µs min=180.36µs med=319.13µs max=16.94ms  p(90)=754.04µs p(95)=1.02ms  
+load-k6-1  |      ws_msgs_received...............: 29868   248.78617/s
+load-k6-1  |      ws_msgs_sent...................: 29868   248.78617/s
+load-k6-1  |      ws_session_duration............: avg=52.45ms  min=12.15ms  med=49.88ms  max=153.83ms p(90)=83.96ms  p(95)=94.99ms 
+load-k6-1  |      ws_sessions....................: 29868   248.78617/s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (2m00.1s), 00/15 VUs, 29868 complete and 0 interrupted iterations
+load-k6-1  | fspiopQuotes ✓ [ 100% ] 00/15 VUs  2m0s
+load-k6-1  | 
+load-k6-1 exited with code 0

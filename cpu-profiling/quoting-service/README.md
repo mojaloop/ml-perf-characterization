@@ -127,9 +127,6 @@ are not cached.
 
 While `getParticipantEndpoint` has no reason specified. Adding endpoint caching may be a optimization.
 
-Strangely, the `handleQuoteRequest` function uses the http admin endpoint to get participants
-when it could potentially just query the database direct. **give history lesson on tight couping between quoting service and central ledger**
-
 Outside of profiling another potential issue raised by @vijayg10, the passing of the hapi request object to an async function that we don't
 handle the promises such as below, may be causing side effects and crashing that preliminary testing of high virtual users
 sending quote requests have shown.
@@ -139,22 +136,3 @@ sending quote requests have shown.
     Logger.isErrorEnabled && Logger.error(`ERROR - handleQuoteRequest: ${LibUtil.getStackOrInspect(err)}`)
   })
 ```
-
-## Status
-
-Performance testing was done with 15.1.1 as opposed to 15.1.0, since metric improvements were added.
-No other impacting changes were made.
-
-| Quoting service version |  Date  | Status|
-|---|---|---|
-|  | 2023-10-04 | Baseline with a scale of 1 ops/s
-|  | 2023-08-24 | Quoting Service logger fixes ops/s
-
-### Isolated Performance Testing
-
-- Follow steps in Local Setup above
-- Run `env K6_SCRIPT_CONFIG_FILE_NAME=fspiopQuotes.json docker compose --project-name load -f docker-compose-load.yml up`
-- Run `docker compose --project-name monitoring --profile quotes-test -f docker-compose-monitoring.yml up -d`
-- Observe grafana dashboards at http://localhost:9999/
-
-### Isolated Performance Testing Observations
