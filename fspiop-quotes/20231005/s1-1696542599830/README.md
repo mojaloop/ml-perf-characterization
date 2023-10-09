@@ -1,13 +1,13 @@
-# Scenario quoting-service-s2: s2, scale 1 baseline + 15vu
+# Scenario s1: FSPIOP Quotes POST /quotes - scale:1, k6vu:1
 
 Params:
 ```conf
-var-testid=1696544303292
-params=&var-testid=1696544303292&from=1696544300803&to=1696544546225
+var-testid=1696542599830
+params=&var-testid=1696542599830&from=1696542597078&to=1696542842232
 
 Scale 1
 2 dfsp Pool
-15 VUs
+1 VUs
 QUOTE_SIMPLE_ROUTING_MODE=false
 UV_THREADPOOL_SIZE=24
 QUOTING_SERVICE_VERSION=v15.2.1
@@ -37,8 +37,8 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile quote
       },
       "startVUs": 1,
       "stages": [
-        { "duration": "30s", "target": 15 },
-        { "duration": "5m", "target": 15 }
+        { "duration": "30s", "target": 1 },
+        { "duration": "5m", "target": 1 }
       ]
     }
   },
@@ -52,9 +52,12 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile quote
 
 ## Observations
 
-- Max ops/s of 113. Iteration duration increased to an average of 115ms.
+- Max ops/s of 73. Iteration duration average of 14.1ms.
 - Ample CPU and memory available.
-- Event loop lag still <4ms.
+- Cache is working properly
+- Event loop lag <4ms.
+- Database size on fresh start is 3.20 MB. After a run with 8476 quotes created the end size is 31.5MB.
+  Around 3.3 KB of database space used by creating one quote in persistent mode. This seems potentially quite large.
 
 ## Recommendations
 

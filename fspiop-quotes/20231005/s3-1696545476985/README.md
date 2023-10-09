@@ -1,4 +1,4 @@
-# Scenario quoting-service-s3: s3, scale 1 baseline + 30vu
+# Scenario s3: FSPIOP Quotes POST /quotes - scale:1, k6vu:30
 
 Params:
 ```conf

@@ -1,14 +1,14 @@
-# Scenario quoting-service-s8: s8, scale 2 + logger fixes + 15vu
+# Scenario quoting-service-s10: s10, scale 1 + logger fixes + passthrough mode + 15vu
 
 Params:
 ```conf
-var-testid=1696550698826
-params=&var-testid=1696550698826&from=1696550696158&to=1696550942106
+var-testid=1696638895921
+params=&var-testid=1696638895921&from=1696638893040&to=1696639140177
 
-Scale 2
+Scale 3
 2 dfsp Pool
-15 VUS
-QUOTE_SIMPLE_ROUTING_MODE=false
+15 VUs
+QUOTE_SIMPLE_ROUTING_MODE=true
 UV_THREADPOOL_SIZE=24
 QUOTING_SERVICE_VERSION=v15.2.2-snapshot.0
 ```
@@ -52,9 +52,9 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile quote
 
 ## Observations
 
-- Max ops/s of 219, scaled very well with respect to scale 1 15 VU max ops/s 113.
-- Lowered iteration duration to an average of 63.3 with respect to scale 1 15 VU avg of 103ms.
+- Max ops/s of 192.
+- Iteration duration to an average of 79.4.
 
 ## Recommendations
 
--
+- Try test case of 30 VUs, to see if it still results in test failure.

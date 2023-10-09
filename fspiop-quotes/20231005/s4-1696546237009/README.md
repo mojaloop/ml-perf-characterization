@@ -1,4 +1,4 @@
-# Scenario quoting-service-s4: s4, scale 1 + logger fixes + 1vu
+# Scenario s4: FSPIOP Quotes POST /quotes + Logger Fixes - scale:1, k6vu:1
 
 Params:
 ```conf

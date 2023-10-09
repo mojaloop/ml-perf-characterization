@@ -1,13 +1,13 @@
-# Scenario quoting-service-s7: s7, scale 2 + logger fixes + 30vu
+# Scenario s8: FSPIOP Quotes POST /quotes + Logger Fixes - scale:2, k6vu:15
 
 Params:
 ```conf
-var-testid=1696550070634
-params=&var-testid=1696550070634&from=1696550068026&to=1696550316794
+var-testid=1696550698826
+params=&var-testid=1696550698826&from=1696550696158&to=1696550942106
 
 Scale 2
 2 dfsp Pool
-30 VUs
+15 VUS
 QUOTE_SIMPLE_ROUTING_MODE=false
 UV_THREADPOOL_SIZE=24
 QUOTING_SERVICE_VERSION=v15.2.2-snapshot.0
@@ -37,8 +37,8 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile quote
       },
       "startVUs": 1,
       "stages": [
-        { "duration": "30s", "target": 30 },
-        { "duration": "5m", "target": 30 }
+        { "duration": "30s", "target": 15 },
+        { "duration": "5m", "target": 15 }
       ]
     }
   },
@@ -52,8 +52,8 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile quote
 
 ## Observations
 
-- Test failure. Exceeded web socket timeout of 5ms and test thresholds.
-- Adding replica of quoting service did not alleviate issue. Futher investigation needed.
+- Max ops/s of 219, scaled very well with respect to scale 1 15 VU max ops/s 113.
+- Lowered iteration duration to an average of 63.3 with respect to scale 1 15 VU avg of 103ms.
 
 ## Recommendations
 
