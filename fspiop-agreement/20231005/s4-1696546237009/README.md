@@ -1,13 +1,13 @@
-# Scenario s5: FSPIOP Quotes POST /quotes + Logger Fixes - scale:1, k6vu:15
+# Scenario s4: FSPIOP Agreement POST /quotes + Logger Fixes - scale:1, k6vu:1
 
 Params:
 ```conf
-var-testid=1696546655687
-params=&var-testid=1696546655687&from=1696546652544&to=1696546899623
+var-testid=1696546237009
+params=&var-testid=1696546237009&from=1696546234120&to=1696546480504
 
 Scale 1
 2 dfsp Pool
-15 VUs
+1 VUs
 QUOTE_SIMPLE_ROUTING_MODE=false
 UV_THREADPOOL_SIZE=24
 QUOTING_SERVICE_VERSION=v15.2.2-snapshot.0
@@ -37,8 +37,8 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile quote
       },
       "startVUs": 1,
       "stages": [
-        { "duration": "30s", "target": 15 },
-        { "duration": "5m", "target": 15 }
+        { "duration": "30s", "target": 1 },
+        { "duration": "5m", "target": 1 }
       ]
     }
   },
@@ -52,8 +52,8 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile quote
 
 ## Observations
 
-- Max ops/s of 127, up from baseline with matching config of 113 ops/s.
-- Lowered Iteration duration increased to an average of 103ms from 115ms from baseline with matching config.
+- Max ops/s of 80, up from baseline with matching config of 73 ops/s.
+- Lowered Iteration duration increased to an average of 12.7ms.
 
 ## Recommendations
 

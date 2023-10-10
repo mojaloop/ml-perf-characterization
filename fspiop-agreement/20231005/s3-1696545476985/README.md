@@ -1,16 +1,16 @@
-# Scenario s6: FSPIOP Quotes POST /quotes + Logger Fixes - scale:1, k6vu:30
+# Scenario s3: FSPIOP Agreement POST /quotes - scale:1, k6vu:30
 
 Params:
 ```conf
-var-testid=1696547005920
-params=&var-testid=1696547005920&from=1696547003252&to=1696547252723
+var-testid=1696545476985
+params=&var-testid=1696545476985&from=1696545474156&to=1696545723473
 
 Scale 1
 2 dfsp Pool
 30 VUs
 QUOTE_SIMPLE_ROUTING_MODE=false
 UV_THREADPOOL_SIZE=24
-QUOTING_SERVICE_VERSION=v15.2.2-snapshot.0
+QUOTING_SERVICE_VERSION=v15.2.1
 ```
 
 ```
@@ -53,6 +53,7 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile quote
 ## Observations
 
 - Test failure. Exceeded web socket timeout of 5ms and test thresholds.
+- Futher investigation needed. Preliminary assumption is that quoting service can't handle so many requests.
 
 ## Recommendations
 

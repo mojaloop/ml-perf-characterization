@@ -1,4 +1,4 @@
-# Scenario s8: FSPIOP Quotes POST /quotes + Logger Fixes - scale:2, k6vu:15
+# Scenario s8: FSPIOP Agreement POST /quotes + Logger Fixes - scale:2, k6vu:15
 
 Params:
 ```conf

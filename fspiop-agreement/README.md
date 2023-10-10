@@ -1,10 +1,10 @@
-# FSPIOP Quotes Performance Characterization
+# FSPIOP Agreement Performance Characterization
 
 ## Status
 
 | Mojaloop Version |  Date  | Status  | Next  | Notes  |
 |---|---|---|---|---|
-| 15.1.0* | 2023-10-08 | **The `FSPIOP-Quotes` has achieved a maximum observed End-to-end throughput of around `274 Op/s` @ `51.2 ms` duration based on [Test-Scenario](#scenarios) `#9` results, with the following configuration:**<br> 1. Machine: AWS m6i.4xlarge, 16 CPU 3.5 GHz, 64gb RAM, iO2 SSD 5k-25k iOPS <br> 2. DSPs: 2 <br> 3. Container Scaling: <br> &nbsp;&nbsp;&nbsp;&nbsp;- 3x for Quoting Service <br><br>**An overview of the configuration and code changes made over all [Test-Scenario](#scenarios) are summarized as follows:** <br> 1. Reduced logging to debug and fixed log level checking**Caching** on **Central-Ledger** (ref: [Test-Scenarios](#scenarios) **#1**,**#4**) ~ `7 Op/s` 🔼 <br> | See [#follow-up-stores](#follow-up-stories) |   |
+| 15.1.0* | 2023-10-08 | **The `FSPIOP-Agreement` has achieved a maximum observed End-to-end throughput of around `274 Op/s` @ `51.2 ms` duration based on [Test-Scenario](#scenarios) `#9` results, with the following configuration:**<br> 1. Machine: AWS m6i.4xlarge, 16 CPU 3.5 GHz, 64gb RAM, iO2 SSD 5k-25k iOPS <br> 2. DSPs: 2 <br> 3. Container Scaling: <br> &nbsp;&nbsp;&nbsp;&nbsp;- 3x for Quoting Service <br><br>**An overview of the configuration and code changes made over all [Test-Scenario](#scenarios) are summarized as follows:** <br> 1. Reduced logging to debug and fixed log level checking**Caching** on **Central-Ledger** (ref: [Test-Scenarios](#scenarios) **#1**,**#4**) ~ `7 Op/s` 🔼 <br> | See [#follow-up-stores](#follow-up-stories) |   |
 
 * Test version is based on ML 15.1.0 but metric additions and initial code changes
   were needed before performance testing could be started.
@@ -16,7 +16,7 @@
 
 Test Case | Description | K6 Test Case | Notes
 ---------|---------|----------|---------
- 1 | FSPIOP Quotes End-to-end | Quotes | FSPIOP POST /quotes request executed from K6 |
+ 1 | FSPIOP Agreement End-to-end | Quotes | FSPIOP POST /quotes request executed from K6 |
 
 ## Test Scenarios
 
@@ -86,16 +86,16 @@ Test Case | Description | K6 Test Case | Notes
 
 Scenario | Description | Test-Case | Repeatable (Y/N) | K6 Test Scenario / Config | Notes
 ---------|----------|---------|---------|---------|---------
- 1 | FSPIOP Quotes POST /quotes - scale:1, k6vu:1 | 1 | Y | fspiopQuotes | .
- 2 | FSPIOP Quotes POST /quotes - scale:1, k6vu:15 | 1 | Y | fspiopQuotes | .
- 3 | FSPIOP Quotes POST /quotes - scale:1, k6vu:30 | 1 | Y | fspiopQuotes | .
- 4 | FSPIOP Quotes POST /quotes + Logger Fixes - scale:1, k6vu:1 | 1 | Y | fspiopQuotes | .
- 5 | FSPIOP Quotes POST /quotes + Logger Fixes - scale:1, k6vu:15 | 1 | Y | fspiopQuotes | .
- 6 | FSPIOP Quotes POST /quotes + Logger Fixes - scale:1, k6vu:30 | 1 | Y | fspiopQuotes | .
- 7 | FSPIOP Quotes POST /quotes + Logger Fixes - scale:2, k6vu:30 | 1 | Y | fspiopQuotes | .
- 8 | FSPIOP Quotes POST /quotes + Logger Fixes - scale:2, k6vu:15 | 1 | Y | fspiopQuotes | .
- 9 | FSPIOP Quotes POST /quotes + Logger Fixes - scale:3, k6vu:15 | 1 | Y | fspiopQuotes | .
- 10 | FSPIOP Quotes POST /quotes + Logger Fixes + Simple Mode - scale:1, k6vu:15 | 1 | Y | fspiopQuotes | .
+ 1 | FSPIOP Agreement POST /quotes - scale:1, k6vu:1 | 1 | Y | fspiopQuotes | .
+ 2 | FSPIOP Agreement POST /quotes - scale:1, k6vu:15 | 1 | Y | fspiopQuotes | .
+ 3 | FSPIOP Agreement POST /quotes - scale:1, k6vu:30 | 1 | Y | fspiopQuotes | .
+ 4 | FSPIOP Agreement POST /quotes + Logger Fixes - scale:1, k6vu:1 | 1 | Y | fspiopQuotes | .
+ 5 | FSPIOP Agreement POST /quotes + Logger Fixes - scale:1, k6vu:15 | 1 | Y | fspiopQuotes | .
+ 6 | FSPIOP Agreement POST /quotes + Logger Fixes - scale:1, k6vu:30 | 1 | Y | fspiopQuotes | .
+ 7 | FSPIOP Agreement POST /quotes + Logger Fixes - scale:2, k6vu:30 | 1 | Y | fspiopQuotes | .
+ 8 | FSPIOP Agreement POST /quotes + Logger Fixes - scale:2, k6vu:15 | 1 | Y | fspiopQuotes | .
+ 9 | FSPIOP Agreement POST /quotes + Logger Fixes - scale:3, k6vu:15 | 1 | Y | fspiopQuotes | .
+ 10 | FSPIOP Agreement POST /quotes + Logger Fixes + Simple Mode - scale:1, k6vu:15 | 1 | Y | fspiopQuotes | .
 
 <!--
  1 | ... | # | Y/N | . | .
@@ -115,9 +115,9 @@ Refer to [../README.md#4-tools-used](../README.md#4-tools-used) for more informa
 
 Initially setup the ml-core-test-harness to support the [Test Scenarios](#test-scenarios) described above. This is done by setting removing all externalized dependencies by simulating them with a simulator (also known as the "Callback Handler Service").
 
-Refer to the following diagram showing the FSPIOP-Quotes characterization interaction diagram:
+Refer to the following diagram showing the FSPIOP-Agreement characterization interaction diagram:
 
-![fspiop-quotes-characterization-end-to-end](../assets/images/fspiop-quotes-characterization-end-to-end.drawio.png)
+![fspiop-agreement-characterization-end-to-end](../assets/images/fspiop-agreement-characterization-end-to-end.drawio.png)
 
 #### 2. Capturing End-to-end Metrics
 

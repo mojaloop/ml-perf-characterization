@@ -1,13 +1,13 @@
-# Scenario s9: FSPIOP Quotes POST /quotes + Logger Fixes - scale:3, k6vu:15
+# Scenario s6: FSPIOP Agreement POST /quotes + Logger Fixes - scale:1, k6vu:30
 
 Params:
 ```conf
-var-testid=1696552439080
-params=&var-testid=1696552439080&from=1696552436273&to=1696552682900
+var-testid=1696547005920
+params=&var-testid=1696547005920&from=1696547003252&to=1696547252723
 
-Scale 3
+Scale 1
 2 dfsp Pool
-15 VUs
+30 VUs
 QUOTE_SIMPLE_ROUTING_MODE=false
 UV_THREADPOOL_SIZE=24
 QUOTING_SERVICE_VERSION=v15.2.2-snapshot.0
@@ -37,8 +37,8 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile quote
       },
       "startVUs": 1,
       "stages": [
-        { "duration": "30s", "target": 15 },
-        { "duration": "5m", "target": 15 }
+        { "duration": "30s", "target": 30 },
+        { "duration": "5m", "target": 30 }
       ]
     }
   },
@@ -52,10 +52,8 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile quote
 
 ## Observations
 
-- Max ops/s of 274, scaled fine with respect to scale 2 15 VU max ops/s 219.
-- Lowered iteration duration to an average of 51.2 with respect to scale 2 15 VU avg of 63.3ms.
-
+- Test failure. Exceeded web socket timeout of 5ms and test thresholds.
 
 ## Recommendations
 
-- Try test case of 30 VUs, to see if it still results in test failure.
+-
