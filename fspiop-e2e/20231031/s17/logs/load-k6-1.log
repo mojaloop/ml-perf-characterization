@@ -1,0 +1,1044 @@
+Attaching to load-k6-1
+load-k6-1  | 
+load-k6-1  |           /\      |‾‾| /‾‾/   /‾‾/   
+load-k6-1  |      /\  /  \     |  |/  /   /  /    
+load-k6-1  |     /  \/    \    |     (   /   ‾‾\  
+load-k6-1  |    /          \   |  |\  \ |  (‾)  | 
+load-k6-1  |   / __________ \  |__| \__\ \_____/ .io
+load-k6-1  | 
+load-k6-1  |   execution: local
+load-k6-1  |      script: /scripts/index.js
+load-k6-1  |      output: Prometheus remote write (http://prometheus:9090/api/v1/write)
+load-k6-1  | 
+load-k6-1  |   scenarios: (100.00%) 1 scenario, 70 max VUs, 6m0s max duration (incl. graceful stop):
+load-k6-1  |            * fspiopE2E: Up to 70 looping VUs for 5m30s over 2 stages (gracefulRampDown: 30s, exec: fspiopE2EScenarios, gracefulStop: 30s)
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (0m01.0s), 03/70 VUs, 0 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   0% ] 03/70 VUs  0m01.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m02.0s), 05/70 VUs, 0 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   1% ] 05/70 VUs  0m02.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m03.0s), 07/70 VUs, 0 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   1% ] 07/70 VUs  0m03.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m04.0s), 10/70 VUs, 5 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   1% ] 10/70 VUs  0m04.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m05.0s), 12/70 VUs, 20 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   2% ] 12/70 VUs  0m05.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m06.0s), 14/70 VUs, 74 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   2% ] 14/70 VUs  0m06.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m07.0s), 17/70 VUs, 152 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   2% ] 17/70 VUs  0m07.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m08.0s), 19/70 VUs, 245 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   2% ] 19/70 VUs  0m08.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m09.0s), 21/70 VUs, 338 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   3% ] 21/70 VUs  0m09.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m10.0s), 23/70 VUs, 447 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   3% ] 23/70 VUs  0m10.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m11.0s), 26/70 VUs, 558 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   3% ] 26/70 VUs  0m11.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m12.0s), 28/70 VUs, 672 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   4% ] 28/70 VUs  0m12.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m13.0s), 30/70 VUs, 793 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   4% ] 30/70 VUs  0m13.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m14.0s), 33/70 VUs, 920 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   4% ] 33/70 VUs  0m14.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m15.0s), 35/70 VUs, 1048 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   5% ] 35/70 VUs  0m15.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m16.0s), 37/70 VUs, 1176 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   5% ] 37/70 VUs  0m16.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m17.0s), 40/70 VUs, 1322 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   5% ] 40/70 VUs  0m17.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m18.0s), 42/70 VUs, 1468 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   5% ] 42/70 VUs  0m18.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m19.0s), 44/70 VUs, 1621 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   6% ] 44/70 VUs  0m19.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m20.0s), 46/70 VUs, 1780 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   6% ] 46/70 VUs  0m20.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m21.0s), 49/70 VUs, 1944 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   6% ] 49/70 VUs  0m21.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m22.0s), 51/70 VUs, 2117 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   7% ] 51/70 VUs  0m22.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m23.0s), 53/70 VUs, 2288 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   7% ] 53/70 VUs  0m23.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m24.0s), 56/70 VUs, 2473 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   7% ] 56/70 VUs  0m24.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m25.0s), 58/70 VUs, 2634 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   8% ] 58/70 VUs  0m25.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m26.0s), 60/70 VUs, 2812 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   8% ] 60/70 VUs  0m26.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m27.0s), 63/70 VUs, 3015 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   8% ] 63/70 VUs  0m27.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m28.0s), 65/70 VUs, 3209 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   8% ] 65/70 VUs  0m28.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m29.0s), 67/70 VUs, 3394 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   9% ] 67/70 VUs  0m29.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m30.0s), 69/70 VUs, 3576 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   9% ] 69/70 VUs  0m30.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m31.0s), 70/70 VUs, 3779 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [   9% ] 70/70 VUs  0m31.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m32.0s), 70/70 VUs, 3978 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  10% ] 70/70 VUs  0m32.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m33.0s), 70/70 VUs, 4177 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  10% ] 70/70 VUs  0m33.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m34.0s), 70/70 VUs, 4388 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  10% ] 70/70 VUs  0m34.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m35.0s), 70/70 VUs, 4589 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  11% ] 70/70 VUs  0m35.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m36.0s), 70/70 VUs, 4783 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  11% ] 70/70 VUs  0m36.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m37.0s), 70/70 VUs, 4984 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  11% ] 70/70 VUs  0m37.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m38.0s), 70/70 VUs, 5203 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  12% ] 70/70 VUs  0m38.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m39.0s), 70/70 VUs, 5402 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  12% ] 70/70 VUs  0m39.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m40.0s), 70/70 VUs, 5596 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  12% ] 70/70 VUs  0m40.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m41.0s), 70/70 VUs, 5792 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  12% ] 70/70 VUs  0m41.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m42.0s), 70/70 VUs, 5998 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  13% ] 70/70 VUs  0m42.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m43.0s), 70/70 VUs, 6218 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  13% ] 70/70 VUs  0m43.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m44.0s), 70/70 VUs, 6421 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  13% ] 70/70 VUs  0m44.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m45.0s), 70/70 VUs, 6626 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  14% ] 70/70 VUs  0m45.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m46.0s), 70/70 VUs, 6838 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  14% ] 70/70 VUs  0m46.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m47.0s), 70/70 VUs, 7073 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  14% ] 70/70 VUs  0m47.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m48.0s), 70/70 VUs, 7269 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  15% ] 70/70 VUs  0m48.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m49.0s), 70/70 VUs, 7505 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  15% ] 70/70 VUs  0m49.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m50.0s), 70/70 VUs, 7727 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  15% ] 70/70 VUs  0m50.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m51.0s), 70/70 VUs, 7942 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  15% ] 70/70 VUs  0m51.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m52.0s), 70/70 VUs, 8164 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  16% ] 70/70 VUs  0m52.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m53.0s), 70/70 VUs, 8350 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  16% ] 70/70 VUs  0m53.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m54.0s), 70/70 VUs, 8582 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  16% ] 70/70 VUs  0m54.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m55.0s), 70/70 VUs, 8788 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  17% ] 70/70 VUs  0m55.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m56.0s), 70/70 VUs, 9003 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  17% ] 70/70 VUs  0m56.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m57.0s), 70/70 VUs, 9220 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  17% ] 70/70 VUs  0m57.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m58.0s), 70/70 VUs, 9433 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  18% ] 70/70 VUs  0m58.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (0m59.0s), 70/70 VUs, 9670 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  18% ] 70/70 VUs  0m59.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m00.0s), 70/70 VUs, 9889 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  18% ] 70/70 VUs  1m00.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m01.0s), 70/70 VUs, 10096 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  18% ] 70/70 VUs  1m01.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m02.0s), 70/70 VUs, 10328 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  19% ] 70/70 VUs  1m02.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m03.0s), 70/70 VUs, 10534 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  19% ] 70/70 VUs  1m03.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m04.0s), 70/70 VUs, 10761 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  19% ] 70/70 VUs  1m04.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m05.0s), 70/70 VUs, 10958 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  20% ] 70/70 VUs  1m05.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m06.0s), 70/70 VUs, 11172 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  20% ] 70/70 VUs  1m06.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m07.0s), 70/70 VUs, 11404 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  20% ] 70/70 VUs  1m07.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m08.0s), 70/70 VUs, 11629 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  21% ] 70/70 VUs  1m08.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m09.0s), 70/70 VUs, 11843 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  21% ] 70/70 VUs  1m09.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m10.0s), 70/70 VUs, 12061 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  21% ] 70/70 VUs  1m10.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m11.0s), 70/70 VUs, 12264 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  22% ] 70/70 VUs  1m11.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m12.0s), 70/70 VUs, 12476 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  22% ] 70/70 VUs  1m12.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m13.0s), 70/70 VUs, 12682 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  22% ] 70/70 VUs  1m13.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m14.0s), 70/70 VUs, 12911 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  22% ] 70/70 VUs  1m14.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m15.0s), 70/70 VUs, 13140 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  23% ] 70/70 VUs  1m15.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m16.0s), 70/70 VUs, 13347 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  23% ] 70/70 VUs  1m16.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m17.0s), 70/70 VUs, 13573 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  23% ] 70/70 VUs  1m17.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m18.0s), 70/70 VUs, 13794 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  24% ] 70/70 VUs  1m18.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m19.0s), 70/70 VUs, 14006 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  24% ] 70/70 VUs  1m19.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m20.0s), 70/70 VUs, 14239 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  24% ] 70/70 VUs  1m20.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m21.0s), 70/70 VUs, 14456 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  25% ] 70/70 VUs  1m21.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m22.0s), 70/70 VUs, 14661 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  25% ] 70/70 VUs  1m22.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m23.0s), 70/70 VUs, 14894 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  25% ] 70/70 VUs  1m23.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m24.0s), 70/70 VUs, 15112 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  25% ] 70/70 VUs  1m24.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m25.0s), 70/70 VUs, 15346 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  26% ] 70/70 VUs  1m25.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m26.0s), 70/70 VUs, 15557 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  26% ] 70/70 VUs  1m26.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m27.0s), 70/70 VUs, 15770 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  26% ] 70/70 VUs  1m27.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m28.0s), 70/70 VUs, 15995 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  27% ] 70/70 VUs  1m28.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m29.0s), 70/70 VUs, 16220 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  27% ] 70/70 VUs  1m29.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m30.0s), 70/70 VUs, 16444 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  27% ] 70/70 VUs  1m30.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m31.0s), 70/70 VUs, 16650 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  28% ] 70/70 VUs  1m31.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m32.0s), 70/70 VUs, 16875 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  28% ] 70/70 VUs  1m32.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m33.0s), 70/70 VUs, 17104 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  28% ] 70/70 VUs  1m33.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m34.0s), 70/70 VUs, 17313 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  28% ] 70/70 VUs  1m34.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m35.0s), 70/70 VUs, 17540 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  29% ] 70/70 VUs  1m35.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m36.0s), 70/70 VUs, 17730 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  29% ] 70/70 VUs  1m36.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m37.0s), 70/70 VUs, 17960 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  29% ] 70/70 VUs  1m37.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m38.0s), 70/70 VUs, 18187 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  30% ] 70/70 VUs  1m38.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m39.0s), 70/70 VUs, 18404 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  30% ] 70/70 VUs  1m39.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m40.0s), 70/70 VUs, 18608 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  30% ] 70/70 VUs  1m40.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m41.0s), 70/70 VUs, 18824 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  31% ] 70/70 VUs  1m41.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m42.0s), 70/70 VUs, 19044 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  31% ] 70/70 VUs  1m42.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m43.0s), 70/70 VUs, 19272 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  31% ] 70/70 VUs  1m43.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m44.0s), 70/70 VUs, 19496 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  32% ] 70/70 VUs  1m44.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m45.0s), 70/70 VUs, 19720 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  32% ] 70/70 VUs  1m45.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m46.0s), 70/70 VUs, 19931 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  32% ] 70/70 VUs  1m46.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m47.0s), 70/70 VUs, 20157 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  32% ] 70/70 VUs  1m47.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m48.0s), 70/70 VUs, 20386 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  33% ] 70/70 VUs  1m48.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m49.0s), 70/70 VUs, 20604 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  33% ] 70/70 VUs  1m49.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m50.0s), 70/70 VUs, 20841 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  33% ] 70/70 VUs  1m50.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m51.0s), 70/70 VUs, 21019 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  34% ] 70/70 VUs  1m51.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m52.0s), 70/70 VUs, 21243 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  34% ] 70/70 VUs  1m52.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m53.0s), 70/70 VUs, 21469 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  34% ] 70/70 VUs  1m53.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m54.0s), 70/70 VUs, 21709 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  35% ] 70/70 VUs  1m54.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m55.0s), 70/70 VUs, 21931 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  35% ] 70/70 VUs  1m55.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m56.0s), 70/70 VUs, 22134 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  35% ] 70/70 VUs  1m56.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m57.0s), 70/70 VUs, 22335 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  35% ] 70/70 VUs  1m57.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m58.0s), 70/70 VUs, 22563 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  36% ] 70/70 VUs  1m58.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (1m59.0s), 70/70 VUs, 22788 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  36% ] 70/70 VUs  1m59.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m00.0s), 70/70 VUs, 23017 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  36% ] 70/70 VUs  2m00.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m01.0s), 70/70 VUs, 23254 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  37% ] 70/70 VUs  2m01.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m02.0s), 70/70 VUs, 23472 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  37% ] 70/70 VUs  2m02.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m03.0s), 70/70 VUs, 23672 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  37% ] 70/70 VUs  2m03.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m04.0s), 70/70 VUs, 23900 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  38% ] 70/70 VUs  2m04.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m05.0s), 70/70 VUs, 24128 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  38% ] 70/70 VUs  2m05.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m06.0s), 70/70 VUs, 24322 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  38% ] 70/70 VUs  2m06.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m07.0s), 70/70 VUs, 24549 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  38% ] 70/70 VUs  2m07.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m08.0s), 70/70 VUs, 24780 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  39% ] 70/70 VUs  2m08.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m09.0s), 70/70 VUs, 24999 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  39% ] 70/70 VUs  2m09.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m10.0s), 70/70 VUs, 25220 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  39% ] 70/70 VUs  2m10.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m11.0s), 70/70 VUs, 25443 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  40% ] 70/70 VUs  2m11.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m12.0s), 70/70 VUs, 25669 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  40% ] 70/70 VUs  2m12.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m13.0s), 70/70 VUs, 25903 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  40% ] 70/70 VUs  2m13.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m14.0s), 70/70 VUs, 26141 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  41% ] 70/70 VUs  2m14.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m15.0s), 70/70 VUs, 26349 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  41% ] 70/70 VUs  2m15.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m16.0s), 70/70 VUs, 26567 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  41% ] 70/70 VUs  2m16.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m17.0s), 70/70 VUs, 26782 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  42% ] 70/70 VUs  2m17.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m18.0s), 70/70 VUs, 27010 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  42% ] 70/70 VUs  2m18.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m19.0s), 70/70 VUs, 27234 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  42% ] 70/70 VUs  2m19.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m20.0s), 70/70 VUs, 27476 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  42% ] 70/70 VUs  2m20.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m21.0s), 70/70 VUs, 27679 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  43% ] 70/70 VUs  2m21.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m22.0s), 70/70 VUs, 27908 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  43% ] 70/70 VUs  2m22.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m23.0s), 70/70 VUs, 28123 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  43% ] 70/70 VUs  2m23.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m24.0s), 70/70 VUs, 28359 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  44% ] 70/70 VUs  2m24.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m25.0s), 70/70 VUs, 28575 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  44% ] 70/70 VUs  2m25.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m26.0s), 70/70 VUs, 28786 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  44% ] 70/70 VUs  2m26.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m27.0s), 70/70 VUs, 28982 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  45% ] 70/70 VUs  2m27.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m28.0s), 70/70 VUs, 29175 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  45% ] 70/70 VUs  2m28.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m29.0s), 70/70 VUs, 29400 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  45% ] 70/70 VUs  2m29.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m30.0s), 70/70 VUs, 29628 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  45% ] 70/70 VUs  2m30.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m31.0s), 70/70 VUs, 29839 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  46% ] 70/70 VUs  2m31.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m32.0s), 70/70 VUs, 30066 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  46% ] 70/70 VUs  2m32.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m33.0s), 70/70 VUs, 30309 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  46% ] 70/70 VUs  2m33.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m34.0s), 70/70 VUs, 30534 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  47% ] 70/70 VUs  2m34.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m35.0s), 70/70 VUs, 30747 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  47% ] 70/70 VUs  2m35.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m36.0s), 70/70 VUs, 30932 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  47% ] 70/70 VUs  2m36.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m37.0s), 70/70 VUs, 31162 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  48% ] 70/70 VUs  2m37.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m38.0s), 70/70 VUs, 31375 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  48% ] 70/70 VUs  2m38.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m39.0s), 70/70 VUs, 31589 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  48% ] 70/70 VUs  2m39.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m40.0s), 70/70 VUs, 31816 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  48% ] 70/70 VUs  2m40.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m41.0s), 70/70 VUs, 32031 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  49% ] 70/70 VUs  2m41.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m42.0s), 70/70 VUs, 32246 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  49% ] 70/70 VUs  2m42.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m43.0s), 70/70 VUs, 32470 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  49% ] 70/70 VUs  2m43.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m44.0s), 70/70 VUs, 32689 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  50% ] 70/70 VUs  2m44.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m45.0s), 70/70 VUs, 32903 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  50% ] 70/70 VUs  2m45.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m46.0s), 70/70 VUs, 33110 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  50% ] 70/70 VUs  2m46.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m47.0s), 70/70 VUs, 33337 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  51% ] 70/70 VUs  2m47.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m48.0s), 70/70 VUs, 33564 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  51% ] 70/70 VUs  2m48.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m49.0s), 70/70 VUs, 33795 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  51% ] 70/70 VUs  2m49.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m50.0s), 70/70 VUs, 34017 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  52% ] 70/70 VUs  2m50.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m51.0s), 70/70 VUs, 34223 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  52% ] 70/70 VUs  2m51.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m52.0s), 70/70 VUs, 34407 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  52% ] 70/70 VUs  2m52.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m53.0s), 70/70 VUs, 34638 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  52% ] 70/70 VUs  2m53.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m54.0s), 70/70 VUs, 34848 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  53% ] 70/70 VUs  2m54.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m55.0s), 70/70 VUs, 35082 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  53% ] 70/70 VUs  2m55.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m56.0s), 70/70 VUs, 35293 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  53% ] 70/70 VUs  2m56.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m57.0s), 70/70 VUs, 35517 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  54% ] 70/70 VUs  2m57.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m58.0s), 70/70 VUs, 35734 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  54% ] 70/70 VUs  2m58.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (2m59.0s), 70/70 VUs, 35951 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  54% ] 70/70 VUs  2m59.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m00.0s), 70/70 VUs, 36166 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  55% ] 70/70 VUs  3m00.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m01.0s), 70/70 VUs, 36363 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  55% ] 70/70 VUs  3m01.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m02.0s), 70/70 VUs, 36587 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  55% ] 70/70 VUs  3m02.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m03.0s), 70/70 VUs, 36812 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  55% ] 70/70 VUs  3m03.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m04.0s), 70/70 VUs, 37040 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  56% ] 70/70 VUs  3m04.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m05.0s), 70/70 VUs, 37256 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  56% ] 70/70 VUs  3m05.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m06.0s), 70/70 VUs, 37448 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  56% ] 70/70 VUs  3m06.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m07.0s), 70/70 VUs, 37672 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  57% ] 70/70 VUs  3m07.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m08.0s), 70/70 VUs, 37890 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  57% ] 70/70 VUs  3m08.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m09.0s), 70/70 VUs, 38120 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  57% ] 70/70 VUs  3m09.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m10.0s), 70/70 VUs, 38351 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  58% ] 70/70 VUs  3m10.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m11.0s), 70/70 VUs, 38557 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  58% ] 70/70 VUs  3m11.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m12.0s), 70/70 VUs, 38780 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  58% ] 70/70 VUs  3m12.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m13.0s), 70/70 VUs, 39005 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  58% ] 70/70 VUs  3m13.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m14.0s), 70/70 VUs, 39240 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  59% ] 70/70 VUs  3m14.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m15.0s), 70/70 VUs, 39466 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  59% ] 70/70 VUs  3m15.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m16.0s), 70/70 VUs, 39699 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  59% ] 70/70 VUs  3m16.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m17.0s), 70/70 VUs, 39916 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  60% ] 70/70 VUs  3m17.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m18.0s), 70/70 VUs, 40133 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  60% ] 70/70 VUs  3m18.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m19.0s), 70/70 VUs, 40364 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  60% ] 70/70 VUs  3m19.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m20.0s), 70/70 VUs, 40550 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  61% ] 70/70 VUs  3m20.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m21.0s), 70/70 VUs, 40769 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  61% ] 70/70 VUs  3m21.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m22.0s), 70/70 VUs, 40997 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  61% ] 70/70 VUs  3m22.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m23.0s), 70/70 VUs, 41218 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  62% ] 70/70 VUs  3m23.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m24.0s), 70/70 VUs, 41442 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  62% ] 70/70 VUs  3m24.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m25.0s), 70/70 VUs, 41675 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  62% ] 70/70 VUs  3m25.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m26.0s), 70/70 VUs, 41895 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  62% ] 70/70 VUs  3m26.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m27.0s), 70/70 VUs, 42122 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  63% ] 70/70 VUs  3m27.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m28.0s), 70/70 VUs, 42360 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  63% ] 70/70 VUs  3m28.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m29.0s), 70/70 VUs, 42537 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  63% ] 70/70 VUs  3m29.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m30.0s), 70/70 VUs, 42757 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  64% ] 70/70 VUs  3m30.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m31.0s), 70/70 VUs, 42982 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  64% ] 70/70 VUs  3m31.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m32.0s), 70/70 VUs, 43197 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  64% ] 70/70 VUs  3m32.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m33.0s), 70/70 VUs, 43409 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  65% ] 70/70 VUs  3m33.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m34.0s), 70/70 VUs, 43645 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  65% ] 70/70 VUs  3m34.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m35.0s), 70/70 VUs, 43860 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  65% ] 70/70 VUs  3m35.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m36.0s), 70/70 VUs, 44057 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  65% ] 70/70 VUs  3m36.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m37.0s), 70/70 VUs, 44264 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  66% ] 70/70 VUs  3m37.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m38.0s), 70/70 VUs, 44497 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  66% ] 70/70 VUs  3m38.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m39.0s), 70/70 VUs, 44693 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  66% ] 70/70 VUs  3m39.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m40.0s), 70/70 VUs, 44890 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  67% ] 70/70 VUs  3m40.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m41.0s), 70/70 VUs, 45109 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  67% ] 70/70 VUs  3m41.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m42.0s), 70/70 VUs, 45322 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  67% ] 70/70 VUs  3m42.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m43.0s), 70/70 VUs, 45535 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  68% ] 70/70 VUs  3m43.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m44.0s), 70/70 VUs, 45747 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  68% ] 70/70 VUs  3m44.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m45.0s), 70/70 VUs, 45968 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  68% ] 70/70 VUs  3m45.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m46.0s), 70/70 VUs, 46192 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  68% ] 70/70 VUs  3m46.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m47.0s), 70/70 VUs, 46412 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  69% ] 70/70 VUs  3m47.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m48.0s), 70/70 VUs, 46639 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  69% ] 70/70 VUs  3m48.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m49.0s), 70/70 VUs, 46878 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  69% ] 70/70 VUs  3m49.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m50.0s), 70/70 VUs, 47087 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  70% ] 70/70 VUs  3m50.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m51.0s), 70/70 VUs, 47280 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  70% ] 70/70 VUs  3m51.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m52.0s), 70/70 VUs, 47514 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  70% ] 70/70 VUs  3m52.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m53.0s), 70/70 VUs, 47739 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  71% ] 70/70 VUs  3m53.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m54.0s), 70/70 VUs, 47960 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  71% ] 70/70 VUs  3m54.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m55.0s), 70/70 VUs, 48176 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  71% ] 70/70 VUs  3m55.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m56.0s), 70/70 VUs, 48380 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  72% ] 70/70 VUs  3m56.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m57.0s), 70/70 VUs, 48609 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  72% ] 70/70 VUs  3m57.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m58.0s), 70/70 VUs, 48818 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  72% ] 70/70 VUs  3m58.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (3m59.0s), 70/70 VUs, 49046 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  72% ] 70/70 VUs  3m59.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m00.0s), 70/70 VUs, 49259 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  73% ] 70/70 VUs  4m00.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m01.0s), 70/70 VUs, 49492 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  73% ] 70/70 VUs  4m01.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m02.0s), 70/70 VUs, 49691 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  73% ] 70/70 VUs  4m02.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m03.0s), 70/70 VUs, 49885 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  74% ] 70/70 VUs  4m03.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m04.0s), 70/70 VUs, 50109 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  74% ] 70/70 VUs  4m04.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m05.0s), 70/70 VUs, 50327 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  74% ] 70/70 VUs  4m05.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m06.0s), 70/70 VUs, 50513 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  75% ] 70/70 VUs  4m06.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m07.0s), 70/70 VUs, 50732 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  75% ] 70/70 VUs  4m07.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m08.0s), 70/70 VUs, 50961 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  75% ] 70/70 VUs  4m08.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m09.0s), 70/70 VUs, 51180 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  75% ] 70/70 VUs  4m09.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m10.0s), 70/70 VUs, 51405 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  76% ] 70/70 VUs  4m10.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m11.0s), 70/70 VUs, 51628 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  76% ] 70/70 VUs  4m11.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m12.0s), 70/70 VUs, 51853 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  76% ] 70/70 VUs  4m12.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m13.0s), 70/70 VUs, 52061 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  77% ] 70/70 VUs  4m13.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m14.0s), 70/70 VUs, 52240 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  77% ] 70/70 VUs  4m14.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m15.0s), 70/70 VUs, 52468 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  77% ] 70/70 VUs  4m15.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m16.0s), 70/70 VUs, 52685 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  78% ] 70/70 VUs  4m16.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m17.0s), 70/70 VUs, 52899 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  78% ] 70/70 VUs  4m17.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m18.0s), 70/70 VUs, 53140 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  78% ] 70/70 VUs  4m18.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m19.0s), 70/70 VUs, 53384 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  78% ] 70/70 VUs  4m19.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m20.0s), 70/70 VUs, 53617 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  79% ] 70/70 VUs  4m20.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m21.0s), 70/70 VUs, 53848 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  79% ] 70/70 VUs  4m21.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m22.0s), 70/70 VUs, 54072 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  79% ] 70/70 VUs  4m22.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m23.0s), 70/70 VUs, 54299 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  80% ] 70/70 VUs  4m23.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m24.0s), 70/70 VUs, 54516 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  80% ] 70/70 VUs  4m24.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m25.0s), 70/70 VUs, 54751 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  80% ] 70/70 VUs  4m25.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m26.0s), 70/70 VUs, 54913 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  81% ] 70/70 VUs  4m26.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m27.0s), 70/70 VUs, 55135 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  81% ] 70/70 VUs  4m27.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m28.0s), 70/70 VUs, 55353 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  81% ] 70/70 VUs  4m28.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m29.0s), 70/70 VUs, 55561 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  82% ] 70/70 VUs  4m29.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m30.0s), 70/70 VUs, 55781 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  82% ] 70/70 VUs  4m30.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m31.0s), 70/70 VUs, 56006 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  82% ] 70/70 VUs  4m31.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m32.0s), 70/70 VUs, 56229 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  82% ] 70/70 VUs  4m32.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m33.0s), 70/70 VUs, 56464 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  83% ] 70/70 VUs  4m33.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m34.0s), 70/70 VUs, 56689 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  83% ] 70/70 VUs  4m34.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m35.0s), 70/70 VUs, 56912 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  83% ] 70/70 VUs  4m35.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m36.0s), 70/70 VUs, 57091 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  84% ] 70/70 VUs  4m36.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m37.0s), 70/70 VUs, 57309 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  84% ] 70/70 VUs  4m37.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m38.0s), 70/70 VUs, 57520 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  84% ] 70/70 VUs  4m38.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m39.0s), 70/70 VUs, 57698 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  85% ] 70/70 VUs  4m39.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m40.0s), 70/70 VUs, 57925 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  85% ] 70/70 VUs  4m40.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m41.0s), 70/70 VUs, 58129 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  85% ] 70/70 VUs  4m41.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m42.0s), 70/70 VUs, 58362 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  85% ] 70/70 VUs  4m42.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m43.0s), 70/70 VUs, 58569 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  86% ] 70/70 VUs  4m43.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m44.0s), 70/70 VUs, 58809 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  86% ] 70/70 VUs  4m44.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m45.0s), 70/70 VUs, 59039 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  86% ] 70/70 VUs  4m45.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m46.0s), 70/70 VUs, 59251 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  87% ] 70/70 VUs  4m46.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m47.0s), 70/70 VUs, 59479 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  87% ] 70/70 VUs  4m47.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m48.0s), 70/70 VUs, 59704 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  87% ] 70/70 VUs  4m48.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m49.0s), 70/70 VUs, 59942 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  88% ] 70/70 VUs  4m49.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m50.0s), 70/70 VUs, 60160 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  88% ] 70/70 VUs  4m50.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m51.0s), 70/70 VUs, 60396 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  88% ] 70/70 VUs  4m51.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m52.0s), 70/70 VUs, 60614 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  88% ] 70/70 VUs  4m52.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m53.0s), 70/70 VUs, 60779 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  89% ] 70/70 VUs  4m53.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m54.0s), 70/70 VUs, 61001 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  89% ] 70/70 VUs  4m54.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m55.0s), 70/70 VUs, 61219 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  89% ] 70/70 VUs  4m55.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m56.0s), 70/70 VUs, 61432 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  90% ] 70/70 VUs  4m56.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m57.0s), 70/70 VUs, 61650 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  90% ] 70/70 VUs  4m57.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m58.0s), 70/70 VUs, 61881 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  90% ] 70/70 VUs  4m58.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (4m59.0s), 70/70 VUs, 62120 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  91% ] 70/70 VUs  4m59.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m00.0s), 70/70 VUs, 62327 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  91% ] 70/70 VUs  5m00.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m01.0s), 70/70 VUs, 62552 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  91% ] 70/70 VUs  5m01.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m02.0s), 70/70 VUs, 62775 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  92% ] 70/70 VUs  5m02.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m03.0s), 70/70 VUs, 62995 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  92% ] 70/70 VUs  5m03.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m04.0s), 70/70 VUs, 63232 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  92% ] 70/70 VUs  5m04.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m05.0s), 70/70 VUs, 63460 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  92% ] 70/70 VUs  5m05.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m06.0s), 70/70 VUs, 63696 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  93% ] 70/70 VUs  5m06.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m07.0s), 70/70 VUs, 63908 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  93% ] 70/70 VUs  5m07.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m08.0s), 70/70 VUs, 64077 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  93% ] 70/70 VUs  5m08.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m09.0s), 70/70 VUs, 64286 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  94% ] 70/70 VUs  5m09.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m10.0s), 70/70 VUs, 64499 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  94% ] 70/70 VUs  5m10.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m11.0s), 70/70 VUs, 64721 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  94% ] 70/70 VUs  5m11.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m12.0s), 70/70 VUs, 64941 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  95% ] 70/70 VUs  5m12.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m13.0s), 70/70 VUs, 65167 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  95% ] 70/70 VUs  5m13.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m14.0s), 70/70 VUs, 65381 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  95% ] 70/70 VUs  5m14.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m15.0s), 70/70 VUs, 65611 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  95% ] 70/70 VUs  5m15.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m16.0s), 70/70 VUs, 65836 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  96% ] 70/70 VUs  5m16.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m17.0s), 70/70 VUs, 66036 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  96% ] 70/70 VUs  5m17.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m18.0s), 70/70 VUs, 66279 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  96% ] 70/70 VUs  5m18.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m19.0s), 70/70 VUs, 66511 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  97% ] 70/70 VUs  5m19.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m20.0s), 70/70 VUs, 66746 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  97% ] 70/70 VUs  5m20.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m21.0s), 70/70 VUs, 66967 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  97% ] 70/70 VUs  5m21.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m22.0s), 70/70 VUs, 67203 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  98% ] 70/70 VUs  5m22.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m23.0s), 70/70 VUs, 67416 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  98% ] 70/70 VUs  5m23.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m24.0s), 70/70 VUs, 67575 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  98% ] 70/70 VUs  5m24.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m25.0s), 70/70 VUs, 67789 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  98% ] 70/70 VUs  5m25.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m26.0s), 70/70 VUs, 68003 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  99% ] 70/70 VUs  5m26.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m27.0s), 70/70 VUs, 68221 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  99% ] 70/70 VUs  5m27.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m28.0s), 70/70 VUs, 68428 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [  99% ] 70/70 VUs  5m28.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m29.0s), 70/70 VUs, 68639 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [ 100% ] 70/70 VUs  5m29.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  | running (5m30.0s), 70/70 VUs, 68862 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E   [ 100% ] 70/70 VUs  5m30.0s/5m30.0s
+load-k6-1  | 
+load-k6-1  |      ✓ ALS_FSPIOP_GET_PARTIES_RESPONSE_IS_202
+load-k6-1  |      ✗ ALS_E2E_FSPIOP_GET_PARTIES_SUCCESS
+load-k6-1  |       ↳  99% — ✓ 68934 / ✗ 1
+load-k6-1  |      ✓ QUOTES_FSPIOP_POST_QUOTES_RESPONSE_IS_202
+load-k6-1  |      ✓ QUOTES_E2E_FSPIOP_POST_QUOTES_SUCCESS
+load-k6-1  |      ✓ TRANSFERS_FSPIOP_POST_TRANSFERS_RESPONSE_IS_202
+load-k6-1  |      ✓ TRANSFERS_E2E_FSPIOP_POST_TRANSFERS_SUCCESS
+load-k6-1  | 
+load-k6-1  |      █ E2E
+load-k6-1  | 
+load-k6-1  |      checks.........................: 99.99% ✓ 413605     ✗ 1     
+load-k6-1  |      data_received..................: 65 MB  196 kB/s
+load-k6-1  |      data_sent......................: 274 MB 830 kB/s
+load-k6-1  |      group_duration.................: avg=403.51µs min=165.17µs med=288.93µs max=57.93ms  p(90)=466.19µs p(95)=875.33µs
+load-k6-1  |      http_req_blocked...............: avg=9.75µs   min=2.53µs   med=6.33µs   max=11.45ms  p(90)=9.11µs   p(95)=10.18µs 
+load-k6-1  |      http_req_connecting............: avg=300ns    min=0s       med=0s       max=3.77ms   p(90)=0s       p(95)=0s      
+load-k6-1  |    ✓ http_req_duration..............: avg=4.48ms   min=815.6µs  med=3.31ms   max=112.23ms p(90)=8.59ms   p(95)=11.38ms 
+load-k6-1  |        { expected_response:true }...: avg=4.48ms   min=815.6µs  med=3.31ms   max=112.23ms p(90)=8.59ms   p(95)=11.38ms 
+load-k6-1  |    ✓ http_req_failed................: 0.00%  ✓ 0          ✗ 206803
+load-k6-1  |      http_req_receiving.............: avg=67.37µs  min=7.99µs   med=33.88µs  max=79.1ms   p(90)=76.67µs  p(95)=91.18µs 
+load-k6-1  |      http_req_sending...............: avg=32.95µs  min=9.84µs   med=21.06µs  max=21.56ms  p(90)=36.61µs  p(95)=43.68µs 
+load-k6-1  |      http_req_tls_handshaking.......: avg=0s       min=0s       med=0s       max=0s       p(90)=0s       p(95)=0s      
+load-k6-1  |      http_req_waiting...............: avg=4.38ms   min=768.17µs med=3.21ms   max=94.19ms  p(90)=8.46ms   p(95)=11.24ms 
+load-k6-1  |      http_reqs......................: 206803 626.211753/s
+load-k6-1  |    ✓ iteration_duration.............: avg=319.96ms min=131.05ms med=307.98ms max=5.01s    p(90)=432.56ms p(95)=477.53ms
+load-k6-1  |      iterations.....................: 68935  208.73927/s
+load-k6-1  |      vus............................: 70     min=3        max=70  
+load-k6-1  |      vus_max........................: 70     min=70       max=70  
+load-k6-1  |      ws_connecting..................: avg=1.68ms   min=251.71µs med=1.15ms   max=97.57ms  p(90)=3.25ms   p(95)=4.43ms  
+load-k6-1  |      ws_msgs_received...............: 206802 626.208725/s
+load-k6-1  |      ws_msgs_sent...................: 206803 626.211753/s
+load-k6-1  |      ws_session_duration............: avg=107.48ms min=15.12ms  med=88.7ms   max=5.01s    p(90)=204.13ms p(95)=243.97ms
+load-k6-1  |      ws_sessions....................: 206803 626.211753/s
+load-k6-1  | 
+load-k6-1  | 
+load-k6-1  | running (5m30.2s), 00/70 VUs, 68935 complete and 0 interrupted iterations
+load-k6-1  | fspiopE2E ✓ [ 100% ] 00/70 VUs  5m30s
+load-k6-1 exited with code 0
