@@ -90,12 +90,20 @@ module.exports = {
             path: '/fspiop-discovery/'
           },
           {
+            title: 'Agreement',
+            path: '/fspiop-agreement/'
+          },
+          {
             title: 'Transfers',
             path: '/fspiop-transfers/'
           },
           {
             title: 'Central-Services-Stream',
             path: '/lib-central-services-stream/'
+          },
+          {
+            title: 'Infrastructure',
+            path: '/support-profiling/'
           },
         ]
       },
@@ -110,21 +118,35 @@ module.exports = {
           {
             title: 'Position Handler',
             path: '/cpu-profiling/cl-position-handler/'
-          }
+          },
+          {
+            title: 'Position Prepare Batch Handler',
+            path: '/cpu-profiling/cl-position-prepare-batch-handler/'
+          },
+          {
+            title: 'Quoting Service',
+            path: '/cpu-profiling/quoting-service/'
+          },
         ]
       },
       {
-        title: 'Sequence Diagram Comparison',
-        path: '/seq_diagrams_code_comparision/',
-        collapsable: false,
+        title: 'Other',
+        collapsable: true,
         children: [
           {
-            title: 'ML Notification Handler',
-            path: '/seq_diagrams_code_comparision/ml-notification-handler/'
-          },
-          {
-            title: 'Position Handler',
-            path: '/seq_diagrams_code_comparision/cl-position-handler/'
+            title: 'Sequence Diagram Comparison',
+            path: '/seq_diagrams_code_comparision/',
+            collapsable: false,
+            children: [
+              {
+                title: 'ML Notification Handler',
+                path: '/seq_diagrams_code_comparision/ml-notification-handler/'
+              },
+              {
+                title: 'Position Handler',
+                path: '/seq_diagrams_code_comparision/cl-position-handler/'
+              }
+            ]
           }
         ]
       },

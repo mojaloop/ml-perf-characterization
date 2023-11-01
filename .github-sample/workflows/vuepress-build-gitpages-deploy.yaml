@@ -2,7 +2,7 @@ name: Build Vuepress Docs and Host with Gitpages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["master"]
+    branches: ["main"]
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -30,14 +30,14 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         TARGET_REPO: mojaloop/ml-perf-characterization
         TARGET_BRANCH: gh_pages
-        BUILD_SCRIPT: cd docs && npm install && npm run build
+        BUILD_SCRIPT: npm install && npm run build
         BUILD_DIR: .vuepress/dist/
     - name: Setup Pages
       uses: actions/configure-pages@v2
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v1
       with:
-        path: 'docs/.vuepress/dist/'
+        path: '.vuepress/dist/'
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v1
