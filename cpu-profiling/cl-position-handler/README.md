@@ -31,7 +31,7 @@ The approach taken for profiling central ledger in isolation is follows:
 
 Refer to the following diagram showing the interaction diagram:
 
-![profiling-position-handler-in-isolation](assets/images/profiling-position-handler-in-isolation.drawio.png)
+![profiling-position-handler-in-isolation](./assets/images/profiling-position-handler-in-isolation.drawio.png)
 
 
 ## Local Setup
@@ -251,7 +251,7 @@ The results are captured in the folders `dashboard-images/cl-services-stream-upg
 
 Refer to the following diagram showing the interaction diagram:
 
-![prism-poc-prepare-and-position-handlers-in-isolation](assets/images/prism-poc-prepare-and-position-handlers-in-isolation.drawio.png)
+![prism-poc-prepare-and-position-handlers-in-isolation](./assets/images/prism-poc-prepare-and-position-handlers-in-isolation.drawio.png)
 
 - Before implementing prism, ran position handler and prepare handler as node services locally and dumped `10k` prepare kafka messages on `topic-transfer-prepare` and captured the readings as base line for this experiment.
 - The following are the commands used to run preapre and position handlers as node processes without docker
