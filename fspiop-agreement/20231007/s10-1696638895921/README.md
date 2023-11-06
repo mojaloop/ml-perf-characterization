@@ -1,4 +1,4 @@
-# Scenario quoting-service-s10: s10, scale 1 + logger fixes + passthrough mode + 15vu
+# Scenario s10: FSPIOP Agreement POST /quotes - scale 1 + logger fixes + passthrough mode + 15vu
 
 Params:
 ```conf
