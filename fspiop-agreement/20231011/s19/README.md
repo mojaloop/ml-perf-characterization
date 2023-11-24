@@ -1,16 +1,17 @@
-# Scenario s10: FSPIOP Agreement POST /quotes - scale 1 + logger fixes + passthrough mode + 15vu
+# Scenario s19: FSPIOP Agreement POST /quotes - scale 1 + logger fixes + transaction fixes + cache fixes 60 sec cache + db/cache optimizations + 24 threadpool + 50vu
+Params: &from=1697208140535&to=1697208597081
 
 Params:
 ```conf
-var-testid=1696638895921
-params=&var-testid=1696638895921&from=1696638893040&to=1696639140177
+var-testid=
+params=&var-testid=&from=1697208140535&to=1697208597081
 
-Scale 3
+Scale 1
 2 dfsp Pool
-15 VUs
-QUOTE_SIMPLE_ROUTING_MODE=true
+50 VUs
+QUOTE_SIMPLE_ROUTING_MODE=false
 UV_THREADPOOL_SIZE=24
-QUOTING_SERVICE_VERSION=v15.2.2-snapshot.0
+QUOTING_SERVICE_VERSION=v15.2.3-snapshot.3
 ```
 
 ```
@@ -37,8 +38,8 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile quote
       },
       "startVUs": 1,
       "stages": [
-        { "duration": "30s", "target": 15 },
-        { "duration": "5m", "target": 15 }
+        { "duration": "30s", "target": 50 },
+        { "duration": "5m", "target": 50 }
       ]
     }
   },
@@ -52,9 +53,4 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile quote
 
 ## Observations
 
-- Max ops/s of 192.
-- Iteration duration to an average of 79.4.
-
-## Recommendations
-
-- Try test case of 30 VUs, to see if it still results in test failure.
+- More optimizations have increased ops/s by 22 over the comparable scenario s14.

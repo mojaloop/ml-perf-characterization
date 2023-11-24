@@ -1,16 +1,17 @@
-# Scenario s10: FSPIOP Agreement POST /quotes - scale 1 + logger fixes + passthrough mode + 15vu
+# Scenario s11: FSPIOP Agreement POST /quotes - scale 1 + logger fixes + transaction fixes + 30vu
+Params: &from=1697048855680&to=1697049312150
 
 Params:
 ```conf
-var-testid=1696638895921
-params=&var-testid=1696638895921&from=1696638893040&to=1696639140177
+var-testid=
+params=&var-testid=&from=1697048855680&to=1697049312150
 
-Scale 3
+Scale 1
 2 dfsp Pool
-15 VUs
-QUOTE_SIMPLE_ROUTING_MODE=true
+30 VUs
+QUOTE_SIMPLE_ROUTING_MODE=false
 UV_THREADPOOL_SIZE=24
-QUOTING_SERVICE_VERSION=v15.2.2-snapshot.0
+QUOTING_SERVICE_VERSION=v15.2.3-snapshot.0
 ```
 
 ```
@@ -37,8 +38,8 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile quote
       },
       "startVUs": 1,
       "stages": [
-        { "duration": "30s", "target": 15 },
-        { "duration": "5m", "target": 15 }
+        { "duration": "30s", "target": 30 },
+        { "duration": "5m", "target": 30 }
       ]
     }
   },
@@ -52,9 +53,6 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile quote
 
 ## Observations
 
-- Max ops/s of 192.
-- Iteration duration to an average of 79.4.
+- Test run passes at high vu load thanks to transaction fix.
+- 129 max ops/s. 222 avg iteration duration.
 
-## Recommendations
-
-- Try test case of 30 VUs, to see if it still results in test failure.

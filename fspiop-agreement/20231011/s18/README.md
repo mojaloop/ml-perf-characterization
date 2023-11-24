@@ -1,16 +1,17 @@
-# Scenario s10: FSPIOP Agreement POST /quotes - scale 1 + logger fixes + passthrough mode + 15vu
+# Scenario s18: FSPIOP Agreement POST /quotes - scale 1 + logger fixes + transaction fixes + cache fixes 60 sec cache + passthrough mode + 48 threadpool + 50vu
+Params: &from=1697061299599&to=1697061756522
 
 Params:
 ```conf
-var-testid=1696638895921
-params=&var-testid=1696638895921&from=1696638893040&to=1696639140177
+var-testid=
+params=&var-testid=&from=1697061299599&to=1697061756522
 
-Scale 3
+Scale 1
 2 dfsp Pool
-15 VUs
+50 VUs
 QUOTE_SIMPLE_ROUTING_MODE=true
-UV_THREADPOOL_SIZE=24
-QUOTING_SERVICE_VERSION=v15.2.2-snapshot.0
+UV_THREADPOOL_SIZE=48
+QUOTING_SERVICE_VERSION=v15.2.3-snapshot.2
 ```
 
 ```
@@ -37,8 +38,8 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile quote
       },
       "startVUs": 1,
       "stages": [
-        { "duration": "30s", "target": 15 },
-        { "duration": "5m", "target": 15 }
+        { "duration": "30s", "target": 50 },
+        { "duration": "5m", "target": 50 }
       ]
     }
   },
@@ -52,9 +53,5 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile quote
 
 ## Observations
 
-- Max ops/s of 192.
-- Iteration duration to an average of 79.4.
+- Passthrough mode benefits from fixes and sees a large improvement in ops/s.
 
-## Recommendations
-
-- Try test case of 30 VUs, to see if it still results in test failure.
