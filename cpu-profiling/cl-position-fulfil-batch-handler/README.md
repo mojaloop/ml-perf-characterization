@@ -1,6 +1,4 @@
-# Profile the Central-Ledger Position Handler with Batch support in isolation
-
-_Note: Currently batch processing is implemented for only `position-prepare` messages. And there is an open PR for central-ledger [central-ledger/968](https://github.com/mojaloop/central-ledger/pull/968)._
+# Profile the Central-Ledger Position (Commit) Handler with Batch support in isolation
 
 ## Status
 
@@ -17,12 +15,12 @@ _Note: Currently batch processing is implemented for only `position-prepare` mes
   - Mysql: docker:mysql/mysql-server:8.0.32
   - Kafka: docker:bitnami/kafka:3.5.0
 - Used In-Memory MySQL DB for all the scenarios to rule out disk I/O issues
-- Transfers to 2-8 random DFSPs as payer and payee
+- Transfers to 8 random DFSPs as payer and payee
 
 ## Approach
 The approach taken for profiling central ledger in isolation is follows:
 - Deployed MySQL and Kafka services as dependencies
-- Captured 5L position-prepare messages and MySQL data dump to set the tables state before position handler starts to process the messages
+- Captured 5L position-commit messages and MySQL data dump to set the tables state before position handler starts to process the messages
 - Replay the MySQL state and kafka messages and observe the running instance of position handler
 - Used monitoring services for metrics
 
@@ -43,7 +41,7 @@ Refer to the following diagram showing the interaction diagram:
 - Start **position handler** using the following
   ```
   npm run migrate
-  nohup env "CLEDG_PORT=3001" "CLEDG_KAFKA__EVENT_TYPE_ACTION_TOPIC_MAP__POSITION__PREPARE=topic-transfer-position-batch" node src/handlers/index.js handler --positionbatch > /dev/null 2>&1&
+  nohup env "CLEDG_PORT=3001" "CLEDG_KAFKA__EVENT_TYPE_ACTION_TOPIC_MAP__POSITION__PREPARE=topic-transfer-position-batch" "CLEDG_KAFKA__EVENT_TYPE_ACTION_TOPIC_MAP__POSITION__COMMIT=topic-transfer-position-batch" node src/handlers/index.js handler --positionbatch > /dev/null 2>&1&
   ```
   Note: Running the service with nohup is important otherwise we will get very low throughput
 - Add the new target `<Docker IP of Host>:3001` (ex: 172.17.0.1:3001) to `prometheus.yml`
@@ -51,9 +49,9 @@ Refer to the following diagram showing the interaction diagram:
   ```
   docker compose --project-name monitoring --profile transfers-test -f docker-compose-monitoring.yml up -d
   ```
-- Execute the following script for the messages `action=prepare` from `cpu-profiling/cl-position-prepare-batch-handler/test-data/feed-test-data-position-prepare-batch.sh` of [ml-perf-characterization](https://github.com/mojaloop/ml-perf-characterization.git) repository.
+- Execute the following script for the messages `action=commit` from `cpu-profiling/cl-position-fulfil-batch-handler/test-data/feed-test-data-position-commit-batch.sh` of [ml-perf-characterization](https://github.com/mojaloop/ml-perf-characterization.git) repository.
   ```
-  sh ./feed-test-data-position-prepare-batch.sh
+  sh ./feed-test-data-position-commit-batch.sh
   ```
 - Now you should see the activity in position handler service
 - Observe the grafana dashboard `mojaloop-central-ledger` for **Processed requests per second** and **Processing Time**
@@ -66,6 +64,7 @@ Refer to the following diagram showing the interaction diagram:
 - Enable the following line in perf.env
 ```
 CLEDG_KAFKA__EVENT_TYPE_ACTION_TOPIC_MAP__POSITION__PREPARE=topic-transfer-position-batch
+CLEDG_KAFKA__EVENT_TYPE_ACTION_TOPIC_MAP__POSITION__COMMIT=topic-transfer-position-batch"
 ```
 - Start the docker services for position batch handler
 ```
@@ -76,42 +75,51 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile trans
   ```
   docker compose --project-name monitoring --profile transfers-test -f docker-compose-monitoring.yml up -d
   ```
-- Execute the following script for the messages `action=prepare` from `cpu-profiling/cl-position-prepare-batch-handler/test-data/feed-test-data-position-prepare-batch.sh` of [ml-perf-characterization](https://github.com/mojaloop/ml-perf-characterization.git) repository
+- Execute the following script for the messages `action=commit` from `cpu-profiling/cl-position-fulfil-batch-handler/test-data/feed-test-data-position-commit-batch.sh` of [ml-perf-characterization](https://github.com/mojaloop/ml-perf-characterization.git) repository
   ```
-  sh ./feed-test-data-position-prepare-batch.sh
+  sh ./feed-test-data-position-commit-batch.sh
   ```
 - Now you should see the activity in position batch handler instances
 - Observe the grafana dashboard `mojaloop-central-ledger` for **Processed requests per second** and **Processing Time**
 
-## Capturing Kafka and MySQL dumps for position-prepare
+## Capturing Kafka and MySQL dumps for position-commit
 - Download [ml-core-test-harness](https://github.com/mojaloop/ml-core-test-harness) repository
 - Expose port `9092` of kafka service
 - Expose port `3306` of mysql service
-- Change central ledger version to `v17.2.0` in .env file (CENTRAL_LEDGER_VERSION=v17.2.0)
-- Run the services except position handler
+- Change central ledger version to `v17.5.0-snapshot.0` in .env file (CENTRAL_LEDGER_VERSION=v17.5.0-snapshot.0)
+- Change `CENTRAL_LEDGER_POSITION_BATCH_REPLICAS` to desired number
+- Set commit override to unused topic and add unused topic name to kafka-provisioning script
+
+This should dump 5l messages into the unused topic that we can dump
 ```
-docker compose --project-name ml-core -f docker-compose-perf.yml --profile transfers-test --profile ttk-provisioning-transfers up -d --scale central-handler-position=0
+CLEDG_KAFKA__EVENT_TYPE_ACTION_TOPIC_MAP__POSITION__COMMIT=topic-transfer-position-batch-1"
+```
+```
+kafka-topics.sh --bootstrap-server kafka:29092 --create --if-not-exists --topic topic-transfer-position-batch-1 --replication-factor 1 --partitions $$KAFKA_POSITION_BATCH_PARTITIONS_NUM
+```
+```
+docker compose --project-name ml-core -f docker-compose-perf.yml --profile transfers-test --profile ttk-provisioning-transfers up -d
 ```
 - Wait for the TTK provisioning to be completed
 - `Note: We need to start with fresh deployment as we don't want to dump old data`
 - Change iteration count in `fspiopTransfersNoCallback.json` to `500000` ("iterations": 500000)
 - Set the pool to 8 dfsps in perf.env file (K6_SCRIPT_FSPIOP_FSP_POOL)
-- Execute k6 load scenario `postTransfersNoCallback
+- Execute k6 load scenario `postTransfersNoCallback`
 ```
 env K6_SCRIPT_CONFIG_FILE_NAME=fspiopTransfersNoCallback.json docker compose --project-name load -f docker-compose-load.yml up
 ```
 - Allow some time to get all messages processed by other handlers
 - Dump mysql database `central_ledger` using `mysqldump` command and store it in a file
 ```
-docker exec -it mysql-cl /bin/mysqldump central_ledger > cl-position-handler-testing-prepare.sql
+docker exec -it mysql-cl /bin/mysqldump central_ledger > cl-position-handler-testing-commit.sql
 ```
 - Dump kafka message in the topic `topic-transfer-position` using the following command
 ```
-docker run -i --log-driver=none -a stdin -a stdout -a stderr --network=host edenhill/kcat:1.7.1 -b localhost:9092 -t topic-transfer-position-batch -C -K\| > kafka-topic-transfer-position-prepare.dump
+docker run -i --log-driver=none -a stdin -a stdout -a stderr --network=host edenhill/kcat:1.7.1 -b localhost:9092 -t topic-transfer-position-batch-1 -C -K\| > kafka-topic-transfer-position-commit.dump
 ```
 - Compress the files
 ```
-tar -cvzf position-prepare-5l-8dfsps.tar.gz cl-position-handler-testing-prepare.sql kafka-topic-transfer-position-prepare.dump
+tar -cvzf position-commit-5l-8dfsps.tar.gz cl-position-handler-testing-commit.sql kafka-topic-transfer-position-commit.dump
 ```
 
 ## Test Scenarios
@@ -120,32 +128,20 @@ tar -cvzf position-prepare-5l-8dfsps.tar.gz cl-position-handler-testing-prepare.
 
 | Scenario           | Cache    | DFSPs   | batchSize | Scale   | Throughput   | Latency  |
 |--------------------|----------|---------|-----------|---------|--------------|----------|
-| Non Batching - S0  | Enabled  | 2       | -         | 1       | 183 ops/s    | 5.37ms   |
-| Non Batching - S1  | Disabled | 2       | -         | 1       | 161 ops/s    | 6.44ms   |
-| Batching - S2      | Enabled  | 2       | 10        | 1       | 1.10K ops/s  | 8.39ms   |
-| Batching - S3      | Disabled | 2       | 10        | 1       | 907 ops/s    | 9.97ms   |
-| Batching - S4      | Enabled  | 2       | 50        | 1       | 1.95K ops/s  | 21.5ms   |
-| Batching - S5      | Enabled  | 2       | 100       | 1       | 2.22K ops/s  | 36.3ms   |
-| Batching - S6      | Enabled  | 4       | 10        | 1       | 762 ops/s    | 12.1ms   |
-| Batching - S7      | Enabled  | 4       | 20        | 1       | 1.17K ops/s  | 15.4ms   |
-| Batching - S8      | Enabled  | 4       | 40        | 1       | 1.55K ops/s  | 21.9ms   |
-| Batching - S9      | Enabled  | 4       | 50        | 1       | 1.67K ops/s  | 25.8ms   |
-| Batching - S10     | Enabled  | 4       | 100       | 1       | 1.94K ops/s  | 42.8ms   |
-| Batching - S11     | Enabled  | 8       | 10        | 1       | 779 ops/s    | 11.0ms   |
-| Batching - S12     | Enabled  | 8       | 20        | 1       | 1.18K ops/s  | 26.1ms   |
-| Batching - S13     | Enabled  | 8       | 40        | 1       | 1.68K ops/s  | 20.9ms   |
-| Batching - S14     | Enabled  | 8       | 50        | 1       | 1.84K ops/s  | 23.0ms   |
-| Batching - S15     | Enabled  | 8       | 100       | 1       | 2.15K ops/s  | 38.6ms   |
-| Batching - S16     | Enabled  | 2       | 1         | 1       | 181 ops/s    | 5.44ms   |
+| Non Batching - S0  | Enabled  | 8       | -         | 1       |     |    |
+| Batching - S1     | Enabled  | 8       | 10        | 1       |     |    |
+| Batching - S2     | Enabled  | 8       | 20        | 1       |   |    |
+| Batching - S3     | Enabled  | 8       | 40        | 1       |   |    |
+| Batching - S4     | Enabled  | 8       | 50        | 1       |   |    |
+| Batching - S5     | Enabled  | 8       | 100       | 1       |   |    |
+| Batching - S6     | Enabled  | 8       | 1         | 1       |     |    |
 
 ### With scaling and distributed messages based on accountID across kafka partitions
 
 | Scenario           | Cache    | DFSPs   | batchSize | Scale   | Throughput per instance | Latency  |
 |--------------------|----------|---------|-----------|---------|-------------------------|----------|
-| Batching - S20     | Enabled  | 2       | 50        | 1       | 1.88K ops/s             | 21.4ms   |
-| Batching - S21     | Enabled  | 4       | 50        | 1       | 1.54K ops/s             | 27.5ms   |
-| Batching - S22     | Enabled  | 8       | 50        | 1       | 1.63K ops/s             | 25.5ms   |
-| Batching - S23     | Enabled  | 4       | 50        | 4       | 1.56K ops/s             | 26.5ms   |
+| Batching - S7     | Enabled  | 8       | 50        | 1       |              |    |
+| Batching - S8     | Enabled  | 8       | 50        | 4       |              |    |
 
 
 ### Observations
