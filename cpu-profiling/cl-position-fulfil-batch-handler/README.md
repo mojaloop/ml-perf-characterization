@@ -64,7 +64,7 @@ Refer to the following diagram showing the interaction diagram:
 - Enable the following line in perf.env
 ```
 CLEDG_KAFKA__EVENT_TYPE_ACTION_TOPIC_MAP__POSITION__PREPARE=topic-transfer-position-batch
-CLEDG_KAFKA__EVENT_TYPE_ACTION_TOPIC_MAP__POSITION__COMMIT=topic-transfer-position-batch"
+CLEDG_KAFKA__EVENT_TYPE_ACTION_TOPIC_MAP__POSITION__COMMIT=topic-transfer-position-batch
 ```
 - Start the docker services for position batch handler
 ```
@@ -128,20 +128,22 @@ tar -cvzf position-commit-5l-8dfsps.tar.gz cl-position-handler-testing-commit.sq
 
 | Scenario           | Cache    | DFSPs   | batchSize | Scale   | Throughput   | Latency  |
 |--------------------|----------|---------|-----------|---------|--------------|----------|
-| Non Batching - S0  | Enabled  | 8       | -         | 1       |     |    |
-| Batching - S1     | Enabled  | 8       | 10        | 1       |     |    |
-| Batching - S2     | Enabled  | 8       | 20        | 1       |   |    |
-| Batching - S3     | Enabled  | 8       | 40        | 1       |   |    |
-| Batching - S4     | Enabled  | 8       | 50        | 1       |   |    |
-| Batching - S5     | Enabled  | 8       | 100       | 1       |   |    |
-| Batching - S6     | Enabled  | 8       | 1         | 1       |     |    |
+| Non Batching - S0  | Enabled  | 8       | -         | 1       | 565 ops/s    | 1.6 ms  |
+| Batching - S1     | Enabled  | 8       | 25        | 1       | 1.66k ops/s   | 12 ms   |
+| Batching - S2     | Enabled  | 8       | 50        | 1       | 2.69k ops/s  |  14.8 ms  |
+| Batching - S3     | Enabled  | 8       | 100       | 1       | 3.49k ops/s  | 20.1 ms   |
+| Batching - S4     | Enabled  | 8       | 1         | 1       | 217 ops/s    | 4.46 ms   |
 
 ### With scaling and distributed messages based on accountID across kafka partitions
 
-| Scenario           | Cache    | DFSPs   | batchSize | Scale   | Throughput per instance | Latency  |
-|--------------------|----------|---------|-----------|---------|-------------------------|----------|
-| Batching - S8     | Enabled  | 8       | 50        | 2       |              |    |
+| Scenario           | Cache    | DFSPs   | batchSize | Scale   | Throughput  | Latency  |
+|--------------------|----------|---------|-----------|---------|-------------|----------|
+| Batching - S5     | Enabled  | 8       | 50        | 2       | 2.95k ops/s  | 15 ms   |
 
 
 ### Observations
-
+- Enabling batching resulted in higher throughput compared to the corresponding non-batching scenarios.
+- As the batch size increases (from 25 to 100), throughput increased, but latency also increased significantly.
+- With a batch size of 50, there's a noticeable improvement in throughput for most scenarios with moderate to low latency.
+- When scaling, throughput and latency remained relatively consistent per each instance.
+- At a batch size of 1 the batch logic performs significantly worse than the normal fulfil handler
