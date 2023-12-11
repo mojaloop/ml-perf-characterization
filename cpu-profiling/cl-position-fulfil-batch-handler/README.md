@@ -113,7 +113,7 @@ env K6_SCRIPT_CONFIG_FILE_NAME=fspiopTransfersNoCallback.json docker compose --p
 ```
 docker exec -it mysql-cl /bin/mysqldump central_ledger > cl-position-handler-testing-commit.sql
 ```
-- Dump kafka message in the topic `topic-transfer-position` using the following command
+- Dump kafka message in the topic `topic-transfer-position-batch-1` using the following command
 ```
 docker run -i --log-driver=none -a stdin -a stdout -a stderr --network=host edenhill/kcat:1.7.1 -b localhost:9092 -t topic-transfer-position-batch-1 -C -K\| > kafka-topic-transfer-position-commit.dump
 ```
