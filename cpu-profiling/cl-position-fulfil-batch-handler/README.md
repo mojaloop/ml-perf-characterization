@@ -140,12 +140,8 @@ tar -cvzf position-commit-5l-8dfsps.tar.gz cl-position-handler-testing-commit.sq
 
 | Scenario           | Cache    | DFSPs   | batchSize | Scale   | Throughput per instance | Latency  |
 |--------------------|----------|---------|-----------|---------|-------------------------|----------|
-| Batching - S7     | Enabled  | 8       | 50        | 1       |              |    |
-| Batching - S8     | Enabled  | 8       | 50        | 4       |              |    |
+| Batching - S8     | Enabled  | 8       | 50        | 2       |              |    |
 
 
 ### Observations
-- Enabling batching resulted in higher throughput compared to the corresponding non-batching scenarios.
-- As the batch size increases (from 10 to 100), throughput increased, but latency also increased significantly.
-- With a batch size of 50, there's a noticeable improvement in throughput for most scenarios with moderate to low latency.
-- When scaling, throughput and latency remained relatively consistent per each instance.
+
