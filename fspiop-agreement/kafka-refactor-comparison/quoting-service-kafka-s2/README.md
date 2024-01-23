@@ -51,5 +51,3 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile quote
 ```
 
 ## Observations
-
-

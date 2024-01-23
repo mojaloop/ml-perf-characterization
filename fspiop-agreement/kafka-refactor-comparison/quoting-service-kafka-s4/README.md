@@ -1,16 +1,16 @@
-# Scenario quoting-service-kafka-s1: s1, scale 4 api handlers + scale 8 kakfa handlers + 50vu
+# Scenario quoting-service-kafka-s4: s4, scale 8 api handlers + 1vu
 
 Params:
 ```conf
-var-testid=1705970174538
-params=&var-testid=1705970174538&from=1705970171050&to=1705970627552
-Scale 4 api handlers
-Scale 8 kafka handlers
+var-testid=1705977908023
+params=&var-testid=1705977908023&from=1705977904318&to=1705978360198
+
+Scale 8 api handlers
 8 dfsp Pool
-50 VUs
+1 VUs
 QUOTE_SIMPLE_ROUTING_MODE=false
 UV_THREADPOOL_SIZE=24
-QUOTING_SERVICE_VERSION=v15.6.0-snapshot.5
+QUOTING_SERVICE_VERSION=v15.4.0
 ```
 
 ```
@@ -37,8 +37,8 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile quote
       },
       "startVUs": 1,
       "stages": [
-        { "duration": "30s", "target": 50 },
-        { "duration": "5m", "target": 50 }
+        { "duration": "30s", "target": 1 },
+        { "duration": "5m", "target": 1 }
       ]
     }
   },
@@ -51,6 +51,3 @@ docker compose --project-name ml-core -f docker-compose-perf.yml --profile quote
 ```
 
 ## Observations
-- Average mean of 507 ops/s compared to old quoting service with 474 ops/s
-- Big improvements in round trip time with iteration duration at 80 ms vs old service with 234ms
-- K6S request rate was also visibly more stable
