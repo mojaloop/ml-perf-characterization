@@ -1,0 +1,945 @@
+Attaching to k6-1
+k6-1  | 
+k6-1  |           /\      |‾‾| /‾‾/   /‾‾/   
+k6-1  |      /\  /  \     |  |/  /   /  /    
+k6-1  |     /  \/    \    |     (   /   ‾‾\  
+k6-1  |    /          \   |  |\  \ |  (‾)  | 
+k6-1  |   / __________ \  |__| \__\ \_____/ .io
+k6-1  | 
+k6-1  |   execution: local
+k6-1  |      script: /scripts/index.js
+k6-1  |      output: Prometheus remote write (http://prometheus:9090/api/v1/write)
+k6-1  | 
+k6-1  |   scenarios: (100.00%) 1 scenario, 100 max VUs, 5m30s max duration (incl. graceful stop):
+k6-1  |            * outboundSDKTransfers: Up to 100 looping VUs for 5m0s over 2 stages (gracefulRampDown: 30s, exec: outboundSDKTransfersScenarios, gracefulStop: 30s)
+k6-1  | 
+k6-1  | 
+k6-1  | running (0m00.9s), 002/100 VUs, 40 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [   0% ] 002/100 VUs  0m00.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m01.9s), 004/100 VUs, 128 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [   1% ] 004/100 VUs  0m01.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m02.9s), 005/100 VUs, 251 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [   1% ] 005/100 VUs  0m02.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m03.9s), 007/100 VUs, 394 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [   1% ] 007/100 VUs  0m03.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m04.9s), 009/100 VUs, 560 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [   2% ] 009/100 VUs  0m04.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m05.9s), 010/100 VUs, 726 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [   2% ] 010/100 VUs  0m05.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m06.9s), 012/100 VUs, 900 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [   2% ] 012/100 VUs  0m06.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m07.9s), 014/100 VUs, 1108 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [   3% ] 014/100 VUs  0m07.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m08.9s), 015/100 VUs, 1326 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [   3% ] 015/100 VUs  0m08.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m09.9s), 017/100 VUs, 1546 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [   3% ] 017/100 VUs  0m09.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m10.9s), 019/100 VUs, 1772 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [   4% ] 019/100 VUs  0m10.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m11.9s), 020/100 VUs, 2008 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [   4% ] 020/100 VUs  0m11.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m12.9s), 022/100 VUs, 2239 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [   4% ] 022/100 VUs  0m12.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m13.9s), 024/100 VUs, 2483 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [   5% ] 024/100 VUs  0m13.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m14.9s), 025/100 VUs, 2731 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [   5% ] 025/100 VUs  0m14.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m15.9s), 027/100 VUs, 2977 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [   5% ] 027/100 VUs  0m15.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m16.9s), 028/100 VUs, 3237 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [   6% ] 028/100 VUs  0m16.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m17.9s), 030/100 VUs, 3475 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [   6% ] 030/100 VUs  0m17.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m18.9s), 032/100 VUs, 3727 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [   6% ] 032/100 VUs  0m18.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m19.9s), 033/100 VUs, 3973 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [   7% ] 033/100 VUs  0m19.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m20.9s), 035/100 VUs, 4226 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [   7% ] 035/100 VUs  0m20.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m21.9s), 037/100 VUs, 4495 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [   7% ] 037/100 VUs  0m21.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m22.9s), 038/100 VUs, 4767 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [   8% ] 038/100 VUs  0m22.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m23.9s), 040/100 VUs, 5034 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [   8% ] 040/100 VUs  0m23.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m24.9s), 042/100 VUs, 5281 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [   8% ] 042/100 VUs  0m24.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m25.9s), 043/100 VUs, 5550 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [   9% ] 043/100 VUs  0m25.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m26.9s), 045/100 VUs, 5792 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [   9% ] 045/100 VUs  0m26.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m27.9s), 047/100 VUs, 6077 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [   9% ] 047/100 VUs  0m27.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m28.9s), 048/100 VUs, 6329 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  10% ] 048/100 VUs  0m28.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m29.9s), 050/100 VUs, 6581 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  10% ] 050/100 VUs  0m29.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m30.9s), 052/100 VUs, 6844 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  10% ] 052/100 VUs  0m30.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m31.9s), 053/100 VUs, 7097 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  11% ] 053/100 VUs  0m31.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m32.9s), 055/100 VUs, 7376 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  11% ] 055/100 VUs  0m32.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m33.9s), 057/100 VUs, 7639 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  11% ] 057/100 VUs  0m33.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m34.9s), 058/100 VUs, 7899 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  12% ] 058/100 VUs  0m34.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m35.9s), 060/100 VUs, 8161 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  12% ] 060/100 VUs  0m35.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m36.9s), 061/100 VUs, 8416 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  12% ] 061/100 VUs  0m36.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m37.9s), 063/100 VUs, 8653 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  13% ] 063/100 VUs  0m37.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m38.9s), 065/100 VUs, 8913 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  13% ] 065/100 VUs  0m38.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m39.9s), 066/100 VUs, 9178 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  13% ] 066/100 VUs  0m39.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m40.9s), 068/100 VUs, 9438 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  14% ] 068/100 VUs  0m40.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m41.9s), 070/100 VUs, 9700 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  14% ] 070/100 VUs  0m41.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m42.9s), 071/100 VUs, 9961 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  14% ] 071/100 VUs  0m42.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m43.9s), 073/100 VUs, 10217 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  15% ] 073/100 VUs  0m43.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m44.9s), 075/100 VUs, 10456 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  15% ] 075/100 VUs  0m44.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m45.9s), 076/100 VUs, 10695 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  15% ] 076/100 VUs  0m45.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m46.9s), 078/100 VUs, 10967 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  16% ] 078/100 VUs  0m46.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m47.9s), 080/100 VUs, 11219 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  16% ] 080/100 VUs  0m47.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m48.9s), 081/100 VUs, 11467 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  16% ] 081/100 VUs  0m48.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m49.9s), 083/100 VUs, 11718 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  17% ] 083/100 VUs  0m49.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m50.9s), 085/100 VUs, 11977 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  17% ] 085/100 VUs  0m50.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m51.9s), 086/100 VUs, 12220 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  17% ] 086/100 VUs  0m51.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m52.9s), 088/100 VUs, 12465 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  18% ] 088/100 VUs  0m52.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m53.9s), 090/100 VUs, 12735 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  18% ] 090/100 VUs  0m53.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m54.9s), 091/100 VUs, 13001 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  18% ] 091/100 VUs  0m54.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m55.9s), 093/100 VUs, 13250 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  19% ] 093/100 VUs  0m55.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m56.9s), 094/100 VUs, 13494 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  19% ] 094/100 VUs  0m56.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m57.9s), 096/100 VUs, 13728 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  19% ] 096/100 VUs  0m57.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m58.9s), 098/100 VUs, 13949 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  20% ] 098/100 VUs  0m58.9s/5m00.0s
+k6-1  | 
+k6-1  | running (0m59.9s), 099/100 VUs, 14173 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  20% ] 099/100 VUs  0m59.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m00.9s), 100/100 VUs, 14400 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  20% ] 100/100 VUs  1m00.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m01.9s), 100/100 VUs, 14640 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  21% ] 100/100 VUs  1m01.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m02.9s), 100/100 VUs, 14883 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  21% ] 100/100 VUs  1m02.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m03.9s), 100/100 VUs, 15153 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  21% ] 100/100 VUs  1m03.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m04.9s), 100/100 VUs, 15395 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  22% ] 100/100 VUs  1m04.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m05.9s), 100/100 VUs, 15626 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  22% ] 100/100 VUs  1m05.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m06.9s), 100/100 VUs, 15891 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  22% ] 100/100 VUs  1m06.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m07.9s), 100/100 VUs, 16138 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  23% ] 100/100 VUs  1m07.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m08.9s), 100/100 VUs, 16417 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  23% ] 100/100 VUs  1m08.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m09.9s), 100/100 VUs, 16707 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  23% ] 100/100 VUs  1m09.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m10.9s), 100/100 VUs, 16958 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  24% ] 100/100 VUs  1m10.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m11.9s), 100/100 VUs, 17207 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  24% ] 100/100 VUs  1m11.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m12.9s), 100/100 VUs, 17483 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  24% ] 100/100 VUs  1m12.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m13.9s), 100/100 VUs, 17736 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  25% ] 100/100 VUs  1m13.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m14.9s), 100/100 VUs, 17981 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  25% ] 100/100 VUs  1m14.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m15.9s), 100/100 VUs, 18223 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  25% ] 100/100 VUs  1m15.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m16.9s), 100/100 VUs, 18467 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  26% ] 100/100 VUs  1m16.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m17.9s), 100/100 VUs, 18712 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  26% ] 100/100 VUs  1m17.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m18.9s), 100/100 VUs, 18954 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  26% ] 100/100 VUs  1m18.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m19.9s), 100/100 VUs, 19210 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  27% ] 100/100 VUs  1m19.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m20.9s), 100/100 VUs, 19446 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  27% ] 100/100 VUs  1m20.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m21.9s), 100/100 VUs, 19722 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  27% ] 100/100 VUs  1m21.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m22.9s), 100/100 VUs, 19970 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  28% ] 100/100 VUs  1m22.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m23.9s), 100/100 VUs, 20237 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  28% ] 100/100 VUs  1m23.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m24.9s), 100/100 VUs, 20486 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  28% ] 100/100 VUs  1m24.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m25.9s), 100/100 VUs, 20722 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  29% ] 100/100 VUs  1m25.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m26.9s), 100/100 VUs, 20996 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  29% ] 100/100 VUs  1m26.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m27.9s), 100/100 VUs, 21257 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  29% ] 100/100 VUs  1m27.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m28.9s), 100/100 VUs, 21517 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  30% ] 100/100 VUs  1m28.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m29.9s), 100/100 VUs, 21784 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  30% ] 100/100 VUs  1m29.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m30.9s), 100/100 VUs, 22009 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  30% ] 100/100 VUs  1m30.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m31.9s), 100/100 VUs, 22293 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  31% ] 100/100 VUs  1m31.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m32.9s), 100/100 VUs, 22534 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  31% ] 100/100 VUs  1m32.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m33.9s), 100/100 VUs, 22791 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  31% ] 100/100 VUs  1m33.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m34.9s), 100/100 VUs, 23052 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  32% ] 100/100 VUs  1m34.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m35.9s), 100/100 VUs, 23303 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  32% ] 100/100 VUs  1m35.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m36.9s), 100/100 VUs, 23553 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  32% ] 100/100 VUs  1m36.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m37.9s), 100/100 VUs, 23798 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  33% ] 100/100 VUs  1m37.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m38.9s), 100/100 VUs, 24057 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  33% ] 100/100 VUs  1m38.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m39.9s), 100/100 VUs, 24303 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  33% ] 100/100 VUs  1m39.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m40.9s), 100/100 VUs, 24556 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  34% ] 100/100 VUs  1m40.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m41.9s), 100/100 VUs, 24781 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  34% ] 100/100 VUs  1m41.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m42.9s), 100/100 VUs, 25026 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  34% ] 100/100 VUs  1m42.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m43.9s), 100/100 VUs, 25304 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  35% ] 100/100 VUs  1m43.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m44.9s), 100/100 VUs, 25543 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  35% ] 100/100 VUs  1m44.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m45.9s), 100/100 VUs, 25815 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  35% ] 100/100 VUs  1m45.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m46.9s), 100/100 VUs, 26096 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  36% ] 100/100 VUs  1m46.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m47.9s), 100/100 VUs, 26337 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  36% ] 100/100 VUs  1m47.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m48.9s), 100/100 VUs, 26611 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  36% ] 100/100 VUs  1m48.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m49.9s), 100/100 VUs, 26841 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  37% ] 100/100 VUs  1m49.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m50.9s), 100/100 VUs, 27100 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  37% ] 100/100 VUs  1m50.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m51.9s), 100/100 VUs, 27354 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  37% ] 100/100 VUs  1m51.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m52.9s), 100/100 VUs, 27588 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  38% ] 100/100 VUs  1m52.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m53.9s), 100/100 VUs, 27840 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  38% ] 100/100 VUs  1m53.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m54.9s), 100/100 VUs, 28089 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  38% ] 100/100 VUs  1m54.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m55.9s), 100/100 VUs, 28355 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  39% ] 100/100 VUs  1m55.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m56.9s), 100/100 VUs, 28610 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  39% ] 100/100 VUs  1m56.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m57.9s), 100/100 VUs, 28862 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  39% ] 100/100 VUs  1m57.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m58.9s), 100/100 VUs, 29115 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  40% ] 100/100 VUs  1m58.9s/5m00.0s
+k6-1  | 
+k6-1  | running (1m59.9s), 100/100 VUs, 29370 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  40% ] 100/100 VUs  1m59.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m00.9s), 100/100 VUs, 29626 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  40% ] 100/100 VUs  2m00.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m01.9s), 100/100 VUs, 29884 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  41% ] 100/100 VUs  2m01.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m02.9s), 100/100 VUs, 30134 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  41% ] 100/100 VUs  2m02.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m03.9s), 100/100 VUs, 30399 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  41% ] 100/100 VUs  2m03.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m04.9s), 100/100 VUs, 30623 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  42% ] 100/100 VUs  2m04.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m05.9s), 100/100 VUs, 30901 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  42% ] 100/100 VUs  2m05.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m06.9s), 100/100 VUs, 31167 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  42% ] 100/100 VUs  2m06.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m07.9s), 100/100 VUs, 31411 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  43% ] 100/100 VUs  2m07.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m08.9s), 100/100 VUs, 31671 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  43% ] 100/100 VUs  2m08.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m09.9s), 100/100 VUs, 31947 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  43% ] 100/100 VUs  2m09.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m10.9s), 100/100 VUs, 32213 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  44% ] 100/100 VUs  2m10.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m11.9s), 100/100 VUs, 32477 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  44% ] 100/100 VUs  2m11.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m12.9s), 100/100 VUs, 32734 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  44% ] 100/100 VUs  2m12.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m13.9s), 100/100 VUs, 32986 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  45% ] 100/100 VUs  2m13.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m14.9s), 100/100 VUs, 33223 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  45% ] 100/100 VUs  2m14.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m15.9s), 100/100 VUs, 33474 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  45% ] 100/100 VUs  2m15.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m16.9s), 100/100 VUs, 33740 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  46% ] 100/100 VUs  2m16.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m17.9s), 100/100 VUs, 34004 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  46% ] 100/100 VUs  2m17.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m18.9s), 100/100 VUs, 34273 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  46% ] 100/100 VUs  2m18.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m19.9s), 100/100 VUs, 34546 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  47% ] 100/100 VUs  2m19.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m20.9s), 100/100 VUs, 34788 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  47% ] 100/100 VUs  2m20.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m21.9s), 100/100 VUs, 35052 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  47% ] 100/100 VUs  2m21.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m22.9s), 100/100 VUs, 35303 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  48% ] 100/100 VUs  2m22.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m23.9s), 100/100 VUs, 35569 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  48% ] 100/100 VUs  2m23.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m24.9s), 100/100 VUs, 35802 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  48% ] 100/100 VUs  2m24.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m25.9s), 100/100 VUs, 36065 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  49% ] 100/100 VUs  2m25.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m26.9s), 100/100 VUs, 36325 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  49% ] 100/100 VUs  2m26.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m27.9s), 100/100 VUs, 36567 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  49% ] 100/100 VUs  2m27.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m28.9s), 100/100 VUs, 36817 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  50% ] 100/100 VUs  2m28.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m29.9s), 100/100 VUs, 37065 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  50% ] 100/100 VUs  2m29.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m30.9s), 100/100 VUs, 37326 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  50% ] 100/100 VUs  2m30.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m31.9s), 100/100 VUs, 37596 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  51% ] 100/100 VUs  2m31.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m32.9s), 100/100 VUs, 37859 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  51% ] 100/100 VUs  2m32.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m33.9s), 100/100 VUs, 38107 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  51% ] 100/100 VUs  2m33.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m34.9s), 100/100 VUs, 38378 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  52% ] 100/100 VUs  2m34.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m35.9s), 100/100 VUs, 38616 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  52% ] 100/100 VUs  2m35.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m36.9s), 100/100 VUs, 38866 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  52% ] 100/100 VUs  2m36.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m37.9s), 100/100 VUs, 39115 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  53% ] 100/100 VUs  2m37.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m38.9s), 100/100 VUs, 39367 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  53% ] 100/100 VUs  2m38.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m39.9s), 100/100 VUs, 39605 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  53% ] 100/100 VUs  2m39.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m40.9s), 100/100 VUs, 39837 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  54% ] 100/100 VUs  2m40.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m41.9s), 100/100 VUs, 40089 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  54% ] 100/100 VUs  2m41.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m42.9s), 100/100 VUs, 40329 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  54% ] 100/100 VUs  2m42.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m43.9s), 100/100 VUs, 40594 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  55% ] 100/100 VUs  2m43.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m44.9s), 100/100 VUs, 40866 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  55% ] 100/100 VUs  2m44.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m45.9s), 100/100 VUs, 41116 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  55% ] 100/100 VUs  2m45.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m46.9s), 100/100 VUs, 41376 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  56% ] 100/100 VUs  2m46.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m47.9s), 100/100 VUs, 41625 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  56% ] 100/100 VUs  2m47.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m48.9s), 100/100 VUs, 41882 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  56% ] 100/100 VUs  2m48.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m49.9s), 100/100 VUs, 42135 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  57% ] 100/100 VUs  2m49.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m50.9s), 100/100 VUs, 42368 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  57% ] 100/100 VUs  2m50.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m51.9s), 100/100 VUs, 42621 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  57% ] 100/100 VUs  2m51.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m52.9s), 100/100 VUs, 42863 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  58% ] 100/100 VUs  2m52.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m53.9s), 100/100 VUs, 43085 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  58% ] 100/100 VUs  2m53.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m54.9s), 100/100 VUs, 43350 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  58% ] 100/100 VUs  2m54.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m55.9s), 100/100 VUs, 43608 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  59% ] 100/100 VUs  2m55.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m56.9s), 100/100 VUs, 43855 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  59% ] 100/100 VUs  2m56.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m57.9s), 100/100 VUs, 44119 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  59% ] 100/100 VUs  2m57.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m58.9s), 100/100 VUs, 44367 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  60% ] 100/100 VUs  2m58.9s/5m00.0s
+k6-1  | 
+k6-1  | running (2m59.9s), 100/100 VUs, 44598 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  60% ] 100/100 VUs  2m59.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m00.9s), 100/100 VUs, 44861 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  60% ] 100/100 VUs  3m00.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m01.9s), 100/100 VUs, 45117 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  61% ] 100/100 VUs  3m01.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m02.9s), 100/100 VUs, 45354 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  61% ] 100/100 VUs  3m02.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m03.9s), 100/100 VUs, 45606 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  61% ] 100/100 VUs  3m03.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m04.9s), 100/100 VUs, 45835 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  62% ] 100/100 VUs  3m04.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m05.9s), 100/100 VUs, 46078 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  62% ] 100/100 VUs  3m05.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m06.9s), 100/100 VUs, 46324 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  62% ] 100/100 VUs  3m06.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m07.9s), 100/100 VUs, 46563 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  63% ] 100/100 VUs  3m07.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m08.9s), 100/100 VUs, 46806 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  63% ] 100/100 VUs  3m08.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m09.9s), 100/100 VUs, 47051 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  63% ] 100/100 VUs  3m09.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m10.9s), 100/100 VUs, 47302 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  64% ] 100/100 VUs  3m10.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m11.9s), 100/100 VUs, 47530 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  64% ] 100/100 VUs  3m11.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m12.9s), 100/100 VUs, 47772 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  64% ] 100/100 VUs  3m12.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m13.9s), 100/100 VUs, 48040 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  65% ] 100/100 VUs  3m13.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m14.9s), 100/100 VUs, 48282 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  65% ] 100/100 VUs  3m14.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m15.9s), 100/100 VUs, 48541 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  65% ] 100/100 VUs  3m15.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m16.9s), 100/100 VUs, 48810 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  66% ] 100/100 VUs  3m16.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m17.9s), 100/100 VUs, 49045 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  66% ] 100/100 VUs  3m17.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m18.9s), 100/100 VUs, 49317 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  66% ] 100/100 VUs  3m18.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m19.9s), 100/100 VUs, 49550 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  67% ] 100/100 VUs  3m19.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m20.9s), 100/100 VUs, 49815 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  67% ] 100/100 VUs  3m20.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m21.9s), 100/100 VUs, 50072 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  67% ] 100/100 VUs  3m21.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m22.9s), 100/100 VUs, 50318 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  68% ] 100/100 VUs  3m22.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m23.9s), 100/100 VUs, 50593 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  68% ] 100/100 VUs  3m23.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m24.9s), 100/100 VUs, 50814 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  68% ] 100/100 VUs  3m24.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m25.9s), 100/100 VUs, 51096 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  69% ] 100/100 VUs  3m25.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m26.9s), 100/100 VUs, 51339 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  69% ] 100/100 VUs  3m26.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m27.9s), 100/100 VUs, 51583 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  69% ] 100/100 VUs  3m27.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m28.9s), 100/100 VUs, 51840 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  70% ] 100/100 VUs  3m28.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m29.9s), 100/100 VUs, 52110 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  70% ] 100/100 VUs  3m29.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m30.9s), 100/100 VUs, 52350 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  70% ] 100/100 VUs  3m30.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m31.9s), 100/100 VUs, 52596 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  71% ] 100/100 VUs  3m31.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m32.9s), 100/100 VUs, 52871 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  71% ] 100/100 VUs  3m32.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m33.9s), 100/100 VUs, 53146 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  71% ] 100/100 VUs  3m33.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m34.9s), 100/100 VUs, 53394 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  72% ] 100/100 VUs  3m34.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m35.9s), 100/100 VUs, 53647 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  72% ] 100/100 VUs  3m35.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m36.9s), 100/100 VUs, 53910 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  72% ] 100/100 VUs  3m36.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m37.9s), 100/100 VUs, 54143 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  73% ] 100/100 VUs  3m37.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m38.9s), 100/100 VUs, 54397 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  73% ] 100/100 VUs  3m38.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m39.9s), 100/100 VUs, 54644 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  73% ] 100/100 VUs  3m39.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m40.9s), 100/100 VUs, 54897 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  74% ] 100/100 VUs  3m40.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m41.9s), 100/100 VUs, 55158 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  74% ] 100/100 VUs  3m41.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m42.9s), 100/100 VUs, 55398 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  74% ] 100/100 VUs  3m42.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m43.9s), 100/100 VUs, 55656 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  75% ] 100/100 VUs  3m43.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m44.9s), 100/100 VUs, 55918 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  75% ] 100/100 VUs  3m44.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m45.9s), 100/100 VUs, 56177 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  75% ] 100/100 VUs  3m45.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m46.9s), 100/100 VUs, 56431 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  76% ] 100/100 VUs  3m46.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m47.9s), 100/100 VUs, 56669 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  76% ] 100/100 VUs  3m47.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m48.9s), 100/100 VUs, 56932 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  76% ] 100/100 VUs  3m48.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m49.9s), 100/100 VUs, 57163 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  77% ] 100/100 VUs  3m49.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m50.9s), 100/100 VUs, 57393 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  77% ] 100/100 VUs  3m50.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m51.9s), 100/100 VUs, 57666 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  77% ] 100/100 VUs  3m51.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m52.9s), 100/100 VUs, 57896 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  78% ] 100/100 VUs  3m52.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m53.9s), 100/100 VUs, 58160 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  78% ] 100/100 VUs  3m53.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m54.9s), 100/100 VUs, 58433 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  78% ] 100/100 VUs  3m54.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m55.9s), 100/100 VUs, 58642 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  79% ] 100/100 VUs  3m55.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m56.9s), 100/100 VUs, 58900 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  79% ] 100/100 VUs  3m56.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m57.9s), 100/100 VUs, 59155 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  79% ] 100/100 VUs  3m57.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m58.9s), 100/100 VUs, 59414 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  80% ] 100/100 VUs  3m58.9s/5m00.0s
+k6-1  | 
+k6-1  | running (3m59.9s), 100/100 VUs, 59699 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  80% ] 100/100 VUs  3m59.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m00.9s), 100/100 VUs, 59953 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  80% ] 100/100 VUs  4m00.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m01.9s), 100/100 VUs, 60206 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  81% ] 100/100 VUs  4m01.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m02.9s), 100/100 VUs, 60481 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  81% ] 100/100 VUs  4m02.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m03.9s), 100/100 VUs, 60718 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  81% ] 100/100 VUs  4m03.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m04.9s), 100/100 VUs, 60983 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  82% ] 100/100 VUs  4m04.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m05.9s), 100/100 VUs, 61239 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  82% ] 100/100 VUs  4m05.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m06.9s), 100/100 VUs, 61485 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  82% ] 100/100 VUs  4m06.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m07.9s), 100/100 VUs, 61755 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  83% ] 100/100 VUs  4m07.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m08.9s), 100/100 VUs, 62007 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  83% ] 100/100 VUs  4m08.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m09.9s), 100/100 VUs, 62251 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  83% ] 100/100 VUs  4m09.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m10.9s), 100/100 VUs, 62522 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  84% ] 100/100 VUs  4m10.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m11.9s), 100/100 VUs, 62787 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  84% ] 100/100 VUs  4m11.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m12.9s), 100/100 VUs, 63045 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  84% ] 100/100 VUs  4m12.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m13.9s), 100/100 VUs, 63308 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  85% ] 100/100 VUs  4m13.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m14.9s), 100/100 VUs, 63556 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  85% ] 100/100 VUs  4m14.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m15.9s), 100/100 VUs, 63803 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  85% ] 100/100 VUs  4m15.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m16.9s), 100/100 VUs, 64060 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  86% ] 100/100 VUs  4m16.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m17.9s), 100/100 VUs, 64302 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  86% ] 100/100 VUs  4m17.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m18.9s), 100/100 VUs, 64569 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  86% ] 100/100 VUs  4m18.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m19.9s), 100/100 VUs, 64820 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  87% ] 100/100 VUs  4m19.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m20.9s), 100/100 VUs, 65070 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  87% ] 100/100 VUs  4m20.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m21.9s), 100/100 VUs, 65318 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  87% ] 100/100 VUs  4m21.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m22.9s), 100/100 VUs, 65594 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  88% ] 100/100 VUs  4m22.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m23.9s), 100/100 VUs, 65846 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  88% ] 100/100 VUs  4m23.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m24.9s), 100/100 VUs, 66097 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  88% ] 100/100 VUs  4m24.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m25.9s), 100/100 VUs, 66339 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  89% ] 100/100 VUs  4m25.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m26.9s), 100/100 VUs, 66587 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  89% ] 100/100 VUs  4m26.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m27.9s), 100/100 VUs, 66840 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  89% ] 100/100 VUs  4m27.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m28.9s), 100/100 VUs, 67114 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  90% ] 100/100 VUs  4m28.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m29.9s), 100/100 VUs, 67349 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  90% ] 100/100 VUs  4m29.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m30.9s), 100/100 VUs, 67612 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  90% ] 100/100 VUs  4m30.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m31.9s), 100/100 VUs, 67856 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  91% ] 100/100 VUs  4m31.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m32.9s), 100/100 VUs, 68106 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  91% ] 100/100 VUs  4m32.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m33.9s), 100/100 VUs, 68356 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  91% ] 100/100 VUs  4m33.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m34.9s), 100/100 VUs, 68632 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  92% ] 100/100 VUs  4m34.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m35.9s), 100/100 VUs, 68869 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  92% ] 100/100 VUs  4m35.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m36.9s), 100/100 VUs, 69148 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  92% ] 100/100 VUs  4m36.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m37.9s), 100/100 VUs, 69397 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  93% ] 100/100 VUs  4m37.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m38.9s), 100/100 VUs, 69639 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  93% ] 100/100 VUs  4m38.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m39.9s), 100/100 VUs, 69915 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  93% ] 100/100 VUs  4m39.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m40.9s), 100/100 VUs, 70176 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  94% ] 100/100 VUs  4m40.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m41.9s), 100/100 VUs, 70435 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  94% ] 100/100 VUs  4m41.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m42.9s), 100/100 VUs, 70684 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  94% ] 100/100 VUs  4m42.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m43.9s), 100/100 VUs, 70951 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  95% ] 100/100 VUs  4m43.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m44.9s), 100/100 VUs, 71178 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  95% ] 100/100 VUs  4m44.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m45.9s), 100/100 VUs, 71438 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  95% ] 100/100 VUs  4m45.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m46.9s), 100/100 VUs, 71675 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  96% ] 100/100 VUs  4m46.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m47.9s), 100/100 VUs, 71925 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  96% ] 100/100 VUs  4m47.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m48.9s), 100/100 VUs, 72164 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  96% ] 100/100 VUs  4m48.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m49.9s), 100/100 VUs, 72425 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  97% ] 100/100 VUs  4m49.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m50.9s), 100/100 VUs, 72650 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  97% ] 100/100 VUs  4m50.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m51.9s), 100/100 VUs, 72904 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  97% ] 100/100 VUs  4m51.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m52.9s), 100/100 VUs, 73161 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  98% ] 100/100 VUs  4m52.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m53.9s), 100/100 VUs, 73422 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  98% ] 100/100 VUs  4m53.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m54.9s), 100/100 VUs, 73684 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  98% ] 100/100 VUs  4m54.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m55.9s), 100/100 VUs, 73917 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  99% ] 100/100 VUs  4m55.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m56.9s), 100/100 VUs, 74188 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  99% ] 100/100 VUs  4m56.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m57.9s), 100/100 VUs, 74438 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [  99% ] 100/100 VUs  4m57.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m58.9s), 100/100 VUs, 74680 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [ 100% ] 100/100 VUs  4m58.9s/5m00.0s
+k6-1  | 
+k6-1  | running (4m59.9s), 100/100 VUs, 74929 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers   [ 100% ] 100/100 VUs  4m59.9s/5m00.0s
+k6-1  | 
+k6-1  |      █ Post Transfers
+k6-1  | 
+k6-1  |        ✓ TRANSFERS__POST_TRANSFERS_RESPONSE_IS_200
+k6-1  |        ✓ TRANSFERS__PUT_TRANSFERS_ACCEPT_PARTY_RESPONSE_IS_200
+k6-1  |        ✓ TRANSFERS__PUT_TRANSFERS_ACCEPT_QUOTE_RESPONSE_IS_200
+k6-1  | 
+k6-1  |      checks.........................: 100.00% ✓ 225099     ✗ 0     
+k6-1  |      data_received..................: 957 MB  3.2 MB/s
+k6-1  |      data_sent......................: 81 MB   270 kB/s
+k6-1  |      group_duration.................: avg=360ms    min=18.6ms  med=385.76ms max=588.76ms p(90)=429.74ms p(95)=443.84ms
+k6-1  |      http_req_blocked...............: avg=2.68µs   min=821ns   med=1.95µs   max=31.01ms  p(90)=3.38µs   p(95)=4.18µs  
+k6-1  |      http_req_connecting............: avg=239ns    min=0s      med=0s       max=30.91ms  p(90)=0s       p(95)=0s      
+k6-1  |    ✓ http_req_duration..............: avg=119.79ms min=4.76ms  med=132.88ms max=324.59ms p(90)=179.84ms p(95)=192ms   
+k6-1  |        { expected_response:true }...: avg=119.79ms min=4.76ms  med=132.88ms max=324.59ms p(90)=179.84ms p(95)=192ms   
+k6-1  |    ✓ http_req_failed................: 0.00%   ✓ 0          ✗ 225099
+k6-1  |      http_req_receiving.............: avg=56.1µs   min=10.46µs med=49.54µs  max=20.39ms  p(90)=76.78µs  p(95)=97.52µs 
+k6-1  |      http_req_sending...............: avg=17.08µs  min=6.15µs  med=13.83µs  max=5.93ms   p(90)=25.21µs  p(95)=30.32µs 
+k6-1  |      http_req_tls_handshaking.......: avg=0s       min=0s      med=0s       max=0s       p(90)=0s       p(95)=0s      
+k6-1  |      http_req_waiting...............: avg=119.72ms min=4.7ms   med=132.8ms  max=324.5ms  p(90)=179.77ms p(95)=191.92ms
+k6-1  |      http_reqs......................: 225099  749.78945/s
+k6-1  |    ✓ iteration_duration.............: avg=360.02ms min=18.62ms med=385.78ms max=588.8ms  p(90)=429.76ms p(95)=443.86ms
+k6-1  |      iterations.....................: 75033   249.929817/s
+k6-1  |      vus............................: 100     min=2        max=100 
+k6-1  |      vus_max........................: 100     min=100      max=100 
+k6-1  | 
+k6-1  | 
+k6-1  | running (5m00.2s), 000/100 VUs, 75033 complete and 0 interrupted iterations
+k6-1  | outboundSDKTransfers ✓ [ 100% ] 000/100 VUs  5m0s
+k6-1 exited with code 0
