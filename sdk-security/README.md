@@ -11,10 +11,14 @@ Test Case | Description | K6 Test Case | Notes
 
 ### Assumptions
 
-- The following AWS machine was used for testing: `m6i.2xlarge`
+- The following VM machine was used for testing: `m6i.2xlarge`
   - `8` vCPU - `3.5 GHz` 3rd Generation Intel Xeon Scalable processors (Ice Lake 8375C)
   - `32gb` RAM
   - HDD `io2` with `100` GB, @ `25k` iOP/S is used unless otherwise stated (_i.e. 5k iOP/s configured from Scenario 51+ onwards_)
+
+  - 32 vCores - `3.3 GHz` ( 16 sockets) AMD EPYC 7302
+  - `65gb` RAM
+  - NVME SSD with `250` GB
 
   ```bash
   $ docker version
