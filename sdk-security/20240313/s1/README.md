@@ -41,6 +41,8 @@ N/A
 
 ## Observations
 
-- Mean/Max of `227 Op/s`/`278 Op/s` with a min/mean/max response time of `21.61ms`/`145.86ms`/`177.64ms`
+- Mean/Max of `225 Op/s`/`278 Op/s` with a min/mean/max response time of `17.82ms`/`146.05ms`/`185.83ms`
 
 ## Recommendations
+
+- None. Baseline test.

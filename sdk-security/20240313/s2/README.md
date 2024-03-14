@@ -41,7 +41,7 @@ N/A
 
 ## Observations
 
-- Mean/Max of `29 Op/s`/`39 Op/s` with a min/mean/max response time of `175.55ms`/`2.32s`/`2.84s`
+- Mean/Max of `30 Op/s`/`40 Op/s` with a min/mean/max response time of `214.46ms`/`2.30s`/`2.76s`
 
 ## Recommendations
 
