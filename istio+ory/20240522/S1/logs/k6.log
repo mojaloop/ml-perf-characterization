@@ -1,0 +1,3 @@
+stioOryTests   [  12% ] 0572/1000 VUs  01m43.7s/15m00.0s
+k6-1  | time="2024-05-22T16:06:33Z" level=warning msg="Request Failed" error="Post \"https://keycloak.awsdev.labsk8s1014.mojaloop.live/realms/dfsps/protocol/openid-connect/token\": request timeout"
+k6-1  | time="2024-05-22T16:06:33Z" level=error msg="GoError: the body is null so we can't transform it to JSON - this likely was because of a request error getting the response\n\tat reflect.methodValueCall (native)\n\tat getAuthToken (file:///scripts/scripts/istioOry.js:32:9(29))\n\tat testIstioOry (file:///scripts/scripts/istioOry.js:54:16(3))\n\tat istioOryScenarios (file:///scripts/scenarios/istioOry.js:5:2(4))\n" executor=ramping-vus scenario=istioOryTests source=stacktrace

@@ -1,4 +1,4 @@
-# Scenario: POST /quotes request through Istio gateway with mTLS, Keycloak authn, Oathkeeper authenticator enabled and Keto authorizer enabled
+# Scenario: POST /quotes request through Istio gateway with mTLS, Keycloak authentication, Oathkeeper JWT authenticator and Keto authorizer enabled
 
 ## Environment
 
@@ -7,6 +7,14 @@
   - 32 GiB memory
   - HDD 250 GB NVMe
   - Network BW: up to 10Gbps
+- Scale
+  - Oathkeeper: 1
+  - Keto: 1
+  - Keycloak: 1
+  - Callback handler: 1
+- Test environment setup
+  
+  ![Alt text](../../images/env.svg)
 
 ## K6 Test Config
 
@@ -40,26 +48,26 @@
 ```
 
 ## Observations
-
-- Istio request timeout
-
+### Istio request timeout
+- About 5.7% of requests to the gateway's quotes endpoint failed. This is above the threshold of 0.01%.
+```bash
 msg="Request Failed" error="Post \"https://extapi.awsdev.labsk8s1014.mojaloop.live/quotes\": dial: i/o timeout"
 msg="Request Failed" error="Post \"https://extapi.awsdev.labsk8s1014.mojaloop.live/quotes\": request timeout"
+``` 
+- Oathkeeper's error log message `connect: cannot assign requested address` suggests inability of Oathkeeper to open new connections to Keto at a high request rate.
+- Max Response Time: 7.34s
 
- - Max 7.34s response time
+### Keycloak request timeout 
+- An insignificant number of requests to keycloaks token endpoint failed.
+- Max. Response Time: 707ms
 
-- Keycloak request timeout - insignificant count, most requests were successful
-  - Max. 707ms response time
-
-Total failures: 11.4% mostly comming from Istio endpoint (could have been the ory components or istio itself - needs digging)
-
-OATHKEEPER error log
-024-05-22T15:02:33+01:00 {"audience":"application","authorization_handler":"remote_json","error":{"message":"Post \"http://keto-read.ory.svc.cluster.local:80/relation-tuples/check\": POST http://keto-read.ory.svc.cluster.local:80/relation-tuples/check giving up after 5 attempt(s): Post \"http://keto-read.ory.svc.cluster.local:80/relation-tuples/check\": dial tcp 10.152.183.168:80: connect: cannot assign requested address"},"granted":false,"http_host":"extapi.awsdev.labsk8s1014.mojaloop.live","http_method":"POST","http_url":"http://extapi.awsdev.labsk8s1014.mojaloop.live/quotes","http_user_agent":"","level":"warning","msg":"The authorization handler encountered an error","reason_id":"authorization_handler_error","rule_id":"fspiop-api.mojaloop","service_name":"ORY Oathkeeper","service_version":"v0.40.6","subject":"c9baf4da-33d9-4a32-859e-567fec725a5a","time":"2024-05-22T14:02:33.396526491Z"}
-
-2024-05-22T15:02:33+01:00 {"audience":"application","error":{"message":"Post \"http://keto-read.ory.svc.cluster.local:80/relation-tuples/check\": POST http://keto-read.ory.svc.cluster.local:80/relation-tuples/check giving up after 5 attempt(s): Post \"http://keto-read.ory.svc.cluster.local:80/relation-tuples/check\": dial tcp 10.152.183.168:80: connect: cannot assign requested address"},"granted":false,"http_host":"extapi.awsdev.labsk8s1014.mojaloop.live","http_method":"POST","http_url":"http://extapi.awsdev.labsk8s1014.mojaloop.live/quotes","http_user_agent":"","level":"info","msg":"Access request denied","service_name":"ORY Oathkeeper","service_version":"v0.40.6","time":"2024-05-22T14:02:33.396592346Z"}
-
-
+### Performance Summary
+- P95 Response Time: 4.34s
+- Throughput: 2.39k req/s
 
 ## Recommendations
 
-- 
+- More investigation of the Ory components logs is required to unravel the cause of the high failure rate.
+
+## Test Result
+![Test Result](<images/Official k6 Test Result.png>)

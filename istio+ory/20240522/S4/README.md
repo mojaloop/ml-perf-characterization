@@ -1,4 +1,6 @@
-# Scenario: POST /quotes request through Istio gateway with mTLS, Keycloak authentication enabled, Oathkeeper authenticator and Keto authorizer disabled (Istio AuthorizationPolicy disabled).
+# Scenario: POST /quotes request through Istio gateway with mTLS, Keycloak authentication, Oathkeeper authenticator and Keto authorizer enabled
+
+This only change in scenario (compared to S1) is scaling up Oathkeeper to 3  while keeping Keto at 1.
 
 ## Environment
 
@@ -8,7 +10,7 @@
   - HDD 250 GB NVMe
   - Network BW: up to 10Gbps
 - Scale
-  - Oathkeeper: 1
+  - Oathkeeper: 3
   - Keto: 1
   - Keycloak: 1
   - Callback handler: 1
@@ -48,24 +50,18 @@
 ```
 
 ## Observations
-### Keto
-- Disabling keto in the resulted in better error rate and performance. This confirms an ongoing issue in the setup of Keto and possibly Oathkeeper.
+### Oathkeeper and Keto
+- Further investigation of the errors in S1 revealed that Oathkeeper was failing a lot of its requests because of inability to open more ephemeral client ports to Keto due to the high volume of requests. By scalin gup Oathkeeper, more ports are made available from the new container hosts. This setup resulted in low error rate and better throughput.
 
-### Istio request timeout
-- About 0.02% of requests to the gateway's quotes endpoint failed. This is above the threshold of 0.01%.
-```bash
-msg="Request Failed" error="Post \"https://extapi.awsdev.labsk8s1014.mojaloop.live/quotes\": dial: i/o timeout"
-msg="Request Failed" error="Post \"https://extapi.awsdev.labsk8s1014.mojaloop.live/quotes\": request timeout"
-``` 
-- Max Response Time: 841ms
+### Istio gateway
+- About 0.0068% of requests to the gateway's quotes endpoint failed. This is below the threshold of 0.01%.
+- Max Response Time: 149ms
 
 ### Performance Summary
-- P95 Response Time: 605.63ms
-- Throughput: 3.81k req/s
+- P95 Response Time: 145.87ms
+- Throughput: 3.32k req/s
 
 ## Recommendations
 
-- Investigate Istio -> callback-handler requests pipeline.
-
 ## Test Result
-![Test Result](<images/Official k6 Test Result (1).png>)
+![Test Result](<images/Official k6 Test Result (5).png>)

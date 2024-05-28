@@ -1,4 +1,6 @@
-# Scenario: POST /quotes request through Istio gateway with mTLS, Keycloak authentication enabled, Oathkeeper authenticator and Keto authorizer disabled (Istio AuthorizationPolicy disabled).
+# Scenario: POST /quotes request through Istio gateway with mTLS, Keycloak authentication, Oathkeeper authenticator and Keto authorizer enabled.
+
+This scenario includes setting up role-permission mapping in Keto for the test user used in this test i.e a role is setup, a permission is aadded to that role, and the test user is added to that role.
 
 ## Environment
 
@@ -8,7 +10,7 @@
   - HDD 250 GB NVMe
   - Network BW: up to 10Gbps
 - Scale
-  - Oathkeeper: 1
+  - Oathkeeper: 3
   - Keto: 1
   - Keycloak: 1
   - Callback handler: 1
@@ -48,24 +50,16 @@
 ```
 
 ## Observations
-### Keto
-- Disabling keto in the resulted in better error rate and performance. This confirms an ongoing issue in the setup of Keto and possibly Oathkeeper.
 
-### Istio request timeout
-- About 0.02% of requests to the gateway's quotes endpoint failed. This is above the threshold of 0.01%.
-```bash
-msg="Request Failed" error="Post \"https://extapi.awsdev.labsk8s1014.mojaloop.live/quotes\": dial: i/o timeout"
-msg="Request Failed" error="Post \"https://extapi.awsdev.labsk8s1014.mojaloop.live/quotes\": request timeout"
-``` 
-- Max Response Time: 841ms
+With the role-permission mapping, error rate was slightly elevated to 0.0095% (still below the threshold of 0.01%).
+
 
 ### Performance Summary
-- P95 Response Time: 605.63ms
-- Throughput: 3.81k req/s
+- P95 Response Time: 146.86ms
+- Throughput: 3.10k req/s
 
 ## Recommendations
 
-- Investigate Istio -> callback-handler requests pipeline.
 
 ## Test Result
-![Test Result](<images/Official k6 Test Result (1).png>)
+![Test Result](<images/Official k6 Test Result (8).png>)
