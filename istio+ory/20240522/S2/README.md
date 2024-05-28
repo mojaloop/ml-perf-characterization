@@ -49,7 +49,7 @@
 
 ## Observations
 ### Keto
-- Disabling keto in the resulted in better error rate and performance. This confirms an ongoing issue in the Oathkeeper -> Keto communication.
+- Disabling keto resulted in lower error rate and better performance. This confirms an ongoing issue in the Oathkeeper -> Keto communication.
 
 ### Istio request timeout
 - About 0.016% of requests to the gateway's quotes endpoint failed. This is above the threshold of 0.01%.
