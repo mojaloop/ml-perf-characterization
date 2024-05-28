@@ -14,7 +14,7 @@
   - Callback handler: 1
 - Test environment setup
   
-  ![Alt text](../../images/env.svg)
+  ![environment schematic diagram](../../images/env.svg)
 
 ## K6 Test Config
 
@@ -49,10 +49,11 @@
 
 ## Observations
 ### Keto
-- Disabling keto resulted in lower error rate and better performance. This confirms an ongoing issue in the Oathkeeper -> Keto communication.
+- Disabling keto resulted in lower error rate and better performance. This confirms an ongoing issue in Oathkeeper -> Keto communication.
 
 ### Istio request timeout
 - About 0.016% of requests to the gateway's quotes endpoint failed. This is above the threshold of 0.01%.
+- From k6's logs
 ```bash
 msg="Request Failed" error="Post \"https://extapi.awsdev.labsk8s1014.mojaloop.live/quotes\": dial: i/o timeout"
 msg="Request Failed" error="Post \"https://extapi.awsdev.labsk8s1014.mojaloop.live/quotes\": request timeout"
@@ -65,7 +66,7 @@ msg="Request Failed" error="Post \"https://extapi.awsdev.labsk8s1014.mojaloop.li
 
 ## Recommendations
 
-- Investigate Istio -> Oathkeeper -> callback-handler requests pipeline.
+- This test validates an ongoing issue in the current Oathkeeper -> Keto setup discovered in S1.
 
 ## Test Result
 ![Test Result](<images/Official k6 Test Result (1).png>)

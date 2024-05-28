@@ -1,6 +1,6 @@
 # Scenario: POST /quotes request through Istio gateway with mTLS, Keycloak authentication, Oathkeeper authenticator and Keto authorizer enabled.
 
-This scenario includes setting up role-permission mapping in Keto for the test user used in this test i.e a role is setup, a permission is aadded to that role, and the test user is added to that role.
+This scenario includes setting up role-permission mapping in Keto for the test user used in this test (dfsp-jwt) i.e a role is setup, a permission is added to that role, and the test user is added to that role.
 
 ## Environment
 
@@ -16,7 +16,7 @@ This scenario includes setting up role-permission mapping in Keto for the test u
   - Callback handler: 1
 - Test environment setup
   
-  ![Alt text](../../images/env.svg)
+  ![environment schematic diagram](../../images/env.svg)
 
 ## K6 Test Config
 
@@ -52,7 +52,6 @@ This scenario includes setting up role-permission mapping in Keto for the test u
 ## Observations
 
 With the role-permission mapping, error rate was slightly elevated to 0.0095% (still below the threshold of 0.01%).
-
 
 ### Performance Summary
 - P95 Response Time: 146.86ms

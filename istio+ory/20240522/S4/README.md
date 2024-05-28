@@ -1,6 +1,6 @@
 # Scenario: POST /quotes request through Istio gateway with mTLS, Keycloak authentication, Oathkeeper authenticator and Keto authorizer enabled
 
-This only change in scenario (compared to S1) is scaling up Oathkeeper to 3  while keeping Keto at 1.
+The only change in this scenario (compared to S1) is scaling up Oathkeeper to 3  while keeping Keto at 1.
 
 ## Environment
 
@@ -16,7 +16,7 @@ This only change in scenario (compared to S1) is scaling up Oathkeeper to 3  whi
   - Callback handler: 1
 - Test environment setup
   
-  ![Alt text](../../images/env.svg)
+  ![environment schematic diagram](../../images/env.svg)
 
 ## K6 Test Config
 
@@ -51,7 +51,7 @@ This only change in scenario (compared to S1) is scaling up Oathkeeper to 3  whi
 
 ## Observations
 ### Oathkeeper and Keto
-- Further investigation of the errors in S1 revealed that Oathkeeper was failing a lot of its requests because of inability to open more ephemeral client ports to Keto due to the high volume of requests. By scalin gup Oathkeeper, more ports are made available from the new container hosts. This setup resulted in low error rate and better throughput.
+- Further investigation of the errors in S1 revealed that Oathkeeper was failing a substantial number of its requests because of inability to open new ephemeral client ports to Keto due to the high volume of requests. By scaling up Oathkeeper, more ports are made available from the new container hosts. This setup resulted in lower error rate and better throughput.
 
 ### Istio gateway
 - About 0.0068% of requests to the gateway's quotes endpoint failed. This is below the threshold of 0.01%.
