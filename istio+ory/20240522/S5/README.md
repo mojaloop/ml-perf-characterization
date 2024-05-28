@@ -59,7 +59,8 @@ With the role-permission mapping, error rate was slightly elevated to 0.0095% (s
 - Throughput: 3.10k req/s
 
 ## Recommendations
-
+- It is not clear at this time if HTTP 1.1 keep-alive is enabled in Oathkeeper and Keto. There is also no configuration option in either of the component to enable this.
+It is believed that with HTTP keep-alive better performance and more efficient resource utilization will be seen.
 
 ## Test Result
 ![Test Result](<images/Official k6 Test Result (8).png>)
