@@ -1,0 +1,4 @@
+msg="Request Failed" error="Post \"https://keycloak.awsdev.labsk8s1014.mojaloop.live/realms/dfsps/protocol/openid-connect/token\": request timeout"
+msg="GoError: the body is null so we can't transform it to JSON - this likely was because of a request error getting the response\n\tat reflect.methodValueCall (native)\n\tat getAuthToken (file:///scripts/scripts/istioOry.js:32:9(29))\n\tat testIstioOry (file:///scripts/scripts/istioOry.js:54:16(3))\n\tat istioOryScenarios (file:///scripts/scenarios/istioOry.js:5:2(4))\n" executor=ramping-vus scenario=istioOryTests source=stacktrace
+msg="Request Failed" error="Post \"https://extapi.awsdev.labsk8s1014.mojaloop.live/quotes\": dial: i/o timeout"
+msg="Request Failed" error="Post \"https://extapi.awsdev.labsk8s1014.mojaloop.live/quotes\": request timeout"
